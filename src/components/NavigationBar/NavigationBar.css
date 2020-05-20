@@ -1,0 +1,54 @@
+.Navigation-Panel {
+    display: flex;
+    justify-content: center;
+    min-width: 100%;
+    padding: 1em 0;
+    position: fixed;
+    background: rgb(235, 242, 245);
+    border-bottom: 1px solid lightseagreen;
+}
+
+.Practiq-logo {
+    height: 40px;
+    width: 40px;
+    background: rgb(37, 120, 243);
+    border-radius: 50%;
+    position: relative;
+}
+
+.Practiq-logo::after {
+    content: "Practiq";
+    position: absolute;
+    color: rgb(0, 0, 0);
+    bottom: 12px;
+    left: 50px;
+    font-weight: bold;
+}
+
+.Navigation-Panel-ul li{
+    display: inline-block;
+    margin-left: 55px;
+    cursor: pointer;
+}
+
+.action-btn {
+    background: white;
+    color: blue;
+    padding: 10px 25px;
+    border-radius: 4px;
+    font-weight: 500;
+}
+
+.Navigation-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    min-width: 1465px;
+}
+
+@media (max-width: 1533px) {
+    .Navigation-wrapper {
+        padding: 0 1em;
+        min-width: 100%;
+    }
+}

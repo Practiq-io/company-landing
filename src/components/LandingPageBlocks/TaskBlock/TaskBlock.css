@@ -1,0 +1,18 @@
+.TB-Section {
+    width: 100%;
+    background: rgb(241, 238, 238);
+}
+
+.TB-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 2px dotted rgb(151, 151, 151);
+    min-height: 70vh;
+}
+
+.TB-title {
+    font-size: 40px;
+    font-weight: 400;
+    color: rgb(122, 118, 118);
+}
