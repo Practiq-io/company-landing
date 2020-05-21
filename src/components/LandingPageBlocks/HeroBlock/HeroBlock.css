@@ -1,10 +1,11 @@
 .HB-Section {
     width: 100%;
-    background: rgb(241, 238, 238);
+    background: rgb(253, 0, 0);
 }
 
 .HB-content {
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     border: 2px dotted rgb(151, 151, 151);
