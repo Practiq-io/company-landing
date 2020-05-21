@@ -1,6 +1,7 @@
 .HB-Section {
     width: 100%;
-    background: rgb(253, 0, 0);
+		/* background: rgb(253, 0, 0); */
+		background-color: lightgreen;
 }
 
 .HB-content {
