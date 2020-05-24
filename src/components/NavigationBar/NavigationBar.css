@@ -1,54 +1,59 @@
-.Navigation-Panel {
-    display: flex;
-    justify-content: center;
-    min-width: 100%;
-    padding: 1em 0;
-    position: fixed;
-    background: rgb(235, 242, 245);
-    border-bottom: 1px solid lightseagreen;
+body,
+html {
+  font-size: 16px;
 }
-
-.Practiq-logo {
-    height: 40px;
-    width: 40px;
-    background: rgb(37, 120, 243);
-    border-radius: 50%;
-    position: relative;
+nav .wrapper .nav_wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 16px;
 }
-
-.Practiq-logo::after {
-    content: "Practiq";
-    position: absolute;
-    color: rgb(0, 0, 0);
-    bottom: 12px;
-    left: 50px;
-    font-weight: bold;
+nav .wrapper .nav_wrapper .logo img {
+  width: 116px;
+  height: 32px;
 }
-
-.Navigation-Panel-ul li{
-    display: inline-block;
-    margin-left: 55px;
-    cursor: pointer;
+nav .wrapper .nav_wrapper .navigation {
+  display: flex;
+  align-items: center;
 }
-
-.action-btn {
-    background: white;
-    color: blue;
-    padding: 10px 25px;
-    border-radius: 4px;
-    font-weight: 500;
+nav .wrapper .nav_wrapper .navigation a {
+  font-family: 'RobotoMono-Regular';
+  font-size: 0.875rem;
+  color: black;
+  letter-spacing: 1px;
+  padding-right: 2.5rem;
+  font-weight: 500;
 }
-
-.Navigation-wrapper {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    min-width: 1465px;
+nav .wrapper .nav_wrapper .navigation a:last-of-type {
+  color: blue;
+  padding: 8px 16px;
+  background-color: white;
+  border-radius: 6px;
 }
-
-@media (max-width: 1533px) {
-    .Navigation-wrapper {
-        padding: 0 1em;
-        min-width: 100%;
-    }
+nav .wrapper .nav_wrapper .navigation .mobile_nav {
+  width: 18px;
+  height: 2px;
+  background-color: black;
+  display: none;
+  position: relative;
+}
+nav .wrapper .nav_wrapper .navigation .mobile_nav::after {
+  content: "";
+  display: block;
+  position: absolute;
+  top: -5px;
+  right: 0;
+  width: 18px;
+  height: 2px;
+  background-color: black;
+}
+nav .wrapper .nav_wrapper .navigation .mobile_nav::before {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 5px;
+  right: 0;
+  width: 18px;
+  height: 2px;
+  background-color: black;
 }

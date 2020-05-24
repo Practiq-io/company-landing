@@ -1,6 +1,7 @@
 .PB-Section {
     width: 100%;
-    background: rgb(241, 238, 238);
+		background: rgb(241, 238, 238);
+		margin-top: 100px;
 }
 
 .PB-content {
