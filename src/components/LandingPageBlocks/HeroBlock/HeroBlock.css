@@ -14,6 +14,24 @@ section > img.large_image {
 }
 @media screen and (min-width: 1700px) {
 }
+section > img.mobile_image {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 610px;
+  z-index: -1;
+}
+@media screen and (min-width: 1000px) {
+  section > img.mobile_image {
+    display: none;
+  }
+}
+@media screen and (max-width: 1000px) {
+  section > img.mobile_image {
+    display: block;
+  }
+}
 section .grid_wrapper {
   padding-top: 100px;
   display: grid;
@@ -23,6 +41,7 @@ section .grid_wrapper {
 }
 @media screen and (max-width: 1000px) {
   section .grid_wrapper {
+    padding-top: 40px;
     grid-template-rows: repeat(4, minmax(min-content, max-content));
     grid-template-areas: "section_title  section_title " "button        button  " "image         code" "section_text  section_text ";
   }
@@ -30,36 +49,53 @@ section .grid_wrapper {
 section .grid_wrapper .section_title {
   grid-area: section_title;
   align-self: center;
+}
+@media screen and (max-width: 1000px) {
+  section .grid_wrapper .section_title {
+    justify-self: center;
+  }
+}
+section .grid_wrapper .section_title h1 {
   font-family: 'DINE-1451';
   font-size: 3.875rem;
   line-height: 70px;
-}
-@media screen and (max-width: 1100px) {
-  section .grid_wrapper .section_title {
-    font-size: 2.7rem;
-    line-height: 50px;
-  }
-}
-@media screen and (min-width: 1100px) {
-  section .grid_wrapper .section_title {
-    font-size: 2.8rem;
-    line-height: 50px;
-  }
-}
-@media screen and (min-width: 1200px) {
-  section .grid_wrapper .section_title {
-    font-size: 3rem;
-    line-height: 70px;
-  }
+  padding-bottom: 24px;
 }
 @media screen and (min-width: 1600px) {
-  section .grid_wrapper .section_title {
+  section .grid_wrapper .section_title h1 {
     width: 720px;
     font-size: 3.875rem;
   }
 }
-section .grid_wrapper .section_title span {
+@media screen and (min-width: 1200px) {
+  section .grid_wrapper .section_title h1 {
+    font-size: 3rem;
+    line-height: 70px;
+  }
+}
+@media screen and (max-width: 1100px) {
+  section .grid_wrapper .section_title h1 {
+    font-size: 2.7rem;
+    line-height: 50px;
+  }
+}
+@media screen and (max-width: 1000px) {
+  section .grid_wrapper .section_title h1 {
+    color: white;
+    font-size: 1.75rem;
+    width: 280px;
+    line-height: 40px;
+    text-align: center;
+  }
+}
+section .grid_wrapper .section_title h1 span {
   color: #1371FD;
+}
+@media screen and (max-width: 1000px) {
+  section .grid_wrapper .section_title h1 span {
+    color: white;
+    border-bottom: 2px solid white;
+  }
 }
 section .grid_wrapper .section_text {
   grid-area: section_text;
@@ -67,36 +103,86 @@ section .grid_wrapper .section_text {
   flex-direction: column;
   justify-content: space-between;
 }
+@media screen and (max-width: 1000px) {
+  section .grid_wrapper .section_text {
+    align-items: center;
+    padding-top: 40px;
+  }
+}
 section .grid_wrapper .section_text p {
   font-family: 'RobotoMono-Regular';
   font-size: 0.9375rem;
   color: #696974;
   line-height: 20px;
 }
+@media screen and (max-width: 500px) {
+  section .grid_wrapper .section_text p {
+    align-items: center;
+    padding-top: 20px;
+  }
+}
+@media screen and (max-width: 1000px) {
+  section .grid_wrapper .section_text p {
+    font-size: 1.0625rem;
+    color: white;
+    max-width: 335px;
+    padding-top: 20px;
+    text-align: center;
+    border-top: 1px solid white;
+  }
+}
 @media screen and (max-width: 1100px) {
   section .grid_wrapper .section_text p {
     font-size: 0.8rem;
   }
 }
-section .grid_wrapper .section_text .arrow img {
+section .grid_wrapper .section_text .arrow img.large {
   width: 32px;
   margin-right: 32px;
 }
 @media screen and (max-width: 1000px) {
-  section .grid_wrapper .section_text .arrow img:nth-child(1) {
+  section .grid_wrapper .section_text .arrow img.large {
+    display: none;
+  }
+  section .grid_wrapper .section_text .arrow img.large:nth-child(1) {
     position: absolute;
     top: 220px;
     left: 320px;
   }
-  section .grid_wrapper .section_text .arrow img:nth-child(1):hover {
+  section .grid_wrapper .section_text .arrow img.large:nth-child(1):hover {
     background-color: blue;
   }
-  section .grid_wrapper .section_text .arrow img:nth-child(2) {
+  section .grid_wrapper .section_text .arrow img.large:nth-child(2) {
     position: absolute;
     top: 220px;
     right: 320px;
   }
-  section .grid_wrapper .section_text .arrow img:nth-child(2):hover {
+  section .grid_wrapper .section_text .arrow img.large:nth-child(2):hover {
+    background-color: purple;
+  }
+}
+section .grid_wrapper .section_text .arrow img.mobile {
+  width: 40px;
+  height: 40px;
+}
+@media screen and (max-width: 1000px) {
+  section .grid_wrapper .section_text .arrow img.mobile {
+    display: block;
+  }
+  section .grid_wrapper .section_text .arrow img.mobile.ArrowLeft {
+    position: absolute;
+    top: calc(193px);
+    left: 30px;
+  }
+  section .grid_wrapper .section_text .arrow img.mobile.ArrowLeft:hover {
+    background-color: blue;
+  }
+  section .grid_wrapper .section_text .arrow img.mobile.ArrowRight {
+    position: absolute;
+    top: calc(193px);
+    right: 30px;
+  }
+  section .grid_wrapper .section_text .arrow img.mobile.ArrowRight:hover {
     background-color: purple;
   }
 }
@@ -112,6 +198,7 @@ section .grid_wrapper .button {
 @media screen and (max-width: 1000px) {
   section .grid_wrapper .button {
     justify-self: center;
+    padding-bottom: 29px;
   }
 }
 section .grid_wrapper .button button {
@@ -124,6 +211,13 @@ section .grid_wrapper .button button {
   border: none;
   background: #1371FD;
   border-radius: 4px;
+}
+@media screen and (max-width: 1000px) {
+  section .grid_wrapper .button button {
+    padding: 8px 12px;
+    background-color: white;
+    color: #1371FD;
+  }
 }
 section .grid_wrapper .button button span {
   width: 12px;
@@ -164,6 +258,11 @@ section .grid_wrapper .code_window {
   grid-area: code;
   justify-self: start;
 }
+@media screen and (max-width: 1000px) {
+  section .grid_wrapper .code_window {
+    align-self: center;
+  }
+}
 section .grid_wrapper .code_window .code_block {
   width: 400px;
   height: 203px;
@@ -180,7 +279,9 @@ section .grid_wrapper .code_window .code_block {
 @media screen and (max-width: 1000px) {
   section .grid_wrapper .code_window .code_block {
     margin-top: 0;
-    margin-left: 0;
+    margin-left: -25px;
+    width: 181px;
+    height: 122px;
   }
 }
 section .grid_wrapper .working_image {
@@ -205,7 +306,14 @@ section .grid_wrapper .working_image img {
 }
 @media screen and (max-width: 1000px) {
   section .grid_wrapper .working_image img {
-    max-width: 40%;
+    max-width: 165px;
+    height: 155px;
     margin-top: 0;
+  }
+}
+@media screen and (max-width: 500px) {
+  section .grid_wrapper .working_image img {
+    max-width: 155px;
+    height: 145px;
   }
 }
