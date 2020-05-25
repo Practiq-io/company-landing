@@ -21,7 +21,7 @@ const HeroBlock = props => {
 
 
 						<div className="section_title">
-						<h1>Let our pre-vetted developers build a <span>Microservice</span> for you</h1>
+						<h1>Let our pre-vetted developers build a <span>React app</span> for you</h1>
 						</div>
 
 						<div className="section_text">
