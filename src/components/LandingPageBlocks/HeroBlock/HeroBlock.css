@@ -1,3 +1,82 @@
+#code_block-animation-title {
+  white-space: pre;
+  line-height: 71px;
+}
+
+.code_block_header {
+  height: 23.92px;
+  background: #191919;
+  width: 100%;
+  position: absolute;
+  left: 0;
+  top: -20px;
+  border-radius: 8px 8px 0 0;
+  display: flex;
+  align-items: center;
+  padding-left: 10px;
+  
+}
+
+.code_block_header_dot {
+  height: 8px;
+  width: 8px;
+  border-radius: 100%;
+  margin-right: 7px;
+}
+
+.red {
+  background: #eb5757;
+}
+
+.yellow {
+  background: #f2c94c;
+}
+
+.green {
+  background: #219653;
+}
+
+.code_block_title {
+  font-family: 'RobotoMono-Regular';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 13px;
+  color: #a1a2aa;
+  margin-bottom: 5px;
+}
+
+#code_block-animation-txt {
+  font-family: 'RobotoMono-Regular';
+  user-select: none;
+  white-space: pre;
+  line-height: 19px;
+  color: rgb(90, 90, 90);
+  font-size: 12px;
+}
+
+#code_block-animation-txt::after {
+  content: "|";
+  line-height: 17px;
+  font-size: 19px;
+  color: rgb(165, 164, 164);
+  animation: blinking 0.8s infinite;
+  position: absolute;
+}
+
+@keyframes blinking {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+
+
+/* /////////////////////////////// */
+
 section > img.large_image {
   position: absolute;
   top: 0;
@@ -266,15 +345,39 @@ section .grid_wrapper .code_window {
 section .grid_wrapper .code_window .code_block {
   width: 400px;
   height: 203px;
-  background-color: grey;
+  background-color: #f5f7fa;
   margin-top: -30px;
   margin-left: 130px;
+  position: relative;
+  padding: 20px 0 0 10px;
+  border-radius: 0 0 8px 8px;
 }
 @media screen and (max-width: 1200px) {
   section .grid_wrapper .code_window .code_block {
     width: 350px;
     height: 180px;
+    padding: 10px 0 0 5px;
   }
+
+  #code_block-animation-txt {
+    letter-spacing: -0.5px;
+    line-height: 15px;
+    font-size: 11px;
+  }
+  
+  #code_block-animation-txt::after {
+    content: "|";
+    line-height: 15px;
+    font-size: 14px;
+    color: rgb(165, 164, 164);
+  }
+
+  .code_block_title {
+    font-weight: 500;
+    font-size: 11px;
+    margin-bottom: 5px;
+  }
+
 }
 @media screen and (max-width: 1000px) {
   section .grid_wrapper .code_window .code_block {
