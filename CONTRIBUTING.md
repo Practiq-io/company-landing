@@ -10,6 +10,8 @@ You only need to understand Git and Javascript together with React. If you don't
 
 ## No commits to master
 
+![alt text](https://memegenerator.net/img/instances/55464448/one-does-not-simply-push-code-into-the-master-branch.jpg "Logo Title Text 1")
+
 This repo is public, however you can not just push your code into the master branch. Most likely you won't have a direct access unless granted by admins.
 
 ## How to contribute
