@@ -1,0 +1,50 @@
+.promo-card-Customize-body {
+    padding: 1em;
+    background: rgb(0, 0, 0);
+    display: flex;
+    border-radius: 8px;
+    max-width: 41%;
+    margin: 0 0 25px 25px;
+}
+
+.promo-card-Customize-img-box {
+    padding: 0 15px 0 0;
+    display: flex;
+}
+
+.promo-card-Customize-text-box {
+    display: flex;
+    flex-direction: column;
+}
+
+.pc-Customize-img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: rgb(255, 255, 255);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+}
+
+.pc-Customize-title {
+    font-size: 18px;
+    font-family: 'DINE-1451';
+    color: #cbcccd;
+    margin-bottom: 10px;
+}
+
+.pc-Customize-subtitle {
+    margin-bottom: 20px;
+    font-size: 14px;
+    color: #B1B1B8;
+    font-family: 'RobotoMono-Regular';
+}
+
+.pc-Customize-text-body {
+    color: #696974;
+    font-size: 14px;
+    font-family: 'RobotoMono-Regular';
+    line-height: 140%;
+}
