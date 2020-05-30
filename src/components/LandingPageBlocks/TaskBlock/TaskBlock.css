@@ -32,3 +32,9 @@ h2 {
     max-width: 60%;
   }
 }
+@media screen and (max-width: 600px) {
+  .TB-Section .TB-content .center .TB-card {
+    flex-direction: column;
+    max-width: 80%;
+  }
+}
