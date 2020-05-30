@@ -48,3 +48,10 @@
     font-family: 'RobotoMono-Regular';
     line-height: 140%;
 }
+
+@media screen and (max-width:1000px) {
+	.promo-card-Customize-body {
+		margin-left: 0;
+		max-width: 60%;
+	}
+}

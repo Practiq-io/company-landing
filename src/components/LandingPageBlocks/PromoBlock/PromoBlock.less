@@ -25,11 +25,11 @@
 
 		@media screen and (max-width: 1000px) {
 			flex-direction: column;
-			
+			align-items: center;
 			// width: 40%;
-			margin-left: 30px;
+			// margin-left: 30px;
 			padding: 0;
-			padding-left: 55px;
+			// padding-left: 55px;
 			
 		}
 		
@@ -40,10 +40,12 @@
 			width: 50%;
 
 			@media screen and (max-width: 1000px) {
-				width: 100%;
+			
 				// justify-content: flex-start;
 				// align-items: center;
 				// text-align: left;
+				align-content: center;
+				width: 60%;
 			}
 
 			h2 {
@@ -67,6 +69,10 @@
 			}
 
 			@media screen and (max-width: 1000px) {
+				p {
+					width: auto;
+				}
+
 				p:nth-of-type(1) {
 					display: none;
 				}
@@ -90,7 +96,7 @@
 				// align-items: flex-start;
 				// width: 50%;
 				padding-top: 48px;
-				// align-items: center;
+				align-content: center;
 			}
 
 			.card_content {

@@ -1,5 +1,6 @@
 import React from 'react';
 import './PromoCardCustomize.css';
+import addCard from "../../../../../image/add.png";
 
 const PromoCardCustomize = props => {
 
@@ -29,7 +30,8 @@ const PromoCardCustomize = props => {
 
                 <div className="promo-card-Customize-img-box">
                     <div className="pc-Customize-img">
-                        <img src={props.imgPath} alt=""/>
+                        {/* <img src={props.imgPath} alt=""/> */}
+                        <img src={addCard} alt=""/>
                     </div>
                 </div>
 

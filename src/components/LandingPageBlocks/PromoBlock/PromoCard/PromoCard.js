@@ -1,6 +1,7 @@
 import React from 'react';
 import './PromoCard.css';
 
+
 const PromoCard = props => {
 
     let title = null
