@@ -6,7 +6,7 @@ const TaskCardRequest = props => {
     return (
         <div className="TCR-Cardbox">
             
-            {/* <img className="TCR-avatar-img" src={Avatar} alt=""/> */}
+            <img className="TCR-avatar-img" src={Avatar} alt=""/>
 
 
             <div className="TCR-body-frame">
