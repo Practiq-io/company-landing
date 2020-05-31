@@ -1,3 +1,12 @@
+.TB-Section {
+  background: #fbfbfb;
+}
+.TB-code-box{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
 h2 {
   font-size: 3rem;
   font-family: 'DIN';
@@ -36,5 +45,14 @@ h2 {
   .TB-Section .TB-content .center .TB-card {
     flex-direction: column;
     max-width: 80%;
+  }
+}
+
+@media screen and (max-width: 425px) {
+  .TB-title-h2 {
+    font-size: 24px;
+  }
+  .TB-title-p {
+    font-size: 17px;
   }
 }

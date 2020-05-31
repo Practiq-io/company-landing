@@ -55,7 +55,7 @@ const HeroBlock = props => {
 									<div className="code_block_header_dot green"></div>
 								</div>
 
-								<p className="code_block_title">// Fetch wizard structure and pass for mounting</p>
+								<pre className="code_block_title">// Fetch wizard structure and pass for mounting</pre>
 								<p id="code_block-animation-txt"><span id="animation-cursor"></span></p> 
 							</div>
 						</div>

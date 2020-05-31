@@ -1,12 +1,32 @@
-.TC-Cardbox {
+.TCR-Card-button {
+    background: #1371FD;
+    color: white;
+    padding: 10px 30px;
+    border-radius: 5px;
+   text-align: center;
+}
+
+.TCR-avatar-img {
+    width: 55px;
+    width: 56px;
+}
+
+
+
+.TCR-Cardbox {
     width: 300px;
     margin: 20px 20px;
     background: rgb(255, 255, 255);
     border-radius: 11px;
     border: solid 1px #e9e9ed;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;    
+    align-items: center;
+    padding: 30px 0;
 }
 
-.TC-img-frame {
+.TCR-img-frame {
     background: white;
     border: solid 1px #e9e9ed;
     display: flex;
@@ -16,7 +36,7 @@
     
 }
 
-.TC-text-box {
+.TCR-text-body {
     /* border:solid 2px orange; */
     display: flex;
     flex-direction: column;
@@ -28,31 +48,46 @@
     font-family: 'RobotoMono-Regular';
 }
 
-.TC-logo-img {
+.TCR-logo-img {
     /* width: 63px;
     height: 63px;
     margin-top: -54px;
     margin-bottom: 30px; */
 }
 
-.TC-text-body {
+.TCR-text-body {
     margin-bottom: 40px;
   
 }
 
 @media screen and (max-width: 500px) {
 
-    .TC-Cardbox {
+    .TCR-avatar-img {
+        margin-right: 30px;
+        align-self: flex-start;
+    }
+
+    .TCR-Cardbox {
         background: rgb(255, 255, 255);
         width: 100%;
         padding: 20px;
+        flex-direction: row;
+        justify-content: flex-start;
     }
 
-    .TC-img-box {
+    .TCR-img-box {
         display:none;
     }
 
-    .TC-img-frame {
+    .TCR-body-frame {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+       
+        width: 100%;
+    }
+
+    .TCR-img-frame {
         width: 63px;
         height: 63px;
         margin-top: 0;
@@ -60,20 +95,16 @@
         margin-right: 30px;
     }
 
-    .TC-text-box {
-        display: flex;
-        flex-direction: row;
-        justify-content: flex-start;
-        align-items: center;
-        text-align: left;
-        font-size: 15px;
-        line-height: 160%;
-        font-family: 'RobotoMono-Regular';
+    .TCR-Card-button {
+        align-self: flex-start;
+
     }
 
-    .TC-text-body {
+    .TCR-text-body {
         display: flex;
         align-items: center;
         margin: 0;
+        text-align: left;
+        margin-bottom: 16px;
     }
 }

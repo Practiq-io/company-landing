@@ -1,27 +1,23 @@
 import React from 'react';
 import './TaskCard.css';
 
-const TaskBlock = props => {
-	return (
-		<div className="card-content">
-			<div className="center">
-				<div className="card-img">
-					<div className="card-bg">
-					<img src={props.CardImgPath} alt=""/>
-					</div>
-					<div className="card-img-logo">
-					<img src={props.CardLogoPath} alt=""/>
-					</div>
-			</div>
+const TaskCard = props => {
+    return (
+        <div className="TC-Cardbox">
+            <div className="TC-img-box">
+                <img src={props.bgImgPath} alt=""/>
+            </div>
+            <div className="TC-text-box">
+                <div className="TC-img-frame">
+                    <img className="TC-logo-img" src={props.logoPath} alt=""/>
+                </div>
+               
+                <div className="TC-text-body">
+                    {props.textBody}
+                </div>
+            </div>
+        </div>
+    )
+}
 
-			<div className="card-text">
-				<p>{props.CardTextPath}</p>
-			</div>
-			</div>
-
-			
-		</div>
-	)
-};
-
-export default TaskBlock;
+export default TaskCard;
