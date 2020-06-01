@@ -66,7 +66,7 @@ const removeCode = (txt) => {
 
 const writeTitle = (txt) => {
 	if (titleFlag === 0) {
-		writeCode(codeSnippets[title_index].snippet); /////////////////////////
+		writeCode(codeSnippets[title_index].snippet);
 	}
 	if (titleFlag < txt.length) {
 		document.getElementById(
