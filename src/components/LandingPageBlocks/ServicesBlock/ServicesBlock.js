@@ -6,6 +6,7 @@ const ServicesBlock = props => {
         <section className="SB-Section">
             <content className="SB-content">
                 <h1 className="SB-title">SERVICES BLOCK</h1>
+								
             </content>
         </section>
     )

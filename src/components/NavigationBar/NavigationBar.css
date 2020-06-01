@@ -1,54 +1,98 @@
-.Navigation-Panel {
-    display: flex;
-    justify-content: center;
-    min-width: 100%;
-    padding: 1em 0;
-    position: fixed;
-    background: rgb(235, 242, 245);
-    border-bottom: 1px solid lightseagreen;
+body,
+html {
+	font-size: 16px;
 }
-
-.Practiq-logo {
-    height: 40px;
-    width: 40px;
-    background: rgb(37, 120, 243);
-    border-radius: 50%;
-    position: relative;
+nav .wrapper .nav_wrapper {
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: -moz-box;
+	display: flex;
+	-webkit-box-pack: justify;
+	-webkit-justify-content: space-between;
+	-moz-box-pack: justify;
+	justify-content: space-between;
+	-webkit-box-align: center;
+	-webkit-align-items: center;
+	-moz-box-align: center;
+	align-items: center;
+	padding-top: 16px;
 }
-
-.Practiq-logo::after {
-    content: "Practiq";
-    position: absolute;
-    color: rgb(0, 0, 0);
-    bottom: 12px;
-    left: 50px;
-    font-weight: bold;
+nav .wrapper .nav_wrapper .logo img:nth-child(1) {
+	width: 116px;
+	height: 32px;
 }
-
-.Navigation-Panel-ul li{
-    display: inline-block;
-    margin-left: 55px;
-    cursor: pointer;
+@media screen and (max-width: 1000px) {
+	nav .wrapper .nav_wrapper .logo img:nth-child(1) {
+		display: none;
+	}
 }
-
-.action-btn {
-    background: white;
-    color: blue;
-    padding: 10px 25px;
-    border-radius: 4px;
-    font-weight: 500;
+nav .wrapper .nav_wrapper .logo img:nth-child(2) {
+	width: 116px;
+	height: 32px;
 }
-
-.Navigation-wrapper {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    min-width: 1465px;
+@media screen and (max-width: 1000px) {
+	nav .wrapper .nav_wrapper .logo img:nth-child(2) {
+		display: block;
+	}
 }
-
-@media (max-width: 1533px) {
-    .Navigation-wrapper {
-        padding: 0 1em;
-        min-width: 100%;
-    }
+nav .wrapper .nav_wrapper .navigation {
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: -moz-box;
+	display: flex;
+	-webkit-box-align: center;
+	-webkit-align-items: center;
+	-moz-box-align: center;
+	align-items: center;
+}
+@media screen and (max-width: 1000px) {
+	nav .wrapper .nav_wrapper .navigation .nav_desctop {
+		display: none;
+	}
+}
+nav .wrapper .nav_wrapper .navigation .nav_desctop a {
+	font-family: "RobotoMono-Regular";
+	font-size: 0.875rem;
+	color: black;
+	letter-spacing: 1px;
+	padding-right: 2.5rem;
+	font-weight: 500;
+}
+nav .wrapper .nav_wrapper .navigation .nav_desctop a:last-of-type {
+	color: blue;
+	padding: 8px 16px;
+	background-color: white;
+	border-radius: 6px;
+}
+nav .wrapper .nav_wrapper .navigation .mobile_nav {
+	display: none;
+	width: 18px;
+	height: 2px;
+	background-color: white;
+	position: relative;
+}
+@media screen and (max-width: 1000px) {
+	nav .wrapper .nav_wrapper .navigation .mobile_nav {
+		display: block;
+	}
+}
+nav .wrapper .nav_wrapper .navigation .mobile_nav::after {
+	content: "";
+	display: block;
+	position: absolute;
+	top: -5px;
+	right: 0;
+	width: 18px;
+	height: 2px;
+	background-color: white;
+}
+nav .wrapper .nav_wrapper .navigation .mobile_nav::before {
+	content: "";
+	display: block;
+	position: absolute;
+	top: 5px;
+	right: 0;
+	width: 18px;
+	height: 2px;
+	background-color: white;
 }
