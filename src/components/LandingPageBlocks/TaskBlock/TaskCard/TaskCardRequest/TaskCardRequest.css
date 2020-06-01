@@ -1,110 +1,153 @@
 .TCR-Card-button {
-    background: #1371FD;
-    color: white;
-    padding: 10px 30px;
-    border-radius: 5px;
-   text-align: center;
+	background: #1371fd;
+	color: white;
+	padding: 10px 30px;
+	border-radius: 5px;
+	text-align: center;
 }
 
 .TCR-avatar-img {
-    width: 55px;
-    width: 56px;
+	width: 55px;
+	width: 56px;
 }
 
-
-
 .TCR-Cardbox {
-    width: 300px;
-    margin: 20px 20px;
-    background: rgb(255, 255, 255);
-    border-radius: 11px;
-    border: solid 1px #e9e9ed;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;    
-    align-items: center;
-    padding: 30px 0;
+	width: 300px;
+	margin: 20px 20px;
+	background: rgb(255, 255, 255);
+	border-radius: 11px;
+	border: solid 1px #e9e9ed;
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: -moz-box;
+	display: flex;
+	-webkit-box-orient: vertical;
+	-webkit-box-direction: normal;
+	-webkit-flex-direction: column;
+	-moz-box-orient: vertical;
+	-moz-box-direction: normal;
+	flex-direction: column;
+	-webkit-box-pack: justify;
+	-webkit-justify-content: space-between;
+	-moz-box-pack: justify;
+	justify-content: space-between;
+	-webkit-box-align: center;
+	-webkit-align-items: center;
+	-moz-box-align: center;
+	align-items: center;
+	padding: 30px 0;
 }
 
 .TCR-img-frame {
-    background: white;
-    border: solid 1px #e9e9ed;
-    display: flex;
-    padding: 10px;
-    border-radius: 8px;
-    margin-top: -50px;
-    
+	background: white;
+	border: solid 1px #e9e9ed;
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: -moz-box;
+	display: flex;
+	padding: 10px;
+	border-radius: 8px;
+	margin-top: -50px;
 }
 
 .TCR-text-body {
-    /* border:solid 2px orange; */
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    font-size: 15px;
-    line-height: 160%;
-    font-family: 'RobotoMono-Regular';
-}
-
-.TCR-logo-img {
-    /* width: 63px;
-    height: 63px;
-    margin-top: -54px;
-    margin-bottom: 30px; */
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: -moz-box;
+	display: flex;
+	-webkit-box-orient: vertical;
+	-webkit-box-direction: normal;
+	-webkit-flex-direction: column;
+	-moz-box-orient: vertical;
+	-moz-box-direction: normal;
+	flex-direction: column;
+	-webkit-box-pack: center;
+	-webkit-justify-content: center;
+	-moz-box-pack: center;
+	justify-content: center;
+	-webkit-box-align: center;
+	-webkit-align-items: center;
+	-moz-box-align: center;
+	align-items: center;
+	text-align: center;
+	font-size: 15px;
+	line-height: 160%;
+	font-family: "RobotoMono-Regular";
 }
 
 .TCR-text-body {
-    margin-bottom: 40px;
-  
+	margin-bottom: 40px;
 }
 
 @media screen and (max-width: 500px) {
+	.TCR-avatar-img {
+		margin-right: 30px;
+		-webkit-align-self: flex-start;
+		align-self: flex-start;
+	}
 
-    .TCR-avatar-img {
-        margin-right: 30px;
-        align-self: flex-start;
-    }
+	.TCR-Cardbox {
+		background: rgb(255, 255, 255);
+		width: 100%;
+		padding: 20px;
+		-webkit-box-orient: horizontal;
+		-webkit-box-direction: normal;
+		-webkit-flex-direction: row;
+		-moz-box-orient: horizontal;
+		-moz-box-direction: normal;
+		flex-direction: row;
+		-webkit-box-pack: start;
+		-webkit-justify-content: flex-start;
+		-moz-box-pack: start;
+		justify-content: flex-start;
+	}
 
-    .TCR-Cardbox {
-        background: rgb(255, 255, 255);
-        width: 100%;
-        padding: 20px;
-        flex-direction: row;
-        justify-content: flex-start;
-    }
+	.TCR-img-box {
+		display: none;
+	}
 
-    .TCR-img-box {
-        display:none;
-    }
+	.TCR-body-frame {
+		display: -webkit-box;
+		display: -webkit-flex;
+		display: -moz-box;
+		display: flex;
+		-webkit-box-orient: vertical;
+		-webkit-box-direction: normal;
+		-webkit-flex-direction: column;
+		-moz-box-orient: vertical;
+		-moz-box-direction: normal;
+		flex-direction: column;
+		-webkit-box-align: start;
+		-webkit-align-items: flex-start;
+		-moz-box-align: start;
+		align-items: flex-start;
+		width: 100%;
+	}
 
-    .TCR-body-frame {
-        display: flex;
-        flex-direction: column;
-        align-items: flex-start;
-       
-        width: 100%;
-    }
+	.TCR-img-frame {
+		width: 63px;
+		height: 63px;
+		margin-top: 0;
+		margin-bottom: 0;
+		margin-right: 30px;
+	}
 
-    .TCR-img-frame {
-        width: 63px;
-        height: 63px;
-        margin-top: 0;
-        margin-bottom: 0;
-        margin-right: 30px;
-    }
+	.TCR-Card-button {
+		-webkit-align-self: flex-start;
+		align-self: flex-start;
+	}
 
-    .TCR-Card-button {
-        align-self: flex-start;
-
-    }
-
-    .TCR-text-body {
-        display: flex;
-        align-items: center;
-        margin: 0;
-        text-align: left;
-        margin-bottom: 16px;
-    }
+	.TCR-text-body {
+		display: -webkit-box;
+		display: -webkit-flex;
+		display: -moz-box;
+		display: flex;
+		-webkit-box-align: center;
+		-webkit-align-items: center;
+		-moz-box-align: center;
+		align-items: center;
+		margin: 0;
+		text-align: left;
+		margin-bottom: 16px;
+	}
 }
