@@ -1,5 +1,6 @@
 .TB-Section {
 	background: #fbfbfb;
+	padding: 120px 0;
 }
 .TB-code-box {
 	display: -webkit-box;
@@ -13,7 +14,6 @@
 	-moz-box-pack: center;
 	justify-content: center;
 }
-
 h2 {
 	font-size: 3rem;
 	font-family: "DIN";
@@ -22,7 +22,6 @@ h2 {
 	max-width: 670px;
 	text-align: center;
 	margin: 0 auto;
-	padding-top: 120px;
 }
 .TB-Section .TB-content .TB-title p {
 	font-size: 0.9375rem;
@@ -76,7 +75,6 @@ h2 {
 		max-width: 80%;
 	}
 }
-
 @media screen and (max-width: 425px) {
 	.TB-title-h2 {
 		font-size: 24px;
