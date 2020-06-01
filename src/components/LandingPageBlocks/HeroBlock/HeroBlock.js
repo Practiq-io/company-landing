@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import background from "../../../image/bg.png";
+import background from "../../../image/bg2.png";
 import working from "../../../image/working.png";
 import arrow1 from "../../../image/Arrow1.png";
 import arrow2 from "../../../image/Arrow2.png";

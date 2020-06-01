@@ -12,8 +12,8 @@
 }
 
 .TCR-Cardbox {
+	box-sizing: border-box;
 	width: 300px;
-	margin: 20px 20px;
 	background: rgb(255, 255, 255);
 	border-radius: 11px;
 	border: solid 1px #e9e9ed;
@@ -77,6 +77,12 @@
 
 .TCR-text-body {
 	margin-bottom: 40px;
+}
+
+@media screen and (max-width: 1280px) {
+	.TCR-Cardbox {
+		margin: 0 15px 30px 15px;
+	}
 }
 
 @media screen and (max-width: 500px) {

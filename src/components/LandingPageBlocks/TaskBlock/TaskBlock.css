@@ -9,10 +9,10 @@
 	display: flex;
 	-webkit-flex-wrap: wrap;
 	flex-wrap: wrap;
-	-webkit-box-pack: center;
-	-webkit-justify-content: center;
-	-moz-box-pack: center;
-	justify-content: center;
+	-webkit-box-pack: justify;
+	-webkit-justify-content: space-between;
+	-moz-box-pack: justify;
+	justify-content: space-between;
 }
 h2 {
 	font-size: 3rem;
@@ -31,16 +31,9 @@ h2 {
 	margin: 0 auto;
 	padding: 16px 0 90px 0;
 }
-@media screen and (max-width: 1000px) {
-	.TB-Section .TB-content .center {
-		-webkit-box-pack: center;
-		-webkit-justify-content: center;
-		-moz-box-pack: center;
+@media screen and (max-width: 1280px) {
+	.TB-code-box {
 		justify-content: center;
-		display: -webkit-box;
-		display: -webkit-flex;
-		display: -moz-box;
-		display: flex;
 	}
 }
 .TB-Section .TB-content .center .TB-card {
@@ -54,6 +47,17 @@ h2 {
 	justify-content: space-between;
 }
 @media screen and (max-width: 1000px) {
+
+	.TB-Section .TB-content .center {
+		-webkit-box-pack: center;
+		-webkit-justify-content: center;
+		-moz-box-pack: center;
+		justify-content: center;
+		display: -webkit-box;
+		display: -webkit-flex;
+		display: -moz-box;
+		display: flex;
+	}
 	.TB-Section .TB-content .center .TB-card {
 		-webkit-box-orient: vertical;
 		-webkit-box-direction: normal;

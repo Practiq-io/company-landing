@@ -85,8 +85,9 @@ section > img.large_image {
 	position: absolute;
 	top: 0;
 	right: 0;
-	width: 50%;
+	width: 39%;
 	z-index: -1;
+	max-width: 942px;
 }
 @media screen and (max-width: 1000px) {
 	section > img.large_image {
@@ -148,14 +149,14 @@ section .grid_wrapper .section_title {
 }
 section .grid_wrapper .section_title h1 {
 	font-family: "DINE-1451";
-	font-size: 3.875rem;
+	font-size: 3rem;
 	line-height: 70px;
 	padding-bottom: 24px;
 }
 @media screen and (min-width: 1600px) {
 	section .grid_wrapper .section_title h1 {
 		width: 720px;
-		font-size: 3.875rem;
+		font-size: 3rem;
 	}
 }
 @media screen and (min-width: 1200px) {
@@ -375,12 +376,14 @@ section .grid_wrapper .button button span::before {
 }
 section .grid_wrapper .code_window {
 	grid-area: code;
-	justify-self: start;
+	justify-self: end;
 }
 @media screen and (max-width: 1000px) {
 	section .grid_wrapper .code_window {
 		-webkit-align-self: center;
 		align-self: center;
+		justify-self: start;
+		margin-left: 10px;
 	}
 }
 section .grid_wrapper .code_window .code_block {
@@ -394,6 +397,9 @@ section .grid_wrapper .code_window .code_block {
 	border-radius: 0 0 8px 8px;
 }
 @media screen and (max-width: 1200px) {
+
+	
+
 	section .grid_wrapper .code_window .code_block {
 		width: 350px;
 		height: 180px;
@@ -430,10 +436,7 @@ section .grid_wrapper .working_image {
 	display: -webkit-flex;
 	display: -moz-box;
 	display: flex;
-	-webkit-box-pack: center;
-	-webkit-justify-content: center;
-	-moz-box-pack: center;
-	justify-content: center;
+	justify-content: flex-end;
 }
 @media screen and (max-width: 1000px) {
 	section .grid_wrapper .working_image {
@@ -444,13 +447,13 @@ section .grid_wrapper .working_image {
 	}
 }
 section .grid_wrapper .working_image img {
-	margin-top: -50px;
-	max-width: 40%;
+	margin-top: -79px;
+	max-width: 49%;
+	z-index: 2;
 }
 @media screen and (max-width: 1200px) {
 	section .grid_wrapper .working_image img {
-		max-width: 38%;
-		margin-top: -30px;
+		max-width: 49%;
 	}
 }
 @media screen and (max-width: 1000px) {

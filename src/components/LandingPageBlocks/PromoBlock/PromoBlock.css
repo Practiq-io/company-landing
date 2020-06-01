@@ -1,7 +1,9 @@
 .PB-Section {
-	background-color: #e9e9ed;
+	background-color: #f8f8fa;
 	margin: 0 -100px;
 	margin-top: 250px;
+	z-index: -2;
+    position: relative;
 }
 @media screen and (max-width: 1000px) {
 	.PB-Section {
@@ -40,7 +42,7 @@
 		-webkit-align-items: center;
 		-moz-box-align: center;
 		align-items: center;
-		padding: 0;
+		padding: 100px 0 0 0;
 	}
 }
 .PB-Section .content_wrapper .weCode {
