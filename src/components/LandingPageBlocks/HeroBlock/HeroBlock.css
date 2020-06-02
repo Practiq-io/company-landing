@@ -14,11 +14,9 @@
 		width: 720px;
 		font-size: 3rem;
 	}
-	@media screen and (min-width: 1600px) {
-		section .grid_wrapper .button {
-			-webkit-align-self: center;
-			align-self: center;
-		}
+	section .grid_wrapper .button {
+		-webkit-align-self: center;
+		align-self: center;
 	}
 }
 #code_block-animation-title {
@@ -106,7 +104,6 @@ section .grid_wrapper .code_window .code_block {
 	0% {
 		opacity: 0;
 	}
-
 	100% {
 		opacity: 1;
 	}
@@ -115,7 +112,6 @@ section .grid_wrapper .code_window .code_block {
 	0% {
 		opacity: 0;
 	}
-
 	100% {
 		opacity: 1;
 	}
@@ -140,6 +136,7 @@ section .grid_wrapper {
 		3,
 		minmax(-webkit-min-content, -webkit-max-content)
 	);
+	grid-template-rows: repeat(3, minmax(-webkit-min-content, -webkit-max-content));
 	grid-template-rows: repeat(3, minmax(min-content, max-content));
 	grid-template-areas: "section_title  code" "section_text  image " "button        image";
 }
@@ -188,12 +185,10 @@ section .grid_wrapper .section_text .arrow img.mobile {
 	width: 40px;
 	height: 40px;
 }
-
 section .grid_wrapper .button {
 	grid-area: button;
 	align-self: end;
 }
-
 section .grid_wrapper .button button {
 	display: -webkit-box;
 	display: -webkit-flex;
@@ -211,7 +206,6 @@ section .grid_wrapper .button button {
 	background: #1371fd;
 	border-radius: 4px;
 }
-
 .desktop-hero-button button {
 	display: -webkit-box;
 	display: -webkit-flex;
@@ -300,6 +294,8 @@ section .grid_wrapper .working_image img {
 		font-size: 16px;
 		font-family: 'RobotoMono-Bold';
 		font-weight: 600;
+		width: -webkit-fit-content;
+		width: -moz-fit-content;
 		width: fit-content;
 		justify-self: center;
 		border-radius: 4px;
@@ -348,6 +344,7 @@ section .grid_wrapper .working_image img {
 			4,
 			minmax(-webkit-min-content, -webkit-max-content)
 		);
+		grid-template-rows: repeat(4, minmax(-webkit-min-content, -webkit-max-content));
 		grid-template-rows: repeat(4, minmax(min-content, max-content));
 		grid-template-areas: "section_title  section_title " "button        button  " "image         code" "section_text  section_text ";
 	}

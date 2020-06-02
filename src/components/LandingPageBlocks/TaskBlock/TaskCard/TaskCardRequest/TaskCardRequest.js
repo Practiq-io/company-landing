@@ -19,6 +19,7 @@ const TaskCardRequest = (props) => {
 				<div className="TCR-Card-button">
 					<p>Send request</p>
 				</div>
+				
 			</div>
 		</div>
 	);
