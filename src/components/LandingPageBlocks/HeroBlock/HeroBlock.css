@@ -467,7 +467,7 @@ section .grid_wrapper .working_image {
 section .grid_wrapper .working_image img {
 	margin-top: -21px;
     max-width: 49%;
-    margin-right: 38px;
+    margin-right: -15px;
     z-index: 2;
 }
 @media screen and (max-width: 1200px) {
@@ -477,8 +477,8 @@ section .grid_wrapper .working_image img {
 }
 @media screen and (max-width: 1000px) {
 	section .grid_wrapper .working_image img {
-		max-width: 165px;
-		height: 155px;
+		max-width: 225px;
+	
 		margin-top: 0;
 	}
 }

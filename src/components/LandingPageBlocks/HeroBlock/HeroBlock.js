@@ -8,7 +8,7 @@ import mobileArrowRight from "../../../image/mobileArrowRight.png";
 import mobileBg from "../../../image/mobileBg.png";
 import mobileCodePlaceholder from '../../../image/mobile-codeblock-plug.png';
 import "./HeroBlock.css";
-import { startAnimation } from "./animationScripts/animationSript";
+import { startAnimation } from "./animationScripts/animationScript";
 
 const HeroBlock = (props) => {
 	useEffect(() => {
