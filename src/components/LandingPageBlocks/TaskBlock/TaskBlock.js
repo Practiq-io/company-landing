@@ -30,8 +30,8 @@ const TaskBlock = (props) => {
 						textBody={
 							<span>
 								Writing unit tests
-								<br /> for React app
-								<br /> (including react routing)
+								<br className="tb-card-linebreak"/> for React app
+								<br className="tb-card-linebreak"/> (including react routing)
 							</span>
 						}
 					/>
@@ -42,7 +42,7 @@ const TaskBlock = (props) => {
 						textBody={
 							<span>
 								CI/CD for Node.js web
-								<br /> applications
+								<br className="tb-card-linebreak"/> applications
 							</span>
 						}
 					/>
@@ -53,8 +53,8 @@ const TaskBlock = (props) => {
 						textBody={
 							<span>
 								Using jakarta to integrate
-								<br /> Javadocs into your build
-								<br /> process for Java applications
+								<br className="tb-card-linebreak"/> Javadocs into your build
+								<br className="tb-card-linebreak"/> process for Java applications
 							</span>
 						}
 					/>

@@ -11,8 +11,8 @@ const TaskCardRequest = (props) => {
 				<div className="TCR-text-body">
 					<p>
 						Tell us what you want our
-						<br /> developers to be
-						<br /> able to do{" "}
+						<br className="tb-card-linebreak"/> developers to be
+						<br className="tb-card-linebreak"/> able to do{" "}
 					</p>
 				</div>
 
