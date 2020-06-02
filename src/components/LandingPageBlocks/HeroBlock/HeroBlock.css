@@ -109,9 +109,18 @@ section > img.large_image {
 
 	section .grid_wrapper .code_window .code_block {
 		padding: 0;
+		display: -webkit-box;
+		display: -webkit-flex;
+		display: -moz-box;
 		display: flex;
-		justify-content: center;
-		align-items: center;
+		-webkit-box-pack: center;
+		-webkit-justify-content: center;
+		   -moz-box-pack: center;
+		        justify-content: center;
+		-webkit-box-align: center;
+		-webkit-align-items: center;
+		   -moz-box-align: center;
+		        align-items: center;
 	}
 
 	.title-animation-linebreak {
@@ -156,6 +165,7 @@ section .grid_wrapper {
 		3,
 		minmax(-webkit-min-content, -webkit-max-content)
 	);
+	grid-template-rows: repeat(3, minmax(-webkit-min-content, -webkit-max-content));
 	grid-template-rows: repeat(3, minmax(min-content, max-content));
 	grid-template-areas: "section_title  code" "section_text  image " "button        image";
 }
@@ -166,6 +176,7 @@ section .grid_wrapper {
 			4,
 			minmax(-webkit-min-content, -webkit-max-content)
 		);
+		grid-template-rows: repeat(4, minmax(-webkit-min-content, -webkit-max-content));
 		grid-template-rows: repeat(4, minmax(min-content, max-content));
 		grid-template-areas: "section_title  section_title " "button        button  " "image         code" "section_text  section_text ";
 	}
@@ -454,7 +465,10 @@ section .grid_wrapper .working_image {
 	display: -webkit-flex;
 	display: -moz-box;
 	display: flex;
-	justify-content: flex-end;
+	-webkit-box-pack: end;
+	-webkit-justify-content: flex-end;
+	   -moz-box-pack: end;
+	        justify-content: flex-end;
 }
 @media screen and (max-width: 1000px) {
 	section .grid_wrapper .working_image {
@@ -466,9 +480,9 @@ section .grid_wrapper .working_image {
 }
 section .grid_wrapper .working_image img {
 	margin-top: -21px;
-    max-width: 49%;
-    margin-right: -15px;
-    z-index: 2;
+	max-width: 49%;
+	margin-right: 54px;
+	z-index: 2;
 }
 @media screen and (max-width: 1200px) {
 	section .grid_wrapper .working_image img {
@@ -478,8 +492,7 @@ section .grid_wrapper .working_image img {
 @media screen and (max-width: 1000px) {
 	section .grid_wrapper .working_image img {
 		max-width: 225px;
-	
-		margin-top: 0;
+		margin: 0 -15px 0 0;
 	}
 }
 @media screen and (max-width: 500px) {
