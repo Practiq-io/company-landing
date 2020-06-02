@@ -1,8 +1,6 @@
 import React, { useEffect } from "react";
 import background from "../../../image/bg2.png";
 import working from "../../../image/working.png";
-import arrow1 from "../../../image/Arrow1.png";
-import arrow2 from "../../../image/Arrow2.png";
 import mobileArrowLeft from "../../../image/mobileArrowLeft.png";
 import mobileArrowRight from "../../../image/mobileArrowRight.png";
 import mobileBg from "../../../image/mobileBg.png";
@@ -35,20 +33,23 @@ const HeroBlock = (props) => {
 						education of our freelancers so that they can provide<br className="title-animation-linebreak"></br> a
 						better service with clear deliverables.
 					</p>
+					<div className="desktop-hero-button">
+						<button>
+							Get started 
+						</button>
+					</div>
 
 					<div className="arrow">
-						<img src={arrow2} className="ArrowLeft large" alt="" />
-						<img src={arrow1} className="ArrowRight large" alt="" />
 						<img src={mobileArrowLeft} className="ArrowLeft mobile" alt="" />
 						<img src={mobileArrowRight} className="ArrowRight mobile" alt="" />
 					</div>
 				</div>
 
-				<div className="button">
-					<button>
-						Get started <span></span>
+			
+					<button className="mobile-hero-button">
+						Get started 
 					</button>
-				</div>
+				
 
 				<div className="code_window">
 					<div className="code_block">
