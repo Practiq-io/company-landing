@@ -1,9 +1,13 @@
 .PB-Section {
 	background-color: #f8f8fa;
-	margin: 0 -100px;
 	margin-top: 250px;
 	z-index: -2;
-    position: relative;
+	position: relative;
+}
+@media screen and (max-width: 1500px) {
+	.PB-Section {
+		margin-top: 100px;
+	}
 }
 @media screen and (max-width: 1000px) {
 	.PB-Section {
@@ -15,22 +19,33 @@
 		-webkit-justify-content: center;
 		-moz-box-pack: center;
 		justify-content: center;
-		margin: 0 -20px;
-	}
-}
-@media screen and (max-width: 500px) {
-	.PB-Section {
-		margin: 0 -10px;
+		margin-top: 30px;
 	}
 }
 .PB-Section .content_wrapper {
-	padding: 120px 100px;
+	padding: 120px 0;
 	display: -webkit-box;
 	display: -webkit-flex;
 	display: -moz-box;
 	display: flex;
 }
-@media screen and (max-width: 1000px) {
+.PB-Section .content_wrapper .card_block {
+	width: 100%;
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: -moz-box;
+	display: flex;
+	-webkit-flex-wrap: wrap;
+	flex-wrap: wrap;
+	-webkit-box-pack: end;
+	-webkit-justify-content: flex-end;
+	-moz-box-pack: end;
+	justify-content: flex-end;
+}
+@media screen and (max-width: 1150px) {
+	.PB-Section .content_wrapper .card_block {
+		justify-content: center;
+	}
 	.PB-Section .content_wrapper {
 		-webkit-box-orient: vertical;
 		-webkit-box-direction: normal;
@@ -42,7 +57,13 @@
 		-webkit-align-items: center;
 		-moz-box-align: center;
 		align-items: center;
-		padding: 100px 0 0 0;
+		padding: 100px 0 100px 0;
+	}
+	.PB-Section .content_wrapper .weCode {
+		align-items: center;
+		width: 100%;
+		margin-bottom: 80px;
+		text-align: center;
 	}
 }
 .PB-Section .content_wrapper .weCode {
@@ -63,6 +84,10 @@
 		-webkit-align-content: center;
 		align-content: center;
 		width: 60%;
+		margin-bottom: 0;
+	}
+	.PB-Section .content_wrapper {
+		padding: 100px 0 0 0;
 	}
 }
 .PB-Section .content_wrapper .weCode h2 {
@@ -91,19 +116,6 @@
 	.PB-Section .content_wrapper .weCode p:nth-of-type(3) {
 		display: none;
 	}
-}
-.PB-Section .content_wrapper .card_block {
-	width: 100%;
-	display: -webkit-box;
-	display: -webkit-flex;
-	display: -moz-box;
-	display: flex;
-	-webkit-flex-wrap: wrap;
-	flex-wrap: wrap;
-	-webkit-box-pack: end;
-	-webkit-justify-content: flex-end;
-	-moz-box-pack: end;
-	justify-content: flex-end;
 }
 @media screen and (max-width: 1000px) {
 	.PB-Section .content_wrapper .card_block {

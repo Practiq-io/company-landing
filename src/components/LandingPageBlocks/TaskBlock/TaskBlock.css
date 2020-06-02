@@ -48,6 +48,8 @@ h2 {
 }
 @media screen and (max-width: 1000px) {
 
+	
+
 	.TB-Section .TB-content .center {
 		-webkit-box-pack: center;
 		-webkit-justify-content: center;
@@ -68,6 +70,12 @@ h2 {
 		max-width: 60%;
 	}
 }
+@media screen and (max-width: 600px) {
+	.tb-card-linebreak {
+		display: none;
+	}
+}
+
 @media screen and (max-width: 600px) {
 	.TB-Section .TB-content .center .TB-card {
 		-webkit-box-orient: vertical;
