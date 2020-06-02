@@ -6,6 +6,7 @@ import arrow2 from "../../../image/Arrow2.png";
 import mobileArrowLeft from "../../../image/mobileArrowLeft.png";
 import mobileArrowRight from "../../../image/mobileArrowRight.png";
 import mobileBg from "../../../image/mobileBg.png";
+import mobileCodePlaceholder from '../../../image/mobile-codeblock-plug.png';
 import "./HeroBlock.css";
 import { startAnimation } from "./animationScripts/animationSript";
 
@@ -22,16 +23,16 @@ const HeroBlock = (props) => {
 			<div className="grid_wrapper">
 				<div className="section_title">
 					<h1>
-						Let our pre-vetted developers <br></br> build a{" "}
+						Let our pre-vetted developers <br className="title-animation-linebreak"></br> build a{" "}
 						<span id="code_block-animation-title"></span>
-						<br></br>for you
+						<br className="title-animation-linebreak"></br>{" "}for you
 					</h1>
 				</div>
 
 				<div className="section_text">
 					<p>
-						We are the first freelance platform that invests in<br></br>{" "}
-						education of our freelancers so that they can provide<br></br> a
+						We are the first freelance platform that invests in<br className="title-animation-linebreak"></br>{" "}
+						education of our freelancers so that they can provide<br className="title-animation-linebreak"></br> a
 						better service with clear deliverables.
 					</p>
 
@@ -56,13 +57,16 @@ const HeroBlock = (props) => {
 							<div className="code_block_header_dot yellow"></div>
 							<div className="code_block_header_dot green"></div>
 						</div>
-
-						<pre className="code_block_title">
-							// Fetch wizard structure and pass for mounting
-						</pre>
-						<p id="code_block-animation-txt">
-							<span id="animation-cursor"></span>
-						</p>
+						<div className="code-block-frame">
+							<div className="code_block_title">
+								// Fetch wizard structure and pass for mounting
+							</div>
+							<p id="code_block-animation-txt">
+								<span id="animation-cursor"></span>
+							</p>
+						</div>
+						
+						<img className="mobileCodeBlockPlaceholder" src={mobileCodePlaceholder} alt=""/>
 					</div>
 				</div>
 

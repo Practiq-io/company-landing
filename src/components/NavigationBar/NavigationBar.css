@@ -17,6 +17,9 @@ nav .wrapper .nav_wrapper {
 	align-items: center;
 	padding-top: 16px;
 }
+nav .wrapper .nav_wrapper .logo img:nth-child(2) {
+	display:none;
+}
 nav .wrapper .nav_wrapper .logo img:nth-child(1) {
 	width: 116px;
 	height: 32px;

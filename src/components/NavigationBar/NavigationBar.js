@@ -9,8 +9,8 @@ const NavigationBar = () => {
 			<div className="wrapper">
 				<div className="nav_wrapper">
 					<div className="logo">
-						<img src={logo} alt="" />
-						<img src={mobileLogo} alt="" />
+						<img src={logo} alt="practiq logo" className="logo-desktop-nav"/>
+						<img src={mobileLogo} alt="practiq logo" className="logo-mobile-nav"/>
 					</div>
 
 					<div className="navigation">
