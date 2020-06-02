@@ -4,7 +4,7 @@ import working from "../../../image/working.png";
 import mobileArrowLeft from "../../../image/mobileArrowLeft.png";
 import mobileArrowRight from "../../../image/mobileArrowRight.png";
 import mobileBg from "../../../image/mobileBg.png";
-import mobileCodePlaceholder from '../../../image/mobile-codeblock-plug.png';
+import mobileCodePlaceholder from "../../../image/mobile-codeblock-plug.png";
 import "./HeroBlock.css";
 import { startAnimation } from "./animationScripts/animationScript";
 
@@ -21,22 +21,22 @@ const HeroBlock = (props) => {
 			<div className="grid_wrapper">
 				<div className="section_title">
 					<h1>
-						Let our pre-vetted developers <br className="title-animation-linebreak"></br> build a{" "}
-						<span id="code_block-animation-title"></span>
-						{" "}for you
+						Let our pre-vetted developers{" "}
+						<br className="title-animation-linebreak"></br> build a{" "}
+						<span id="code_block-animation-title"></span> for you
 					</h1>
 				</div>
 
 				<div className="section_text">
 					<p>
-						We are the first freelance platform that invests in<br className="title-animation-linebreak"></br>{" "}
-						education of our freelancers so that they can provide<br className="title-animation-linebreak"></br> a
-						better service with clear deliverables.
+						We are the first freelance platform that invests in
+						<br className="title-animation-linebreak"></br> education of our
+						freelancers so that they can provide
+						<br className="title-animation-linebreak"></br> a better service
+						with clear deliverables.
 					</p>
 					<div className="desktop-hero-button">
-						<button>
-							Get started 
-						</button>
+						<button>Get started</button>
 					</div>
 
 					<div className="arrow">
@@ -45,11 +45,7 @@ const HeroBlock = (props) => {
 					</div>
 				</div>
 
-			
-					<button className="mobile-hero-button">
-						Get started 
-					</button>
-				
+				<button className="mobile-hero-button">Get started</button>
 
 				<div className="code_window">
 					<div className="code_block">
@@ -66,8 +62,12 @@ const HeroBlock = (props) => {
 								<span id="animation-cursor"></span>
 							</p>
 						</div>
-						
-						<img className="mobileCodeBlockPlaceholder" src={mobileCodePlaceholder} alt=""/>
+
+						<img
+							className="mobileCodeBlockPlaceholder"
+							src={mobileCodePlaceholder}
+							alt=""
+						/>
 					</div>
 				</div>
 
