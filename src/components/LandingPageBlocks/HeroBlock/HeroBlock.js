@@ -25,7 +25,7 @@ const HeroBlock = (props) => {
 					<h1>
 						Let our pre-vetted developers <br className="title-animation-linebreak"></br> build a{" "}
 						<span id="code_block-animation-title"></span>
-						<br className="title-animation-linebreak"></br>{" "}for you
+						{" "}for you
 					</h1>
 				</div>
 

@@ -465,9 +465,10 @@ section .grid_wrapper .working_image {
 	}
 }
 section .grid_wrapper .working_image img {
-	margin-top: -79px;
-	max-width: 49%;
-	z-index: 2;
+	margin-top: -21px;
+    max-width: 49%;
+    margin-right: 38px;
+    z-index: 2;
 }
 @media screen and (max-width: 1200px) {
 	section .grid_wrapper .working_image img {
