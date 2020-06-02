@@ -33,6 +33,9 @@ h2 {
 }
 @media screen and (max-width: 1280px) {
 	.TB-code-box {
+		-webkit-box-pack: center;
+		-webkit-justify-content: center;
+		-moz-box-pack: center;
 		justify-content: center;
 	}
 }
@@ -47,9 +50,6 @@ h2 {
 	justify-content: space-between;
 }
 @media screen and (max-width: 1000px) {
-
-	
-
 	.TB-Section .TB-content .center {
 		-webkit-box-pack: center;
 		-webkit-justify-content: center;
@@ -75,7 +75,6 @@ h2 {
 		display: none;
 	}
 }
-
 @media screen and (max-width: 600px) {
 	.TB-Section .TB-content .center .TB-card {
 		-webkit-box-orient: vertical;

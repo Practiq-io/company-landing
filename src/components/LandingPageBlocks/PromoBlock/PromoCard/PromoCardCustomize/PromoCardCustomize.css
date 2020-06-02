@@ -8,8 +8,8 @@
 	border-radius: 8px;
 	max-width: 41%;
 	margin: 0 0 25px 25px;
+	box-shadow: 0px 1px 33px #ecebeb;
 }
-
 .promo-card-Customize-img-box {
 	padding: 0 15px 0 0;
 	display: -webkit-box;
@@ -17,7 +17,6 @@
 	display: -moz-box;
 	display: flex;
 }
-
 .promo-card-Customize-text-box {
 	display: -webkit-box;
 	display: -webkit-flex;
@@ -30,7 +29,6 @@
 	-moz-box-direction: normal;
 	flex-direction: column;
 }
-
 .pc-Customize-img {
 	width: 50px;
 	height: 50px;
@@ -50,38 +48,33 @@
 	align-items: center;
 	color: white;
 }
-
 .pc-Customize-title {
 	font-size: 18px;
 	font-family: "DINE-1451";
 	color: #cbcccd;
 	margin-bottom: 10px;
 }
-
 .pc-Customize-subtitle {
 	margin-bottom: 20px;
 	font-size: 14px;
 	color: #b1b1b8;
 	font-family: "RobotoMono-Regular";
 }
-
 .pc-Customize-text-body {
 	color: #696974;
 	font-size: 14px;
 	font-family: "RobotoMono-Regular";
 	line-height: 140%;
 }
-
 @media screen and (max-width: 1000px) {
 	.promo-card-Customize-body {
 		margin-left: 0;
 		max-width: 60%;
 	}
 }
-
 @media screen and (max-width: 600px) {
 	.promo-card-Customize-body {
 		margin-left: 0;
-		max-width: 80%;
+		max-width: 100%;
 	}
 }
