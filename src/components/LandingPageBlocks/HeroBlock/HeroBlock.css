@@ -205,7 +205,6 @@ section .grid_wrapper .section_text {
 	-webkit-justify-content: space-between;
 	-moz-box-pack: justify;
 	justify-content: space-between;
->>>>>>> newBranch
 }
 @media screen and (max-width: 1000px) {
 	section .grid_wrapper .section_text {
