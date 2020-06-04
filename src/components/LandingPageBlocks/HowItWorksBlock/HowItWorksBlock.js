@@ -12,6 +12,10 @@ import Lana from "../../../image/Lana.png";
 import codeWindow from "../../../image/codeWindow.png";
 import GitHub from "../../../image/GitHub.png";
 import dotsMobileBlock1 from "../../../image/dotsMobileBlock1.png";
+import dotsMobileBlock2 from "../../../image/dotsMobileBlock2.png";
+import dotsMobileBlock3 from "../../../image/dotsMobileBlock3.png";
+import dotsMobileBlock4 from "../../../image/dotsMobileBlock4.png";
+import dotsMobileBlock5 from "../../../image/dotsMobileBlock5.png";
 
 
 
@@ -66,6 +70,10 @@ const HowItWorksBlock = props => {
 											<div className="title">
 												<p>02</p>
 												<p>Our platform classifies the skill set and level of knowledge required for the task execution. </p>
+											
+												<div className="dotsMobile">
+														<img src={dotsMobileBlock2} alt=""/>
+												</div>
 											</div>
 											<div className="discription">
 												
@@ -93,6 +101,11 @@ const HowItWorksBlock = props => {
 												<p>03</p>
 												<p>We assign a group of developers
  													to work on your request</p>
+
+												<div className="dotsMobile">
+													<img src={dotsMobileBlock3} alt=""/>
+												</div>
+
 											</div>
 											<div className="discription">
 												<div className="discription-content row">
@@ -140,6 +153,11 @@ const HowItWorksBlock = props => {
 											<div className="title">
 												<p>04</p>
 												<p>We make code reviews to ensure level of quality and provide developers with resources needed to comply to industry standards </p>
+											
+												<div className="dotsMobile">
+													<img src={dotsMobileBlock4} alt=""/>
+												</div>
+
 											</div>
 											<div className="discription">
 												
@@ -162,6 +180,11 @@ const HowItWorksBlock = props => {
 											<div className="title">
 												<p>05</p>
 												<p>The package is delivered via Github including all your requirements</p>
+											
+												<div className="dotsMobile">
+														<img src={dotsMobileBlock5} alt=""/>
+												</div>
+
 											</div>
 											<div className="discription">
 												<img src={GitHub} alt=""/>

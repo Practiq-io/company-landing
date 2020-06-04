@@ -15,9 +15,9 @@
 
 	.dotsMobile {
 		position: absolute;
-		top: 0;
+		top: 30px;
 		right: -120px;
-		width: 100px;
+		width: 90px;
 		
 
 		@media screen and (max-width: 550px) {
@@ -25,6 +25,60 @@
 		}
 	}
 }
+
+.blockPosition {
+	
+	.info {
+
+		.title {
+			position: relative;
+
+			.dotsMobile {
+				
+				position: absolute;
+				top: 30px;
+				left: -80px;
+				
+				img {
+
+					width: 40px;
+				}
+			}
+		}
+
+		
+	}
+}
+
+.block03 {
+	.dotsMobile {
+		width: 80px;
+		top: 40px;
+	}
+}
+
+.block04{
+	.info {
+		.title {
+			.dotsMobile {
+				top: 50px;
+				img {
+
+					width: 35px;
+				}
+			}
+		}
+	}
+}
+
+.block05 {
+	.dotsMobile {
+		width: 65px;
+		top: 30px;
+	}
+}
+
+
 
 .HIWB-Section {
 	// background-color: #E5E5E5;
@@ -45,6 +99,10 @@
 
 			.blocks {
 				display: flex;
+
+				@media screen and (max-width: 1000px) {
+					padding-top: 50px;
+				}
 
 				.info {
 					padding-right: 70px;

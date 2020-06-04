@@ -13,14 +13,39 @@
 }
 .title .dotsMobile {
   position: absolute;
-  top: 0;
+  top: 30px;
   right: -120px;
-  width: 100px;
+  width: 90px;
 }
 @media screen and (max-width: 550px) {
   .title .dotsMobile {
     right: -80px;
   }
+}
+.blockPosition .info .title {
+  position: relative;
+}
+.blockPosition .info .title .dotsMobile {
+  position: absolute;
+  top: 30px;
+  left: -80px;
+}
+.blockPosition .info .title .dotsMobile img {
+  width: 40px;
+}
+.block03 .dotsMobile {
+  width: 80px;
+  top: 40px;
+}
+.block04 .info .title .dotsMobile {
+  top: 50px;
+}
+.block04 .info .title .dotsMobile img {
+  width: 35px;
+}
+.block05 .dotsMobile {
+  width: 65px;
+  top: 30px;
 }
 .HIWB-Section .HIWB-content h2 {
   text-align: center;
@@ -36,6 +61,11 @@
 }
 .HIWB-Section .HIWB-content .HIWB-wrapper .blocks {
   display: flex;
+}
+@media screen and (max-width: 1000px) {
+  .HIWB-Section .HIWB-content .HIWB-wrapper .blocks {
+    padding-top: 50px;
+  }
 }
 .HIWB-Section .HIWB-content .HIWB-wrapper .blocks .info {
   padding-right: 70px;
