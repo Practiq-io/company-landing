@@ -1,0 +1,19 @@
+.slick-slider .slick-track, .slick-slider .slick-list {
+    overflow: visible!important;
+}
+
+div {
+    outline: none;
+}
+
+.slick-dots li.slick-active button:before {
+    color: #1371fd;
+}
+
+.slick-dots li button:before {
+    color: rgb(122, 122, 122);
+}
+
+.slick-dots {
+    bottom: -80px;
+}
