@@ -39,6 +39,7 @@
   border-bottom: 1px solid #f2f2f6;
   padding: 16px 0;
   margin-bottom: 16px;
+  line-height: 140%;
 }
 .servicesCardBody .cardStructure .servicesCardLowerBox .servicesCardExample {
   font-size: 14px;

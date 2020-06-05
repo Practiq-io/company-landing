@@ -3,6 +3,18 @@ import "./ServicesCard.css";
 import buttonRightArrow from "./ServicesCardImg/rightarrow.png";
 
 const ServicesCard = (props) => {
+
+    let string = null;
+    if(props.textBody){
+        string = props.textBody;
+    }
+    if(string.length > 150) {
+        let cut = string.slice(150, string.length);
+        console.log('\n',cut, "<===== im cuted string", cut.length, "<==== CUTED LENGTH\n");
+    }
+    console.log(props.textBody, "<== TEXT BODY STRING", props.textBody.length, "<===== TEXT LENGTH");
+    
+
 	return (
 		<div className="servicesCardBody">
 			<div className="servicesCardImgbox">
