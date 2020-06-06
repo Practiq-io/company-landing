@@ -7,7 +7,7 @@ div {
 }
 
 .slick-dots li.slick-active button:before {
-    color: #1371fd;
+    color: #1371fd!important;
 }
 
 .slick-dots li button:before {
@@ -16,4 +16,19 @@ div {
 
 .slick-dots {
     bottom: -80px;
+    font-size: 8px;
 }
+
+.slick-track
+{
+    display: flex !important;
+    align-self: stretch!important;
+}
+
+.slick-slide
+{
+    height: inherit !important;
+
+    display: flex!important;
+}
+

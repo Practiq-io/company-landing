@@ -1,6 +1,6 @@
 .servicesCardBody {
   width: 630px;
-  height: 347px;
+  min-height: 100%!important;
   background: #fdfdfd;
   border-radius: 12px;
   border: solid 1px #e7e7eb;
@@ -24,6 +24,9 @@
   flex-direction: column;
   justify-content: space-between;
 }
+.servicesCardBody .cardStructure .cardInfoBox {
+  margin-bottom: 16px;
+}
 .servicesCardBody .cardStructure .servicesCardUpperBox .servicesCardTitle {
   font-size: 18px;
   line-height: 96%;
@@ -35,10 +38,13 @@
   font-family: "RobotoMono-Regular";
   color: #696974;
   font-size: 14px;
-  letter-spacing: -0.02em;
+  letter-spacing: -0.03em;
   border-bottom: 1px solid #f2f2f6;
   padding: 16px 0;
   margin-bottom: 16px;
+  line-height: 140%;
+}
+.servicesCardBody .cardStructure .servicesCardLowerBox {
   line-height: 140%;
 }
 .servicesCardBody .cardStructure .servicesCardLowerBox .servicesCardExample {
@@ -54,15 +60,33 @@
   font-size: 13px;
   color: #696974;
   opacity: 0.7;
+  margin-bottom: 20px;
+}
+.servicesCardBody .cardStructure .servicesCardLowerBox .servicesCardTextBody .moreText {
+  display: none;
+}
+.servicesCardBody .cardStructure .servicesCardLowerBox #toggleTextSpan {
+  color: #1371FD;
+  cursor: pointer;
+  transition: 0.2s;
+}
+.servicesCardBody .cardStructure .servicesCardLowerBox #toggleTextSpan:hover {
+  color: #13a7fd;
+  transition: 0.2s;
 }
 .servicesCardBody .cardStructure .servicesCardButton {
   display: flex;
-  padding: 12px 32px;
+  padding: 18px 32px;
   background: #1371fd;
   width: fit-content;
   border-radius: 4px;
   color: white;
   cursor: pointer;
+  transition: 0.2s;
+}
+.servicesCardBody .cardStructure .servicesCardButton:hover {
+  background: #105fd6;
+  transition: 0.2s;
 }
 .servicesCardBody .cardStructure .servicesCardButton p {
   font-family: "RobotoMono-Regular";

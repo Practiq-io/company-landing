@@ -5,6 +5,7 @@ import './ServicesCarouselFix.css';
 import Slider from "react-slick";
 
 class ServicesCarousel extends Component {
+	
 	render() {
 
 		var settings = {
@@ -13,9 +14,9 @@ class ServicesCarousel extends Component {
 			slidesToScroll: 1,
 			swipeToSlide: true,
 			infinite: false,
-			focusOnSelect: true,
+			focusOnSelect: false,
 			variableWidth: true,
-			arrows: false,
+			arrows: false
 		};
 
 		return (
