@@ -5,14 +5,14 @@ import buttonRightArrow from "./ServicesCardImg/rightarrow.png";
 class ServicesCard extends Component {
 	state = {
 		show: false,
-		string: this.props.textBody,
+		textBody: this.props.textBody,
 		hiddenString: false,
 		displayedString: false,
 	};
 
 	componentDidMount() {
-		let cut = this.state.string.slice(150, this.state.string.length);
-		let display = this.state.string.slice(0, 150);
+		let cut = this.state.textBody.slice(150, this.state.textBody.length);
+		let display = this.state.textBody.slice(0, 150);
 		this.setState({ hiddenString: cut });
 		this.setState({ displayedString: display });
 	}
@@ -36,7 +36,6 @@ class ServicesCard extends Component {
 					<p className="servicesCardTitleMobile">{this.props.title}</p>
 				</div>
 				
-
 				<div className="cardStructure">
 					<div className="cardInfoBox">
 						<div className="servicesCardUpperBox">

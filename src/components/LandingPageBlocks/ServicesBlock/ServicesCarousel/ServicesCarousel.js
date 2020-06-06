@@ -5,22 +5,24 @@ import './ServicesCarouselFix.css';
 import Slider from "react-slick";
 
 class ServicesCarousel extends Component {
+
+	settings = {
+		dots: true,
+		slidesToShow: 1,
+		slidesToScroll: 1,
+		swipeToSlide: true,
+		infinite: false,
+		focusOnSelect: false,
+		variableWidth: true,
+		arrows: false
+	};
 	
 	render() {
 
-		var settings = {
-			dots: true,
-			slidesToShow: 1,
-			slidesToScroll: 1,
-			swipeToSlide: true,
-			infinite: false,
-			focusOnSelect: false,
-			variableWidth: true,
-			arrows: false
-		};
+		
 
 		return (
-			<Slider {...settings}>
+			<Slider {...this.settings}>
 				{this.props.children}
 			</Slider>
 		);
