@@ -1,30 +1,52 @@
 .servicesCardBody {
 	width: 630px;
-	min-height: 100%!important;
+	min-height: 100% !important;
 	background: #fdfdfd;
 	border-radius: 12px;
 	border: solid 1px #e7e7eb;
 	box-shadow: 0px 0px 49px #fbf8f8;
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: -moz-box;
 	display: flex;
-    padding: 32px;
-    margin-right: 40px;
+	padding: 32px;
+	margin-right: 40px;
 
 	.servicesCardImgbox {
 		background: #f2f2f4;
+		display: -webkit-box;
+		display: -webkit-flex;
+		display: -moz-box;
 		display: flex;
+		-webkit-box-pack: center;
+		-webkit-justify-content: center;
+		-moz-box-pack: center;
 		justify-content: center;
+		-webkit-box-align: center;
+		-webkit-align-items: center;
+		-moz-box-align: center;
 		align-items: center;
+		-webkit-align-self: flex-start;
 		align-self: flex-start;
 		padding: 24px;
 		border-radius: 8px;
-        margin-right: 24px;
-        
-       
+		margin-right: 24px;
 	}
 
 	.cardStructure {
+		display: -webkit-box;
+		display: -webkit-flex;
+		display: -moz-box;
 		display: flex;
+		-webkit-box-orient: vertical;
+		-webkit-box-direction: normal;
+		-webkit-flex-direction: column;
+		-moz-box-orient: vertical;
+		-moz-box-direction: normal;
 		flex-direction: column;
+		-webkit-box-pack: justify;
+		-webkit-justify-content: space-between;
+		-moz-box-pack: justify;
 		justify-content: space-between;
 
 		.cardInfoBox {
@@ -32,7 +54,6 @@
 		}
 
 		.servicesCardUpperBox {
-
 			.servicesCardTitle {
 				font-size: 18px;
 				line-height: 96%;
@@ -48,13 +69,12 @@
 				letter-spacing: -0.03em;
 				border-bottom: 1px solid #f2f2f6;
 				padding: 16px 0;
-                margin-bottom: 16px;
-                line-height: 140%;
+				margin-bottom: 16px;
+				line-height: 140%;
 			}
 		}
 
 		.servicesCardLowerBox {
-
 			line-height: 140%;
 
 			.servicesCardExample {
@@ -72,7 +92,6 @@
 				color: #696974;
 				opacity: 0.7;
 				margin-bottom: 20px;
-				
 
 				.moreText {
 					display: none;
@@ -80,28 +99,38 @@
 			}
 
 			#toggleTextSpan {
-				color: #1371FD;
+				color: #1371fd;
 				cursor: pointer;
+				-webkit-transition: 0.2s;
 				transition: 0.2s;
+
 				&:hover {
 					color: rgb(19, 167, 253);
+					-webkit-transition: 0.2s;
 					transition: 0.2s;
 				}
 			}
 		}
 
 		.servicesCardButton {
+			display: -webkit-box;
+			display: -webkit-flex;
+			display: -moz-box;
 			display: flex;
 			padding: 18px 32px;
 			background: #1371fd;
+			width: -webkit-fit-content;
+			width: -moz-fit-content;
 			width: fit-content;
 			border-radius: 4px;
 			color: white;
 			cursor: pointer;
+			-webkit-transition: 0.2s;
 			transition: 0.2s;
 
 			&:hover {
 				background: rgb(16, 95, 214);
+				-webkit-transition: 0.2s;
 				transition: 0.2s;
 			}
 

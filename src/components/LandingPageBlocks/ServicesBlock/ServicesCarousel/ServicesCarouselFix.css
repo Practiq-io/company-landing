@@ -1,34 +1,42 @@
-.slick-slider .slick-track, .slick-slider .slick-list {
-    overflow: visible!important;
+.slick-slider .slick-track,
+.slick-slider .slick-list {
+	overflow: visible !important;
 }
 
 div {
-    outline: none;
+	outline: none;
 }
 
 .slick-dots li.slick-active button:before {
-    color: #1371fd!important;
+	color: #1371fd !important;
 }
 
 .slick-dots li button:before {
-    color: rgb(122, 122, 122);
+	color: rgb(122, 122, 122);
 }
 
 .slick-dots {
-    bottom: -80px;
-    font-size: 8px;
+	bottom: -80px;
+	font-size: 8px;
 }
 
-.slick-track
-{
-    display: flex !important;
-    align-self: stretch!important;
+.slick-track {
+	display: -webkit-box !important;
+	display: -webkit-flex !important;
+	display: -moz-box !important;
+	display: flex !important;
+	-webkit-align-self: stretch !important;
+	align-self: stretch !important;
 }
 
-.slick-slide
-{
-    height: inherit !important;
+.slick-slide {
+	height: inherit !important;
 
-    display: flex!important;
+	display: -webkit-box !important;
+
+	display: -webkit-flex !important;
+
+	display: -moz-box !important;
+
+	display: flex !important;
 }
-

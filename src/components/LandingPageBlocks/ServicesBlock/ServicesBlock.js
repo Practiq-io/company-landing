@@ -4,43 +4,75 @@ import FrontEnd from "./FrontEnd/FrontEnd";
 import BackEnd from "./BackEnd/BackEnd";
 
 class ServicesBlock extends Component {
+	state = {
+		displayed: "backend",
+		switched: false,
+	};
 
-    render(){
+	switchToBackEnd = () => {
+		if (this.state.displayed !== "backend") {
+			this.setState({ displayed: "backend", switched: false });
+		}
+	};
 
-        return (
+	switchToFrontEnd = () => {
+		if (this.state.displayed !== "frontend") {
+			this.setState({ displayed: "frontend", switched: true });
+		}
+	};
 
-            <section className="SB-Section">
-    
-                <content className="upperServicesBox">
+	render() {
+        
+		let carouselTypeOutput;
+		if (this.state.displayed === "backend") {
+			carouselTypeOutput = <BackEnd />;
+		} else if (this.state.displayed === "frontend") {
+			carouselTypeOutput = <FrontEnd />;
+		}
 
-                    <h2 className="servicesTitle">What we can build for you</h2>
+		return (
+			<section className="SB-Section">
+				<content className="upperServicesBox">
+					<h2 className="servicesTitle">What we can build for you</h2>
 
-                    <div className="servicesButtonBox">
+					<div className="servicesButtonBox">
+						<p
+							onClick={this.switchToFrontEnd}
+							className="frontendButton"
+							style={{
+								color: this.state.switched ? "white" : "#171725"
+							}}
+						>
+							Frontend
+						</p>
+						<p
+							onClick={this.switchToBackEnd}
+							className="backendButton"
+							style={{
+								color: this.state.switched ? "#171725" : "white"
+							}}
+						>
+							Backend
+						</p>
 
-                        <p className="frontendButton">Frontend</p>
-                        <p className="backendButton">Backend</p>
+						<div
+							className="buttonSwitch"
+							style={{
+								right: this.state.switched ? "143px" : "0"
+							}}
+						></div>
+					</div>
+				</content>
 
-                        <div className="buttonSwitch"></div>
+				<content className="lowerServicesBox">
 
-                    </div>
+                    {carouselTypeOutput}
 
                 </content>
-            
-                <content className="lowerServicesBox">
-                    
-                    <BackEnd />
-                    <FrontEnd />
-                
-                </content>
 
-
-    
-            </section>
-
-        );
-
-    }
-
-};
+			</section>
+		);
+	}
+}
 
 export default ServicesBlock;
