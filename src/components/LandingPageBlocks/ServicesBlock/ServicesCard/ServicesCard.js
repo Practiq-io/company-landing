@@ -24,13 +24,18 @@ class ServicesCard extends Component {
 	render() {
 		return (
 			<div className="servicesCardBody">
-				<div className="servicesCardImgbox">
-					<img
-						className="servicesCardImg"
-						src={this.props.imgPath}
-						alt="service icon"
-					/>
+				<div className="mobileWrap">
+					<div className="servicesCardImgbox">
+						<img
+							className="servicesCardImg"
+							src={this.props.imgPath}
+							alt="service icon"
+						/>
+						
+					</div>
+					<p className="servicesCardTitleMobile">{this.props.title}</p>
 				</div>
+				
 
 				<div className="cardStructure">
 					<div className="cardInfoBox">
