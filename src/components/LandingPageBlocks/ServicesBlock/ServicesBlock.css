@@ -23,6 +23,13 @@
   color: #171725;
   text-align: center;
 }
+.ui_mobile_dash {
+  display:none;
+  height: 2px;
+  width: 40px;
+  background: #1371FD;
+  margin-bottom: 24px;
+}
 .servicesButtonBox {
   display: -webkit-box;
   display: -webkit-flex;
@@ -62,6 +69,7 @@
   transition: 0.5s;
 }
 .frontendButton {
+  -webkit-tap-highlight-color: transparent;
   cursor: pointer;
   z-index: 2;
   color: #171725;
@@ -70,6 +78,7 @@
   transition: 0.2s;
 }
 .backendButton {
+  -webkit-tap-highlight-color: transparent;
   cursor: pointer;
   z-index: 2;
   color: white;
@@ -83,3 +92,16 @@
     background: #fafafc;
   }
 }
+@media screen and (max-width: 600px) {
+  .servicesTitle {
+    margin-bottom: 24px;
+  }
+  .ui_mobile_dash {
+    display: block;
+    height: 2px;
+    width: 40px;
+    background: #1371FD;
+    margin-bottom: 24px;
+  }
+}
+

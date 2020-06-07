@@ -34,7 +34,7 @@ class ServicesBlock extends Component {
 			<section className="SB-Section">
 				<content className="upperServicesBox">
 					<h2 className="servicesTitle">What we can build for you</h2>
-
+					<div className="ui_mobile_dash"></div>
 					<div className="servicesButtonBox">
 						<p
 							onClick={this.switchToFrontEnd}
