@@ -25,7 +25,7 @@ const HowItWorksBlock = (props) => {
         
           <div className="HIWB-blocks block01">
             <div className="HIWB-info">
-              <div className="HIWB-title">
+              <div className="HIWB-title block01">
                 <p>01</p>
                 <p>You submit the development request</p>
 
@@ -185,7 +185,7 @@ const HowItWorksBlock = (props) => {
                       </div>
 
                       <div className="message">
-                        <p>How is your work going?</p>
+                        <p class="mobilePosition">How is your work going?</p>
                       </div>
                     </div>
                   </div>

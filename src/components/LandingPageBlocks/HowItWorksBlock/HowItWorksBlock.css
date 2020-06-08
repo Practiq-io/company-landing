@@ -115,6 +115,41 @@
     text-align: left;
   }
 }
+@media screen and (max-width: 510px) {
+  .block01 .HIWB-title {
+    padding-right: 50px;
+  }
+}
+@media screen and (max-width: 380px) {
+  .block01 .HIWB-title {
+    padding-right: 70px;
+  }
+}
+@media screen and (max-width: 550px) {
+  .block01 .HIWB-title .HIWB-dotsMobile {
+    right: -120px;
+  }
+}
+@media screen and (max-width: 510px) {
+  .block01 .HIWB-title .HIWB-dotsMobile {
+    right: -90px;
+  }
+}
+@media screen and (max-width: 380px) {
+  .block01 .HIWB-title .HIWB-dotsMobile {
+    right: -70px;
+  }
+}
+@media screen and (max-width: 355px) {
+  .block01 .HIWB-title .HIWB-dotsMobile {
+    right: -50px;
+  }
+}
+@media screen and (max-width: 335px) {
+  .block01 .HIWB-title .HIWB-dotsMobile {
+    right: -40px;
+  }
+}
 .block04 .HIWB-info .HIWB-title .HIWB-dotsMobile {
   top: 50px;
 }
@@ -156,6 +191,9 @@
 }
 .HIWB-Section .HIWB-github-logo {
   width: auto;
+  border: 1px solid #E9E9ED;
+  padding: 15px 35px;
+  border-radius: 30px;
 }
 .HIWB-Section .HIWB-content h2 {
   text-align: center;
@@ -462,7 +500,8 @@
 .HIWB-Section .HIWB-content .block03 .HIWB-info .discription-content .add p:nth-of-type(1) {
   border-radius: 50%;
   border: 1px solid #b1b1b8;
-  padding: 20px;
+  padding: 19px;
+  margin-top: 5px;
 }
 .HIWB-Section .HIWB-content .block03 .HIWB-info .discription-content .add p:nth-of-type(2) {
   text-align: center;
@@ -555,14 +594,37 @@
   -moz-box-align: center;
   align-items: center;
 }
+@media screen and (max-width: 1000px) {
+  .HIWB-Section .HIWB-content .block06 .discription .chat .you-content {
+    width: 270px;
+  }
+}
+@media screen and (max-width: 380px) {
+  .HIWB-Section .HIWB-content .block06 .discription .chat .you-content {
+    margin-left: -40px;
+  }
+}
 .HIWB-Section .HIWB-content .block06 .discription .chat .you-content .message {
   background-image: url("../../../image/cloudSpeach2.png");
   background-repeat: no-repeat;
   background-size: contain;
   padding: 30px 30px;
 }
+@media screen and (max-width: 1000px) {
+  .HIWB-Section .HIWB-content .block06 .discription .chat .you-content .message {
+    padding: 20px;
+  }
+}
+@media screen and (max-width: 1000px) {
+  .HIWB-Section .HIWB-content .block06 .discription .chat .you-content .message .mobilePosition {
+    text-align: left;
+    margin-top: -10px;
+  }
+}
+@media screen and (max-width: 415px) {
+}
 .HIWB-Section .HIWB-content .block06 .discription .chat .someone {
-  margin-right: -150px;
+  margin-right: -80px;
   margin-top: 20px;
   display: -webkit-box;
   display: -webkit-flex;
