@@ -22,14 +22,14 @@ const HowItWorksBlock = (props) => {
       <content className="HIWB-content">
         <h2>How it Works</h2>
 
-        <div className="HIWB-wrapper">
-          <div className="blocks block01">
-            <div className="info">
-              <div className="title">
+        
+          <div className="HIWB-blocks block01">
+            <div className="HIWB-info">
+              <div className="HIWB-title">
                 <p>01</p>
                 <p>You submit the development request</p>
 
-                <div className="dotsMobile">
+                <div className="HIWB-dotsMobile">
                   <img src={dotsMobileBlock1} alt="" />
                 </div>
               </div>
@@ -45,21 +45,21 @@ const HowItWorksBlock = (props) => {
               </div>
             </div>
 
-            <div className="dots-image">
+            <div className="HIWB-dots-image">
               <img src={dotsDesc} alt="" />
             </div>
           </div>
 
-          <div className="blocks blockPosition">
-            <div className="info">
-              <div className="title">
+          <div className="HIWB-blocks blockPosition">
+            <div className="HIWB-info">
+              <div className="HIWB-title">
                 <p>02</p>
                 <p>
                   Our platform classifies the skill set and level of knowledge
                   required for the task execution.{" "}
                 </p>
 
-                <div className="dotsMobile">
+                <div className="HIWB-dotsMobile">
                   <img src={dotsMobileBlock2} alt="" />
                 </div>
               </div>
@@ -72,18 +72,18 @@ const HowItWorksBlock = (props) => {
               </div>
             </div>
 
-            <div className="dots-image">
+            <div className="HIWB-dots-image">
               <img src={dotsDesctopBlock2} alt="" />
             </div>
           </div>
 
-          <div className="blocks block03">
-            <div className="info">
-              <div className="title">
+          <div className="HIWB-blocks block03">
+            <div className="HIWB-info">
+              <div className="HIWB-title">
                 <p>03</p>
                 <p>We assign a group of developers to work on your request</p>
 
-                <div className="dotsMobile">
+                <div className="HIWB-dotsMobile">
                   <img src={dotsMobileBlock3} alt="" />
                 </div>
               </div>
@@ -117,14 +117,14 @@ const HowItWorksBlock = (props) => {
               </div>
             </div>
 
-            <div className="dots-image">
+            <div className="HIWB-dots-image">
               <img src={dotsDesctopBlock3} alt="" />
             </div>
           </div>
 
-          <div className="blocks blockPosition block04">
-            <div className="info">
-              <div className="title">
+          <div className="HIWB-blocks blockPosition block04">
+            <div className="HIWB-info">
+              <div className="HIWB-title">
                 <p>04</p>
                 <p>
                   We make code reviews to ensure level of quality and provide
@@ -132,7 +132,7 @@ const HowItWorksBlock = (props) => {
                   standards{" "}
                 </p>
 
-                <div className="dotsMobile">
+                <div className="HIWB-dotsMobile">
                   <img src={dotsMobileBlock4} alt="" />
                 </div>
               </div>
@@ -141,37 +141,37 @@ const HowItWorksBlock = (props) => {
               </div>
             </div>
 
-            <div className="dots-image">
+            <div className="HIWB-dots-image">
               <img src={dotsDesctopBlock4} alt="" />
             </div>
           </div>
 
-          <div className="blocks block05">
-            <div className="info">
-              <div className="title">
+          <div className="HIWB-blocks block05">
+            <div className="HIWB-info">
+              <div className="HIWB-title">
                 <p>05</p>
                 <p>
                   The package is delivered via Github including all your
                   requirements
                 </p>
 
-                <div className="dotsMobile">
+                <div className="HIWB-dotsMobile">
                   <img src={dotsMobileBlock5} alt="" />
                 </div>
               </div>
               <div className="discription">
-                <img src={GitHub} alt="" />
+                <img className="HIWB-github-logo" src={GitHub} alt="" />
               </div>
             </div>
 
-            <div className="dots-image">
+            <div className="HIWB-dots-image">
               <img src={dotsDesc} alt="" />
             </div>
           </div>
 
-          <div className="blocks blockPosition block06">
-            <div className="info">
-              <div className="title">
+          <div className="HIWB-blocks blockPosition block06">
+            <div className="HIWB-info">
+              <div className="HIWB-title">
                 <p>06</p>
                 <p>You can check in with any of the developers at any point </p>
               </div>
@@ -205,7 +205,7 @@ const HowItWorksBlock = (props) => {
               </div>
             </div>
           </div>
-        </div>
+       
       </content>
     </section>
   );

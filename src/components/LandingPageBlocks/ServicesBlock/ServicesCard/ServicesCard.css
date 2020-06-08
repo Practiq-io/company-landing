@@ -50,6 +50,9 @@
   border-radius: 8px;
   margin-right: 24px;
 }
+.servicesCardBody .servicesCardImgbox .servicesCardImg {
+  width: auto;
+}
 .servicesCardBody .cardStructure {
   display: -webkit-box;
   display: -webkit-flex;
@@ -133,6 +136,9 @@
   cursor: pointer;
   -webkit-transition: 0.2s;
   transition: 0.2s;
+}
+.servicesCardBody .cardStructure .servicesCardButton .servicesCardButtonImg {
+  width: auto;
 }
 .servicesCardBody .cardStructure .servicesCardButton:hover {
   background: #105fd6;

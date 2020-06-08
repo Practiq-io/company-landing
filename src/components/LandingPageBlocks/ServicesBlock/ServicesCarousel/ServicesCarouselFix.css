@@ -3,7 +3,8 @@
 	overflow: visible !important;
 }
 
-div {
+.slick-slider .slick-track,
+.slick-slider .slick-list div {
 	outline: none;
 }
 
