@@ -83,8 +83,7 @@ table {
 	border-spacing: 0;
 }
 img {
-	
-	height: auto;
+	width: 100%;
 }
 a {
 	text-decoration: none;
