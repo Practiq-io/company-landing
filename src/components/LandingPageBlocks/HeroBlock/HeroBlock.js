@@ -55,8 +55,8 @@ const HeroBlock = (props) => {
 							<div className="code_block_header_dot green"></div>
 						</div>
 						<div className="code-block-frame">
-							<div className="code_block_title">
-								// Fetch wizard structure and pass for mounting
+							<div className="code_block_title" >
+								<p>// <span id="comment_block-animation-txt"></span></p>
 							</div>
 							<p id="code_block-animation-txt">
 								<span id="animation-cursor"></span>
