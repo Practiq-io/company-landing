@@ -1,0 +1,207 @@
+.servicesCardBody {
+  width: 630px;
+  min-height: 100% !important;
+  background: #fdfdfd;
+  border-radius: 12px;
+  border: solid 1px #e7e7eb;
+  box-shadow: 0px 0px 49px #fbf8f8;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: flex;
+  padding: 32px;
+  margin-right: 40px;
+}
+.servicesCardBody .servicesCardTitleMobile {
+  display: none;
+  font-size: 18px;
+  line-height: 96%;
+  letter-spacing: 0.05em;
+  color: #171725;
+  font-family: "DINE-1451";
+}
+.servicesCardBody .mobileWrap {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -moz-box-align: center;
+  align-items: center;
+}
+.servicesCardBody .servicesCardImgbox {
+  background: #f2f2f4;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -moz-box-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -moz-box-align: center;
+  align-items: center;
+  -webkit-align-self: flex-start;
+  align-self: flex-start;
+  padding: 24px;
+  border-radius: 8px;
+  margin-right: 24px;
+}
+.servicesCardBody .servicesCardImgbox .servicesCardImg {
+  width: auto;
+}
+.servicesCardBody .cardStructure {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+  -moz-box-orient: vertical;
+  -moz-box-direction: normal;
+  flex-direction: column;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -moz-box-pack: justify;
+  justify-content: space-between;
+}
+.servicesCardBody .cardStructure .cardInfoBox {
+  margin-bottom: 16px;
+}
+.servicesCardBody .cardStructure .servicesCardUpperBox .servicesCardTitle {
+  font-size: 18px;
+  line-height: 96%;
+  letter-spacing: 0.05em;
+  color: #171725;
+  font-family: "DINE-1451";
+}
+.servicesCardBody .cardStructure .servicesCardUpperBox .servicesCardSubTitle {
+  font-family: "RobotoMono-Regular";
+  color: #696974;
+  font-size: 14px;
+  letter-spacing: -0.03em;
+  border-bottom: 1px solid #f2f2f6;
+  padding: 16px 0;
+  margin-bottom: 16px;
+  line-height: 140%;
+}
+.servicesCardBody .cardStructure .servicesCardLowerBox {
+  line-height: 140%;
+}
+.servicesCardBody .cardStructure .servicesCardLowerBox .servicesCardExample {
+  font-size: 14px;
+  color: #1371fd;
+  font-family: "RobotoMono-Bold";
+  margin-bottom: 12px;
+}
+.servicesCardBody .cardStructure .servicesCardLowerBox .servicesCardTextBody {
+  font-family: "RobotoMono-Regular";
+  font-style: normal;
+  font-weight: normal;
+  font-size: 13px;
+  color: #696974;
+  opacity: 0.7;
+  margin-bottom: 20px;
+}
+.servicesCardBody .cardStructure .servicesCardLowerBox .servicesCardTextBody .moreText {
+  display: none;
+}
+.servicesCardBody .cardStructure .servicesCardLowerBox #toggleTextSpan {
+  color: #1371fd;
+  cursor: pointer;
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
+}
+.servicesCardBody .cardStructure .servicesCardLowerBox #toggleTextSpan:hover {
+  color: #13a7fd;
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
+}
+.servicesCardBody .cardStructure .servicesCardButton {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: flex;
+  padding: 18px 32px;
+  background: #1371fd;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  border-radius: 4px;
+  color: white;
+  cursor: pointer;
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
+}
+.servicesCardBody .cardStructure .servicesCardButton .servicesCardButtonImg {
+  width: auto;
+}
+.servicesCardBody .cardStructure .servicesCardButton:hover {
+  background: #105fd6;
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
+}
+.servicesCardBody .cardStructure .servicesCardButton p {
+  font-family: "RobotoMono-Regular";
+  font-size: 16px;
+  text-align: center;
+  color: #ffffff;
+  margin-right: 8px;
+}
+@media screen and (max-width: 1000px) {
+  .servicesCardBody {
+    width: 311px;
+    min-height: 100% !important;
+    background: #fdfdfd;
+    border-radius: 12px;
+    border: solid 1px #e7e7eb;
+    box-shadow: 0px 0px 49px #fbf8f8;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -moz-box;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: column;
+    -moz-box-orient: vertical;
+    -moz-box-direction: normal;
+    flex-direction: column;
+    padding: 16px;
+    margin-right: 16px;
+  }
+  .servicesCardBody .servicesCardImgbox {
+    padding: 13px;
+    border-radius: 8px;
+    margin-right: 24px;
+  }
+  .servicesCardBody .servicesCardTitle {
+    display: none;
+  }
+  .servicesCardBody .servicesCardTitleMobile {
+    display: block;
+  }
+  .servicesCardBody .cardStructure {
+    min-height: 395px;
+  }
+  .servicesCardBody .cardStructure .servicesCardButton {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -moz-box;
+    display: flex;
+    width: 100%;
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+    -moz-box-pack: center;
+    justify-content: center;
+    padding: 12px 0;
+    border-radius: 4px;
+    color: white;
+  }
+  .servicesCardBody .cardStructure .servicesCardButton .servicesCardButtonImg {
+    display: none;
+  }
+}

@@ -42,6 +42,9 @@
 .TC-text-body {
 	margin-bottom: 40px;
 }
+.TC-img-box img{
+	width:100%;
+}
 @media screen and (max-width: 1280px) {
 	.TC-Cardbox {
 		margin: 0 15px 30px 15px;

@@ -48,6 +48,9 @@
 	align-items: center;
 	color: white;
 }
+.pc-Customize-img img {
+	width: 100%;
+}
 .pc-Customize-title {
 	font-size: 18px;
 	font-family: "DINE-1451";
