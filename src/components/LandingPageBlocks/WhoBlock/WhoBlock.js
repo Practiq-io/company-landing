@@ -6,7 +6,6 @@ import LizaMobile from "../../../image/Liza-mobile.png";
 import RomaMobile from "../../../image/Roma-mobile.png";
 import linkidMobile from "../../../image/linkid-blue.png";
 
-
 const WhoBlock = (props) => {
 	return (
 		<section className="WB-Section">
@@ -62,54 +61,54 @@ const WhoBlock = (props) => {
 					<div className="person-mobile-block">
 						<div className="person-card-mobile ika">
 							<div className="person-card-image">
-								<img src={IkaMobile} alt=""/>
+								<img src={IkaMobile} alt="" />
 							</div>
 
 							<div className="person-card-text">
 								<p>Ilya Sidorovich</p>
-								<p>Co-founder, Tech Senior Software Developer @ Booking.com
-									BSc Finance & Marketing, KIMEP</p>
+								<p>
+									Co-founder, Tech Senior Software Developer @ Booking.com BSc
+									Finance & Marketing, KIMEP
+								</p>
 								<div className="person-card-logo">
-									<img src={linkidMobile} alt=""/>
-								</div>	
+									<img src={linkidMobile} alt="" />
+								</div>
 							</div>
-
 						</div>
 
 						<div className="person-card-mobile liza">
 							<div className="person-card-image">
-								<img src={LizaMobile} alt=""/>
+								<img src={LizaMobile} alt="" />
 							</div>
 
 							<div className="person-card-text">
 								<p>Elizaveta Kolesnichenko</p>
-								<p>Co-founder, Product / Strategy
-									Head of Startup Incubation 
-									@ ACE Incubator
-									MSc Cognitive Neurobiology, UvA</p>
+								<p>
+									Co-founder, Product / Strategy Head of Startup Incubation @
+									ACE Incubator MSc Cognitive Neurobiology, UvA
+								</p>
 								<div className="person-card-logo">
-									<img src={linkidMobile} alt=""/>
-								</div>	
+									<img src={linkidMobile} alt="" />
+								</div>
 							</div>
-
 						</div>
 
 						<div className="person-card-mobile roma">
 							<div className="person-card-image">
-								<img src={RomaMobile} alt=""/>
+								<img src={RomaMobile} alt="" />
 							</div>
 
 							<div className="person-card-text">
 								<p>Ilya Sidorovich</p>
-								<p>Co-founder, Tech Senior Software Developer @ Booking.com
-									BSc Finance & Marketing, KIMEP</p>
+								<p>
+									Co-founder, Tech Senior Software Developer @ Booking.com BSc
+									Finance & Marketing, KIMEP
+								</p>
 								<div className="person-card-logo">
-									<img src={linkidMobile} alt=""/>
-								</div>	
+									<img src={linkidMobile} alt="" />
+								</div>
 							</div>
-
 						</div>
-						
 					</div>
 				</div>
 			</content>
