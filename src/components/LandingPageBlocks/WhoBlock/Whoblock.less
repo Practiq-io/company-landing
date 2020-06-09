@@ -32,114 +32,190 @@
         align-items: center;
       }
 
-      // .person {
-      //   display: flex;
-      //   flex-direction: column;
+      .person {
+        display: flex;
+        flex-direction: column;
 
-      //   max-width: 300px;
-      //   height: 403px;
+        max-width: 300px;
+        height: 403px;
         
-      //   @media screen and (max-width: 1220px) {
-      //     max-width: calc(300px - 30px);
-      //     height: calc(403px - 30px);
-      //   }
+        @media screen and (max-width: 1220px) {
+          max-width: calc(300px - 30px);
+          height: calc(403px - 30px);
+        }
 
-      //   @media screen and (max-width: 1150px) {
-      //     max-width: calc(300px - 40px);
-      //     height: calc(403px - 40px);
-      //   }
+        @media screen and (max-width: 1150px) {
+          max-width: calc(300px - 40px);
+          height: calc(403px - 40px);
+        }
 
-      //   @media screen and (max-width: 1110px) {
-      //     max-width: calc(300px);
-      //     height: calc(403px);
-      //   }
-
-        
+        @media screen and (max-width: 1110px) {
+          max-width: calc(300px);
+          height: calc(403px);
+        }
 
         
+        @media screen and (max-width: 1000px) {
+          display: none;
+        }
+        
         
 
-      //   .person-image {
-      //     display: flex;
-      //     flex-direction: column;
-      //     justify-content: flex-end;
-      //     flex-grow: 1;
-      //     padding: 0 20px;
+        .person-image {
+          display: flex;
+          flex-direction: column;
+          justify-content: flex-end;
+          flex-grow: 1;
+          padding: 0 20px;
 
-      //     background-image: url("../../../image/Ika.png");
-      //     background-repeat: no-repeat;
-      //     background-size: cover;
+          background-image: url("../../../image/Ika.png");
+          background-repeat: no-repeat;
+          background-size: cover;
 
-      //     border-top-right-radius: 12px;
-      //     border-top-left-radius: 12px;
+          border-top-right-radius: 12px;
+          border-top-left-radius: 12px;
 
-      //     > p {
-      //       font-family: 'DINE-1451';
-      //       font-size: 2rem;
-      //       color: white;
-      //       letter-spacing: 2px;
-      //     }
+          > p {
+            font-family: 'DINE-1451';
+            font-size: 2rem;
+            color: white;
+            letter-spacing: 2px;
+          }
 
-      //     .linkid-logo {
-      //      padding: 24px 0 40px 0;
-      //       width: 20px;
-      //       height: 20px;
-      //     }
+          .linkid-logo {
+           padding: 24px 0 40px 0;
+            width: 20px;
+            height: 20px;
+          }
 
-      //     + p {
+          + p {
             
-      //       margin-top: auto;
-      //       padding: 16px 20px;
-      //       background-color: #2473EA;
-      //       color: white;
-      //       font-family: 'RobotoMono-Regular';
-      //       font-size: 0.9375rem;
+            margin-top: auto;
+            padding: 16px 20px;
+            background-color: #2473EA;
+            color: white;
+            font-family: 'RobotoMono-Regular';
+            font-size: 0.9375rem;
 
-      //       border-bottom-right-radius: 12px;
-      //       border-bottom-left-radius: 12px;
-      //     }
-      //   }
+            border-bottom-right-radius: 12px;
+            border-bottom-left-radius: 12px;
+          }
+        }
         
 
-      //   &.liza {
-      //     height: 424px !important;
+        &.liza {
+          height: 424px !important;
 
-      //     @media screen and (max-width: 1220px) {
+          @media screen and (max-width: 1220px) {
             
-      //       height: calc(424px - 30px) !important;
-      //     }
+            height: calc(424px - 30px) !important;
+          }
 
-      //     @media screen and (max-width: 1150px) {
+          @media screen and (max-width: 1150px) {
             
-      //       height: calc(424px - 40px) !important;
-      //     }
+            height: calc(424px - 40px) !important;
+          }
 
-      //     @media screen and (max-width: 1150px) {
+          @media screen and (max-width: 1150px) {
             
-      //       height: calc(424px) !important;
-      //     }
+            height: calc(424px) !important;
+          }
 
-      //     .person-image {
-      //       background-image: url("../../../image/Liza.png");
-      //       background-repeat: no-repeat;
-      //       background-size: cover;
+          .person-image {
+            background-image: url("../../../image/Liza.png");
+            background-repeat: no-repeat;
+            background-size: cover;
   
 
-      //       + p {
-      //         padding-top: 13px;
-      //         line-height: 17px;
-      //       }
-      //     }
-      //   }
+            + p {
+              padding-top: 13px;
+              line-height: 17px;
+            }
+          }
+        }
 
-      //   &.roma {
-      //     .person-image {
-      //       background-image: url("../../../image/Roma.png");
-      //       background-repeat: no-repeat;
-      //       background-size: cover;
-      //     }
-      //   }
-      // }
+        &.roma {
+          .person-image {
+            background-image: url("../../../image/Roma.png");
+            background-repeat: no-repeat;
+            background-size: cover;
+          }
+        }
+      }
+
+      .person-mobile-block {
+        .person-card-mobile {
+          @media screen and (max-width: 1000px) {
+            display: block;
+          }
+
+          @media screen and (min-width: 1000px) {
+            display: none !important;
+          }
+
+
+          display: flex !important;
+          max-width: 380px;
+          
+
+          .person-card-image {
+            
+            
+           img {
+            width: 90px;
+            height: 129px;
+           }
+          }
+
+          .person-card-text {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+            padding-left: 16px;
+            p:nth-child(1) {
+              font-size: 1.125rem;
+              font-family: 'RobotoMono-Bold';
+            }
+
+            p:nth-child(2) {
+              font-size: 0.875rem;
+              font-family: 'RobotoMono-Regular';
+              color:#696974;
+            }
+            .person-card-logo {
+              width: 20px;
+              height: 20px;
+
+            }
+          }
+
+          &.liza {
+
+            border-bottom: 2px solid #E9E9ED;
+            border-top: 2px solid #E9E9ED;
+            padding: 20px 0;
+            
+            .person-card-image {
+
+              img {
+               width: 90px;
+               height: 140px;
+              }
+             }
+          }
+
+          &.ika {
+            padding-bottom: 20px;
+          }
+
+          &.roma {
+            padding-top: 20px;
+          }
+        }
+       
+
+       
+      }
     }
   }
 }
