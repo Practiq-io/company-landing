@@ -9,7 +9,7 @@ const WhoBlock = (props) => {
 				<h2>Who build this</h2>
 
 				<div className="person-card">
-					<div className="person">
+					{/* <div className="person">
 						<div className="person-image">
 							<p>Ilya Sidorovich</p>
 
@@ -22,9 +22,9 @@ const WhoBlock = (props) => {
 							Co-founder, Tech Senior Software Developer @ Booking.com BSc
 							Finance & Marketing, KIMEP
 						</p>
-					</div>
+					</div> */}
 
-					<div className="person liza">
+					{/* <div className="person liza">
 						<div className="person-image">
 							<p>Elizaveta Kolesnichenko</p>
 
@@ -37,9 +37,9 @@ const WhoBlock = (props) => {
 							Co-founder, Product / Strategy Head of Startup Incubation @ ACE
 							Incubator MSc Cognitive Neurobiology, UvA
 						</p>
-					</div>
+					</div> */}
 
-					<div className="person roma">
+					{/* <div className="person roma">
 						<div className="person-image">
 							<p>Roman Cherepivskiy</p>
 
@@ -52,7 +52,7 @@ const WhoBlock = (props) => {
 							Senior UI/UX Designer Computer Hardware and Software Almaty
 							technological university
 						</p>
-					</div>
+					</div> */}
 				</div>
 			</content>
 		</section>
