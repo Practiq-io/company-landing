@@ -14,7 +14,7 @@ const MediumBlock = (props) => {
 				<h2>Our Medium Blog</h2>
 
 				<div className="article-block">
-					<div className="article-card fiveKiller">
+					<a target="_blank" href="https://medium.com/@isid.home/five-killer-mistakes-of-software-developers-and-how-to-avoid-them-f65e8e44c887" className="article-card fiveKiller">
 						<div className="article-image">
 							<img src={alcohol} alt="" />
 						</div>
@@ -43,16 +43,9 @@ const MediumBlock = (props) => {
 								<p>May 9</p>
 							</div>
 						</div>
+					</a>
 
-						<div className="viewed">
-							<p>
-								<img src={eye}></img>
-								453
-							</p>
-						</div>
-					</div>
-
-					<div className="article-card ">
+					<a target="_blank" href="https://medium.com/@isid.home/from-zero-to-hero-how-i-became-a-software-developer-with-a-degree-in-finance-97121b1a6da8" className="article-card ">
 						<div className="article-image">
 							<img src={hall} alt="" />
 						</div>
@@ -75,20 +68,13 @@ const MediumBlock = (props) => {
 
 							<div className="writer-info">
 								<p>Ilya Sidorovich</p>
-								<p>May 9</p>
+								<p>May 26</p>
 							</div>
 						</div>
-
-						<div className="viewed">
-							<p>
-								<img src={eye}></img>
-								453
-							</p>
-						</div>
-					</div>
+					</a>
 				</div>
 				<div className="all-articles">
-					<p>See all articles</p>
+					<a target="_blank" href="https://medium.com/@isid.home">See all articles</a>
 				</div>
 			</content>
 		</section>
