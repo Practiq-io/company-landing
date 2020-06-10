@@ -88,7 +88,7 @@ const MediumBlock = (props) => {
 					</div>
 				</div>
 
-				<div className="article-block">
+				{/* <div className="article-block">
 					<div className="article-card fiveKiller">
 						<div className="article-image">
 							<img src={notebook} alt="" />
@@ -158,7 +158,7 @@ const MediumBlock = (props) => {
 							</p>
 						</div>
 					</div>
-				</div>
+				</div> */}
 
 				<div className="all-articles">
 					<p>See all articles</p>
