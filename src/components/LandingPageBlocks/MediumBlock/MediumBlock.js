@@ -73,9 +73,13 @@ const MediumBlock = (props) => {
 						</div>
 					</a>
 				</div>
-				<div className="all-articles">
-					<a target="_blank" href="https://medium.com/@isid.home">See all articles</a>
-				</div>
+			
+				<a className="all-articles" target="_blank" href="https://medium.com/@isid.home">
+					
+					<p>See all articles</p>
+				
+				</a>
+				
 			</content>
 		</section>
 	);
