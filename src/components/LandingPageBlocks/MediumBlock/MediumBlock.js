@@ -13,8 +13,8 @@ const MediumBlock = (props) => {
 			<content className="MB-content">
 				<h2>Our Medium Blog</h2>
 
-				<a target="_blank" href="https://medium.com/@isid.home/five-killer-mistakes-of-software-developers-and-how-to-avoid-them-f65e8e44c887" className="article-block">
-					<a className="article-card fiveKiller">
+				<div className="article-block">
+					<a target="_blank" href="https://medium.com/@isid.home/five-killer-mistakes-of-software-developers-and-how-to-avoid-them-f65e8e44c887" className="article-card fiveKiller">
 						<div className="article-image">
 							<img src={alcohol} alt="" />
 						</div>
