@@ -251,11 +251,11 @@
   align-items: flex-end;
 }
 @media screen and (max-width: 1000px) {
-  .HIWB-Section .HIWB-content .HIWB-blocks .HIWB-info .HIWB-title .HIWB-title {
+  .HIWB-Section .HIWB-content .HIWB-blocks .HIWB-info .HIWB-title {
+    align-items: flex-start;
     -webkit-box-align: start;
     -webkit-align-items: flex-start;
     -moz-box-align: start;
-    align-items: flex-start;
   }
 }
 .HIWB-Section .HIWB-content .HIWB-blocks .HIWB-info .HIWB-title p {
@@ -434,7 +434,7 @@
 }
 @media screen and (max-width: 520px) {
   .HIWB-Section .HIWB-content .block03 {
-    margin-top: 20px;
+    margin-top: 50px;
   }
 }
 .HIWB-Section .HIWB-content .block03 .HIWB-info {
