@@ -43,13 +43,6 @@ const MediumBlock = (props) => {
 								<p>May 9</p>
 							</div>
 						</div>
-
-						<div className="viewed">
-							<p>
-								<img src={eye}></img>
-								453
-							</p>
-						</div>
 					</a>
 
 					<a target="_blank" href="https://medium.com/@isid.home/from-zero-to-hero-how-i-became-a-software-developer-with-a-degree-in-finance-97121b1a6da8" className="article-card ">
@@ -75,15 +68,8 @@ const MediumBlock = (props) => {
 
 							<div className="writer-info">
 								<p>Ilya Sidorovich</p>
-								<p>May 9</p>
+								<p>May 26</p>
 							</div>
-						</div>
-
-						<div className="viewed">
-							<p>
-								<img src={eye}></img>
-								453
-							</p>
 						</div>
 					</a>
 				</div>
