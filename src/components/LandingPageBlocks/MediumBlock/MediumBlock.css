@@ -15,6 +15,7 @@
 }
 .MB-Section .MB-content .article-block a:visited {
   text-decoration: none;
+  text-decoration-color: inherit;
 }
 @media screen and (max-width: 1000px) {
   .MB-Section .MB-content .article-block {
@@ -80,6 +81,7 @@
 }
 .MB-Section .MB-content .article-block .article-card .article-title {
   grid-area: title;
+  color: #171725;
   font-family: "DINE-1451";
   font-size: 1.375rem;
 }
@@ -98,6 +100,7 @@
 }
 .MB-Section .MB-content .article-block .article-card .article-text {
   grid-area: text;
+  color: #696974;
   font-size: 0.875rem;
   font-family: "RobotoMono-Regular";
 }
@@ -149,6 +152,9 @@
     -moz-box-align: center;
     align-items: center;
   }
+}
+.MB-Section .MB-content .article-block .article-card .article-writer .writer-info p:nth-child(1) {
+  color: #171725;
 }
 .MB-Section .MB-content .article-block .article-card .article-writer .writer-info p:nth-child(2) {
   color: #b1b1b8;

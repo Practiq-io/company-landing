@@ -17,7 +17,8 @@
 			margin-bottom: 40px;
 			
 			a:visited {
-			    text-decoration: none; 
+				text-decoration: none;
+				text-decoration-color: inherit;
 			}
 
 			@media screen and (max-width: 1000px) {
@@ -90,7 +91,7 @@
 
 				.article-title {
 					grid-area: title;
-
+					color: #171725;
 					font-family: "DINE-1451";
 					font-size: 1.375rem;
 
@@ -113,7 +114,7 @@
 
 				.article-text {
 					grid-area: text;
-
+					color: #696974;
 					font-size: 0.875rem;
 					font-family: "RobotoMono-Regular";
 				}
@@ -167,6 +168,10 @@
 							-webkit-align-items: center;
 							-moz-box-align: center;
 							align-items: center;
+						}
+
+						p:nth-child(1) {
+							color: #171725;
 						}
 
 						p:nth-child(2) {
