@@ -53,6 +53,7 @@ time, mark, audio, video {
 	-moz-box-sizing: border-box;
 		 box-sizing: border-box;
 		 scroll-behavior: smooth;
+		 outline: transparent;
 }
 
 /* HTML5 display-role reset for older browsers */
@@ -98,3 +99,9 @@ a {
 .overflow_wrapper {
 	overflow-x: hidden;
 }
+
+:active, :focus {
+	outline: 0;
+	border: none;
+	-moz-outline-style: none;
+  }

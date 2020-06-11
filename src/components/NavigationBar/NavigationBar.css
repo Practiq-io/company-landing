@@ -3,31 +3,57 @@ html {
   font-size: 16px;
 }
 nav .wrapper .nav_wrapper {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
   display: flex;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -moz-box-pack: justify;
   justify-content: space-between;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -moz-box-align: center;
   align-items: center;
   padding-top: 16px;
+  width: 100%;
 }
-nav .wrapper .nav_wrapper .logo img:nth-child(1) {
+nav .wrapper .nav_wrapper .logo-mobile-nav {
   width: 116px;
   height: 32px;
 }
 @media screen and (max-width: 1000px) {
-  nav .wrapper .nav_wrapper .logo img:nth-child(1) {
+  nav .wrapper .nav_wrapper .logo-mobile-nav {
+    display: block;
+  }
+}
+@media screen and (min-width: 1000px) {
+  nav .wrapper .nav_wrapper .logo-mobile-nav {
     display: none;
   }
 }
-nav .wrapper .nav_wrapper .logo img:nth-child(2) {
+nav .wrapper .nav_wrapper .logo-desktop-nav {
   width: 116px;
   height: 32px;
 }
 @media screen and (max-width: 1000px) {
-  nav .wrapper .nav_wrapper .logo img:nth-child(2) {
+  nav .wrapper .nav_wrapper .logo-desktop-nav {
+    display: none;
+  }
+}
+@media screen and (min-width: 1000px) {
+  nav .wrapper .nav_wrapper .logo-desktop-nav {
     display: block;
   }
 }
 nav .wrapper .nav_wrapper .navigation {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
   display: flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -moz-box-align: center;
   align-items: center;
 }
 @media screen and (max-width: 1000px) {
@@ -36,7 +62,7 @@ nav .wrapper .nav_wrapper .navigation {
   }
 }
 nav .wrapper .nav_wrapper .navigation .nav_desctop a {
-  font-family: 'RobotoMono-Regular';
+  font-family: "RobotoMono-Regular";
   font-size: 0.875rem;
   color: black;
   letter-spacing: 1px;
@@ -49,35 +75,106 @@ nav .wrapper .nav_wrapper .navigation .nav_desctop a:last-of-type {
   background-color: white;
   border-radius: 6px;
 }
-nav .wrapper .nav_wrapper .navigation .mobile_nav {
+.mobile-navigation_body {
+  height: 100vh;
+  width: 50vw;
+  background: #1f2631;
+  position: fixed;
+  right: 0;
+  color: white;
+  z-index: 50;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+  -moz-box-orient: vertical;
+  -moz-box-direction: normal;
+  flex-direction: column;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -moz-box-pack: center;
+  justify-content: center;
+  padding-left: 3em;
   display: none;
-  width: 18px;
-  height: 2px;
-  background-color: white;
+}
+.mobile-navigation_body a {
+  margin-bottom: 25px;
+  color: white;
+  font-family: "DIN";
+}
+.bm-menu-wrap {
+  top: 0;
+}
+.bm-burger-button {
+  position: fixed;
+  width: 36px;
+  height: 30px;
+  right: 36px;
+  top: 15px;
+}
+.bm-burger-bars {
+  background: #ffffff;
+  height: 3px !important;
+}
+.bm-burger-bars-hover {
+  background: #ffffff !important;
+  opacity: 1 !important;
+}
+.bm-cross {
+  background: white;
+}
+.bm-menu {
+  background: #1f82f3;
+  padding: 150px 0 0 0;
+  font-size: 1.15em;
+  overflow: hidden !important;
+}
+.bm-overlay {
+  top: 0 !important;
+  background: rgba(7, 7, 7, 0.76) !important;
   position: relative;
+  left: 0;
+}
+.menu-item {
+  color: white;
+  margin-bottom: 50px;
+  padding: 1em;
+  text-align: center;
+}
+.menu-item:hover {
+  background: #549cee;
+}
+.mobile-action-btn {
+  background: white;
+  color: #1f82f3;
+}
+.mobile-action-btn:hover {
+  background: white;
+}
+.mobile-test-wrap {
+  position: fixed;
+  height: 44px;
+  width: 44px;
+  background: rgba(29, 27, 27, 0.185);
+  right: 32px;
+  top: 6px;
+  border-radius: 4px;
+  z-index: 100;
+  display: none;
 }
 @media screen and (max-width: 1000px) {
-  nav .wrapper .nav_wrapper .navigation .mobile_nav {
+  .mobile-test-wrap {
     display: block;
   }
 }
-nav .wrapper .nav_wrapper .navigation .mobile_nav::after {
-  content: "";
-  display: block;
-  position: absolute;
-  top: -5px;
-  right: 0;
-  width: 18px;
-  height: 2px;
-  background-color: white;
+.mobile-burger-menu {
+  display: none;
 }
-nav .wrapper .nav_wrapper .navigation .mobile_nav::before {
-  content: "";
-  display: block;
-  position: absolute;
-  top: 5px;
-  right: 0;
-  width: 18px;
-  height: 2px;
-  background-color: white;
+@media screen and (max-width: 1000px) {
+  .mobile-burger-menu {
+    display: block;
+  }
 }

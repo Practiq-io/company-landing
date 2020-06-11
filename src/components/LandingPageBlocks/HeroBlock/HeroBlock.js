@@ -1,8 +1,6 @@
 import React, { useEffect } from "react";
 import background from "../../../image/bg2.png";
 import working from "../../../image/working.png";
-import mobileArrowLeft from "../../../image/mobileArrowLeft.png";
-import mobileArrowRight from "../../../image/mobileArrowRight.png";
 import mobileBg from "../../../image/mobileBg.png";
 import mobileCodePlaceholder from "../../../image/mobile-codeblock-plug.png";
 import "./HeroBlock.css";
@@ -38,11 +36,6 @@ const HeroBlock = (props) => {
 					<div className="desktop-hero-button">
 						<button>Get started</button>
 					</div>
-
-					<div className="arrow">
-						<img src={mobileArrowLeft} className="ArrowLeft mobile" alt="" />
-						<img src={mobileArrowRight} className="ArrowRight mobile" alt="" />
-					</div>
 				</div>
 
 				<button className="mobile-hero-button">Get started</button>
@@ -55,8 +48,10 @@ const HeroBlock = (props) => {
 							<div className="code_block_header_dot green"></div>
 						</div>
 						<div className="code-block-frame">
-							<div className="code_block_title" >
-								<p>// <span id="comment_block-animation-txt"></span></p>
+							<div className="code_block_title">
+								<p>
+									// <span id="comment_block-animation-txt"></span>
+								</p>
 							</div>
 							<p id="code_block-animation-txt">
 								<span id="animation-cursor"></span>

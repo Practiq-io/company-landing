@@ -4,6 +4,7 @@ import ServicesCard from "../ServicesCard/ServicesCard";
 import API from "../ServicesCard/ServicesCardImg/generalapi.png";
 import connector from "../ServicesCard/ServicesCardImg/connector.png";
 import longProcess from "../ServicesCard/ServicesCardImg/longrunning.png";
+import landingComponentIcon from '../ServicesCard/ServicesCardImg/landingSPAcomponent.png';
 
 const BackEnd = () => {
 	return (
@@ -46,9 +47,9 @@ const BackEnd = () => {
 				/>
 
 				<ServicesCard
-					id={"script"}
-					imgPath={longProcess}
-					title={"Script"}
+					id={"Landing page / SPA / Component"}
+					imgPath={landingComponentIcon}
+					title={"Landing page / SPA / Component"}
 					subTitle={
 						"General purpose script that is not deployed anywhere and can be executed on demand on any machine."
 					}

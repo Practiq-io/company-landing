@@ -185,7 +185,7 @@ const HowItWorksBlock = (props) => {
                       </div>
 
                       <div className="message">
-                        <p class="mobilePosition">How is your work going?</p>
+                        <p className="mobilePosition">How is your work going?</p>
                       </div>
                     </div>
                   </div>
