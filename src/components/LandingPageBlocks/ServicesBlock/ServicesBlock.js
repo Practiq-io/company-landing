@@ -31,7 +31,7 @@ class ServicesBlock extends Component {
 		}
 
 		return (
-			<section className="SB-Section">
+			<section className="SB-Section" id="services-block_anchor">
 				<content className="upperServicesBox">
 					<h2 className="servicesTitle">What we can build for you</h2>
 					<div className="ui_mobile_dash"></div>

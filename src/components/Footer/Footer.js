@@ -16,9 +16,9 @@ const Footer = () => {
 				<div className="footer-contact">
 					<div className="general">
 						<p>General</p>
-						<a href="#">What we do</a>
-						<a href="#">How it works</a>
-						<a href="#">About us</a>
+						<a href="#services-block_anchor">What we do</a>
+						<a href="#how-it-works_anchor">How it works</a>
+						<a href="#who-block_anchor">About us</a>
 					</div>
 
 					<div className="contacts">
