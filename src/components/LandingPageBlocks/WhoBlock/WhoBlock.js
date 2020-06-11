@@ -8,7 +8,7 @@ import linkidMobile from "../../../image/linkid-blue.png";
 
 const WhoBlock = (props) => {
 	return (
-		<section className="WB-Section">
+		<section className="WB-Section" id="who-block_anchor">
 			<content className="WB-content">
 				<h2>Who build this</h2>
 

@@ -84,6 +84,11 @@
   color: #171725;
   font-family: "DINE-1451";
   font-size: 1.375rem;
+  transition: 0.2s;
+}
+.MB-Section .MB-content .article-block .article-card .article-title:hover {
+  color: #4084dd;
+  transition: 0.2s;
 }
 @media screen and (max-width: 1000px) {
   .MB-Section .MB-content .article-block .article-card .article-title {
@@ -217,7 +222,7 @@
     padding: 10px 0 40px 0;
   }
 }
-.MB-Section .MB-content .all-articles > p {
+.MB-Section .MB-content .all-articles > a {
   font-family: "RobotoMono-Regular";
   font-size: 1rem;
   color: #1371fd;
@@ -225,4 +230,10 @@
   border: 2px solid #1371fd;
   padding: 12px 30px;
   border-radius: 4px;
+  transition: 0.2s;
+}
+.MB-Section .MB-content .all-articles > a:hover {
+  color: #6aa5fd;
+  border: 2px solid #6aa5fd;
+  transition: 0.2s;
 }
