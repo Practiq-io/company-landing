@@ -7,7 +7,7 @@ import MobileNavigation from './mobileNavigation/mobileNavigation';
 class NavigationBar extends Component {
 
 	state = {
-		mobileNavigation: true
+		mobileNavigation: false
 	}
 
 	toggleMobileMenu = () => {
