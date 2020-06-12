@@ -41,10 +41,10 @@ const MobileNavigation = (props) => {
 					right: props.display ? "0" : "-75vw"
 				}}
             >
-				<a href="#services-block_anchor">What we do</a>
-				<a href="#how-it-works_anchor">How it works</a>
-				<a href="#who-block_anchor">About us</a>
-				<a className="mobile-action_button" href="#start">
+				<a  onClick={props.toggle} href="#services-block_anchor">What we do</a>
+				<a  onClick={props.toggle} href="#how-it-works_anchor">How it works</a>
+				<a  onClick={props.toggle} href="#who-block_anchor">About us</a>
+				<a  onClick={props.toggle} className="mobile-action_button" href="#start">
 					Get started
 				</a>
 			</div>
