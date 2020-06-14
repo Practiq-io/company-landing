@@ -228,6 +228,7 @@ section .grid_wrapper .button button {
 	border: none;
 	background: #1371fd;
 	border-radius: 4px;
+	cursor: pointer;
 }
 section .grid_wrapper .code_window {
 	grid-area: code;

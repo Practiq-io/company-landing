@@ -10,11 +10,15 @@ import WizardModal from '../../components/Wizard/WizardModal';
 
 
 class MainContainer extends Component {
+
     render(){
+
+        const {displayWizard, toggleWizard} = this.props;
+
         return (
             <>
-               <WizardModal />
-               <HeroBlock/>
+               <WizardModal toggleWizard={toggleWizard} displayWizard={displayWizard}/>
+               <HeroBlock toggleWizard={toggleWizard}/>
                <PromoBlock/>
                <TaskBlock/>
                <ServicesBlock/>

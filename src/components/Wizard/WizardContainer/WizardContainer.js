@@ -15,12 +15,16 @@ export class WizardContainer extends Component {
 
     render() {
         
-        const {step, back, next} = this.props;
+        const {step, back, next, toggleWizard} = this.props;
         
         switch(step) {
             case 1: 
                 return (
-                    <AboutCompany />
+                    <AboutCompany 
+                        back={back}
+                        next={next}
+                        toggleWizard={toggleWizard}
+                    />
                 )
             case 2:
                 return (

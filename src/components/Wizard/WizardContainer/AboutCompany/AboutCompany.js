@@ -3,6 +3,9 @@ import './AboutCompany.css';
 
 export default class AboutCompany extends Component {
 	render() {
+
+        const {back, next, toggleWizard} = this.props;
+
 		return (
 			<div className="about-company_frame">
 
@@ -19,11 +22,11 @@ export default class AboutCompany extends Component {
 
 				<div className="wizard-button_box">
 
-					<div className="wizard_button wizard-back_button">
+					<div onClick={toggleWizard} className="wizard_button wizard-back_button">
 						<p>Back</p>
 					</div>
 
-					<div className="wizard_button wizard-next_button">
+					<div onClick={next} className="wizard_button wizard-next_button">
 						<p>Next</p>
 					</div>
 

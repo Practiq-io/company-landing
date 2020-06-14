@@ -6,10 +6,10 @@ import mobileCodePlaceholder from "../../../image/mobile-codeblock-plug.png";
 import "./HeroBlock.css";
 import { startAnimation } from "./animationScripts/animationScript";
 
-const HeroBlock = (props) => {
-	useEffect(() => {
-		startAnimation();
-	});
+const HeroBlock = props => {
+	// useEffect(() => {
+	// 	startAnimation();
+	// });
 
 	return (
 		<section>
@@ -34,7 +34,7 @@ const HeroBlock = (props) => {
 						with clear deliverables.
 					</p>
 					<div className="desktop-hero-button">
-						<button>Get started</button>
+						<button onClick={props.toggleWizard}>Get started</button>
 					</div>
 				</div>
 
