@@ -6,12 +6,14 @@ import ServicesBlock from '../../components/LandingPageBlocks/ServicesBlock/Serv
 import HowItWorksBlock from '../../components/LandingPageBlocks/HowItWorksBlock/HowItWorksBlock';
 import WhoBlock from '../../components/LandingPageBlocks/WhoBlock/WhoBlock';
 import MediumBlock from '../../components/LandingPageBlocks/MediumBlock/MediumBlock';
+import WizardModal from '../../components/Wizard/WizardModal';
 
 
 class MainContainer extends Component {
     render(){
         return (
             <>
+               <WizardModal />
                <HeroBlock/>
                <PromoBlock/>
                <TaskBlock/>
