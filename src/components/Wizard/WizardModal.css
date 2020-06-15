@@ -9,6 +9,7 @@
   opacity: 0.4;
 }
 .wizard-modal {
+  font-family: 'Circle-Regular';
   width: 640px;
   padding: 37px 32px 32px 32px;
   background: white;
