@@ -99,10 +99,10 @@ const WhoBlock = (props) => {
 							</div>
 
 							<div className="person-card-text">
-								<p>Ilya Sidorovich</p>
+								<p>Roman Cherepivskiy</p>
 								<p>
-									Co-founder, Tech Senior Software Developer @ Booking.com BSc
-									Finance & Marketing, KIMEP
+									Senior UI/UX Designer Computer Hardware and Software Almaty
+									technological university
 								</p>
 								<div className="person-card-logo">
 									<img src={linkidMobile} alt="" />

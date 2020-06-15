@@ -3,6 +3,24 @@
 		h2 {
 			text-align: center;
 			padding: 100px 0 80px 0;
+			position: relative;
+			
+			@media screen and (max-width: 1000px) {
+				padding: 40px 0 40px 0;
+
+				position: relative;
+
+				&::after {
+					content: "";
+					position: absolute;
+					display: block;
+					width: 40px;
+					height: 2px;
+					left: calc(50% - 20px);
+					bottom: 30px;
+					background-color: #1371fd;
+				}
+			}
 		}
 
 		.article-block {
@@ -68,7 +86,6 @@
 				grid-gap: 20px;
 				-webkit-align-content: center;
 				align-content: center;
-				// grid-template-rows: repeat(3, 1fr);
 				grid-template-areas:
 					"image title  title"
 					"image text   text"
@@ -121,8 +138,10 @@
 				.article-text {
 					grid-area: text;
 					color: #696974;
-					font-size: 0.875rem;
-					font-family: "RobotoMono-Regular";
+					// font-size: 0.875rem;
+					font-size: 1rem;
+					line-height: 20px;
+					font-family: 'Circle-Regular';
 				}
 
 				.article-writer {

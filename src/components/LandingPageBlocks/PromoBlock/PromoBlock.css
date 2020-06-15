@@ -75,7 +75,9 @@
 .PB-Section .content_wrapper .weCode h2 {
 	font-size: 3rem;
 	font-family: "DIN";
+	
 }
+
 .PB-Section .content_wrapper .weCode p {
 	width: 400px;
 	font-size: 0.9375rem;
@@ -123,7 +125,21 @@
 	}
 	.PB-Section .content_wrapper .weCode p {
 		width: auto;
+		position: relative;
+		padding-top: 16px;
 	}
+
+	.PB-Section .content_wrapper .weCode p::after {
+		content: "";
+		display: block;
+		position: absolute;
+		width: 40px;
+		height: 2px;
+		left: 0;
+		bottom: -16px;
+		background-color: #1371FD;
+	}
+
 	.PB-Section .content_wrapper .weCode p:nth-of-type(1) {
 		display: none;
 	}
@@ -181,4 +197,16 @@
 		text-align: left;
 		line-height: 30px;
 	}
+}
+
+
+
+
+@media screen and (max-width: 1000px) {
+	h2 {
+		font-size: 2rem !important;
+		
+	}
+
+	
 }
