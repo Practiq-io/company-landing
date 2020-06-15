@@ -18,6 +18,8 @@ class HeroBlock extends Component {
 
 	render(){
 
+		const {toggleWizard} = this.props;
+
 		return (
 			<section>
 				<img src={background} className="large_image" alt="" />
@@ -41,7 +43,7 @@ class HeroBlock extends Component {
 							with clear deliverables.
 						</p>
 						<div className="desktop-hero-button">
-							<button onClick={this.props.toggleWizard}>Get started</button>
+							<button onClick={toggleWizard}>Get started</button>
 						</div>
 					</div>
 	
