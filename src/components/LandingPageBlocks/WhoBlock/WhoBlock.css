@@ -172,8 +172,9 @@
   padding: 16px 20px;
   background-color: #2473ea;
   color: white;
-  font-family: "RobotoMono-Regular";
-  font-size: 0.9375rem;
+  font-family: 'Circle-Regular';
+  font-size: 1rem;
+  line-height: 20px;
   border-bottom-right-radius: 12px;
   border-bottom-left-radius: 12px;
 }
@@ -182,20 +183,19 @@
 }
 @media screen and (max-width: 1220px) {
   .WB-Section .WB-content .person-card .person.liza {
-    height: -webkit-calc(394px) !important;
-    height: calc(424px - 30px) !important;
+    height: -webkit-calc(374px) !important;
+    height: calc(424px - 50px) !important;
   }
 }
 @media screen and (max-width: 1150px) {
   .WB-Section .WB-content .person-card .person.liza {
-    height: -webkit-calc(384px) !important;
-    height: calc(424px - 40px) !important;
+    height: -webkit-calc(363px) !important;
+    height: calc(403px - 40px) !important;
   }
 }
 @media screen and (max-width: 1150px) {
   .WB-Section .WB-content .person-card .person.liza {
-    height: -webkit-calc(424px) !important;
-    height: calc(424px) !important;
+    height: 425px !important;
   }
 }
 .WB-Section .WB-content .person-card .person.liza .person-image {
@@ -204,8 +204,8 @@
   background-size: cover;
 }
 .WB-Section .WB-content .person-card .person.liza .person-image + p {
-  padding-top: 13px;
-  line-height: 17px;
+  padding-top: 17px;
+  line-height: 20px;
 }
 .WB-Section .WB-content .person-card .person.roma .person-image {
   background-image: url("../../../image/Roma.png");
