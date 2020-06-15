@@ -10,9 +10,15 @@ class NavigationBar extends Component {
 		mobileNavigation: false
 	}
 
+ smallFixesAllLayout
+
+	return (
+		<nav className="Navigation-Panel">
+
 	toggleMobileMenu = () => {
 		this.setState({mobileNavigation: !this.state.mobileNavigation})
 	}
+master
 
 	render() {
 		return (

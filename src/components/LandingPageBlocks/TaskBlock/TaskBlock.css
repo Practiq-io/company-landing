@@ -69,6 +69,26 @@ h2 {
 		flex-direction: column;
 		max-width: 60%;
 	}
+
+	.TB-Section {
+		padding-top: 40px;
+	}
+
+	.TB-Section .TB-content .TB-title p {
+		padding-bottom: 60px;
+		position: relative;
+	}
+
+	.TB-Section .TB-content .TB-title p::after {
+		content:"";
+		position: absolute;
+		display: block;
+		width: 40px;
+		height: 2px;
+		left: calc(50% - 20px);
+		bottom: 30px;
+		background-color: #1371FD;
+	}
 }
 @media screen and (max-width: 600px) {
 	.tb-card-linebreak {
