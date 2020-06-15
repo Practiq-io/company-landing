@@ -23,12 +23,35 @@
     padding-top: 60px;
   }
 }
+@media screen and (max-width: 1000px) {
+  .WB-Section .WB-content {
+    padding-top: 40px;
+  }
+}
 .WB-Section .WB-content h2 {
   width: 300px;
+  position: relative;
 }
 @media screen and (max-width: 1150px) {
   .WB-Section .WB-content h2 {
     padding-bottom: 80px;
+  }
+}
+@media screen and (max-width: 1000px) {
+  .WB-Section .WB-content h2 {
+    text-align: center;
+    padding-bottom: 40px;
+    position: relative;
+  }
+  .WB-Section .WB-content h2::after {
+    content: "";
+    position: absolute;
+    display: block;
+    width: 40px;
+    height: 2px;
+    left: calc(50% - 20px);
+    bottom: 30px;
+    background-color: #1371fd;
   }
 }
 .WB-Section .WB-content .person-card {
@@ -230,8 +253,9 @@
   font-family: "RobotoMono-Bold";
 }
 .WB-Section .WB-content .person-card .person-mobile-block .person-card-mobile .person-card-text p:nth-child(2) {
-  font-size: 0.875rem;
-  font-family: "RobotoMono-Regular";
+  font-size: 1rem;
+  font-family: 'Circle-Regular';
+  line-height: 20px;
   color: #696974;
 }
 .WB-Section .WB-content .person-card .person-mobile-block .person-card-mobile .person-card-text .person-card-logo {

@@ -6,6 +6,7 @@ import mobileLogo from "../../image/mobileLogo.png";
 
 const NavigationBar = () => {
 
+
 	return (
 		<nav className="Navigation-Panel">
 
