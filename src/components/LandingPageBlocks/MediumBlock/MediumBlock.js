@@ -20,7 +20,7 @@ const MediumBlock = (props) => {
 						</div>
 
 						<div>
-							<a
+							<a	rel="noopener noreferrer"
 								target="_blank"
 								href="https://medium.com/@isid.home/five-killer-mistakes-of-software-developers-and-how-to-avoid-them-f65e8e44c887"
 							>
@@ -40,7 +40,7 @@ const MediumBlock = (props) => {
 
 						<div className="article-writer">
 							<div className="writer-avatar">
-								<a target="_blank" href="https://medium.com/@isid.home">
+								<a rel="noopener noreferrer" target="_blank" href="https://medium.com/@isid.home">
 									<img src={IkaAvatar} alt="" />
 								</a>
 							</div>
@@ -59,6 +59,7 @@ const MediumBlock = (props) => {
 
 						<div>
 							<a
+								rel="noopener noreferrer"
 								target="_blank"
 								href="https://medium.com/@isid.home/from-zero-to-hero-how-i-became-a-software-developer-with-a-degree-in-finance-97121b1a6da8"
 							>
@@ -75,7 +76,7 @@ const MediumBlock = (props) => {
 
 						<div className="article-writer">
 							<div className="writer-avatar">
-								<a target="_blank" href="https://medium.com/@isid.home">
+								<a rel="noopener noreferrer" target="_blank" href="https://medium.com/@isid.home">
 									<img src={IkaAvatar} alt="" />
 								</a>
 							</div>
@@ -89,7 +90,7 @@ const MediumBlock = (props) => {
 				</div>
 
 				<div className="all-articles">
-					<a target="_blank" href="https://medium.com/@isid.home">
+					<a rel="noopener noreferrer" target="_blank" href="https://medium.com/@isid.home">
 						See all articles
 					</a>
 				</div>

@@ -1,53 +1,69 @@
 @import "../../mixins.less";
 
-
-
 nav {
-	
 	.wrapper {
 		.nav_wrapper {
+			display: -webkit-box;
+			display: -webkit-flex;
+			display: -moz-box;
 			display: flex;
+			-webkit-box-pack: justify;
+			-webkit-justify-content: space-between;
+			-moz-box-pack: justify;
 			justify-content: space-between;
+			-webkit-box-align: center;
+			-webkit-align-items: center;
+			-moz-box-align: center;
 			align-items: center;
 			padding-top: 16px;
-			.logo {
-				img:nth-child(1) {
-					width: 116px;
-					height: 32px;
+			width: 100%;
 
-					@media screen and (max-width: 1000px) {
-						display: none;
-					}
+			.logo-mobile-nav {
+				width: 116px;
+				height: 32px;
+
+				@media screen and (max-width: 1000px) {
+					display: block;
 				}
+				@media screen and (min-width: 1000px) {
+					display: none;
+				}
+			}
+			.logo-desktop-nav {
+				width: 116px;
+				height: 32px;
 
-				img:nth-child(2) {
-					width: 116px;
-					height: 32px;
-
-					@media screen and (max-width: 1000px) {
-						display: block;
-					}
+				@media screen and (max-width: 1000px) {
+					display: none;
+				}
+				@media screen and (min-width: 1000px) {
+					display: block;
 				}
 			}
 
 			.navigation {
+				display: -webkit-box;
+				display: -webkit-flex;
+				display: -moz-box;
 				display: flex;
+				-webkit-box-align: center;
+				-webkit-align-items: center;
+				-moz-box-align: center;
 				align-items: center;
 
 				.nav_desctop {
-
 					@media screen and (max-width: 1000px) {
 						display: none;
 					}
 
 					a {
-						font-family: 'RobotoMono-Regular';
+						font-family: "RobotoMono-Regular";
 						font-size: 0.875rem;
 						color: black;
 						letter-spacing: 1px;
 						margin-right: 2.5rem;
 						font-weight: 500;
-	
+
 						&:last-of-type {
 							color: blue;
 							padding: 8px 16px;
@@ -56,48 +72,14 @@ nav {
 						}
 					}
 				}
-				
-
-				.mobile_nav {
-					display: none;
-
-					width: 18px;
-					height: 2px;
-					background-color: white;
-					
-					position: relative;
-
-					@media screen and (max-width: 1000px) {
-						display: block;
-						
-					}
-
-					&::after {
-						content:"";
-						display: block;
-						position: absolute;
-						top: -5px;
-						right: 0;
-						width: 18px;
-						height: 2px;
-						background-color: white;
-					}
-
-					&::before {
-						content:"";
-						display: block;
-						position: absolute;
-						top: 5px;
-						right: 0;
-						width: 18px;
-						height: 2px;
-						background-color: white;
-					}
-				}
 			}
-
-			
 		}
 	}
 }
 
+.mobile-navigation_display {
+	display: none;
+	@media screen and (max-width: 1000px) {
+		display: block;
+	}
+}

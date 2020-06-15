@@ -3,31 +3,57 @@ html {
   font-size: 16px;
 }
 nav .wrapper .nav_wrapper {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
   display: flex;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -moz-box-pack: justify;
   justify-content: space-between;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -moz-box-align: center;
   align-items: center;
   padding-top: 16px;
+  width: 100%;
 }
-nav .wrapper .nav_wrapper .logo img:nth-child(1) {
+nav .wrapper .nav_wrapper .logo-mobile-nav {
   width: 116px;
   height: 32px;
 }
 @media screen and (max-width: 1000px) {
-  nav .wrapper .nav_wrapper .logo img:nth-child(1) {
+  nav .wrapper .nav_wrapper .logo-mobile-nav {
+    display: block;
+  }
+}
+@media screen and (min-width: 1000px) {
+  nav .wrapper .nav_wrapper .logo-mobile-nav {
     display: none;
   }
 }
-nav .wrapper .nav_wrapper .logo img:nth-child(2) {
+nav .wrapper .nav_wrapper .logo-desktop-nav {
   width: 116px;
   height: 32px;
 }
 @media screen and (max-width: 1000px) {
-  nav .wrapper .nav_wrapper .logo img:nth-child(2) {
+  nav .wrapper .nav_wrapper .logo-desktop-nav {
+    display: none;
+  }
+}
+@media screen and (min-width: 1000px) {
+  nav .wrapper .nav_wrapper .logo-desktop-nav {
     display: block;
   }
 }
 nav .wrapper .nav_wrapper .navigation {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
   display: flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -moz-box-align: center;
   align-items: center;
 }
 @media screen and (max-width: 1000px) {
@@ -36,7 +62,7 @@ nav .wrapper .nav_wrapper .navigation {
   }
 }
 nav .wrapper .nav_wrapper .navigation .nav_desctop a {
-  font-family: 'RobotoMono-Regular';
+  font-family: "RobotoMono-Regular";
   font-size: 0.875rem;
   color: black;
   letter-spacing: 1px;
@@ -49,35 +75,11 @@ nav .wrapper .nav_wrapper .navigation .nav_desctop a:last-of-type {
   background-color: white;
   border-radius: 6px;
 }
-nav .wrapper .nav_wrapper .navigation .mobile_nav {
+.mobile-navigation_display {
   display: none;
-  width: 18px;
-  height: 2px;
-  background-color: white;
-  position: relative;
 }
 @media screen and (max-width: 1000px) {
-  nav .wrapper .nav_wrapper .navigation .mobile_nav {
+  .mobile-navigation_display {
     display: block;
   }
-}
-nav .wrapper .nav_wrapper .navigation .mobile_nav::after {
-  content: "";
-  display: block;
-  position: absolute;
-  top: -5px;
-  right: 0;
-  width: 18px;
-  height: 2px;
-  background-color: white;
-}
-nav .wrapper .nav_wrapper .navigation .mobile_nav::before {
-  content: "";
-  display: block;
-  position: absolute;
-  top: 5px;
-  right: 0;
-  width: 18px;
-  height: 2px;
-  background-color: white;
 }
