@@ -1,6 +1,23 @@
 .MB-Section .MB-content h2 {
   text-align: center;
   padding: 100px 0 80px 0;
+  position: relative;
+}
+@media screen and (max-width: 1000px) {
+  .MB-Section .MB-content h2 {
+    padding: 40px 0 40px 0;
+    position: relative;
+  }
+  .MB-Section .MB-content h2::after {
+    content: "";
+    position: absolute;
+    display: block;
+    width: 40px;
+    height: 2px;
+    left: calc(50% - 20px);
+    bottom: 30px;
+    background-color: #1371fd;
+  }
 }
 .MB-Section .MB-content .article-block {
   display: -webkit-box;
@@ -106,8 +123,9 @@
 .MB-Section .MB-content .article-block .article-card .article-text {
   grid-area: text;
   color: #696974;
-  font-size: 0.875rem;
-  font-family: "RobotoMono-Regular";
+  font-size: 1rem;
+  line-height: 20px;
+  font-family: 'Circle-Regular';
 }
 .MB-Section .MB-content .article-block .article-card .article-writer {
   display: -webkit-box;
