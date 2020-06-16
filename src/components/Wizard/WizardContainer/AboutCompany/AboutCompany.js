@@ -9,35 +9,61 @@ export default class AboutCompany extends Component {
 		let emailError = "";
 		let websiteError = "";
 
-		if (!this.props.stateForValidation.companyName) {
+		if (this.state.data.companyName) {
+			if (this.state.data.companyName.length > 500) {
+				companyNameError = "* too long string";
+			}
+		} else {
 			companyNameError = "* is required";
 		}
-		if (!this.props.stateForValidation.email) {
+
+		if (this.state.data.email) {
+			if (this.state.data.email.length > 500) {
+				emailError = "* too long string";
+			} else if (!this.state.data.email.includes("@")) {
+				emailError = "* invalid email format";
+			}
+		} else {
 			emailError = "* is required";
-		} else if (!this.props.stateForValidation.email.includes("@")) {
-			emailError = "* invalid email";
 		}
 
-		if (companyNameError || emailError) {
-			this.setState({ companyNameError, emailError });
+		if (this.state.data.website) {
+			if (this.state.data.website.length > 500) {
+				websiteError = "* too long string";
+			}
+		}
+
+		if (companyNameError || emailError || websiteError) {
+			this.setState({ companyNameError, emailError, websiteError });
 			return false;
 		}
-
 		return true;
 	};
 
 	continue = () => {
 		const isValid = this.validation();
 		if (isValid) {
+			this.props.setWizardProperties({
+				companyName: this.state.data.companyName,
+				email: this.state.data.email,
+				website: this.state.data.website,
+			});
+
 			this.props.nextStep();
 		}
 	};
 
-	render() {
-		console.log(this.state.validationErrors);
+	onChangeHandler = (e) => {
+		const data = { ...this.state.data };
+		data[e.target.name] = e.target.value;
+		this.setState({ data });
+	};
 
+	render() {
+		console.log(this.state, "===triggered");
 		const { companyNameError, emailError, websiteError } = this.state;
-		const { toggleWizard, onChange } = this.props;
+		const { toggleWizard, onChange, setWizardProperty } = this.props;
+		const { stateForValidation } = this.props;
 
 		return (
 			<div className="about-company_frame">
@@ -53,19 +79,23 @@ export default class AboutCompany extends Component {
 								{companyNameError}
 							</span>
 						</p>
-						<input onChange={onChange} type="text" name="companyName" />
+						<input
+							onChange={this.onChangeHandler}
+							type="text"
+							name="companyName"
+						/>
 						<p>
 							Email
 							<span className="about-company_error-message">{emailError}</span>
 						</p>
-						<input onChange={onChange} type="text" name="email" />
+						<input onChange={this.onChangeHandler} type="text" name="email" />
 						<p>
 							Website (optional)
 							<span className="about-company_error-message">
 								{websiteError}
 							</span>
 						</p>
-						<input onChange={onChange} type="text" name="website" />
+						<input onChange={this.onChangeHandler} type="text" name="website" />
 					</div>
 				</div>
 

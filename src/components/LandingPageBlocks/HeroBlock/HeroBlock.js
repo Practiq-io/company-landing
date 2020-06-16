@@ -18,7 +18,7 @@ class HeroBlock extends Component {
 
 	render(){
 
-		const {toggleWizard} = this.props;
+		const {toggle} = this.props;
 
 		return (
 			<section>
@@ -43,7 +43,7 @@ class HeroBlock extends Component {
 							with clear deliverables.
 						</p>
 						<div className="desktop-hero-button">
-							<button onClick={toggleWizard}>Get started</button>
+							<button onClick={toggle}>Get started</button>
 						</div>
 					</div>
 	

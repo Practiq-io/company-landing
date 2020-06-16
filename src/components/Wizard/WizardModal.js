@@ -23,7 +23,7 @@ export class WizardModal extends Component {
 
 	render() {
 		const { step } = this.state;
-		const { toggleWizard } = this.props;
+		const { toggle } = this.props;
 		return (
 			<>
 				<div className="wizard-frame">
@@ -33,7 +33,7 @@ export class WizardModal extends Component {
 						<div className="wizard-title_box">
 							<p>Get started</p>
 							<img
-								onClick={toggleWizard}
+								onClick={toggle}
 								src={close}
 								alt="modal button close"
 							/>
@@ -47,7 +47,7 @@ export class WizardModal extends Component {
 
 						<div className="wizard-modal-component_output">
 							<WizardContainer
-								toggleWizard={toggleWizard}
+								toggleWizard={toggle}
 								step={step}
 								next={this.nextStep}
 								back={this.prevStep}

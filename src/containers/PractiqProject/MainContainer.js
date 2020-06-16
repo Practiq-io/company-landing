@@ -16,12 +16,12 @@ class MainContainer extends Component {
 
     render(){
        
-        const {displayWizard, toggleWizard} = this.props;
-
+        const {show, toggle} = this.props.wizard;
+       
         return (
             <>
-               {displayWizard ? <WizardModal toggleWizard={toggleWizard} /> : null}
-               <HeroBlock toggleWizard={toggleWizard} />
+               {show ? <WizardModal toggle={toggle} /> : null}
+               <HeroBlock toggle={toggle} />
                <PromoBlock/>
                <TaskBlock/>
                <ServicesBlock/>

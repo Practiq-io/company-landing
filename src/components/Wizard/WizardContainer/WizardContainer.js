@@ -4,16 +4,41 @@ import AboutCompany from "./AboutCompany/AboutCompany";
 
 export class WizardContainer extends Component {
 	state = {
-		data: {},
+		
 	};
 
-	onChangeHandler = (e) => {
-		const data = { ...this.state.data };
-		data[e.target.name] = e.target.value;
-		this.setState({ data });
-	};
+	// onChangeHandler = (e) => {
+	// 	const data = { ...this.state.data };
+	// 	data[e.target.name] = e.target.value;
+	// 	this.setState({ data });
+	// };
+
+	// setWizardProperty = (name,value) => {
+	// 	const data = {...this.state.data}
+	// 	data[name] = value;
+	// 	this.setState({data});
+	// }
+
+	setWizardProperty = (name, value) => {
+		const data = {...this.state}
+		data[name] = value;
+		this.setState(data);
+	}
+
+	setWizardProperties = (properties) => {
+
+		
+		Object.keys(properties).forEach(key => {
+			this.setWizardProperty(key, properties[key])
+		})
+
+	}
 
 	render() {
+		
+		console.log(this.state, "IM A MAIN STATE LETS SEE ME BOYS");
+		
+
 		const { back, next, step, toggleWizard } = this.props;
 
 		switch (step) {
@@ -23,7 +48,7 @@ export class WizardContainer extends Component {
 						stateForValidation={this.state.data}
 						nextStep={next}
 						toggleWizard={toggleWizard}
-						onChange={this.onChangeHandler}
+						setWizardProperties={this.setWizardProperties}
 					/>
 				);
 			case 2:
