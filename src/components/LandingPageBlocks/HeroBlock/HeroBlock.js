@@ -7,10 +7,6 @@ import "./HeroBlock.css";
 import { startAnimation } from "./animationScripts/animationScript";
 
 class HeroBlock extends Component {
-	// useEffect(() => {
-	// 	startAnimation();
-	// });
-
 
 	componentDidMount(){
 		startAnimation();
