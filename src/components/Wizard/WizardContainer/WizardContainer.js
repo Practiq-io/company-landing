@@ -3,41 +3,22 @@ import "./WizardContainer.css";
 import AboutCompany from "./AboutCompany/AboutCompany";
 
 export class WizardContainer extends Component {
-	state = {
-		
-	};
-
-	// onChangeHandler = (e) => {
-	// 	const data = { ...this.state.data };
-	// 	data[e.target.name] = e.target.value;
-	// 	this.setState({ data });
-	// };
-
-	// setWizardProperty = (name,value) => {
-	// 	const data = {...this.state.data}
-	// 	data[name] = value;
-	// 	this.setState({data});
-	// }
+	state = {};
 
 	setWizardProperty = (name, value) => {
-		const data = {...this.state}
+		const data = { ...this.state };
 		data[name] = value;
 		this.setState(data);
-	}
+	};
 
 	setWizardProperties = (properties) => {
-
-		
-		Object.keys(properties).forEach(key => {
-			this.setWizardProperty(key, properties[key])
-		})
-
-	}
+		Object.keys(properties).forEach((key) => {
+			this.setWizardProperty(key, properties[key]);
+		});
+	};
 
 	render() {
-		
 		console.log(this.state, "IM A MAIN STATE LETS SEE ME BOYS");
-		
 
 		const { back, next, step, toggleWizard } = this.props;
 
