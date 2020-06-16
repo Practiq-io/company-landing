@@ -9,7 +9,7 @@ import eye from "../../../image/eye.png";
 
 const MediumBlock = (props) => {
 	return (
-		<section className="MB-Section">
+		<section className="MB-Section wrapper">
 			<content className="MB-content">
 				<h2>Our Medium Blog</h2>
 

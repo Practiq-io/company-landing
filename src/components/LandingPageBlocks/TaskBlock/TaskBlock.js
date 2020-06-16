@@ -11,7 +11,7 @@ import TaskCardRequest from "./TaskCard/TaskCardRequest/TaskCardRequest";
 
 const TaskBlock = (props) => {
 	return (
-		<section className="TB-Section">
+		<section className="TB-Section wrapper">
 			<content className="TB-content">
 				<div className="TB-title">
 					<h2 className="TB-title-h2">

@@ -8,7 +8,7 @@ import endTesting from "../../../image/endTesting.png";
 
 const PromoBlock = (props) => {
 	return (
-		<section className="PB-Section">
+		<section className="PB-Section wrapper">
 			<div className="content_wrapper">
 				<div className="weCode">
 					<h2>We code for production</h2>
