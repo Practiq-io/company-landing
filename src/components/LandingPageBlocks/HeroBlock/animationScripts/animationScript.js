@@ -1,11 +1,14 @@
-let title_index = 0;
+let codeSnippetCounter = 0;
 let codeFlag = 0;
 let titleFlag = 0;
+let commentFlag = 0;
 let codeSpeed = 12;
 let titleSpeed = 35;
+let commentSpeed = 12;
 const codeSnippets = [
 	{
-		title: "Microservice",
+		title: "React SPA",
+		comment: " Fetch wizard structure and pass for mounting",
 		snippet: 
 `componentDidMount() { 
   this.setState({ isLoading: true});
@@ -17,25 +20,57 @@ const codeSnippets = [
 	 } else {`,
 	},
 	{
-		title: "Design",
+		title: "Library",
+		comment: " Proxy requests for user creation to the Users API",
 		snippet: 
-`const UI_Component = props => { 
-  return(
-	<div>It all starts here!<div>
-	<p>Your first steps in programming</p>
-	<p>Supervised by specialists</p>
-  )`,
+`final Request createUserRequest = CreateUserRequest
+  .newBuilder()
+  .withRequestId(UUID.randomUUID())
+  .withUser(User.of(username))
+  .isTest()
+  .build();
+  
+  client.send(createUserRequest);`,
 	},
 	{
-		title: "React SPA",
+		title: "Microservice",
+		comment: " Initialize task API controller",
 		snippet: 
-`This.State.Property = "New Array,
-  This.State.Default = "New Obj,
-  This.State.Value = {[e.target.name]:e.target.value}
-		 
-  Show Default Settings: true`,
+`@Controller("/taskWizard") 
+class TaskWizardController {
+  
+    @Get(produces = [MediaType.APPLICATION_JSON]) 
+    fun index(): TaskWizard {
+        return TaskWizard.default().build(); 
+    }
+}`,
 	},
 ];
+
+const writeComment = (txt) => {
+	if (commentFlag === 0) {
+		writeCode(codeSnippets[codeSnippetCounter].snippet);
+	}
+	if (commentFlag < txt.length) {
+		document.getElementById(
+			"comment_block-animation-txt"
+		).innerHTML += txt.charAt(commentFlag);
+		commentFlag++;
+		setTimeout(() => writeComment(txt), commentSpeed);
+	}
+};
+
+const removeComment = (txt) => {
+	if (commentFlag === txt.length) {
+		document.getElementById(
+			"comment_block-animation-txt"
+		).innerHTML = txt = txt.slice(0, commentFlag - 1);
+		commentFlag--;
+		setTimeout(() => removeComment(txt), 10);
+	} else {
+		setTimeout(() => animationLogic(), 10);
+	}
+};
 
 
 const writeCode = (txt) => {
@@ -46,7 +81,7 @@ const writeCode = (txt) => {
 		codeFlag++;
 		setTimeout(() => writeCode(txt), codeSpeed);
 	} else if (codeFlag === txt.length) {
-		setTimeout(() => removeCode(txt), 5000);
+		setTimeout(() => removeCode(txt), 2500);
 	}
 };
 
@@ -60,14 +95,15 @@ const removeCode = (txt) => {
 		codeFlag--;
 		setTimeout(() => removeCode(txt), 10);
 	} else {
-		setTimeout(() => animationLogic(), 50);
+		setTimeout(() => removeComment(codeSnippets[codeSnippetCounter].comment), 50);
 	}
 };
 
-const writeTitle = (txt) => {
-	if (titleFlag === 0) {
-		writeCode(codeSnippets[title_index].snippet);
+const writeTitle = (txt, comment) => {
+	if(titleFlag === 0){
+		setTimeout(() => writeComment(codeSnippets[codeSnippetCounter].comment), commentSpeed);
 	}
+	
 	if (titleFlag < txt.length) {
 		document.getElementById(
 			"code_block-animation-title"
@@ -85,20 +121,20 @@ const removeTitle = (txt) => {
 		titleFlag--;
 		setTimeout(() => removeTitle(txt), 35);
 	} else {
-		if(title_index === codeSnippets.length-1){
-			title_index = 0;
+		if(codeSnippetCounter === codeSnippets.length-1){
+			codeSnippetCounter = 0;
 		} else {
-			title_index++
+			codeSnippetCounter++
 		}
 		setTimeout(() => animationLogic(), 10);
 	}
 };
 
 const animationLogic = () => {
-	if (titleFlag < codeSnippets[title_index].title.length) {
-		setTimeout(() => writeTitle(codeSnippets[title_index].title), 10);
-	} else if (titleFlag === codeSnippets[title_index].title.length) {
-		setTimeout(() => removeTitle(codeSnippets[title_index].title), 50);
+	if (titleFlag < codeSnippets[codeSnippetCounter].title.length) {
+		setTimeout(() => writeTitle(codeSnippets[codeSnippetCounter].title), 10);
+	} else if (titleFlag === codeSnippets[codeSnippetCounter].title.length) {
+		setTimeout(() => removeTitle(codeSnippets[codeSnippetCounter].title), 50);
 	}
 };
 

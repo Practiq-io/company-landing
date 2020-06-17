@@ -1,6 +1,7 @@
 .TB-Section {
 	background: #ffffff;
-	padding: 120px 0;
+	padding-top: 120px !important;
+	padding-bottom: 120px !important;
 }
 .TB-code-box {
 	display: -webkit-box;
@@ -68,6 +69,27 @@ h2 {
 		-moz-box-direction: normal;
 		flex-direction: column;
 		max-width: 60%;
+	}
+
+	.TB-Section {
+		padding-top: 40px !important;
+		padding-bottom: 40px !important;
+	}
+
+	.TB-Section .TB-content .TB-title p {
+		padding-bottom: 60px;
+		position: relative;
+	}
+
+	.TB-Section .TB-content .TB-title p::after {
+		content:"";
+		position: absolute;
+		display: block;
+		width: 40px;
+		height: 2px;
+		left: calc(50% - 20px);
+		bottom: 30px;
+		background-color: #1371FD;
 	}
 }
 @media screen and (max-width: 600px) {

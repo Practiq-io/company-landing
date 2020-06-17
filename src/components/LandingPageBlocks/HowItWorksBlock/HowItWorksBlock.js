@@ -18,7 +18,7 @@ import dotsMobileBlock4 from "../../../image/dotsMobileBlock4.png";
 import dotsMobileBlock5 from "../../../image/dotsMobileBlock5.png";
 const HowItWorksBlock = (props) => {
   return (
-    <section className="HIWB-Section">
+    <section className="HIWB-Section wrapper" id="how-it-works_anchor">
       <content className="HIWB-content">
         <h2>How it Works</h2>
 
@@ -185,7 +185,7 @@ const HowItWorksBlock = (props) => {
                       </div>
 
                       <div className="message">
-                        <p class="mobilePosition">How is your work going?</p>
+                        <p className="mobilePosition">How is your work going?</p>
                       </div>
                     </div>
                   </div>

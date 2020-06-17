@@ -150,6 +150,9 @@
     right: -40px;
   }
 }
+.block04 {
+  padding-top: 30px;
+}
 .block04 .HIWB-info .HIWB-title .HIWB-dotsMobile {
   top: 50px;
 }
@@ -187,11 +190,18 @@
   }
 }
 .HIWB-Section {
-  padding: 120px 85px;
+  padding-top: 120px !important;
+  padding-bottom: 120px !important;
+}
+@media screen and (max-width: 1000px) {
+  .HIWB-Section {
+    padding-top: 80px !important;
+    padding-bottom: 40px !important;
+  }
 }
 .HIWB-Section .HIWB-github-logo {
   width: auto;
-  border: 1px solid #E9E9ED;
+  border: 1px solid #e9e9ed;
   padding: 15px 35px;
   border-radius: 30px;
 }
@@ -199,9 +209,25 @@
   text-align: center;
   padding-bottom: 80px;
 }
+@media screen and (max-width: 1000px) {
+  .HIWB-Section .HIWB-content h2 {
+    padding-bottom: 40px;
+    position: relative;
+  }
+  .HIWB-Section .HIWB-content h2::after {
+    content: "";
+    position: absolute;
+    display: block;
+    width: 40px;
+    height: 2px;
+    left: calc(50% - 20px);
+    bottom: 30px;
+    background-color: #1371fd;
+  }
+}
 @media screen and (max-width: 1300px) {
   .HIWB-Section .HIWB-content {
-    padding: 0!important;
+    padding: 0 !important;
   }
 }
 .HIWB-Section .HIWB-content .HIWB-blocks {
@@ -251,11 +277,11 @@
   align-items: flex-end;
 }
 @media screen and (max-width: 1000px) {
-  .HIWB-Section .HIWB-content .HIWB-blocks .HIWB-info .HIWB-title .HIWB-title {
+  .HIWB-Section .HIWB-content .HIWB-blocks .HIWB-info .HIWB-title {
+    align-items: flex-start;
     -webkit-box-align: start;
     -webkit-align-items: flex-start;
     -moz-box-align: start;
-    align-items: flex-start;
   }
 }
 .HIWB-Section .HIWB-content .HIWB-blocks .HIWB-info .HIWB-title p {
@@ -338,7 +364,6 @@
   -webkit-justify-content: flex-end;
   -moz-box-pack: end;
   justify-content: flex-end;
-  padding-right: 60px;
 }
 @media screen and (max-width: 1000px) {
   .HIWB-Section .HIWB-content .blockPosition {
@@ -432,9 +457,12 @@
     margin-top: 5px;
   }
 }
+.HIWB-Section .HIWB-content .block03 {
+  padding-top: 30px;
+}
 @media screen and (max-width: 520px) {
   .HIWB-Section .HIWB-content .block03 {
-    margin-top: 20px;
+    margin-top: 30px;
   }
 }
 .HIWB-Section .HIWB-content .block03 .HIWB-info {
@@ -551,7 +579,7 @@
   margin-top: 70px;
 }
 .HIWB-Section .HIWB-content .block06 {
-  padding-right: 110px;
+  padding-top: 30px;
 }
 @media screen and (max-width: 1000px) {
   .HIWB-Section .HIWB-content .block06 {
@@ -659,8 +687,16 @@
   background-position-x: 10px;
   padding: 15px;
 }
+.HIWB-Section .HIWB-content .block06 .discription .chat .someone .message p:nth-child(2) {
+  margin-top: -10px;
+}
 @media screen and (max-width: 900px) {
   .HIWB-Section {
     padding: 40px 0;
+  }
+}
+@media screen and (max-width: 1000px) {
+  .HIWB-blocks.block01 {
+    padding-top: 10px !important;
   }
 }

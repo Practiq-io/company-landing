@@ -1,9 +1,9 @@
 import React from "react";
 import ServicesCarousel from "../ServicesCarousel/ServicesCarousel";
 import ServicesCard from "../ServicesCard/ServicesCard";
-import API from "../ServicesCard/ServicesCardImg/generalapi.png";
-import connector from "../ServicesCard/ServicesCardImg/connector.png";
-import longProcess from "../ServicesCard/ServicesCardImg/longrunning.png";
+import landingPageIcon from "../ServicesCard/ServicesCardImg/landingPageIcon.png";
+import SPAIcon from "../ServicesCard/ServicesCardImg/singlePageAplicationIcon.png";
+import componentIcon from "../ServicesCard/ServicesCardImg/frontEndComponentIcon.png";
 
 const FrontEnd = () => {
 	return (
@@ -11,7 +11,7 @@ const FrontEnd = () => {
 			<ServicesCarousel>
 				<ServicesCard
 					id={"Landingpage"}
-					imgPath={API}
+					imgPath={landingPageIcon}
 					title={"Landing page"}
 					subTitle={
 						"A promotional page for your product. Front end implemented for the provided design."
@@ -23,7 +23,7 @@ const FrontEnd = () => {
 
 				<ServicesCard
 					id={"Single page web application"}
-					imgPath={connector}
+					imgPath={SPAIcon}
 					title={"Single page web application"}
 					subTitle={
 						"A single page web app based on a modern Frontend stack like React+Bootstrap+Redux+Node connected to your API."
@@ -35,7 +35,7 @@ const FrontEnd = () => {
 
 				<ServicesCard
 					id={"Frontendcomponent"}
-					imgPath={longProcess}
+					imgPath={componentIcon}
 					title={"Frontend component"}
 					subTitle={
 						"A functional component for your website based either on API or self-contained. Can be used directly on your FE or embedded using Iframe."
