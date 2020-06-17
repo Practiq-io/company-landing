@@ -38,7 +38,7 @@ const MobileNavigation = (props) => {
 
 			<div className="mobile-navigation_background"
                 style={{
-					right: props.display ? "0" : "-75vw"
+					right: props.display ? "0" : "-85vw"
 				}}
             >
 				<a  onClick={props.toggle} href="#services-block_anchor">What we do</a>

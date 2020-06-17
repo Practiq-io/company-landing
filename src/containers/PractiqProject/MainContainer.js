@@ -6,13 +6,22 @@ import ServicesBlock from '../../components/LandingPageBlocks/ServicesBlock/Serv
 import HowItWorksBlock from '../../components/LandingPageBlocks/HowItWorksBlock/HowItWorksBlock';
 import WhoBlock from '../../components/LandingPageBlocks/WhoBlock/WhoBlock';
 import MediumBlock from '../../components/LandingPageBlocks/MediumBlock/MediumBlock';
+import WizardModal from '../../components/Wizard/WizardModal';
 
 
 class MainContainer extends Component {
+
+
+    
+
     render(){
+       
+        const {show, toggle} = this.props.wizard;
+       
         return (
             <>
-               <HeroBlock/>
+               {show ? <WizardModal toggle={toggle} /> : null}
+               <HeroBlock toggle={toggle} />
                <PromoBlock/>
                <TaskBlock/>
                <ServicesBlock/>

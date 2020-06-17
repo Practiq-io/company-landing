@@ -1,0 +1,97 @@
+.wizard-backdrop {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: black;
+  z-index: 100;
+  opacity: 0.4;
+}
+.wizard-modal {
+  font-family: 'Circle-Regular';
+  width: 640px;
+  padding: 37px 32px 32px 32px;
+  background: white;
+  border-radius: 18px;
+  z-index: 101;
+}
+.wizard-frame {
+  position: fixed;
+  width: 100%;
+  display: flex;
+  padding-top: 90px;
+  justify-content: center;
+  z-index: 99;
+  top: 0;
+  left: 0;
+}
+.wizard-title_box {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 30px;
+}
+.wizard-title_box p {
+  font-weight: bold;
+}
+.wizard-title_box img {
+  width: inherit;
+}
+.wizard-title_box img:hover {
+  cursor: pointer;
+}
+.wizard-step-progress-box {
+  width: 100%;
+  background: #e9e9ed;
+  height: 2px;
+  position: relative;
+  margin-bottom: 20px;
+}
+.wizard-step-progress-box .wizard-progress-bar {
+  width: 16.66%;
+  height: 2px;
+  background: #1371fd;
+}
+.wizard-step-box {
+  color: #b1b1b8;
+  margin-bottom: 20px;
+}
+.wizard-button_box {
+  display: flex;
+  padding-top: 30px;
+  justify-content: flex-end;
+}
+.wizard_button {
+  padding: 17px 60px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+.wizard-next_button {
+  margin-left: 16px;
+  background: #1371fd;
+  color: white;
+  transition: 0.1s;
+}
+.wizard-next_button:hover {
+  background: #115dcf;
+  transition: 0.1s;
+}
+.modal-title {
+  color: #171725;
+  font-weight: bold;
+  font-size: 20px;
+  margin-bottom: 40px;
+}
+.wizard-back_button {
+  border: 1px solid #e9e9ed;
+  color: #b1b1b8;
+}
+@media screen and (max-width: 660px) {
+  .wizard-modal {
+    width: 100%;
+  }
+  .wizard-frame {
+    padding: 100px 1em 1em 1em;
+  }
+}
