@@ -6,34 +6,18 @@
 
 
 
-/* @media screen and (max-width: 1345px) {
-	.App {
-		padding: 0 20px;
-	}
-}
-
-@media screen and (max-width: 1000px) {
-	.App {
-		padding: 0 10px;
-	}
-}
-
-@media screen and (max-width: 500px) {
-	.App {
-		padding: 0 5px;
-	}
-} */
-
 
 .wrapper {
-	padding: 0 100px !important;
+	padding-left: 100px;
+	padding-right: 100px;
 }
 
 
 
 @media screen and (min-width:1400px) {
 	.wrapper {
-		padding: 0 100px !important;
+		padding-left: 100px;
+		padding-right: 100px;
 	}
 
 	
@@ -41,15 +25,25 @@
 
 @media screen and (min-width:1650px) {
 	.wrapper {
-		padding: 0 250px !important;
+		padding-left: 250px;
+		padding-right: 250px;
 	}
 
 	.WB-Section {
-		padding: 0 200px !important;
+		padding-left: 200px;
+		padding-right: 200px;
 	}
 
 	.HIWB-Section {
-		padding: 0 280px !important;
+		padding-left: 280px;
+		padding-right: 280px;
+	}
+}
+
+@media screen and (min-width: 1720px) {
+	.HIWB-Section {
+		padding-left: 350px;
+		padding-right: 350px;
 	}
 }
 
@@ -57,79 +51,92 @@
 
 @media screen and (max-width: 1650px) {
 	.HIWB-Section {
-		padding: 0 250px !important;
+		padding-left: 250px;
+		padding-right: 250px;
 	}
 }
 
 @media screen and (max-width: 1550px) {
 	.HIWB-Section {
-		padding: 0 200px !important;
+		padding-left: 200px;
+		padding-right: 200px;
 	}
 }
 
 @media screen and (max-width: 1400px) {
 	.wrapper {
-		padding: 0 50px !important;
+		padding-left: 50px;
+		padding-right: 50px;
 	}
 
 	.HIWB-Section {
-		padding: 0 150px !important;
+		padding-left: 150px;
+		padding-right: 150px;
 	}
 }
 
 @media screen and (max-width: 1000px) {
 	.wrapper {
-		padding: 0 20px !important;
+		padding-left: 20px;
+		padding-right: 20px;
 	}
 
 	.HIWB-Section {
-		padding: 0 270px !important;
+		padding-left: 270px;
+		padding-right: 270px;
 	}
 }
 
 @media screen and (max-width: 950px) {
 
 	.HIWB-Section {
-		padding: 0 200px !important;
+		padding-left: 200px;
+		padding-right: 200px;
 	}
 }
 
 @media screen and (max-width: 800px) {
 
 	.HIWB-Section {
-		padding: 0 180px !important;
+		padding-left: 180px;
+		padding-right: 180px;
 	}
 }
 
 @media screen and (max-width: 800px) {
 
 	.HIWB-Section {
-		padding: 0 100px !important;
+		padding-left: 100px;
+		padding-right: 100px;
 	}
 }
 
 @media screen and (max-width: 600px) {
 
 	.HIWB-Section {
-		padding: 0 50px !important;
+		padding-left: 50px;
+		padding-right: 50px;
 	}
 }
 
 @media screen and (max-width: 500px) {
 
 	.HIWB-Section {
-		padding: 0 10px !important;
+		padding-left: 10px;
+		padding-right: 10px;
 	}
 }
 
 @media screen and (max-width: 600px) {
 	.wrapper {
-		padding: 0 10px !important;
+		padding-left: 10px;
+		padding-right: 10px;
 	}
 }
 
 @media screen and (max-width: 400px) {
 	.wrapper {
-		padding: 0 5px !important;
+		padding-left: 5px;
+		padding-right: 5px;
 	}
 }

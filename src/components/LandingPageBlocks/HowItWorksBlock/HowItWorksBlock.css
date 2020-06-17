@@ -190,13 +190,13 @@
   }
 }
 .HIWB-Section {
-  padding-top: 120px !important;
-  padding-bottom: 120px !important;
+  padding-top: 120px;
+  padding-bottom: 120px;
 }
 @media screen and (max-width: 1000px) {
   .HIWB-Section {
-    padding-top: 80px !important;
-    padding-bottom: 40px !important;
+    padding-top: 80px;
+    padding-bottom: 40px;
   }
 }
 .HIWB-Section .HIWB-github-logo {
@@ -691,9 +691,6 @@
   margin-top: -10px;
 }
 @media screen and (max-width: 900px) {
-  .HIWB-Section {
-    padding: 40px 0;
-  }
 }
 @media screen and (max-width: 1000px) {
   .HIWB-blocks.block01 {
