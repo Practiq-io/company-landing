@@ -22,7 +22,6 @@ class ServicesBlock extends Component {
 	};
 
 	render() {
-        
 		let carouselTypeOutput;
 		if (this.state.displayed === "backend") {
 			carouselTypeOutput = <BackEnd />;
@@ -31,45 +30,42 @@ class ServicesBlock extends Component {
 		}
 
 		return (
-			<section className="SB-Section wrapper" id="services-block_anchor">
-				<content className="upperServicesBox">
-					<h2 className="servicesTitle">What we can build for you</h2>
-					<div className="ui_mobile_dash"></div>
-					<div className="servicesButtonBox">
-						<p
-							onClick={this.switchToFrontEnd}
-							className="frontendButton"
-							style={{
-								color: this.state.switched ? "white" : "#171725"
-							}}
-						>
-							Frontend
-						</p>
-						<p
-							onClick={this.switchToBackEnd}
-							className="backendButton"
-							style={{
-								color: this.state.switched ? "#171725" : "white"
-							}}
-						>
-							Backend
-						</p>
+			<section className="SB-Section" id="services-block_anchor">
+				<div className="wrapper">
+					<content className="upperServicesBox">
+						<h2 className="servicesTitle">What we can build for you</h2>
+						<div className="ui_mobile_dash"></div>
+						<div className="servicesButtonBox">
+							<p
+								onClick={this.switchToFrontEnd}
+								className="frontendButton"
+								style={{
+									color: this.state.switched ? "white" : "#171725",
+								}}
+							>
+								Frontend
+							</p>
+							<p
+								onClick={this.switchToBackEnd}
+								className="backendButton"
+								style={{
+									color: this.state.switched ? "#171725" : "white",
+								}}
+							>
+								Backend
+							</p>
 
-						<div
-							className="buttonSwitch"
-							style={{
-								right: this.state.switched ? "143px" : "0"
-							}}
-						></div>
-					</div>
-				</content>
+							<div
+								className="buttonSwitch"
+								style={{
+									right: this.state.switched ? "143px" : "0",
+								}}
+							></div>
+						</div>
+					</content>
 
-				<content className="lowerServicesBox">
-
-                    {carouselTypeOutput}
-
-                </content>
-
+					<content className="lowerServicesBox">{carouselTypeOutput}</content>
+				</div>
 			</section>
 		);
 	}
