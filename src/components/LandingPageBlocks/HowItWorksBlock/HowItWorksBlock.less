@@ -155,6 +155,7 @@
 }
 
 .block04 {
+	padding-top: 30px;
 	.HIWB-info {
 		.HIWB-title {
 			.HIWB-dotsMobile {
@@ -200,7 +201,14 @@
 }
 
 .HIWB-Section {
-	padding: 120px 85px;
+	// padding: 120px 85px;
+	padding-top: 120px;
+	padding-bottom: 120px; 
+
+	@media screen and (max-width: 1000px) {
+		padding-top: 80px;
+		padding-bottom: 40px;
+	}
 
 	.HIWB-github-logo {
 		width: auto;
@@ -210,6 +218,7 @@
 	}
 
 	.HIWB-content {
+		
 		h2 {
 			text-align: center;
 			padding-bottom: 80px;
@@ -381,7 +390,7 @@
 			-webkit-justify-content: flex-end;
 			-moz-box-pack: end;
 			justify-content: flex-end;
-			padding-right: 60px;
+			
 
 			@media screen and (max-width: 1000px) {
 				padding-right: 0;
@@ -410,19 +419,19 @@
 				}
 
 				@media screen and (max-width: 415px) {
-					//test
+					
 
 					max-width: 330px;
 				}
 
 				@media screen and (max-width: 380px) {
-					//test
+					
 
 					max-width: 300px;
 				}
 
 				@media screen and (max-width: 350px) {
-					//test
+					
 
 					max-width: 280px;
 				}
@@ -479,6 +488,7 @@
 		}
 
 		.block03 {
+			padding-top: 30px;
 			@media screen and (max-width: 520px) {
 				margin-top: 30px;
 			}
@@ -618,7 +628,7 @@
 		}
 
 		.block06 {
-			padding-right: 110px;
+			padding-top: 30px;
 
 			@media screen and (max-width: 1000px) {
 				padding-right: 0;
@@ -743,11 +753,7 @@
 	}
 }
 
-@media screen and (max-width: 900px) {
-	.HIWB-Section {
-		padding: 40px 0;
-	}
-}
+
 
 @media screen and (max-width: 1000px) {
 	.HIWB-blocks.block01 {

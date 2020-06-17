@@ -135,9 +135,16 @@
 		position: absolute;
 		width: 40px;
 		height: 2px;
-		left: 0;
+		left: -webkit-calc(50% - 20px);
+		left: calc(50% - 20px);
 		bottom: -16px;
 		background-color: #1371FD;
+	}
+
+	@media screen and (max-width: 600px) {
+		.PB-Section .content_wrapper .weCode p::after {
+			left: 0;
+		}
 	}
 
 	.PB-Section .content_wrapper .weCode p:nth-of-type(1) {
@@ -210,3 +217,4 @@
 
 	
 }
+

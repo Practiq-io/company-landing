@@ -150,6 +150,9 @@
     right: -40px;
   }
 }
+.block04 {
+  padding-top: 30px;
+}
 .block04 .HIWB-info .HIWB-title .HIWB-dotsMobile {
   top: 50px;
 }
@@ -187,7 +190,14 @@
   }
 }
 .HIWB-Section {
-  padding: 120px 85px;
+  padding-top: 120px;
+  padding-bottom: 120px;
+}
+@media screen and (max-width: 1000px) {
+  .HIWB-Section {
+    padding-top: 80px;
+    padding-bottom: 40px;
+  }
 }
 .HIWB-Section .HIWB-github-logo {
   width: auto;
@@ -354,7 +364,6 @@
   -webkit-justify-content: flex-end;
   -moz-box-pack: end;
   justify-content: flex-end;
-  padding-right: 60px;
 }
 @media screen and (max-width: 1000px) {
   .HIWB-Section .HIWB-content .blockPosition {
@@ -447,6 +456,9 @@
   .HIWB-Section .HIWB-content .blockPosition .HIWB-info .discription p {
     margin-top: 5px;
   }
+}
+.HIWB-Section .HIWB-content .block03 {
+  padding-top: 30px;
 }
 @media screen and (max-width: 520px) {
   .HIWB-Section .HIWB-content .block03 {
@@ -567,7 +579,7 @@
   margin-top: 70px;
 }
 .HIWB-Section .HIWB-content .block06 {
-  padding-right: 110px;
+  padding-top: 30px;
 }
 @media screen and (max-width: 1000px) {
   .HIWB-Section .HIWB-content .block06 {
@@ -679,9 +691,6 @@
   margin-top: -10px;
 }
 @media screen and (max-width: 900px) {
-  .HIWB-Section {
-    padding: 40px 0;
-  }
 }
 @media screen and (max-width: 1000px) {
   .HIWB-blocks.block01 {
