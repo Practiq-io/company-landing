@@ -12,7 +12,7 @@ const HeroBlock = (props) => {
 	});
 
 	return (
-		<section>
+		<section className="wrapper">
 			<img src={background} className="large_image" alt="" />
 			<img src={mobileBg} className="mobile_image" alt="" />
 

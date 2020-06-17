@@ -1,5 +1,6 @@
 .SB-Section {
-  padding: 120px 0;
+  padding-top: 120px !important;
+  padding-bottom: 120px !important;
   background: #fafafc;
 }
 .upperServicesBox {
@@ -105,3 +106,9 @@
   }
 }
 
+@media screen and (max-width: 1000px) {
+  .SB-Section {
+    padding-top: 40px !important;
+    padding-bottom: 40px !important;
+  }
+}
