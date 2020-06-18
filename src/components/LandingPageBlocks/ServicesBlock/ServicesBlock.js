@@ -31,7 +31,10 @@ class ServicesBlock extends Component {
 		}
 
 		return (
-			<section className="SB-Section wrapper" id="services-block_anchor">
+			<section className="SB-Section" id="services-block_anchor">
+				<div className="wrapper">
+
+				
 				<content className="upperServicesBox">
 					<h2 className="servicesTitle">What we can build for you</h2>
 					<div className="ui_mobile_dash"></div>
@@ -69,7 +72,7 @@ class ServicesBlock extends Component {
                     {carouselTypeOutput}
 
                 </content>
-
+				</div>
 			</section>
 		);
 	}
