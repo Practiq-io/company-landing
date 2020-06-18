@@ -1,6 +1,15 @@
 .footer-main {
 	background-color: #f9f9fb;
 	padding: 65px 0;
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: -moz-box;
+	display: flex;
+	-webkit-box-pack: center;
+	-webkit-justify-content: center;
+	-moz-box-pack: center;
+	justify-content: center;
+
 	.footer-wrapper {
 		display: -webkit-box;
 		display: -webkit-flex;
@@ -8,6 +17,8 @@
 		display: flex;
 		-webkit-justify-content: space-around;
 		justify-content: space-around;
+		max-width: 1320px;
+		width: 100%;
 
 		@media screen and (max-width: 1000px) {
 			-webkit-box-orient: vertical;
@@ -67,7 +78,7 @@
 					-webkit-align-items: center;
 					-moz-box-align: center;
 					align-items: center;
-					
+
 					margin-top: 20px;
 				}
 
@@ -96,7 +107,6 @@
 			display: -webkit-flex;
 			display: -moz-box;
 			display: flex;
-			
 
 			@media screen and (max-width: 1000px) {
 				-webkit-box-ordinal-group: 2;
