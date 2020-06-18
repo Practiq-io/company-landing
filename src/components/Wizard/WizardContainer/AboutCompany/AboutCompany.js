@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import "./AboutCompany.css";
 
 export default class AboutCompany extends Component {
+
 	state = {};
 
 	validation = () => {
@@ -9,26 +10,26 @@ export default class AboutCompany extends Component {
 		let emailError = "";
 		let websiteError = "";
 
-		if (this.state.data.companyName) {
-			if (this.state.data.companyName.length > 500) {
+		if (this.state.companyName) {
+			if (this.state.companyName.length > 500) {
 				companyNameError = "* too long string";
 			}
 		} else {
 			companyNameError = "* is required";
 		}
 
-		if (this.state.data.email) {
-			if (this.state.data.email.length > 500) {
+		if (this.state.email) {
+			if (this.state.email.length > 500) {
 				emailError = "* too long string";
-			} else if (!this.state.data.email.includes("@")) {
+			} else if (!this.state.email.includes("@")) {
 				emailError = "* invalid email format";
 			}
 		} else {
 			emailError = "* is required";
 		}
 
-		if (this.state.data.website) {
-			if (this.state.data.website.length > 500) {
+		if (this.state.website) {
+			if (this.state.website.length > 500) {
 				websiteError = "* too long string";
 			}
 		}
@@ -44,26 +45,22 @@ export default class AboutCompany extends Component {
 		const isValid = this.validation();
 		if (isValid) {
 			this.props.setWizardProperties({
-				companyName: this.state.data.companyName,
-				email: this.state.data.email,
-				website: this.state.data.website,
+				companyName: this.state.companyName,
+				email: this.state.email,
+				website: this.state.website,
 			});
-
 			this.props.nextStep();
 		}
 	};
 
 	onChangeHandler = (e) => {
-		const data = { ...this.state.data };
-		data[e.target.name] = e.target.value;
-		this.setState({ data });
+		this.setState({[e.target.name]: e.target.value });
 	};
 
 	render() {
-		console.log(this.state, "===triggered");
+		
 		const { companyNameError, emailError, websiteError } = this.state;
-		const { toggleWizard, onChange, setWizardProperty } = this.props;
-		const { stateForValidation } = this.props;
+		const { toggleWizard } = this.props;
 
 		return (
 			<div className="about-company_frame">
