@@ -1,13 +1,14 @@
 import React from "react";
 import "./TaskBlock.css";
 import ReactBgImg from "../../../image/ReactBG.png";
-import ReactLogo from "../../../image/ReactLogo.png";
-import NodeLogo from "../../../image/NodeLogo.png";
+import ReactLogo from "../../../image/reactLogo.svg";
+import NodeLogo from "../../../image/nodeTESTSVG.svg";
 import NodeBgImg from "../../../image/NodeBG.png";
-import JavaLogo from "../../../image/JavaLogo.png";
+import JavaLogo from "../../../image/javaLogo.svg";
 import JavaBgImg from "../../../image/JavaBG.png";
 import TaskCard from "./TaskCard/TaskCard";
 import TaskCardRequest from "./TaskCard/TaskCardRequest/TaskCardRequest";
+
 
 const TaskBlock = (props) => {
 	return (

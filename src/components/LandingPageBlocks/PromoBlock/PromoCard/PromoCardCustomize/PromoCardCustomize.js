@@ -1,6 +1,6 @@
 import React from "react";
 import "./PromoCardCustomize.css";
-import addCard from "../../../../../image/add.png";
+import addCard from "../../../../../image/yourOwn.svg";
 
 const PromoCardCustomize = (props) => {
 	let title = null;

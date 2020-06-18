@@ -1,7 +1,11 @@
 .SB-Section {
-  padding-top: 120px !important;
-  padding-bottom: 120px !important;
+  padding: 120px 0;
   background: #fafafc;
+  width: 100%;
+}
+.SB-section-wrapper {
+  background: red;
+  width: 100%;
 }
 .upperServicesBox {
   display: -webkit-box;
@@ -22,14 +26,6 @@
 .servicesTitle {
   margin-bottom: 80px;
   color: #171725;
-  text-align: center;
-}
-.ui_mobile_dash {
-  display:none;
-  height: 2px;
-  width: 40px;
-  background: #1371FD;
-  margin-bottom: 24px;
 }
 .servicesButtonBox {
   display: -webkit-box;
@@ -70,7 +66,6 @@
   transition: 0.5s;
 }
 .frontendButton {
-  -webkit-tap-highlight-color: transparent;
   cursor: pointer;
   z-index: 2;
   color: #171725;
@@ -79,7 +74,6 @@
   transition: 0.2s;
 }
 .backendButton {
-  -webkit-tap-highlight-color: transparent;
   cursor: pointer;
   z-index: 2;
   color: white;
@@ -91,24 +85,5 @@
   .SB-Section {
     padding: 40px 0 120px 0;
     background: #fafafc;
-  }
-}
-@media screen and (max-width: 600px) {
-  .servicesTitle {
-    margin-bottom: 24px;
-  }
-  .ui_mobile_dash {
-    display: block;
-    height: 2px;
-    width: 40px;
-    background: #1371FD;
-    margin-bottom: 24px;
-  }
-}
-
-@media screen and (max-width: 1000px) {
-  .SB-Section {
-    padding-top: 40px !important;
-    padding-bottom: 40px !important;
   }
 }

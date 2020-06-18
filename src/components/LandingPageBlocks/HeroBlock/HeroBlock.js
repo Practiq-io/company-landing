@@ -1,6 +1,6 @@
 import React, { useEffect, Component } from "react";
 import background from "../../../image/bg2.png";
-import working from "../../../image/working.png";
+import working from "../../../image/working.svg";
 import mobileBg from "../../../image/mobileBg.png";
 import mobileCodePlaceholder from "../../../image/mobile-codeblock-plug.png";
 import "./HeroBlock.css";
@@ -15,7 +15,7 @@ class HeroBlock extends Component {
 		const { toggle } = this.props;
 
 		return (
-			<section>
+			<section className="wrapper">
 				<img src={background} className="large_image" alt="" />
 				<img src={mobileBg} className="mobile_image" alt="" />
 

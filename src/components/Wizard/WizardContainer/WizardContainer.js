@@ -3,6 +3,7 @@ import "./WizardContainer.css";
 import AboutCompany from "./AboutCompany/AboutCompany";
 
 export class WizardContainer extends Component {
+	
 	state = {};
 
 	setWizardProperty = (name, value) => {
@@ -18,7 +19,6 @@ export class WizardContainer extends Component {
 	};
 
 	render() {
-		console.log(this.state, "IM A MAIN STATE LETS SEE ME BOYS");
 
 		const { back, next, step, toggleWizard } = this.props;
 
@@ -26,7 +26,6 @@ export class WizardContainer extends Component {
 			case 1:
 				return (
 					<AboutCompany
-						stateForValidation={this.state.data}
 						nextStep={next}
 						toggleWizard={toggleWizard}
 						setWizardProperties={this.setWizardProperties}

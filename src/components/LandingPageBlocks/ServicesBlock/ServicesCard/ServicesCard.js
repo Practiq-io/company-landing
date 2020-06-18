@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import "./ServicesCard.css";
-import buttonRightArrow from "./ServicesCardImg/rightarrow.png";
+import buttonRightArrow from "./ServicesCardImg/cardRightArrow.svg";
 
 class ServicesCard extends Component {
 	state = {
