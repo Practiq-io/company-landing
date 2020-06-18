@@ -1,9 +1,9 @@
 import React from "react";
 import ServicesCarousel from "../ServicesCarousel/ServicesCarousel";
 import ServicesCard from "../ServicesCard/ServicesCard";
-import landingPageIcon from "../ServicesCard/ServicesCardImg/landingPageIcon.png";
-import SPAIcon from "../ServicesCard/ServicesCardImg/singlePageAplicationIcon.png";
-import componentIcon from "../ServicesCard/ServicesCardImg/frontEndComponentIcon.png";
+import landingPageIcon from "../ServicesCard/ServicesCardImg/landingPage.svg";
+import SPAIcon from "../ServicesCard/ServicesCardImg/frontSPA.svg";
+import componentIcon from "../ServicesCard/ServicesCardImg/component.svg";
 
 const FrontEnd = () => {
 	return (

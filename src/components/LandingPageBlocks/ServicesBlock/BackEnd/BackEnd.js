@@ -1,10 +1,10 @@
 import React from "react";
 import ServicesCarousel from "../ServicesCarousel/ServicesCarousel";
 import ServicesCard from "../ServicesCard/ServicesCard";
-import API from "../ServicesCard/ServicesCardImg/generalapi.png";
-import connector from "../ServicesCard/ServicesCardImg/connector.png";
-import longProcess from "../ServicesCard/ServicesCardImg/longrunning.png";
-import landingComponentIcon from '../ServicesCard/ServicesCardImg/landingSPAcomponent.png';
+import API from "../ServicesCard/ServicesCardImg/apiLogo.svg";
+import connector from "../ServicesCard/ServicesCardImg/connectorLogo.svg";
+import longProcess from "../ServicesCard/ServicesCardImg/longRunning.svg";
+import landingComponentIcon from '../ServicesCard/ServicesCardImg/BACKENDSPA.svg';
 
 const BackEnd = () => {
 	return (

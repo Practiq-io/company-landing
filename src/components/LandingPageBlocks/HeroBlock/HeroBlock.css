@@ -96,6 +96,7 @@ section .grid_wrapper .code_window .code_block {
 	line-height: 19px;
 	color: rgb(90, 90, 90);
 	font-size: 12px;
+	font-weight: 600;
 }
 #code_block-animation-txt::after {
 	content: "|";
@@ -152,7 +153,7 @@ section .grid_wrapper .section_title {
 }
 section .grid_wrapper .section_title h1 {
 	font-family: "DINE-1451";
-	font-size: 3rem;
+	font-size: 3.7rem;
 	line-height: 70px;
 	padding-bottom: 24px;
 }
@@ -180,7 +181,7 @@ section .grid_wrapper .section_text p {
 	font-family: "RobotoMono-Regular";
 	font-size: 0.9375rem;
 	color: #696974;
-	line-height: 20px;
+	line-height: 160%;
 	margin-bottom: 45px;
 }
 section .grid_wrapper .section_text .arrow img.large {

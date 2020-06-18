@@ -1,6 +1,6 @@
 import React from "react";
 import "./TaskCardRequest.css";
-import Avatar from "../../../../../image/face.png";
+import Avatar from "../../../../../image/face.svg";
 
 const TaskCardRequest = (props) => {
 	return (

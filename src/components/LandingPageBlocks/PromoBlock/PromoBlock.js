@@ -2,9 +2,9 @@ import React from "react";
 import "./PromoBlock.css";
 import PromoCard from "./PromoCard/PromoCard";
 import PromoCardCustomize from "./PromoCard/PromoCardCustomize/PromoCardCustomize";
-import documentation from "../../../image/documentation.png";
-import docerFiles from "../../../image/docerFiles.png";
-import endTesting from "../../../image/endTesting.png";
+import documentation from "../../../image/documentation.svg";
+import docerFiles from "../../../image/docker.svg";
+import endTesting from "../../../image/unitTest.svg";
 
 const PromoBlock = (props) => {
 	return (
