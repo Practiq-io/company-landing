@@ -11,11 +11,18 @@ import TaskCardRequest from "./TaskCard/TaskCardRequest/TaskCardRequest";
 
 
 const TaskBlock = (props) => {
+	const animationByClass = (cls) => {
+		return {delay:400, cls:cls};
+	};
+	const leftAnimation = animationByClass("fade-right");
+	const middleAnimation = animationByClass("fade-down");
+	const rightAnimation = animationByClass("fade-left");
+	const bottomAnimation = animationByClass("fade-up");
 	return (
 		<section className="TB-Section">
 			<div className="wrapper">
 				<content className="TB-content">
-					<div className="TB-title">
+					<div className="TB-title" data-aos="fade-up" data-aos-delay="100">
 						<h2 className="TB-title-h2">
 							Practiq empowers developers to grow their skills and knowledge
 						</h2>
@@ -36,6 +43,7 @@ const TaskBlock = (props) => {
 									<br className="tb-card-linebreak" /> (including react routing)
 								</span>
 							}
+							animation={leftAnimation}
 						/>
 
 						<TaskCard
@@ -47,6 +55,7 @@ const TaskBlock = (props) => {
 									<br className="tb-card-linebreak" /> applications
 								</span>
 							}
+							animation={middleAnimation}
 						/>
 
 						<TaskCard
@@ -60,9 +69,11 @@ const TaskBlock = (props) => {
 									applications
 								</span>
 							}
+							animation={rightAnimation}
 						/>
 
-						<TaskCardRequest />
+						<TaskCardRequest
+							animation={bottomAnimation} />
 					</div>
 				</content>
 			</div>
