@@ -17,7 +17,8 @@ const TaskCard = (props) => {
 					<img className="TC-logo-img" src={props.logoPath} alt="" />
 				</div>
 
-				<div className="TC-text-body">{props.textBody}</div>
+				<div className="TC-text-body" 
+					data-aos="fade-bottom" data-aos-delay="1000">{props.textBody}</div>
 			</div>
 		</div>
 	);

@@ -37,7 +37,7 @@ const TaskBlock = (props) => {
 							bgImgPath={ReactBgImg}
 							logoPath={ReactLogo}
 							textBody={
-								<span>
+								<span data-aos="fade-bottom" data-aos-delay="400">
 									Writing unit tests
 									<br className="tb-card-linebreak" /> for React app
 									<br className="tb-card-linebreak" /> (including react routing)
