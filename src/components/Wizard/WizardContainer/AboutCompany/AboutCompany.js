@@ -5,39 +5,63 @@ export default class AboutCompany extends Component {
 
 	state = {};
 
+	componentWillMount(){
+		const containerState = this.props.containerState
+		console.log("MOUNT WAS TRIGGERED with ===", this.props.containerState);
+		
+		if(containerState.companyName || containerState.email || containerState.website){
+			console.log("BUT THIS SHOULD NOT TRIGGER RIGHT AWAY FUCK YOU");
+			this.setState({
+				companyName: containerState.companyName,
+				email: containerState.email,
+				website: containerState.website
+			})
+		}
+	}
+
 	validation = () => {
 		let companyNameError = "";
 		let emailError = "";
 		let websiteError = "";
 
+		console.log('IM DOING VALIDATION');
+		
 		if (this.state.companyName) {
 			if (this.state.companyName.length > 500) {
 				companyNameError = "* too long string";
+				
 			}
 		} else {
 			companyNameError = "* is required";
+			
 		}
 
 		if (this.state.email) {
 			if (this.state.email.length > 500) {
 				emailError = "* too long string";
+				
 			} else if (!this.state.email.includes("@")) {
 				emailError = "* invalid email format";
+				
 			}
 		} else {
 			emailError = "* is required";
+			
 		}
 
 		if (this.state.website) {
 			if (this.state.website.length > 500) {
 				websiteError = "* too long string";
+				
 			}
 		}
 
 		if (companyNameError || emailError || websiteError) {
 			this.setState({ companyNameError, emailError, websiteError });
+			console.log('FUCKING BITCH');
 			return false;
 		}
+		console.log('GOOD GOOD');
 		return true;
 	};
 
@@ -47,7 +71,7 @@ export default class AboutCompany extends Component {
 			this.props.setWizardProperties({
 				companyName: this.state.companyName,
 				email: this.state.email,
-				website: this.state.website,
+				website: this.state.website
 			});
 			this.props.nextStep();
 		}
@@ -62,6 +86,8 @@ export default class AboutCompany extends Component {
 		const { companyNameError, emailError, websiteError } = this.state;
 		const { toggleWizard } = this.props;
 
+
+		console.log(this.state, "ABOUT-STATE, LOOK HERE");
 		return (
 			<div className="about-company_frame">
 				<div className="modal-position_wrapper">
@@ -80,19 +106,28 @@ export default class AboutCompany extends Component {
 							onChange={this.onChangeHandler}
 							type="text"
 							name="companyName"
+							defaultValue={this.state.companyName}
 						/>
 						<p>
 							Email
 							<span className="about-company_error-message">{emailError}</span>
 						</p>
-						<input onChange={this.onChangeHandler} type="text" name="email" />
+						<input 
+							onChange={this.onChangeHandler} 
+							type="text" name="email" 
+							defaultValue={this.state.email} 
+						/>
 						<p>
 							Website (optional)
 							<span className="about-company_error-message">
 								{websiteError}
 							</span>
 						</p>
-						<input onChange={this.onChangeHandler} type="text" name="website" />
+						<input 
+							onChange={this.onChangeHandler} 
+							type="text" name="website" 
+							defaultValue={this.state.website}
+						/>
 					</div>
 				</div>
 

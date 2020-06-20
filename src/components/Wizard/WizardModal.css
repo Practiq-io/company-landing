@@ -9,7 +9,6 @@
   opacity: 0.4;
 }
 .wizard-modal {
-  font-family: 'Circle-Regular';
   width: 640px;
   padding: 37px 32px 32px 32px;
   background: white;
@@ -63,6 +62,8 @@
   justify-content: flex-end;
 }
 .wizard_button {
+  display: flex;
+  align-items: center;
   padding: 17px 60px;
   border-radius: 4px;
   cursor: pointer;
