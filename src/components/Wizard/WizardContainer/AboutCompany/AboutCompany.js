@@ -96,34 +96,37 @@ export default class AboutCompany extends Component {
 					</div>
 
 					<div className="modal-content_box">
-						<p>
+						<p className="modal-content_subtitle">
 							Company name
 							<span className="about-company_error-message">
 								{companyNameError}
 							</span>
 						</p>
 						<input
+							className="about-company_input"
 							onChange={this.onChangeHandler}
 							type="text"
 							name="companyName"
 							defaultValue={this.state.companyName}
 						/>
-						<p>
+						<p className="modal-content_subtitle">
 							Email
 							<span className="about-company_error-message">{emailError}</span>
 						</p>
-						<input 
+						<input
+							className="about-company_input"
 							onChange={this.onChangeHandler} 
 							type="text" name="email" 
 							defaultValue={this.state.email} 
 						/>
-						<p>
+						<p className="modal-content_subtitle">
 							Website (optional)
 							<span className="about-company_error-message">
 								{websiteError}
 							</span>
 						</p>
-						<input 
+						<input
+							className="about-company_input"
 							onChange={this.onChangeHandler} 
 							type="text" name="website" 
 							defaultValue={this.state.website}
