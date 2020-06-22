@@ -18,15 +18,19 @@ const popularTags = {
 	reactNative: "React Native",
 	php: "PHP",
 	kotlin: "Kotlin",
-	net: ".NET"
-};
-
-const selectedTags = {
+	net: ".NET",
 	ios: "IOS",
 	android: "Android",
 	aws: "AWS",
 	java: "Java",
 };
+
+// const selectedTags = {
+// 	ios: "IOS",
+// 	android: "Android",
+// 	aws: "AWS",
+// 	java: "Java",
+// };
 
 
 
@@ -35,10 +39,43 @@ const selectedTags = {
 export default class Languages extends Component {
 	state = {};
 
-	componentWillMount() {
-		this.setState({ popularTags, selectedTags });
+	// componentWillMount() {
+	// 	this.setState({ popularTags, selectedTags });
+	// }
+	componentDidMount() {
+		this.setState({ popularTags });
 	}
 	
+	addPopularTag = (key, value) => {
+
+		console.log("triggered with key===>",key,"And value ===>",value);
+
+		let popularTags = {...this.state.popularTags};
+		delete popularTags[key];
+		let selectedTags = {...this.state.selectedTags};
+		selectedTags[key] = value;
+		this.setState({popularTags, selectedTags})
+
+	};
+
+	removeSelectedTag = (key, value) => {
+		console.log("REMOVE IS TRIGGERED");
+		
+		console.log("triggered with Selected Key===>",key,"And Selected Value ===>",value);
+		if(key in popularTags) {
+			let selectedTags = {...this.state.selectedTags};
+			let popularTags = {...this.state.popularTags};
+			delete selectedTags[key];
+			popularTags[key] = value;
+			this.setState({popularTags, selectedTags});
+		} else {
+			let selectedTags = {...this.state.selectedTags};
+			delete selectedTags[key];
+		}
+
+	}
+
+
 
 	render() {
 
@@ -56,7 +93,8 @@ export default class Languages extends Component {
 
 
 
-
+		console.log(this.state.selectedTags, "I WILL SEND THIS TO CONTAINER");
+		
 		
 
 		const { errorMessage } = this.state;
@@ -75,37 +113,34 @@ export default class Languages extends Component {
 							<span className="validation_error-message">{errorMessage}</span>
 						</p>
 						<input
+							autocomplete="off"
 							className="languages_input"
 							// onChange={this.onChangeHandler}
 							type="text"
 							name="companyName"
 							placeholder="e.g., Java, React, Drupal, etc."
-							// defaultValue={this.state.companyName}
 						/>
 
 						<div className="languages-selected-tags_output">
-							{Object.keys(this.state.selectedTags).map((key) => {
-								const tagData = this.state.selectedTags[key];
-								return (
-									<div className="selected_tag" key={key}>
-										<p>{tagData}</p>
-										<img
-											className="selected-tag_close-button"
-											src={selectedTagClose}
-											alt=""
-										/>
-									</div>
-								);
-							})}
+							{ this.state.selectedTags ? 
+								Object.keys(this.state.selectedTags).map((key) => {
+									const popularTagValue = this.state.selectedTags[key];
+									const popularTagKey = key;
+									return (
+										<div className="selected_tag" key={key}>
+											<p>{popularTagValue}</p>
+											<img
+												onClick={() => this.removeSelectedTag(popularTagKey, popularTagValue)}
+												className="selected-tag_close-button"
+												src={selectedTagClose}
+												alt=""
+											/>
+										</div>
+									);
+								})
+								: null
+							}
 
-							{/* 
-								<div className="selected_tag">
-									
-									<p>Ruby</p>
-									
-										<img className="selected-tag_close-button" src={selectedTagClose} alt=""/>
-								
-								</div> */}
 						</div>
 
 						<p className="modal-content_subtitle">
@@ -117,14 +152,21 @@ export default class Languages extends Component {
 
 						<div className="languages-popular-tags_output">
 
-							{Object.keys(this.state.popularTags).map((key) => {
-								const tagData = this.state.popularTags[key];
-								return (
-									<div className="popular_tag" key={key}>
-										<p>{tagData}</p>
-									</div>
-								);
-							})}
+							{ this.state.popularTags ?
+								Object.keys(this.state.popularTags).map((key) => {
+									const selectedTagValue = this.state.popularTags[key];
+									const selectedTagKey = key;
+									return (
+										<div 
+											onClick={() => this.addPopularTag(selectedTagKey,selectedTagValue)}
+											className="popular_tag" 
+											key={key}
+										>
+											<p>{selectedTagValue}</p>
+										</div>
+									);
+								}) : null
+							}
 
 							{/* 
 							<div className="popular_tag">
