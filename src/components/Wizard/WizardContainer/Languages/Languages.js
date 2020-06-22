@@ -1,9 +1,65 @@
 import React, { Component } from "react";
 import "./Languages.css";
-import selectedTagClose from './Languages_img/tagClose.svg';
+import selectedTagClose from "./Languages_img/tagClose.svg";
+
+const popularTags = {
+	javascript: "Javascript",
+	react: "React",
+	laravel: "Laravel",
+	nodeJs: "Node JS",
+	ruby: "Ruby",
+	cPlusPlus: "C++",
+	cSharp: "C#",
+	swift: "Swift",
+	css: "CSS",
+	html: "HTML",
+	drupal: "Drupal",
+	wordpress: "Wordpress",
+	reactNative: "React Native",
+	php: "PHP",
+	kotlin: "Kotlin",
+	net: ".NET"
+};
+
+const selectedTags = {
+	ios: "IOS",
+	android: "Android",
+	aws: "AWS",
+	java: "Java",
+};
+
+
+
+
 
 export default class Languages extends Component {
+	state = {};
+
+	componentWillMount() {
+		this.setState({ popularTags, selectedTags });
+	}
+	
+
 	render() {
+
+
+		// const languages = {
+		// 	iso:"IOS",
+		// 	aws: "AWS",
+		// 	javascript: "Javascript"
+		// }
+		// console.log(languages, "LANGUAGES OBJECT");
+		// Object.keys(languages).forEach(key => {
+		// 	console.log(languages[key], "LANGUAGES DATA");
+			
+		// })
+
+
+
+
+		
+
+		const { errorMessage } = this.state;
 		const { toggleWizard, prevStep } = this.props;
 
 		return (
@@ -14,12 +70,9 @@ export default class Languages extends Component {
 					</div>
 
 					<div className="modal-content_box">
-
 						<p className="modal-content_subtitle">
 							Languages and/or frameworks
-							{/* <span className="about-company_error-message">
-								{companyNameError}
-							</span> */}
+							<span className="validation_error-message">{errorMessage}</span>
 						</p>
 						<input
 							className="languages_input"
@@ -30,97 +83,30 @@ export default class Languages extends Component {
 							// defaultValue={this.state.companyName}
 						/>
 
-						
-							<div className="languages-selected-tags_output">
+						<div className="languages-selected-tags_output">
+							{Object.keys(this.state.selectedTags).map((key) => {
+								const tagData = this.state.selectedTags[key];
+								return (
+									<div className="selected_tag" key={key}>
+										<p>{tagData}</p>
+										<img
+											className="selected-tag_close-button"
+											src={selectedTagClose}
+											alt=""
+										/>
+									</div>
+								);
+							})}
 
-								
-
+							{/* 
 								<div className="selected_tag">
-									<p>Javascript</p>
-									<img src={selectedTagClose} alt=""/>
-								</div>
-								
-								<div className="selected_tag">
-									<p>HTML</p>
-									<img src={selectedTagClose} alt=""/>
-								</div>
-
-								<div className="selected_tag">
+									
 									<p>Ruby</p>
-									<img src={selectedTagClose} alt=""/>
-								</div>
-
-								<div className="selected_tag">
-									<p>Wordpress</p>
-									<img src={selectedTagClose} alt=""/>
-								</div>
-
-								<div className="selected_tag">
-									<p>React</p>
-									<img src={selectedTagClose} alt=""/>
-								</div>
-
-								<div className="selected_tag">
-									<p>Node JS</p>
-									<img src={selectedTagClose} alt=""/>
-								</div>
-
-								<div className="selected_tag">
-									<p>Java</p>
-									<img src={selectedTagClose} alt=""/>
-								</div>
-
-								<div className="selected_tag">
-									<p>Bootstrap</p>
-									<img src={selectedTagClose} alt=""/>
-								</div>
-
-								<div className="selected_tag">
-									<p>CSS</p>
-									<img src={selectedTagClose} alt=""/>
-								</div>
-
-								<div className="selected_tag">
-									<p>C++</p>
-									<img src={selectedTagClose} alt=""/>
-								</div>
-
-								<div className="selected_tag">
-									<p>Asembler</p>
-									<img src={selectedTagClose} alt=""/>
-								</div>
-
-								<div className="selected_tag">
-									<p>Swift</p>
-									<img src={selectedTagClose} alt=""/>
-								</div>
-								<div className="selected_tag">
-									<p>Rust</p>
-									<img src={selectedTagClose} alt=""/>
-								</div>
-
-								<div className="selected_tag">
-									<p>C#</p>
-									<img src={selectedTagClose} alt=""/>
-								</div>
-
-								<div className="selected_tag">
-									<p>Angular</p>
-									<img src={selectedTagClose} alt=""/>
-								</div>
-
-								<div className="selected_tag">
-									<p>Noorka</p>
-									<img src={selectedTagClose} alt=""/>
-								</div>
-
-								<div className="selected_tag">
-									<p>Stos</p>
-									<img src={selectedTagClose} alt=""/>
-								</div>
-
-							</div>
-						
+									
+										<img className="selected-tag_close-button" src={selectedTagClose} alt=""/>
+								
+								</div> */}
+						</div>
 
 						<p className="modal-content_subtitle">
 							Or select from the following:
@@ -131,92 +117,21 @@ export default class Languages extends Component {
 
 						<div className="languages-popular-tags_output">
 
+							{Object.keys(this.state.popularTags).map((key) => {
+								const tagData = this.state.popularTags[key];
+								return (
+									<div className="popular_tag" key={key}>
+										<p>{tagData}</p>
+									</div>
+								);
+							})}
+
+							{/* 
 							<div className="popular_tag">
 								<p>Javascript</p>
-							</div>
-
-							<div className="popular_tag">
-								<p>React</p>
-							</div>
-
-							<div className="popular_tag">
-								<p>CSS</p>
-							</div>
-
-							<div className="popular_tag">
-								<p>Drupal</p>
-							</div>
-
-							<div className="popular_tag">
-								<p>React Native</p>
-							</div>
-
-							<div className="popular_tag">
-								<p>PHP</p>
-							</div>
-
-							<div className="popular_tag">
-								<p>Java</p>
-							</div>
-
-							<div className="popular_tag">
-								<p>Laravel</p>
-							</div>
-
-							<div className="popular_tag">
-								<p>Laravel</p>
-							</div>
-
-							<div className="popular_tag">
-								<p>Laravel</p>
-							</div>
-
-							<div className="popular_tag">
-								<p>Laravel</p>
-							</div>
-
-							<div className="popular_tag">
-								<p>Laravel</p>
-							</div>
-
-							<div className="popular_tag">
-								<p>Laravel</p>
-							</div>
-
-							<div className="popular_tag">
-								<p>Laravel</p>
-							</div>
-
-							<div className="popular_tag">
-								<p>IOS</p>
-							</div>
-
-							<div className="popular_tag">
-								<p>Android</p>
-							</div>
-
-							<div className="popular_tag">
-								<p>AWS</p>
-							</div>
-
-							<div className="popular_tag">
-								<p>Swift</p>
-							</div>
-
-							<div className="popular_tag">
-								<p>Kotlin</p>
-							</div>
-
-							<div className="popular_tag">
-								<p>Wordpress</p>
-							</div>
-
-							<div className="popular_tag">
-								<p>.NET</p>
-							</div>
+							</div> */}
 
 						</div>
-
 					</div>
 				</div>
 

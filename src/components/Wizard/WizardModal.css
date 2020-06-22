@@ -108,3 +108,6 @@
     transition: 0.3s;
   }
 }
+.validation_error-message {
+  color: #eb5757;
+}

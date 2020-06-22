@@ -6,11 +6,7 @@ import Languages from "./Languages/Languages";
 export class WizardContainer extends Component {
 	
 	state = {
-		data : {
-			companyName: "",
-			email: "",
-			website: ""
-		}
+		data : {}
 		
 	};
 
@@ -33,28 +29,36 @@ export class WizardContainer extends Component {
 	// 	website: this.state.website
 	// });
 
+	// setWizardProperties = (properties) => {
+		
+	// 	let data = {...this.state.data}	
+	// 	Object.keys(properties).forEach(key => {
+	// 		data[key] = properties[key]
+	// 	}) 
+
+	// 	this.setState({data})
+	// };
 	setWizardProperties = (properties) => {
-		// Object.keys(properties).forEach((key) => {
-		// 	this.setWizardProperty(key, properties[key]);
-		// 	console.log("setting key=",key,"value=",properties[key]);
-			
-		// });
-	
-		this.setState({data:properties})
+			 
+		const key = Object.keys(properties)
+		const value = Object.values(properties)
+
+		let data = {...this.state.data}	
+		data[[key[0]]] = value[0]
+
+		this.setState({data})
 	};
 
 	render() {
 
-		
-		
 		const containerState = this.state
 		const { back, next, step, toggleWizard } = this.props;
-		console.log(containerState, "<<<<< i need to compare this state");
+		
 		switch (step) {
 			case 1:
 				return (
 					<AboutCompany
-						containerState={containerState.data}
+						containerState={containerState.data.aboutCompany}
 						nextStep={next}
 						toggleWizard={toggleWizard}
 						setWizardProperties={this.setWizardProperties}

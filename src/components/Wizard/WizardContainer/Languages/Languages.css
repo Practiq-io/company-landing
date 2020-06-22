@@ -2,18 +2,19 @@
   color: red;
 }
 .languages_input::placeholder {
-  color: #B1B1B8;
+  color: #b1b1b8;
 }
 .languages-selected-tags_output {
-  border-bottom: 1px solid #E9E9ED;
+  border-bottom: 1px solid #e9e9ed;
   margin: 16px 0 24px 0;
+  padding-bottom: 8px;
   min-height: 45px;
   display: flex;
   flex-wrap: wrap;
   transition: 0.3s;
 }
 .languages-selected-tags_output .selected_tag {
-  background: #1371FD;
+  background: #1371fd;
   padding: 0 14px;
   height: 28px;
   border-radius: 4px;
@@ -44,7 +45,7 @@
   transition: 0.3s;
 }
 .languages-popular-tags_output .popular_tag {
-  border: 1px solid #E9E9ED;
+  border: 1px solid #e9e9ed;
   padding: 0 14px;
   height: 28px;
   border-radius: 4px;

@@ -7,15 +7,17 @@ export default class AboutCompany extends Component {
 
 	componentWillMount(){
 		const containerState = this.props.containerState
-		console.log("MOUNT WAS TRIGGERED with ===", this.props.containerState);
 		
-		if(containerState.companyName || containerState.email || containerState.website){
-			console.log("BUT THIS SHOULD NOT TRIGGER RIGHT AWAY FUCK YOU");
-			this.setState({
-				companyName: containerState.companyName,
-				email: containerState.email,
-				website: containerState.website
-			})
+		console.log(containerState, "FUCKING BITCH ASS FUCK");
+		
+		if(containerState){
+			if(containerState.companyName || containerState.email || containerState.website){
+				this.setState({
+					companyName: containerState.companyName,
+					email: containerState.email,
+					website: containerState.website
+				})
+			}
 		}
 	}
 
@@ -65,14 +67,30 @@ export default class AboutCompany extends Component {
 		return true;
 	};
 
+	// continue = () => {
+	// 	const isValid = this.validation();
+	// 	if (isValid) {
+	// 		this.props.setWizardProperties({
+	// 			companyName: this.state.companyName,
+	// 			email: this.state.email,
+	// 			website: this.state.website
+	// 		});
+	// 		this.props.nextStep();
+	// 	}
+	// };
 	continue = () => {
 		const isValid = this.validation();
 		if (isValid) {
-			this.props.setWizardProperties({
-				companyName: this.state.companyName,
-				email: this.state.email,
-				website: this.state.website
-			});
+			const aboutCompany = {
+				aboutCompany: {
+					companyName: this.state.companyName,
+					email: this.state.email,
+					website: this.state.website
+				}
+				
+				
+			}
+			this.props.setWizardProperties(aboutCompany);
 			this.props.nextStep();
 		}
 	};
@@ -87,7 +105,7 @@ export default class AboutCompany extends Component {
 		const { toggleWizard } = this.props;
 
 
-		console.log(this.state, "ABOUT-STATE, LOOK HERE");
+		
 		return (
 			<div className="about-company_frame">
 				<div className="modal-position_wrapper">
@@ -98,7 +116,7 @@ export default class AboutCompany extends Component {
 					<div className="modal-content_box">
 						<p className="modal-content_subtitle">
 							Company name
-							<span className="about-company_error-message">
+							<span className="validation_error-message">
 								{companyNameError}
 							</span>
 						</p>
@@ -111,7 +129,7 @@ export default class AboutCompany extends Component {
 						/>
 						<p className="modal-content_subtitle">
 							Email
-							<span className="about-company_error-message">{emailError}</span>
+							<span className="validation_error-message">{emailError}</span>
 						</p>
 						<input
 							className="about-company_input"
@@ -121,7 +139,7 @@ export default class AboutCompany extends Component {
 						/>
 						<p className="modal-content_subtitle">
 							Website (optional)
-							<span className="about-company_error-message">
+							<span className="validation_error-message">
 								{websiteError}
 							</span>
 						</p>

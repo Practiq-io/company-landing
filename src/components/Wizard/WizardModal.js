@@ -6,7 +6,7 @@ import WizardProgressBar from "./WizardProgressBar/WizardProgressBar";
 
 export class WizardModal extends Component {
 	state = {
-		step: 2
+		step: 1
 	};
 
 	componentWillUnmount() {
