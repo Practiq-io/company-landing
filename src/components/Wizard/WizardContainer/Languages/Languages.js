@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 import "./Languages.css";
 import selectedTagClose from "./Languages_img/tagClose.svg";
+import Autosuggest from "react-autosuggest";
+import './Autocomplete/Autocomplete.css';
 
 const popularTags = {
 	javascript: "Javascript",
@@ -24,80 +26,210 @@ const popularTags = {
 	aws: "AWS",
 	java: "Java",
 };
+const arrayTags = [
+	"C++","C#","Java","React","Joomla","Wordpress"
+]
+const allTags = [
+	{
+		name: "Java",
+	},
+	{
+		name: "Java SE",
+	},
+	{
+		name: "Java Docs",
+	},
+	{
+		name: "Javascript",
+	},
+	{
+		name: "React",
+	},
+	{
+		name: "Laravel",
+	},
+	{
+		name: "Node JS",
+	},
+	{
+		name: "Ruby",
+	},
+	{
+		name: "C++",
+	},
+	{
+		name: "C#",
+	},
+	{
+		name: "Swift",
+	},
+	{
+		name: "CSS",
+	},
+	{
+		name: "HTML",
+	},
+	{
+		name: "Drupal",
+	},
+	{
+		name: "Wordpress",
+	},
+	{
+		name: "React Native",
+	},
+	{
+		name: "PHP",
+	},
+	{
+		name: "Perl",
+	},
+	{
+		name: "Scala",
+	},
+	{
+		name: "Haskell",
+	},
+	{
+		name: "Java1",
+	},
+	{
+		name: "Java2",
+	},
+	{
+		name: "Java3",
+	},
+	{
+		name: "Java4",
+	},
+	{
+		name: "Java5",
+	},
+	{
+		name: "Java6",
+	},
+	{
+		name: "Java7",
+	},
+	{
+		name: "Java8",
+	},
+	{
+		name: "Java9",
+	},
+	{
+		name: "Java10"
+	}
+];
+function escapeRegexCharacters(str) {
+	return str.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+}
+function getSuggestions(value) {
+	const escapedValue = escapeRegexCharacters(value.trim());
 
-// const selectedTags = {
-// 	ios: "IOS",
-// 	android: "Android",
-// 	aws: "AWS",
-// 	java: "Java",
-// };
+	if (escapedValue === "") {
+		return [];
+	}
+
+	const regex = new RegExp("^" + escapedValue, "i");
+
+	return allTags.filter((language) => regex.test(language.name));
+}
+function getSuggestionValue(suggestion) {
+	return suggestion.name;
+}
+function renderSuggestion(suggestion) {
+	return <div className="custom-styles_span">{suggestion.name}</div>;
+}
+
+// const arr = ["C++","C#","Java","Node Js","Laravel"];
+
+// const index = arr.indexOf("C++");
+
+// console.log(arr,"LOL KEK KEK KEK");
+
+// arr.splice(index, 1);
+
+// console.log(arr, "AFTER DELETION");
 
 
 
 
 
 export default class Languages extends Component {
-	state = {};
+	state = {
+		value: "",
+		suggestions: [],
+	};
 
-	// componentWillMount() {
-	// 	this.setState({ popularTags, selectedTags });
-	// }
-	componentDidMount() {
-		this.setState({ popularTags });
+	arrayAddTag = name => {
+		let arrayTags = [...this.state.arrayTags]
+		let index = arrayTags.indexOf(name);
+		arrayTags.splice(index, 1);
+		this.setState({arrayTags})
 	}
-	
+
+	onChange = (event, { newValue, method }) => {
+		this.setState({
+			value: newValue,
+		});
+	};
+	onSuggestionsFetchRequested = ({ value }) => {
+		this.setState({
+			suggestions: getSuggestions(value),
+		});
+	};
+	onSuggestionsClearRequested = () => {
+		this.setState({
+			suggestions: [],
+		});
+	};
+
+	componentDidMount() {
+		// this.setState({ popularTags });
+		this.setState({arrayTags})
+	}
+
 	addPopularTag = (key, value) => {
+		console.log("triggered with key===>", key, "And value ===>", value);
 
-		console.log("triggered with key===>",key,"And value ===>",value);
-
-		let popularTags = {...this.state.popularTags};
+		let popularTags = { ...this.state.popularTags };
 		delete popularTags[key];
-		let selectedTags = {...this.state.selectedTags};
+		let selectedTags = { ...this.state.selectedTags };
 		selectedTags[key] = value;
-		this.setState({popularTags, selectedTags})
-
+		this.setState({ popularTags, selectedTags });
 	};
 
 	removeSelectedTag = (key, value) => {
 		console.log("REMOVE IS TRIGGERED");
-		
-		console.log("triggered with Selected Key===>",key,"And Selected Value ===>",value);
-		if(key in popularTags) {
-			let selectedTags = {...this.state.selectedTags};
-			let popularTags = {...this.state.popularTags};
+
+		console.log(
+			"triggered with Selected Key===>",
+			key,
+			"And Selected Value ===>",
+			value
+		);
+		if (key in popularTags) {
+			let selectedTags = { ...this.state.selectedTags };
+			let popularTags = { ...this.state.popularTags };
 			delete selectedTags[key];
 			popularTags[key] = value;
-			this.setState({popularTags, selectedTags});
+			this.setState({ popularTags, selectedTags });
 		} else {
-			let selectedTags = {...this.state.selectedTags};
+			let selectedTags = { ...this.state.selectedTags };
 			delete selectedTags[key];
 		}
-
-	}
-
-
+	};
 
 	render() {
-
-
-		// const languages = {
-		// 	iso:"IOS",
-		// 	aws: "AWS",
-		// 	javascript: "Javascript"
-		// }
-		// console.log(languages, "LANGUAGES OBJECT");
-		// Object.keys(languages).forEach(key => {
-		// 	console.log(languages[key], "LANGUAGES DATA");
-			
-		// })
-
-
-
+		const { value, suggestions, errorMessage } = this.state;
+		const inputProps = {
+			placeholder: "e.g., Java, React, Drupal, etc.",
+			value,
+			onChange: this.onChange,
+		};
 		console.log(this.state.selectedTags, "I WILL SEND THIS TO CONTAINER");
 		
-		
-
-		const { errorMessage } = this.state;
 		const { toggleWizard, prevStep } = this.props;
 
 		return (
@@ -112,35 +244,39 @@ export default class Languages extends Component {
 							Languages and/or frameworks
 							<span className="validation_error-message">{errorMessage}</span>
 						</p>
-						<input
-							autocomplete="off"
-							className="languages_input"
-							// onChange={this.onChangeHandler}
-							type="text"
-							name="companyName"
-							placeholder="e.g., Java, React, Drupal, etc."
+
+						<Autosuggest
+							suggestions={suggestions}
+							onSuggestionsFetchRequested={this.onSuggestionsFetchRequested}
+							onSuggestionsClearRequested={this.onSuggestionsClearRequested}
+							getSuggestionValue={getSuggestionValue}
+							renderSuggestion={renderSuggestion}
+							inputProps={inputProps}
 						/>
 
 						<div className="languages-selected-tags_output">
-							{ this.state.selectedTags ? 
-								Object.keys(this.state.selectedTags).map((key) => {
-									const popularTagValue = this.state.selectedTags[key];
-									const popularTagKey = key;
-									return (
-										<div className="selected_tag" key={key}>
-											<p>{popularTagValue}</p>
-											<img
-												onClick={() => this.removeSelectedTag(popularTagKey, popularTagValue)}
-												className="selected-tag_close-button"
-												src={selectedTagClose}
-												alt=""
-											/>
-										</div>
-									);
-								})
-								: null
-							}
-
+							{this.state.selectedTags
+								? Object.keys(this.state.selectedTags).map((key) => {
+										const popularTagValue = this.state.selectedTags[key];
+										const popularTagKey = key;
+										return (
+											<div className="selected_tag" key={key}>
+												<p>{popularTagValue}</p>
+												<img
+													onClick={() =>
+														this.removeSelectedTag(
+															popularTagKey,
+															popularTagValue
+														)
+													}
+													className="selected-tag_close-button"
+													src={selectedTagClose}
+													alt=""
+												/>
+											</div>
+										);
+								  })
+								: null}
 						</div>
 
 						<p className="modal-content_subtitle">
@@ -151,28 +287,39 @@ export default class Languages extends Component {
 						</p>
 
 						<div className="languages-popular-tags_output">
-
-							{ this.state.popularTags ?
-								Object.keys(this.state.popularTags).map((key) => {
-									const selectedTagValue = this.state.popularTags[key];
-									const selectedTagKey = key;
-									return (
-										<div 
-											onClick={() => this.addPopularTag(selectedTagKey,selectedTagValue)}
-											className="popular_tag" 
-											key={key}
-										>
-											<p>{selectedTagValue}</p>
-										</div>
-									);
-								}) : null
-							}
-
-							{/* 
-							<div className="popular_tag">
-								<p>Javascript</p>
-							</div> */}
-
+							{this.state.arrayTags
+									? this.state.arrayTags.map(name => {
+											
+											return (
+												<div
+													onClick={() =>
+														this.arrayAddTag(name)
+													}
+													className="popular_tag"
+													key={name}
+												>
+													<p>{name}</p>
+												</div>
+											);
+									})
+									: null}
+							{/* {this.state.popularTags
+								? Object.keys(this.state.popularTags).map((key) => {
+										const selectedTagValue = this.state.popularTags[key];
+										const selectedTagKey = key;
+										return (
+											<div
+												onClick={() =>
+													this.addPopularTag(selectedTagKey, selectedTagValue)
+												}
+												className="popular_tag"
+												key={key}
+											>
+												<p>{selectedTagValue}</p>
+											</div>
+										);
+								  })
+								: null} */}
 						</div>
 					</div>
 				</div>
