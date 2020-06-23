@@ -165,7 +165,6 @@ export default class Languages extends Component {
 		selectedTags.push(name)
 		this.setState({popularTags, selectedTags})
 	}
-
 	removeSelectedTag = name => {
 		
 		if(popularTags.includes(name)){
@@ -182,7 +181,33 @@ export default class Languages extends Component {
 			this.setState({ selectedTags });
 		}
 	}
+	
+	addInputTag = (event) => {
+		if(event.key === 'Enter' && this.state.value){
 
+		  let value = this.state.value;
+		  let selectedTags = [...this.state.selectedTags];
+		  let popularTags = [...this.state.popularTags];
+
+		  if(popularTags.includes(value)){
+
+			let index = popularTags.indexOf(value);
+			popularTags.splice(index, 1);
+			selectedTags.push(value);
+			value = "";
+			this.setState({selectedTags,popularTags,value});
+
+		  } else {
+			if(!selectedTags.includes(value)){
+				selectedTags.push(value);
+				value = "";
+				this.setState({selectedTags,value});
+			} else {
+				return;
+			}
+		  } 
+		}
+	  }
 	componentDidMount() {
 		this.setState({popularTags})
 	}
@@ -200,7 +225,7 @@ export default class Languages extends Component {
 		const {prevStep } = this.props;
 
 		return (
-			<div className="languages_frame">
+			<div className="languages_frame" onKeyPress={this.addInputTag}>
 				<div className="modal-position_wrapper">
 					<div className="modal-title">
 						<p>What languages and frameworks are you looking for?</p>
@@ -213,6 +238,7 @@ export default class Languages extends Component {
 						</p>
 
 						<Autosuggest
+							
 							suggestions={suggestions}
 							onSuggestionsFetchRequested={this.onSuggestionsFetchRequested}
 							onSuggestionsClearRequested={this.onSuggestionsClearRequested}
