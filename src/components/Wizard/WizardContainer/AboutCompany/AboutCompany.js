@@ -29,7 +29,7 @@ export default class AboutCompany extends Component {
 		let emailError = "";
 		let websiteError = "";
 
-		console.log("IM DOING VALIDATION");
+		console.debug("aboutCompany validation has started");
 
 		if (this.state.companyName) {
 			if (this.state.companyName.length > 500) {
@@ -57,10 +57,10 @@ export default class AboutCompany extends Component {
 
 		if (companyNameError || emailError || websiteError) {
 			this.setState({ companyNameError, emailError, websiteError });
-			console.log("FAILED VALIDATION");
+			console.debug("aboutCompany validation has failed");
 			return false;
 		}
-		console.log("GOOD GOOD");
+		console.debug("aboutCompany validation has passed");
 		return true;
 	};
 

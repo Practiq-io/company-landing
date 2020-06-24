@@ -11,34 +11,6 @@ export class WizardContainer extends Component {
 		
 	};
 
-
-	// setWizardProperty = (name, value) => {
-	// 	let data = { ...this.state };
-		
-	// 	console.log("DATA IN SETSTATE BEFORE ADDED VALUE", data,);
-	// 	data[name] = value
-		
-	// 	console.log("I SET STATE WITH THIS FUCKING SHIT ======", data);
-	// 	this.setState(
-	// 		data
-	// 	);
-	// };
-
-	// this.props.setWizardProperties({
-	// 	companyName: this.state.companyName,
-	// 	email: this.state.email,
-	// 	website: this.state.website
-	// });
-
-	// setWizardProperties = (properties) => {
-		
-	// 	let data = {...this.state.data}	
-	// 	Object.keys(properties).forEach(key => {
-	// 		data[key] = properties[key]
-	// 	}) 
-
-	// 	this.setState({data})
-	// };
 	setWizardProperties = (properties) => {
 			 
 		const key = Object.keys(properties)
@@ -54,7 +26,7 @@ export class WizardContainer extends Component {
 
 		const containerState = this.state
 		const { back, next, step, toggleWizard } = this.props;
-		console.log(this.state, "I NEED TO SEE THIS AFTER NEXT");
+		console.debug(this.state, "container state, that i need to pass to components on second render");
 		
 		
 		switch (step) {

@@ -243,7 +243,7 @@ export default class Languages extends Component {
 	validation = () => {
 		let inputError = "";
 
-		console.log("IM DOING VALIDATION");
+		console.debug("languages validation has started");
 
 		if (this.state.selectedTags.length === 0) {
 			inputError = "* chose a language";
@@ -251,10 +251,10 @@ export default class Languages extends Component {
 
 		if (inputError) {
 			this.setState({ inputError });
-			console.log("FAILED VALIDATION");
+			console.debug("languages validation has failed");
 			return false;
 		}
-		console.log("GOOD GOOD");
+		console.debug("languages validation has passed");
 		return true;
 	};
 	continue = () => {
