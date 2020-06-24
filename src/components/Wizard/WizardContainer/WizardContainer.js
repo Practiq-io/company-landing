@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import "./WizardContainer.css";
 import AboutCompany from "./AboutCompany/AboutCompany";
 import Languages from "./Languages/Languages";
+import TaskType from "./TaskType/TaskType";
 
 export class WizardContainer extends Component {
 	
@@ -53,6 +54,8 @@ export class WizardContainer extends Component {
 
 		const containerState = this.state
 		const { back, next, step, toggleWizard } = this.props;
+		console.log(this.state, "I NEED TO SEE THIS AFTER NEXT");
+		
 		
 		switch (step) {
 			case 1:
@@ -69,10 +72,17 @@ export class WizardContainer extends Component {
 					 <Languages
 						toggleWizard={toggleWizard}
 						prevStep={back}
+						nextStep={next}
+						setWizardProperties={this.setWizardProperties}
+						containerState={containerState.data.taxonomy}
 					/>
 				);
 			case 3:
-				return <h1>Task Type</h1>;
+				return (
+					<TaskType
+						prevStep={back}
+					/>
+				);
 			case 4:
 				return <h1>Deliverables</h1>;
 			case 5:

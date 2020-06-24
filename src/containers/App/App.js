@@ -6,7 +6,7 @@ import NavigationBar from "../../components/NavigationBar/NavigationBar";
 
 export default class App extends Component {
 	state = {
-		showWizard: true,
+		showWizard: false,
 		toggle: () => {
 			this.setState({ showWizard: !this.state.showWizard });
 		},

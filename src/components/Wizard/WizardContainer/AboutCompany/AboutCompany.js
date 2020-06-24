@@ -67,17 +67,6 @@ export default class AboutCompany extends Component {
 		return true;
 	};
 
-	// continue = () => {
-	// 	const isValid = this.validation();
-	// 	if (isValid) {
-	// 		this.props.setWizardProperties({
-	// 			companyName: this.state.companyName,
-	// 			email: this.state.email,
-	// 			website: this.state.website
-	// 		});
-	// 		this.props.nextStep();
-	// 	}
-	// };
 	continue = () => {
 		const isValid = this.validation();
 		if (isValid) {
@@ -87,8 +76,6 @@ export default class AboutCompany extends Component {
 					email: this.state.email,
 					website: this.state.website
 				}
-				
-				
 			}
 			this.props.setWizardProperties(aboutCompany);
 			this.props.nextStep();
