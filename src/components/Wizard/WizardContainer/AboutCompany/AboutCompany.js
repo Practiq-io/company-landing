@@ -7,20 +7,14 @@ export default class AboutCompany extends Component {
 	componentWillMount() {
 		const containerState = this.props.containerState;
 
-		console.log(containerState, "=== container state");
+		console.debug(containerState, "container state passed to aboutCompany");
 
 		if (containerState) {
-			if (
-				containerState.companyName ||
-				containerState.email ||
-				containerState.website
-			) {
-				this.setState({
-					companyName: containerState.companyName,
-					email: containerState.email,
-					website: containerState.website,
-				});
-			}
+			this.setState({
+				companyName: containerState.companyName,
+				email: containerState.email,
+				website: containerState.website,
+			});
 		}
 	}
 
