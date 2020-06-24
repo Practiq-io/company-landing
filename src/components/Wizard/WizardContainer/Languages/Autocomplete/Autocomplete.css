@@ -10,8 +10,20 @@
   border: 1px solid #e9e9ed;
   border-radius: 8px;
 }
+.react-autosuggest__input::-webkit-input-placeholder {
+  color: #b1b1b8;
+}
+.react-autosuggest__input::-moz-placeholder {
+  color: #b1b1b8;
+}
+.react-autosuggest__input:-ms-input-placeholder {
+  color: #b1b1b8;
+}
+.react-autosuggest__input::-ms-input-placeholder {
+  color: #b1b1b8;
+}
 .react-autosuggest__input::placeholder {
-  color: #B1B1B8;
+  color: #b1b1b8;
 }
 .react-autosuggest__input--focused {
   outline: none;
@@ -20,7 +32,13 @@
   width: 100%;
   min-height: 46px;
   border-bottom: 1px solid #e9e9ed;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
   display: flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -moz-box-align: center;
   align-items: center;
   margin: -7px 0;
   padding: 27px 0;
@@ -53,6 +71,7 @@
   margin: 0 15px 0 15px;
 }
 .react-autosuggest__suggestion--highlighted {
+  -webkit-transition: 0.4s;
   transition: 0.4s;
-  color: #1371FD;
+  color: #1371fd;
 }

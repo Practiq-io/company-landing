@@ -2,21 +2,24 @@ import React, { Component } from "react";
 import "./AboutCompany.css";
 
 export default class AboutCompany extends Component {
-
 	state = {};
 
-	componentWillMount(){
-		const containerState = this.props.containerState
-		
-		console.log(containerState, "FUCKING BITCH ASS FUCK");
-		
-		if(containerState){
-			if(containerState.companyName || containerState.email || containerState.website){
+	componentWillMount() {
+		const containerState = this.props.containerState;
+
+		console.log(containerState, "=== container state");
+
+		if (containerState) {
+			if (
+				containerState.companyName ||
+				containerState.email ||
+				containerState.website
+			) {
 				this.setState({
 					companyName: containerState.companyName,
 					email: containerState.email,
-					website: containerState.website
-				})
+					website: containerState.website,
+				});
 			}
 		}
 	}
@@ -26,44 +29,38 @@ export default class AboutCompany extends Component {
 		let emailError = "";
 		let websiteError = "";
 
-		console.log('IM DOING VALIDATION');
-		
+		console.log("IM DOING VALIDATION");
+
 		if (this.state.companyName) {
 			if (this.state.companyName.length > 500) {
 				companyNameError = "* too long string";
-				
 			}
 		} else {
 			companyNameError = "* is required";
-			
 		}
 
 		if (this.state.email) {
 			if (this.state.email.length > 500) {
 				emailError = "* too long string";
-				
 			} else if (!this.state.email.includes("@")) {
 				emailError = "* invalid email format";
-				
 			}
 		} else {
 			emailError = "* is required";
-			
 		}
 
 		if (this.state.website) {
 			if (this.state.website.length > 500) {
 				websiteError = "* too long string";
-				
 			}
 		}
 
 		if (companyNameError || emailError || websiteError) {
 			this.setState({ companyNameError, emailError, websiteError });
-			console.log('FUCKING BITCH');
+			console.log("FAILED VALIDATION");
 			return false;
 		}
-		console.log('GOOD GOOD');
+		console.log("GOOD GOOD");
 		return true;
 	};
 
@@ -74,25 +71,22 @@ export default class AboutCompany extends Component {
 				aboutCompany: {
 					companyName: this.state.companyName,
 					email: this.state.email,
-					website: this.state.website
-				}
-			}
+					website: this.state.website,
+				},
+			};
 			this.props.setWizardProperties(aboutCompany);
 			this.props.nextStep();
 		}
 	};
 
 	onChangeHandler = (e) => {
-		this.setState({[e.target.name]: e.target.value });
+		this.setState({ [e.target.name]: e.target.value });
 	};
 
 	render() {
-		
 		const { companyNameError, emailError, websiteError } = this.state;
 		const { toggleWizard } = this.props;
 
-
-		
 		return (
 			<div className="about-company_frame">
 				<div className="modal-position_wrapper">
@@ -120,20 +114,20 @@ export default class AboutCompany extends Component {
 						</p>
 						<input
 							className="about-company_input"
-							onChange={this.onChangeHandler} 
-							type="text" name="email" 
-							defaultValue={this.state.email} 
+							onChange={this.onChangeHandler}
+							type="text"
+							name="email"
+							defaultValue={this.state.email}
 						/>
 						<p className="modal-content_subtitle">
 							Website (optional)
-							<span className="validation_error-message">
-								{websiteError}
-							</span>
+							<span className="validation_error-message">{websiteError}</span>
 						</p>
 						<input
 							className="about-company_input"
-							onChange={this.onChangeHandler} 
-							type="text" name="website" 
+							onChange={this.onChangeHandler}
+							type="text"
+							name="website"
 							defaultValue={this.state.website}
 						/>
 					</div>
