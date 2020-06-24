@@ -241,20 +241,12 @@ export default class Languages extends Component {
 		this.setState({ popularTags });
 	}
 	validation = () => {
-		let inputError = "";
 
-		console.debug("languages validation has started");
-
-		if (this.state.selectedTags.length === 0) {
-			inputError = "* chose a language";
-		}
-
-		if (inputError) {
-			this.setState({ inputError });
-			console.debug("languages validation has failed");
+		if(this.state.selectedTags.length === 0) {
+			this.setState({ inputError: "* choose a language"});
 			return false;
 		}
-		console.debug("languages validation has passed");
+		
 		return true;
 	};
 	continue = () => {
