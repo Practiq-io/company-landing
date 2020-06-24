@@ -191,7 +191,7 @@ export default class Languages extends Component {
 	};
 	addInputTag = (event) => {
 		if (event.key === "Enter" && this.state.value) {
-			const blockedRegex = /[\[\]!@#$%^&*(),.?":{}|<>]/;
+			const blockedRegex = /[\[\]!@$%^&*(),?":{}|<>]/;
 
 			if (this.state.value.match(blockedRegex)) {
 				this.setState({ inputError: "* only string values" });
