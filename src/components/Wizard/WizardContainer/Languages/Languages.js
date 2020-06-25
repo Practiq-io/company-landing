@@ -241,12 +241,11 @@ export default class Languages extends Component {
 		this.setState({ popularTags });
 	}
 	validation = () => {
-
-		if(this.state.selectedTags.length === 0) {
-			this.setState({ inputError: "* choose a language"});
+		if (this.state.selectedTags.length === 0) {
+			this.setState({ inputError: "* choose a language" });
 			return false;
 		}
-		
+
 		return true;
 	};
 	continue = () => {

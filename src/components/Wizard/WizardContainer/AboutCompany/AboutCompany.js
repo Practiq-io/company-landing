@@ -7,8 +7,6 @@ export default class AboutCompany extends Component {
 	componentWillMount() {
 		const containerState = this.props.containerState;
 
-		console.debug(containerState, "container state passed to aboutCompany");
-
 		if (containerState) {
 			this.setState({
 				companyName: containerState.companyName,
@@ -22,8 +20,6 @@ export default class AboutCompany extends Component {
 		let companyNameError = "";
 		let emailError = "";
 		let websiteError = "";
-
-		console.debug("aboutCompany validation has started");
 
 		if (this.state.companyName) {
 			if (this.state.companyName.length > 500) {
@@ -51,10 +47,8 @@ export default class AboutCompany extends Component {
 
 		if (companyNameError || emailError || websiteError) {
 			this.setState({ companyNameError, emailError, websiteError });
-			console.debug("aboutCompany validation has failed");
 			return false;
 		}
-		console.debug("aboutCompany validation has passed");
 		return true;
 	};
 

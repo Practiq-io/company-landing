@@ -5,30 +5,24 @@ import Languages from "./Languages/Languages";
 import TaskType from "./TaskType/TaskType";
 
 export class WizardContainer extends Component {
-	
 	state = {
-		data : {}
-		
+		data: {},
 	};
 
 	setWizardProperties = (properties) => {
-			 
-		const key = Object.keys(properties)
-		const value = Object.values(properties)
+		const key = Object.keys(properties);
+		const value = Object.values(properties);
 
-		let data = {...this.state.data}	
-		data[[key[0]]] = value[0]
+		let data = { ...this.state.data };
+		data[[key[0]]] = value[0];
 
-		this.setState({data})
+		this.setState({ data });
 	};
 
 	render() {
-
-		const containerState = this.state
+		const containerState = this.state;
 		const { back, next, step, toggleWizard } = this.props;
-		console.debug(this.state, "container state, that i need to pass to components on second render");
-		
-		
+
 		switch (step) {
 			case 1:
 				return (
@@ -40,8 +34,8 @@ export class WizardContainer extends Component {
 					/>
 				);
 			case 2:
-				return(
-					 <Languages
+				return (
+					<Languages
 						toggleWizard={toggleWizard}
 						prevStep={back}
 						nextStep={next}
@@ -50,11 +44,7 @@ export class WizardContainer extends Component {
 					/>
 				);
 			case 3:
-				return (
-					<TaskType
-						prevStep={back}
-					/>
-				);
+				return <TaskType prevStep={back} />;
 			case 4:
 				return <h1>Deliverables</h1>;
 			case 5:
