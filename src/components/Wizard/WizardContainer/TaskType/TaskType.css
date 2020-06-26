@@ -2,3 +2,9 @@
   background: #c4c3c3;
   color: gray;
 }
+.plug {
+  width: 100%;
+  height: 150px;
+  background: red;
+  margin: 10px 0;
+}
