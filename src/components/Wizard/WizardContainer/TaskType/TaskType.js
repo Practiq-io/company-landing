@@ -6,8 +6,13 @@ import TaskTypeControls from "./TaskTypeControls/TaskTypeControls";
 
 export default class TaskType extends Component {
 	state = {
-		programming: "frontend"
+		programming: "backend",
+		taskType: "none"
 	};
+
+	setTaskType = taskType => {
+		this.setState({taskType: taskType})
+	}
 
 	toggleLanguage = () => {
 		if(this.state.programming === "backend"){
@@ -19,7 +24,6 @@ export default class TaskType extends Component {
 
 	render() {
 		const { prevStep } = this.props;
-		console.log(this.state, "looking at switch");
 		
 		return (
 			<div className="about-company_frame">
@@ -28,7 +32,7 @@ export default class TaskType extends Component {
 						<p>Select technical requirements</p>
 					</div>
 					<TaskTypeSwitch toggle={this.toggleLanguage} programming={this.state.programming} />
-					<TaskTypeControls programming={this.state.programming}/>
+					<TaskTypeControls selectTask={this.setTaskType}  programming={this.state.programming} taskType={this.state.taskType}/>
 
 
 				</div>

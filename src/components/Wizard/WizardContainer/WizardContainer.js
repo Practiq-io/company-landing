@@ -26,7 +26,7 @@ export class WizardContainer extends Component {
 
 		const containerState = this.state
 		const { back, next, step, toggleWizard } = this.props;
-		console.debug(this.state, "container state, that i need to pass to components on second render");
+	
 		
 		
 		switch (step) {
