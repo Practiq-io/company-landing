@@ -1,11 +1,12 @@
 import React, { Component } from "react";
 import "./TaskType.css";
 import TaskTypeSwitch from "./TaskTypeSwitch/TaskTypeSwitch";
+import TaskTypeControls from "./TaskTypeControls/TaskTypeControls";
 
 
 export default class TaskType extends Component {
 	state = {
-		programming: "backend"
+		programming: "frontend"
 	};
 
 	toggleLanguage = () => {
@@ -27,7 +28,7 @@ export default class TaskType extends Component {
 						<p>Select technical requirements</p>
 					</div>
 					<TaskTypeSwitch toggle={this.toggleLanguage} programming={this.state.programming} />
-
+					<TaskTypeControls programming={this.state.programming}/>
 
 
 				</div>
