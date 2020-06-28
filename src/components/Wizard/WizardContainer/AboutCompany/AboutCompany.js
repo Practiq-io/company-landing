@@ -7,8 +7,6 @@ export default class AboutCompany extends Component {
 	componentWillMount() {
 		const containerState = this.props.containerState;
 
-		console.debug(containerState, "container state passed to aboutCompany");
-
 		if (containerState) {
 			this.setState({
 				companyName: containerState.companyName,
@@ -23,7 +21,6 @@ export default class AboutCompany extends Component {
 		let emailError = "";
 		let websiteError = "";
 
-		console.debug("aboutCompany validation has started");
 
 		if (this.state.companyName) {
 			if (this.state.companyName.length > 500) {
@@ -51,10 +48,9 @@ export default class AboutCompany extends Component {
 
 		if (companyNameError || emailError || websiteError) {
 			this.setState({ companyNameError, emailError, websiteError });
-			console.debug("aboutCompany validation has failed");
 			return false;
 		}
-		console.debug("aboutCompany validation has passed");
+		
 		return true;
 	};
 
@@ -80,9 +76,11 @@ export default class AboutCompany extends Component {
 	render() {
 		const { companyNameError, emailError, websiteError } = this.state;
 		const { toggleWizard } = this.props;
+		console.log(this.state, "=== FINAL STATE");
+		
 
 		return (
-			<div className="about-company_frame">
+			<div className="wizard-modal_content-box">
 				<div className="modal-position_wrapper">
 					<div className="modal-title">
 						<p>Tell us about your company</p>

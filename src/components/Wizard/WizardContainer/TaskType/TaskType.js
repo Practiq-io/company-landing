@@ -9,11 +9,24 @@ export default class TaskType extends Component {
 	state = {
 		programming: "backend",
 		taskType: "",
-		taskData: {}
+		taskData: {
+		
+		}
 	};
 
 	setTaskType = taskType => {
 		this.setState({taskType: taskType})
+	}
+
+	setTaskTypeState = (properties) => {
+
+		const key = Object.keys(properties)
+		const value = Object.values(properties)
+
+		let taskData = {...this.state.taskData}
+		taskData[[key[0]]] = value[0]
+	
+		this.setState({taskData})
 	}
 
 	toggleLanguage = () => {
@@ -24,21 +37,40 @@ export default class TaskType extends Component {
 		}
 	}
 
-	render() {
-		const { prevStep } = this.props;
+	continue = () => {
 		
+		const specification = {
+			specification: {
+				type: this.state.taskType,
+				programming: this.state.programming,
+				taskData: this.state.taskData
+			}
+		}
+		this.props.setWizardProperties(specification);
+		this.props.nextStep();
+	}
+
+	render() {
+		const { prevStep, nextStep, setWizardProperties } = this.props;
+		console.log(this.state, "Task Type State with OUTPUT KEY");
+		
+
 		return (
-			<div className="about-company_frame">
+			<div className="wizard-modal_content-box">
+
 				<div className="modal-position_wrapper">
+					
 					<div className="modal-title">
 						<p>Select technical requirements</p>
 					</div>
+
 					<TaskTypeSwitch toggle={this.toggleLanguage} programming={this.state.programming} />
-					<TaskTypeControls selectTask={this.setTaskType}  programming={this.state.programming} taskType={this.state.taskType}/>
+					<TaskTypeControls selectTask={this.setTaskType} programming={this.state.programming} taskType={this.state.taskType}/>
 
 					<div className="task-type-output_frame">
-						<TaskTypeOutput taskTypeState={this.state}/>
+						<TaskTypeOutput setTaskTypeState={this.setTaskTypeState} taskTypeState={this.state}/>
 					</div>
+
 				</div>
 
 				<div className="wizard-button_box">
@@ -46,7 +78,7 @@ export default class TaskType extends Component {
 						<p>Back</p>
 					</div>
 
-					<div className="wizard_button wizard-next_button">
+					<div onClick={this.continue} className="wizard_button wizard-next_button">
 						<p>Next</p>
 					</div>
 				</div>

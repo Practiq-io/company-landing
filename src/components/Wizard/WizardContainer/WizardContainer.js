@@ -3,6 +3,7 @@ import "./WizardContainer.css";
 import AboutCompany from "./AboutCompany/AboutCompany";
 import Languages from "./Languages/Languages";
 import TaskType from "./TaskType/TaskType";
+import Deliverables from "./Deliverables/Deliverables";
 
 export class WizardContainer extends Component {
 	
@@ -23,6 +24,9 @@ export class WizardContainer extends Component {
 	};
 
 	render() {
+
+		console.log(this.state, " FINIAL CHECK KOK");
+		
 
 		const containerState = this.state
 		const { back, next, step, toggleWizard } = this.props;
@@ -51,10 +55,16 @@ export class WizardContainer extends Component {
 				return (
 					<TaskType
 						prevStep={back}
+						nextStep={next}
+						setWizardProperties={this.setWizardProperties}
 					/>
 				);
 			case 4:
-				return <h1>Deliverables</h1>;
+				return (
+					<Deliverables
+						prevStep={back}	
+					/>
+				);
 			case 5:
 				return <h1>General Info</h1>;
 			case 6:

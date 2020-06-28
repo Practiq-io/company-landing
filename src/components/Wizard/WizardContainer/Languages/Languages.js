@@ -274,7 +274,7 @@ export default class Languages extends Component {
 		const { prevStep } = this.props;
 
 		return (
-			<div className="languages_frame" onKeyPress={this.addInputTag}>
+			<div className="wizard-modal_content-box" onKeyPress={this.addInputTag}>
 				<div className="modal-position_wrapper">
 					<div className="modal-title">
 						<p>What languages and frameworks are you looking for?</p>

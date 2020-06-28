@@ -1,7 +1,20 @@
 import React, { Component } from "react";
 
 export default class ApiConnectorAdapter extends Component {
+
+    componentWillMount(){
+        const connectorAdapter = {
+            connectorAdapter : {
+                apiRequest: "string",
+                apiResponse: "string",
+                linkToDocumentation: "link"
+            }   
+        }
+        this.props.setTaskTypeState(connectorAdapter)
+    }
+
 	render() {
+
 		return (
 			<>
                 <p className="modal-content_subtitle">
