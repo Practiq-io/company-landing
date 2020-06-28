@@ -100,6 +100,7 @@ export default class AboutCompany extends Component {
 							onChange={this.onChangeHandler}
 							type="text"
 							name="companyName"
+							autocomplete="off"
 							defaultValue={this.state.companyName}
 						/>
 						<p className="modal-content_subtitle">
@@ -122,6 +123,7 @@ export default class AboutCompany extends Component {
 							onChange={this.onChangeHandler}
 							type="text"
 							name="website"
+							autocomplete="off"
 							defaultValue={this.state.website}
 						/>
 					</div>

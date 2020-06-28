@@ -16,8 +16,14 @@
   z-index: 101;
   transition: 0.3s;
 }
+.modal-content_subtitle {
+  color: #696974;
+  margin-bottom: 17px;
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
+}
 .wizard-frame {
-  position: fixed;
+  position: absolute;
   width: 100%;
   display: flex;
   padding-top: 90px;

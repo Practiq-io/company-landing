@@ -2,12 +2,14 @@ import React, { Component } from "react";
 import "./TaskType.css";
 import TaskTypeSwitch from "./TaskTypeSwitch/TaskTypeSwitch";
 import TaskTypeControls from "./TaskTypeControls/TaskTypeControls";
+import TaskTypeOutput from "./TaskTypeOutput/TaskTypeOutput";
 
 
 export default class TaskType extends Component {
 	state = {
 		programming: "backend",
-		taskType: "none"
+		taskType: "",
+		taskData: {}
 	};
 
 	setTaskType = taskType => {
@@ -33,23 +35,9 @@ export default class TaskType extends Component {
 					</div>
 					<TaskTypeSwitch toggle={this.toggleLanguage} programming={this.state.programming} />
 					<TaskTypeControls selectTask={this.setTaskType}  programming={this.state.programming} taskType={this.state.taskType}/>
-
+					<TaskTypeOutput />
 
 				</div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 				<div className="wizard-button_box">
 					<div onClick={prevStep} className="wizard_button wizard-back_button">
