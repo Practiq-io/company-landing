@@ -1,40 +1,52 @@
 import React, { Component } from "react";
 import "./WizardContainer.css";
 import AboutCompany from "./AboutCompany/AboutCompany";
+import Languages from "./Languages/Languages";
+import TaskType from "./TaskType/TaskType";
 
 export class WizardContainer extends Component {
-	
-	state = {};
-
-	setWizardProperty = (name, value) => {
-		const data = { ...this.state };
-		data[name] = value;
-		this.setState(data);
+	state = {
+		data: {},
 	};
 
 	setWizardProperties = (properties) => {
-		Object.keys(properties).forEach((key) => {
-			this.setWizardProperty(key, properties[key]);
-		});
+		const key = Object.keys(properties);
+		const value = Object.values(properties);
+
+		let data = { ...this.state.data };
+		data[[key[0]]] = value[0];
+
+		this.setState({ data });
 	};
 
 	render() {
-
+		console.dir(this.state, "RESULT");
+		
+		const containerState = this.state;
 		const { back, next, step, toggleWizard } = this.props;
 
 		switch (step) {
 			case 1:
 				return (
 					<AboutCompany
+						containerState={containerState.data.aboutCompany}
 						nextStep={next}
 						toggleWizard={toggleWizard}
 						setWizardProperties={this.setWizardProperties}
 					/>
 				);
 			case 2:
-				return <h1>Languages</h1>;
+				return (
+					<Languages
+						toggleWizard={toggleWizard}
+						prevStep={back}
+						nextStep={next}
+						setWizardProperties={this.setWizardProperties}
+						containerState={containerState.data.taxonomy}
+					/>
+				);
 			case 3:
-				return <h1>Task Type</h1>;
+				return <TaskType prevStep={back} />;
 			case 4:
 				return <h1>Deliverables</h1>;
 			case 5:
