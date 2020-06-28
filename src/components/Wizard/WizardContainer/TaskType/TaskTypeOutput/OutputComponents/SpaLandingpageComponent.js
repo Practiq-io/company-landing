@@ -29,7 +29,7 @@ export default class SpaLandingpageComponent extends Component {
                
                 <p 
                     style={{
-                        marginBottom: "16px"
+                        marginBottom: "32px"
                     }}
                     className="attach-file-button"
                 >

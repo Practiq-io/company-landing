@@ -1,24 +1,49 @@
-import React, { Component } from 'react'
-import './TaskTypeOutput.css';
-import GeneralPurposeApi from './OutputComponents/GeneralPurposeAPI';
-import ApiConnectorAdapter from './OutputComponents/ApiConnectorAdapter';
-import LongRunningProcess from './OutputComponents/LongRunningProcess';
-import SpaLandingpageComponent from './OutputComponents/SpaLandingpageComponent';
-
-
+import React, { Component } from "react";
+import "./TaskTypeOutput.css";
+import GeneralPurposeApi from "./OutputComponents/GeneralPurposeAPI";
+import ApiConnectorAdapter from "./OutputComponents/ApiConnectorAdapter";
+import LongRunningProcess from "./OutputComponents/LongRunningProcess";
+import SpaLandingpageComponent from "./OutputComponents/SpaLandingpageComponent";
+import CustomTask from "./OutputComponents/CustomTask";
 
 export default class TaskTypeOutput extends Component {
-    render() {
-        return (
-            <div className="task-type-output_frame">
-
-
-                {/* <GeneralPurposeApi /> */}
-                {/* <ApiConnectorAdapter /> */}
-                {/* <LongRunningProcess /> */}
-                <SpaLandingpageComponent />
-
-            </div>
-        )
-    }
+	render() {
+		
+		const { taskTypeState } = this.props;
+        const taskType = taskTypeState.taskType;
+		switch (taskType) {
+			case "General purpose API":
+				return (
+					<GeneralPurposeApi
+					
+					/>
+				);
+			case "API Connector/Adapter":
+				return (
+					<ApiConnectorAdapter
+						
+					/>
+				);
+			case "Long running process":
+				return (
+                    <LongRunningProcess 
+                    
+                    />
+                );
+			case "Landing page / SPA / Component":
+				return (
+                    <SpaLandingpageComponent 
+                    
+                    />
+                );
+			case "Custom backend task":
+				return (
+                    <CustomTask 
+                    
+                    />
+                );
+			default:
+				return <h1>Output component didn't find that task type.</h1>;
+		}
+	}
 }

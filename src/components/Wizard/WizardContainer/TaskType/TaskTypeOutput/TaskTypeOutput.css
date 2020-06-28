@@ -1,9 +1,3 @@
-.task-type-output_frame {
-  padding-top: 32px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
 .attach-file-button {
   color: #1371fd;
   font-weight: bold;

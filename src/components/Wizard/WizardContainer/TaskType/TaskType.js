@@ -35,8 +35,10 @@ export default class TaskType extends Component {
 					</div>
 					<TaskTypeSwitch toggle={this.toggleLanguage} programming={this.state.programming} />
 					<TaskTypeControls selectTask={this.setTaskType}  programming={this.state.programming} taskType={this.state.taskType}/>
-					<TaskTypeOutput />
 
+					<div className="task-type-output_frame">
+						<TaskTypeOutput taskTypeState={this.state}/>
+					</div>
 				</div>
 
 				<div className="wizard-button_box">
