@@ -25,6 +25,7 @@
 	z-index: 99;
 	top: 0;
 	left: 0;
+	transition: 0.3s;
 }
 
 .wizard-title_box {
@@ -71,6 +72,8 @@
 }
 
 .wizard_button {
+	display: flex;
+	align-items: center;
 	padding: 17px 60px;
 	border-radius: 4px;
 	cursor: pointer;
@@ -108,5 +111,20 @@
 	.wizard-frame {
 		padding: 100px 1em 1em 1em;
 	}
+
+	.wizard-frame {
+		position: fixed;
+		width: 100%;
+		display: flex;
+		padding-top: 1em;
+		justify-content: center;
+		z-index: 99;
+		top: 0;
+		left: 0;
+		transition: 0.3s;
+	}
 }
 
+.validation_error-message {
+	color: #eb5757;
+}

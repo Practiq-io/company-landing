@@ -2,8 +2,19 @@ import React, { Component } from "react";
 import "./AboutCompany.css";
 
 export default class AboutCompany extends Component {
-
 	state = {};
+
+	componentWillMount() {
+		const containerState = this.props.containerState;
+
+		if (containerState) {
+			this.setState({
+				companyName: containerState.companyName,
+				email: containerState.email,
+				website: containerState.website,
+			});
+		}
+	}
 
 	validation = () => {
 		let companyNameError = "";
@@ -44,21 +55,23 @@ export default class AboutCompany extends Component {
 	continue = () => {
 		const isValid = this.validation();
 		if (isValid) {
-			this.props.setWizardProperties({
-				companyName: this.state.companyName,
-				email: this.state.email,
-				website: this.state.website,
-			});
+			const aboutCompany = {
+				aboutCompany: {
+					companyName: this.state.companyName,
+					email: this.state.email,
+					website: this.state.website,
+				},
+			};
+			this.props.setWizardProperties(aboutCompany);
 			this.props.nextStep();
 		}
 	};
 
 	onChangeHandler = (e) => {
-		this.setState({[e.target.name]: e.target.value });
+		this.setState({ [e.target.name]: e.target.value });
 	};
 
 	render() {
-		
 		const { companyNameError, emailError, websiteError } = this.state;
 		const { toggleWizard } = this.props;
 
@@ -70,29 +83,41 @@ export default class AboutCompany extends Component {
 					</div>
 
 					<div className="modal-content_box">
-						<p>
+						<p className="modal-content_subtitle">
 							Company name
-							<span className="about-company_error-message">
+							<span className="validation_error-message">
 								{companyNameError}
 							</span>
 						</p>
 						<input
+							className="about-company_input"
 							onChange={this.onChangeHandler}
 							type="text"
 							name="companyName"
+							defaultValue={this.state.companyName}
 						/>
-						<p>
+						<p className="modal-content_subtitle">
 							Email
-							<span className="about-company_error-message">{emailError}</span>
+							<span className="validation_error-message">{emailError}</span>
 						</p>
-						<input onChange={this.onChangeHandler} type="text" name="email" />
-						<p>
+						<input
+							className="about-company_input"
+							onChange={this.onChangeHandler}
+							type="text"
+							name="email"
+							defaultValue={this.state.email}
+						/>
+						<p className="modal-content_subtitle">
 							Website (optional)
-							<span className="about-company_error-message">
-								{websiteError}
-							</span>
+							<span className="validation_error-message">{websiteError}</span>
 						</p>
-						<input onChange={this.onChangeHandler} type="text" name="website" />
+						<input
+							className="about-company_input"
+							onChange={this.onChangeHandler}
+							type="text"
+							name="website"
+							defaultValue={this.state.website}
+						/>
 					</div>
 				</div>
 

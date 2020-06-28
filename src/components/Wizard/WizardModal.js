@@ -6,12 +6,8 @@ import WizardProgressBar from "./WizardProgressBar/WizardProgressBar";
 
 export class WizardModal extends Component {
 	state = {
-		step: 1,
+		step: 1
 	};
-
-	componentWillUnmount() {
-		this.setState({ step: 1 });
-	}
 
 	nextStep = () => {
 		this.setState({ step: this.state.step + 1 });
