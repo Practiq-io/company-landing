@@ -2,7 +2,13 @@ import React, { Component } from "react";
 
 export default class ApiConnectorAdapter extends Component {
 
-    state = {}
+    state = {
+        connectorAdapter : {
+            apiRequest: "",
+            apiResponse: "",
+            documentation: ""
+        }   
+    }
 
     componentWillMount(){
         if(this.props.taskTypeDataKey.connectorAdapter){
@@ -23,10 +29,13 @@ export default class ApiConnectorAdapter extends Component {
             this.props.setTaskTypeState(connectorAdapter)
             this.setState(Object.values(connectorAdapter)[0])
         }
+       
         
     }
 
 	render() {
+
+        
 
         const {outputOnChange} = this.props;
        

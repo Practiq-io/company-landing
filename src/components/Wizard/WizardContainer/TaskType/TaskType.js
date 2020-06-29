@@ -11,7 +11,8 @@ export default class TaskType extends Component {
 		taskType: "",
 		taskData: {
 		
-		}
+		},
+		editData: {}
 	};
 
 	setTaskType = taskType => {
@@ -20,16 +21,15 @@ export default class TaskType extends Component {
 
 	componentDidMount(){
 		if(this.props.containerState){
-			console.log(this.props.containerState, "NEED TO CHECK THIS STATE");
+			
 			
 			let containerState = this.props.containerState
 			this.setState({
 				programming: containerState.programming,
 				taskType: containerState.taskType,
-				taskData: containerState.taskData
+				taskData: containerState.taskData,
+				editData: containerState.taskData
 			})
-			console.log("CONTAINER STATE WAS TRIGGERED");
-			
 		}
 	}
 
@@ -39,6 +39,7 @@ export default class TaskType extends Component {
 		const value = Object.values(properties)
 
 		let taskData = {...this.state.taskData}
+		taskData = {};
 		taskData[[key[0]]] = value[0]
 	
 		this.setState({taskData})
@@ -69,12 +70,14 @@ export default class TaskType extends Component {
 		let taskData = {...this.state.taskData};
 		taskData[key][e.target.name] = e.target.value;
 		this.setState({taskData});
-		console.log("output change triggered");
+		
 	}
 
 	render() {
-		const { prevStep, nextStep, setWizardProperties } = this.props;
-		console.log(this.state, "Task Type State with OUTPUT KEY");
+		const { prevStep, nextStep, setWizardProperties, containerState } = this.props;
+		
+		console.log(this.state.taskData, "== TASK STATE");
+		console.log(this.props.containerState, "== CONTAINER STATE I GET IN TASK TYPE");
 		
 
 		return (
@@ -94,7 +97,7 @@ export default class TaskType extends Component {
 							outputOnChange={this.taskDataOnChangeHandler} 
 							setTaskTypeState={this.setTaskTypeState} 
 							taskTypeState={this.state}
-							taskTypeDataKey={this.state.taskData}
+							taskTypeDataKey={this.state.editData}
 						/>
 					</div>
 
