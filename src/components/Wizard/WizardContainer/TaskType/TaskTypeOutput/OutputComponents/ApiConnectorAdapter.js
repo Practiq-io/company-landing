@@ -2,19 +2,34 @@ import React, { Component } from "react";
 
 export default class ApiConnectorAdapter extends Component {
 
+    state = {}
+
     componentWillMount(){
-        const connectorAdapter = {
-            connectorAdapter : {
-                apiRequest: "string",
-                apiResponse: "string",
-                linkToDocumentation: "link"
-            }   
+        if(this.props.taskTypeDataKey.connectorAdapter){
+            let dataKey = this.props.taskTypeDataKey.connectorAdapter;
+                this.setState({
+                    apiRequest: dataKey.apiRequest,
+                    apiResponse: dataKey.apiResponse,
+                    documentation: dataKey.documentation
+                })
+        } else {
+            const connectorAdapter = {
+                connectorAdapter : {
+                    apiRequest: "",
+                    apiResponse: "",
+                    documentation: ""
+                }   
+            }
+            this.props.setTaskTypeState(connectorAdapter)
+            this.setState(Object.values(connectorAdapter)[0])
         }
-        this.props.setTaskTypeState(connectorAdapter)
+        
     }
 
 	render() {
 
+        const {outputOnChange} = this.props;
+       
 		return (
 			<>
                 <p className="modal-content_subtitle">
@@ -22,31 +37,29 @@ export default class ApiConnectorAdapter extends Component {
 					<span className="validation_error-message"></span>
 				</p>
 				<input
-                    // onChange={this.onChangeHandler}
+                    onChange={outputOnChange("connectorAdapter")}
                     style={{
                         marginBottom: "24px"
                     }}
 					type="text"
-                    name="companyName"
+                    name="documentation"
                     autoComplete="off"
-                   
-					// defaultValue={this.state.companyName}
+                    defaultValue={this.state.documentation}
 				/>
 				<p className="modal-content_subtitle">
                     API request (optional)
 					<span className="validation_error-message"></span>
 				</p>
 				<textarea
-                    // onChange={this.onChangeHandler}
+                    onChange={outputOnChange("connectorAdapter")}
                     className="general-purpose-api_textarea general-purpose-api_textarea--margin-bottom"
 					type="text"
-                    name="companyName"
+                    name="apiRequest"
                     style={{
                         marginBottom: "24px",
                         minHeight: "101px"
                     }}
-                   
-					// defaultValue={this.state.companyName}
+                    defaultValue={this.state.apiRequest}
 				/>
 
                 <p className="modal-content_subtitle">
@@ -54,15 +67,15 @@ export default class ApiConnectorAdapter extends Component {
 					<span className="validation_error-message"></span>
 				</p>
 				<textarea
-                    // onChange={this.onChangeHandler}
+                    onChange={outputOnChange("connectorAdapter")}
                     className="general-purpose-api_textarea"
 					type="text"
-                    name="companyName"
+                    name="apiResponse"
                     style={{
                         marginBottom: "24px",
                         minHeight: "101px"
                     }}
-					// defaultValue={this.state.companyName}
+					defaultValue={this.state.apiResponse}
 				/>
 			</>
 		);

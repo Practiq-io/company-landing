@@ -18,6 +18,21 @@ export default class TaskType extends Component {
 		this.setState({taskType: taskType})
 	}
 
+	componentDidMount(){
+		if(this.props.containerState){
+			console.log(this.props.containerState, "NEED TO CHECK THIS STATE");
+			
+			let containerState = this.props.containerState
+			this.setState({
+				programming: containerState.programming,
+				taskType: containerState.taskType,
+				taskData: containerState.taskData
+			})
+			console.log("CONTAINER STATE WAS TRIGGERED");
+			
+		}
+	}
+
 	setTaskTypeState = (properties) => {
 
 		const key = Object.keys(properties)
@@ -41,13 +56,20 @@ export default class TaskType extends Component {
 		
 		const specification = {
 			specification: {
-				type: this.state.taskType,
+				taskType: this.state.taskType,
 				programming: this.state.programming,
 				taskData: this.state.taskData
 			}
 		}
 		this.props.setWizardProperties(specification);
 		this.props.nextStep();
+	}
+
+	taskDataOnChangeHandler = key => e => {
+		let taskData = {...this.state.taskData};
+		taskData[key][e.target.name] = e.target.value;
+		this.setState({taskData});
+		console.log("output change triggered");
 	}
 
 	render() {
@@ -68,7 +90,12 @@ export default class TaskType extends Component {
 					<TaskTypeControls selectTask={this.setTaskType} programming={this.state.programming} taskType={this.state.taskType}/>
 
 					<div className="task-type-output_frame">
-						<TaskTypeOutput setTaskTypeState={this.setTaskTypeState} taskTypeState={this.state}/>
+						<TaskTypeOutput 
+							outputOnChange={this.taskDataOnChangeHandler} 
+							setTaskTypeState={this.setTaskTypeState} 
+							taskTypeState={this.state}
+							taskTypeDataKey={this.state.taskData}
+						/>
 					</div>
 
 				</div>

@@ -57,6 +57,7 @@ export class WizardContainer extends Component {
 						prevStep={back}
 						nextStep={next}
 						setWizardProperties={this.setWizardProperties}
+						containerState={containerState.data.specification}
 					/>
 				);
 			case 4:

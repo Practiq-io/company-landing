@@ -9,8 +9,10 @@ import CustomTask from "./OutputComponents/CustomTask";
 export default class TaskTypeOutput extends Component {
 	render() {
 		
-		const { taskTypeState, setTaskTypeState } = this.props;
-        const taskType = taskTypeState.taskType;
+		const { taskTypeState, setTaskTypeState, outputOnChange, taskTypeDataKey } = this.props;
+		const taskType = taskTypeState.taskType;
+		
+		
 		switch (taskType) {
 			case "General purpose API":
 				return (
@@ -21,7 +23,9 @@ export default class TaskTypeOutput extends Component {
 			case "API Connector/Adapter":
 				return (
 					<ApiConnectorAdapter
+						taskTypeDataKey={taskTypeDataKey}
 						setTaskTypeState={setTaskTypeState}
+						outputOnChange={outputOnChange}
 					/>
 				);
 			case "Long running process":
