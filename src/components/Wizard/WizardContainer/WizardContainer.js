@@ -25,7 +25,7 @@ export class WizardContainer extends Component {
 
 	render() {
 
-		console.log(this.state, " FINIAL CHECK KOK");
+		
 		
 
 		const containerState = this.state

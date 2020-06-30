@@ -1,26 +1,55 @@
 import React, { Component } from "react";
 
 export default class LongRunningProcess extends Component {
+	state = {
+		longRunningProcess: {
+			datasource: ""
+		}
+	};
+
+	componentDidMount() {
+		if (this.props.taskTypeDataKey.longRunningProcess) {
+			let dataKey = this.props.taskTypeDataKey.longRunningProcess;
+			const longRunningProcess = {
+				longRunningProcess: {
+					datasource: dataKey.datasource
+				}
+			};
+			this.props.setTaskTypeState(longRunningProcess);
+			this.setState({
+				datasource: dataKey.datasource
+			});
+		} else {
+			const longRunningProcess = {
+				longRunningProcess: {
+					datasource: ""
+				}
+			};
+			this.props.setTaskTypeState(longRunningProcess);
+			this.setState(Object.values(longRunningProcess)[0]);
+		}
+	}
+
 	render() {
+		
+		const { outputOnChange } = this.props;
+
 		return (
 			<>
 				<p className="modal-content_subtitle">
-                    Datasource
+					Datasource
 					<span className="validation_error-message"></span>
 				</p>
 				<textarea
-                    // onChange={this.onChangeHandler}
-                    style={{
-                        marginBottom: "24px",
-                        minHeight: "101px"
-                    }}
+					onChange={outputOnChange("longRunningProcess")}
+					style={{
+						marginBottom: "24px",
+						minHeight: "101px",
+					}}
 					type="text"
-                    name="companyName"
-                    
-                   
-					// defaultValue={this.state.companyName}
+					name="datasource"
+					defaultValue={this.state.datasource}
 				/>
-
 			</>
 		);
 	}

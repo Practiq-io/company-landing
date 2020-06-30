@@ -80,7 +80,7 @@ export default class ControlsBackend extends Component {
 					</div>
 				</div>
 
-				<div className="card-set">
+				<div className="card-set card-set_margin-between">
 					<div
 						onClick={() => selectTask("Long running process")}
 						className="task-type_card"
@@ -114,7 +114,7 @@ export default class ControlsBackend extends Component {
 
 					<div
 						onClick={() => selectTask("Custom backend task")}
-						className="task-type_card"
+						className="task-type_card task-type_card-mobile-margin-bottom"
 					>
 						<div className="task-type_card--info-box">
 							<img src={addIcon} alt="" />

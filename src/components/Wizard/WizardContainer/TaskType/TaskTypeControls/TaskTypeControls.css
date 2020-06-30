@@ -9,8 +9,10 @@
 }
 .card-set {
   display: flex;
-  margin-bottom: 16px;
   justify-content: space-between;
+}
+.card-set_margin-between {
+  margin-top: 16px;
 }
 .task-type_card {
   cursor: pointer;
@@ -58,16 +60,19 @@
   transition: 0.1s;
   border: solid 1px #a1a1a1 !important;
 }
-.card-type_below {
-  max-width: 100%;
-}
 @media screen and (max-width: 660px) {
   .card-set {
     flex-direction: column;
     margin-bottom: 0;
   }
+  .card-set_margin-between {
+    margin-top: 0;
+  }
   .card-set .task-type_card {
     max-width: 100%;
     margin-bottom: 16px;
+  }
+  .task-type_card-mobile-margin-bottom {
+    margin-bottom: 0!important;
   }
 }

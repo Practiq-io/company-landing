@@ -68,16 +68,22 @@ export default class TaskType extends Component {
 
 	taskDataOnChangeHandler = key => e => {
 		let taskData = {...this.state.taskData};
-		taskData[key][e.target.name] = e.target.value;
-		this.setState({taskData});
+		if(taskData[key]){
+			taskData[key][e.target.name] = e.target.value;
+			this.setState({taskData});
+		} else {
+			console.log("ERROR");
+			
+		}
+		
 		
 	}
 
 	render() {
 		const { prevStep } = this.props;
 		
-		console.log(this.state.taskData, "== TASK STATE");
-		console.log(this.props.containerState, "== CONTAINER STATE I GET IN TASK TYPE");
+		console.log(this.state.taskData, "I NEED TO CHECK FOR KEY THAT GIVES ERROR HERE");
+		
 		
 
 		return (

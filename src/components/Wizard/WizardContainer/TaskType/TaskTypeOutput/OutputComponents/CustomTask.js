@@ -1,7 +1,40 @@
 import React, { Component } from "react";
 
 export default class CustomTask extends Component {
+
+	state = {
+		customTask: {
+			taskDescription: ""
+		}
+	};
+
+	componentDidMount() {
+		if (this.props.taskTypeDataKey.customTask) {
+			let dataKey = this.props.taskTypeDataKey.customTask;
+			const customTask = {
+				customTask: {
+					taskDescription: dataKey.taskDescription
+				}
+			};
+			this.props.setTaskTypeState(customTask);
+			this.setState({
+				taskDescription: dataKey.taskDescription
+			});
+		} else {
+			const customTask = {
+				customTask: {
+					taskDescription: ""
+				}
+			};
+			this.props.setTaskTypeState(customTask);
+			this.setState(Object.values(customTask)[0]);
+		}
+	}
+
 	render() {
+
+		const { outputOnChange } = this.props;
+
 		return ( 
 			<>
 				<p className="modal-content_subtitle">
@@ -9,16 +42,14 @@ export default class CustomTask extends Component {
 					<span className="validation_error-message"></span>
 				</p>
 				<textarea
-                    // onChange={this.onChangeHandler}
+                    onChange={outputOnChange("customTask")}
                     style={{
                         marginBottom: "24px",
                         minHeight: "101px"
                     }}
 					type="text"
-                    name="companyName"
-                    
-                   
-					// defaultValue={this.state.companyName}
+                    name="taskDescription"
+                    defaultValue={this.state.taskDescription}
 				/>
 
 			</>

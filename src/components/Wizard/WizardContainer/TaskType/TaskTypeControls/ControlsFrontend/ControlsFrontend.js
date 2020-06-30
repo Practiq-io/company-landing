@@ -83,7 +83,7 @@ export default class ControlsFrontend extends Component {
 
             </div>
 
-            <div className="card-set">
+            <div className="card-set card-set_margin-between">
 
                 <div 
                     onClick={() => selectTask("Frontend component")}
@@ -118,7 +118,7 @@ export default class ControlsFrontend extends Component {
 
                 <div 
                     onClick={() => selectTask("Custom frontend task")}
-                    className="task-type_card"
+                    className="task-type_card task-type_card-mobile-margin-bottom"
                 >
 
                     <div className="task-type_card--info-box">
