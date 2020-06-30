@@ -113,22 +113,20 @@ export default class ControlsBackend extends Component {
 					</div>
 
 					<div
-						onClick={() => selectTask("Landing page / SPA / Component")}
+						onClick={() => selectTask("Custom backend task")}
 						className="task-type_card"
 					>
 						<div className="task-type_card--info-box">
-							<img src={landingSpaIcon} alt="" />
-							<p>Landing page / SPA / Component</p>
+							<img src={addIcon} alt="" />
+							<p>Add my own task</p>
 						</div>
 
 						<div
 							style={{
 								background:
-									taskType === "Landing page / SPA / Component"
-										? "#1371FC"
-										: "white",
+									taskType === "Custom backend task" ? "#1371FC" : "white",
 								border:
-									taskType === "Landing page / SPA / Component"
+									taskType === "Custom backend task"
 										? "1px solid transparent"
 										: "1px solid #E9E9ED",
 							}}
@@ -137,44 +135,12 @@ export default class ControlsBackend extends Component {
 							<img
 								style={{
 									display:
-										taskType === "Landing page / SPA / Component"
-											? "block"
-											: "none",
+										taskType === "Custom backend task" ? "block" : "none",
 								}}
 								src={selectDot}
 								alt=""
 							/>
 						</div>
-					</div>
-				</div>
-
-				<div
-					onClick={() => selectTask("Custom backend task")}
-					className="task-type_card card-type_below"
-				>
-					<div className="task-type_card--info-box">
-						<img src={addIcon} alt="" />
-						<p>Add my own task</p>
-					</div>
-
-					<div
-						style={{
-							background:
-								taskType === "Custom backend task" ? "#1371FC" : "white",
-							border:
-								taskType === "Custom backend task"
-									? "1px solid transparent"
-									: "1px solid #E9E9ED",
-						}}
-						className="task-type_card--select-circle"
-					>
-						<img
-							style={{
-								display: taskType === "Custom backend task" ? "block" : "none",
-							}}
-							src={selectDot}
-							alt=""
-						/>
 					</div>
 				</div>
 			</>

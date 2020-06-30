@@ -33,19 +33,25 @@ export default class TaskTypeOutput extends Component {
 			case "Long running process":
 				return (
                     <LongRunningProcess 
-                    
+						taskTypeDataKey={taskTypeDataKey}
+						setTaskTypeState={setTaskTypeState}
+						outputOnChange={outputOnChange}
                     />
                 );
 			case "Landing page / SPA / Component":
 				return (
                     <SpaLandingpageComponent 
-                    
+						taskTypeDataKey={taskTypeDataKey}
+						setTaskTypeState={setTaskTypeState}
+						outputOnChange={outputOnChange}
                     />
                 );
 			case "Custom backend task":
 				return (
                     <CustomTask 
-                    
+						taskTypeDataKey={taskTypeDataKey}
+						setTaskTypeState={setTaskTypeState}
+						outputOnChange={outputOnChange}
                     />
                 );
 			default:

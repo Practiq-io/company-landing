@@ -74,7 +74,7 @@ export default class TaskType extends Component {
 	}
 
 	render() {
-		const { prevStep, nextStep, setWizardProperties, containerState } = this.props;
+		const { prevStep } = this.props;
 		
 		console.log(this.state.taskData, "== TASK STATE");
 		console.log(this.props.containerState, "== CONTAINER STATE I GET IN TASK TYPE");
