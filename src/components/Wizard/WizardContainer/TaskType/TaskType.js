@@ -6,8 +6,8 @@ import TaskTypeOutput from "./TaskTypeOutput/TaskTypeOutput";
 
 export default class TaskType extends Component {
 	state = {
-		programming: "backend",
-		taskType: "General purpose API",
+		programming: "frontend",
+		taskType: "Landing page",
 		taskData: {
 			
 		},
@@ -106,7 +106,8 @@ export default class TaskType extends Component {
 
 	render() {
 		const { prevStep, containerState } = this.props;
-		console.log(this.state, "MAIN STATE");
+		
+		console.log(this.state, "MAIN STATE I NEED");
 		
 		
 		return (

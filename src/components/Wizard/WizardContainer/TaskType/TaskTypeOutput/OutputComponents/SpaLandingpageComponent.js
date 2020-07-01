@@ -17,27 +17,63 @@ export default class SpaLandingpageComponent extends Component {
 		}
     };
 
-    
-    componentWillMount() {
+    ///////////////////////////////////////////////////////////////////////////////////////////////
+    // componentWillMount() {
+	// 	if (this.props.taskTypeDataKey) {
+    //         let dataKey = {...this.props.taskTypeDataKey.landingPage};
+            
+            
+            
+	// 		// const landingPage = {
+	// 		// 	landingPage: {
+	// 		// 		designLink: dataKey.designLink,
+	// 		// 		attachedFiles: dataKey.attachedFiles,
+	// 		// 		apisFields: dataKey.apisFields
+	// 		// 	}
+    //         // };
+    //         let landingPage = {...this.state.landingPage}
+    //         landingPage.designLink = dataKey.designLink;
+    //         landingPage.attachedFiles = dataKey.attachFile;
+    //         landingPage.apisFields = dataKey.apisFields;
+	// 		// this.props.setTaskTypeState({dataKey});
+	// 		this.setState({
+	// 			landingPage
+	// 		});
+	// 	} else {
+    //         console.log("AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA");
+            
+	// 		const landingPage = {
+	// 			landingPage: {
+    //                 designLink: "",
+    //                 attachedFiles: ["homepage.sketch", "profile.sketch", "ilya.sketch","roma.sketch"],
+    //                 apisFields: []
+    //             }
+	// 		};
+	// 		this.props.setTaskTypeState(landingPage);
+	// 		this.setState({landingPage:Object.values(landingPage)[0]});
+	// 	}
+    // }
+ componentWillMount() {
 		if (this.props.taskTypeDataKey.landingPage) {
             let dataKey = {...this.props.taskTypeDataKey.landingPage};
             
-            console.log(dataKey, " I WILL SET LOCAL STATE WITH THIS");
+            console.log(this.props.taskTypeDataKey,"AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA");
             
-			// const landingPage = {
-			// 	landingPage: {
-			// 		designLink: dataKey.designLink,
-			// 		attachedFiles: dataKey.attachedFiles,
-			// 		apisFields: dataKey.apisFields
-			// 	}
-            // };
-            let landingPage = {...this.state.landingPage}
-            landingPage = dataKey;
-			// this.props.setTaskTypeState({dataKey});
+			const landingPage = {
+				landingPage: {
+					designLink: dataKey.designLink,
+					attachedFiles: dataKey.attachedFiles,
+					apisFields: dataKey.apisFields
+				}
+            };
+            
+			this.props.setTaskTypeState(landingPage);
 			this.setState({
 				landingPage
 			});
 		} else {
+           
+            
 			const landingPage = {
 				landingPage: {
                     designLink: "",
@@ -49,6 +85,11 @@ export default class SpaLandingpageComponent extends Component {
 			this.setState({landingPage:Object.values(landingPage)[0]});
 		}
     }
+    
+
+///////////////////////////////////////////////////////////////////////////////////////////////
+
+
     // componentDidMount() {
 	// 	if (this.props.taskTypeDataKey.landingPage) {
     //         let dataKey = this.props.taskTypeDataKey.landingPage;
@@ -83,7 +124,8 @@ export default class SpaLandingpageComponent extends Component {
 
 	render() {
         const { outputOnChange, taskTypeState, removeAttachedFile, attachFile } = this.props;
-        console.log(this.state.landingPage, "LOOK FOR LINK");
+        
+        console.log(this.state,"landing page state");
         
         
 		return (
