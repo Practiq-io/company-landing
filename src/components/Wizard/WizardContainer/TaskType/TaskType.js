@@ -4,13 +4,12 @@ import TaskTypeSwitch from "./TaskTypeSwitch/TaskTypeSwitch";
 import TaskTypeControls from "./TaskTypeControls/TaskTypeControls";
 import TaskTypeOutput from "./TaskTypeOutput/TaskTypeOutput";
 
-
 export default class TaskType extends Component {
 	state = {
 		programming: "backend",
-		taskType: "",
+		taskType: "General purpose API",
 		taskData: {
-		
+			
 		},
 		editData: {}
 	};
@@ -19,22 +18,52 @@ export default class TaskType extends Component {
 		this.setState({taskType: taskType})
 	}
 
+	attachFile = (name, taskKey) => {
+		let key = taskKey
+		let taskData = {...this.state.taskData} 
+		key = {...this.state.taskData[key]}
+        let attachedFiles = [...key.attachedFiles]
+        attachedFiles.push(name);
+		key.attachedFiles = attachedFiles;
+		taskData[taskKey] = key
+        this.setState({taskData});
+	}
+
+	removeAttachedFile = (name, taskKey) => {
+		let key = taskKey
+		let taskData = {...this.state.taskData}
+		key = {...this.state.taskData[key]};
+        let attachedFiles = [...key.attachedFiles]
+		let index = attachedFiles.indexOf(name);
+        attachedFiles.splice(index, 1);
+		key.attachedFiles = attachedFiles;
+		taskData[taskKey] = key
+        this.setState({taskData});
+    }
+
 	componentDidMount(){
 		if(this.props.containerState){
-			
-			
-			let containerState = this.props.containerState
+			let containerState = {...this.props.containerState}
+
+			let programming = {...this.state.programming};
+			let taskType = {...this.state.taskType};
+			let taskData = {...this.state.taskData};
+			let editData
+			programming = containerState.programming;
+			taskType = containerState.taskType;
+			taskData = containerState.taskData;
+			editData = containerState.taskData;
+
 			this.setState({
-				programming: containerState.programming,
-				taskType: containerState.taskType,
-				taskData: containerState.taskData,
-				editData: containerState.taskData
+				programming,
+				taskType,
+				taskData,
+				editData
 			})
 		}
 	}
 
 	setTaskTypeState = (properties) => {
-
 		const key = Object.keys(properties)
 		const value = Object.values(properties)
 
@@ -45,16 +74,19 @@ export default class TaskType extends Component {
 		this.setState({taskData})
 	}
 
-	toggleLanguage = () => {
-		if(this.state.programming === "backend"){
-			this.setState({programming:"frontend"})
-		} else if (this.state.programming === "frontend"){
+	toggleBackend = () => {
+		if(this.state.programming !== "backend"){
 			this.setState({programming:"backend"})
 		}
 	}
 
-	continue = () => {
-		
+	toggleFrontend = () => {
+		if(this.state.programming !== "frontend"){
+			this.setState({programming:"frontend"})
+		}
+	}
+
+	continue = () => {	
 		const specification = {
 			specification: {
 				taskType: this.state.taskType,
@@ -68,24 +100,15 @@ export default class TaskType extends Component {
 
 	taskDataOnChangeHandler = key => e => {
 		let taskData = {...this.state.taskData};
-		if(taskData[key]){
-			taskData[key][e.target.name] = e.target.value;
-			this.setState({taskData});
-		} else {
-			console.log("ERROR");
-			
-		}
-		
-		
+		taskData[key][e.target.name] = e.target.value;
+		this.setState({taskData});
 	}
 
 	render() {
-		const { prevStep } = this.props;
+		const { prevStep, containerState } = this.props;
+		console.log(this.state, "MAIN STATE");
 		
-		console.log(this.state.taskData, "I NEED TO CHECK FOR KEY THAT GIVES ERROR HERE");
 		
-		
-
 		return (
 			<div className="wizard-modal_content-box">
 
@@ -95,8 +118,14 @@ export default class TaskType extends Component {
 						<p>Select technical requirements</p>
 					</div>
 
-					<TaskTypeSwitch toggle={this.toggleLanguage} programming={this.state.programming} />
-					<TaskTypeControls selectTask={this.setTaskType} programming={this.state.programming} taskType={this.state.taskType}/>
+					<TaskTypeSwitch toggleFrontend={this.toggleFrontend} toggleBackend={this.toggleBackend} programming={this.state.programming} />
+
+					<TaskTypeControls 
+						containerState={containerState}
+						selectTask={this.setTaskType} 
+						programming={this.state.programming} 
+						taskType={this.state.taskType}
+					/>
 
 					<div className="task-type-output_frame">
 						<TaskTypeOutput 
@@ -104,6 +133,8 @@ export default class TaskType extends Component {
 							setTaskTypeState={this.setTaskTypeState} 
 							taskTypeState={this.state}
 							taskTypeDataKey={this.state.editData}
+							removeAttachedFile={this.removeAttachedFile}
+							attachFile={this.attachFile}
 						/>
 					</div>
 

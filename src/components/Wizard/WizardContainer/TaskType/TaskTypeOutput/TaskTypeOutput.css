@@ -4,3 +4,74 @@
   font-size: 14px;
   cursor: pointer;
 }
+.attached-file_box {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: flex;
+}
+.attached-file_box .attached-file-name {
+  color: #696974;
+  font-size: 14px;
+  font-weight: 500;
+  margin-right: 10px;
+}
+.attached-file_box .attached-file-icon {
+  margin-right: 10px;
+}
+.attached-file_box .attached-file-selected-icon {
+  display: none;
+  margin-right: 10px;
+}
+.attached-file_box .delete-attached-file-icon {
+  opacity: 0;
+  cursor: pointer;
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
+}
+.attached-file_box img {
+  width: inherit;
+}
+.attached-file_box .attached-file_wrapper {
+  cursor: default;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -moz-box-align: center;
+  align-items: center;
+  margin-bottom: 16px;
+}
+.attached-file_box .attached-file_wrapper:hover .attached-file-selected-icon {
+  display: block;
+}
+.attached-file_box .attached-file_wrapper:hover .delete-attached-file-icon {
+  opacity: 1;
+}
+.attached-file_box .attached-file_wrapper:hover .attached-file-icon {
+  display: none;
+}
+.front-end_input-wrapper {
+  position: relative;
+}
+.front-end_input-wrapper .front-end_input {
+  width: 100%;
+}
+.front-end_input-wrapper .front-end_input_remove-button {
+  cursor: pointer;
+  position: absolute;
+  right: 13px;
+  top: 13px;
+  border: 1px solid #E9E9ED;
+  height: 32px;
+  width: 32px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+}
+.front-end_input-wrapper .front-end_input_remove-button img {
+  width: auto;
+}

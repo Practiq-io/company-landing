@@ -27,6 +27,7 @@ export class WizardContainer extends Component {
 
 		
 		
+		
 
 		const containerState = this.state
 		const { back, next, step, toggleWizard } = this.props;

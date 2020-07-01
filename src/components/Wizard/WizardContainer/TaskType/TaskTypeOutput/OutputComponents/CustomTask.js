@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 
 export default class CustomTask extends Component {
-
 	state = {
 		customTask: {
 			taskDescription: ""

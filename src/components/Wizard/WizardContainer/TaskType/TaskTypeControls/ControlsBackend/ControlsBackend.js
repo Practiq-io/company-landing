@@ -2,13 +2,21 @@ import React, { Component } from "react";
 import genApiIcon from "../TaskTypeControlsImg/gen-api-icon.svg";
 import connectorIcon from "../TaskTypeControlsImg/connector-icon.svg";
 import longProcess from "../TaskTypeControlsImg/long-icon.svg";
-import landingSpaIcon from "../TaskTypeControlsImg/land-spa-icon.svg";
 import addIcon from "../TaskTypeControlsImg/add-icon.svg";
 import selectDot from "../TaskTypeControlsImg/selected-dot.svg";
 
 export default class ControlsBackend extends Component {
-	componentDidMount() {
-		this.props.selectTask("General purpose API");
+
+	componentDidMount(){
+		if(this.props.containerState){
+            if(this.props.containerState.programming === "backend"){
+                this.props.selectTask(this.props.containerState.taskType);
+            } else {
+				this.props.selectTask("General purpose API");
+			}
+		} else {
+			this.props.selectTask("General purpose API");
+		}
 	}
 
 	render() {

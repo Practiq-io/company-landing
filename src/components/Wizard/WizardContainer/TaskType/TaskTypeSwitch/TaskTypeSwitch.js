@@ -8,14 +8,14 @@ import frontendIcon from "./TaskTypeSwitchImg/frontend-icon.svg";
 export default class TaskTypeSwitch extends Component {
 	render() {
         
-        const {programming, toggle} = this.props;
+        const {programming, toggleBackend, toggleFrontend} = this.props;
 
 		return (
 			<div className="task-type-switch_box">
 				
 
                 <div 
-                    onClick={toggle}
+                    onClick={toggleFrontend}
                     className="switch_frontend-box"
                     style={{
                         borderBottom: programming === "frontend" ? "1px solid #171725" : "1px #e9e9ed solid"
@@ -37,7 +37,7 @@ export default class TaskTypeSwitch extends Component {
 				</div>
 
                 <div 
-                    onClick={toggle}
+                    onClick={toggleBackend}
                     className="switch_backend-box"
                     style={{
                         borderBottom: programming === "backend" ? "1px solid #171725" : "1px #e9e9ed solid"

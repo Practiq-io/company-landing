@@ -6,14 +6,22 @@ import addIcon from "../TaskTypeControlsImg/add-icon.svg";
 import selectDot from "../TaskTypeControlsImg/selected-dot.svg";
 
 export default class ControlsFrontend extends Component {
-	componentDidMount(){
-        this.props.selectTask("Landing page");
-    }
+
+    componentDidMount(){
+		if(this.props.containerState){
+            if(this.props.containerState.programming === "frontend"){
+                this.props.selectTask(this.props.containerState.taskType);
+            } else {
+                this.props.selectTask("Landing page");
+            }
+		} else {
+			this.props.selectTask("Landing page");
+		}
+	}
 
     render() {
 
         const {taskType, selectTask} = this.props;
-        
         
         return (
             <>
@@ -36,18 +44,14 @@ export default class ControlsFrontend extends Component {
                         }}
                         className="task-type_card--select-circle"
                     >
-
                         <img 
                             style = {{
                                 display: taskType === "Landing page" ? "block" : "none"
                             }}
                             src={selectDot} 
                             alt="" 
-
                         />
-
                     </div>
-
                 </div>
 
                 <div 
@@ -67,7 +71,6 @@ export default class ControlsFrontend extends Component {
                         }}
                         className="task-type_card--select-circle"
                     >
-
                         <img 
                             style = {{
                                 display: taskType === "Single page application" ? "block" : "none"
@@ -76,11 +79,8 @@ export default class ControlsFrontend extends Component {
                             alt="" 
 
                         />
-
                     </div>
-
                 </div>
-
             </div>
 
             <div className="card-set card-set_margin-between">
@@ -89,7 +89,6 @@ export default class ControlsFrontend extends Component {
                     onClick={() => selectTask("Frontend component")}
                     className="task-type_card"
                 >
-
                     <div className="task-type_card--info-box">
                         <img src={frontendIcon} alt="" />
                         <p>Frontend component</p>
@@ -102,7 +101,6 @@ export default class ControlsFrontend extends Component {
                         }}
                         className="task-type_card--select-circle"
                     >
-
                         <img 
                             style = {{
                                 display: taskType === "Frontend component" ? "block" : "none"
@@ -111,16 +109,13 @@ export default class ControlsFrontend extends Component {
                             alt="" 
 
                         />
-
                     </div>
-
                 </div>
 
                 <div 
                     onClick={() => selectTask("Custom frontend task")}
                     className="task-type_card task-type_card-mobile-margin-bottom"
                 >
-
                     <div className="task-type_card--info-box">
                         <img src={addIcon} alt="" />
                         <p>Add my own task</p>
@@ -133,22 +128,16 @@ export default class ControlsFrontend extends Component {
                         }}
                         className="task-type_card--select-circle"
                     >
-
                         <img 
                             style = {{
                                 display: taskType === "Custom frontend task" ? "block" : "none"
                             }}
                             src={selectDot} 
                             alt="" 
-
                         />
-
                     </div>
-
                 </div>
-
             </div>
-
         </>
         )
     }
