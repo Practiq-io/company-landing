@@ -6,15 +6,15 @@ import minusIcon from "../OutputComponentsImg/minus-icon.svg";
 import uuid from "uuid";
 
 export default class SpaLandingpageComponent extends Component {
-	state = {
-		landingPage: {
-			designLink: "",
-			attachedFiles: [],
-            apisFields: [],
-            field1: "",
-            field2: ""
-		},
-	};
+	// state = {
+	// 	landingPage: {
+	// 		designLink: "",
+	// 		attachedFiles: [],
+    //         apisFields: [],
+    //         field1: "",
+    //         field2: ""
+	// 	},
+	// };
 
 	///////////////////////////////////////////////////////////////////////////////////////////////
 	// componentWillMount() {
@@ -101,13 +101,13 @@ export default class SpaLandingpageComponent extends Component {
                             "ilya.sketch",
                             "roma.sketch",
                         ],
-                        apisFields: ["field1","field2"],
-                        field1: "",
-                        field2: ""
+                        apisFields: ["field1"],
+                        field: "",
+                        field1: ""
                     },
                 };
                 this.props.setTaskTypeState(landingPage);
-                this.setState({ landingPage: Object.values(landingPage)[0] });
+                // this.setState({ landingPage: Object.values(landingPage)[0] });
             }
             
            
@@ -122,13 +122,13 @@ export default class SpaLandingpageComponent extends Component {
                         "ilya.sketch",
                         "roma.sketch",
                     ],
-                    apisFields: ["field1","field2"],
-                    field1: "",
-                    field2: ""
+                    apisFields: ["field1"],
+                    field: "",
+                    field1: ""
                 },
             };
             this.props.setTaskTypeState(landingPage);
-            this.setState({ landingPage: Object.values(landingPage)[0] });
+            // this.setState({ landingPage: Object.values(landingPage)[0] });
         }
         
     }
@@ -177,34 +177,8 @@ export default class SpaLandingpageComponent extends Component {
 		} = this.props;
 
 		
-        let mappedInput = 
-        taskTypeState.taskData.landingPage ?
-        taskTypeState.taskData.landingPage.apisFields.map(input => {
-                return <div key={input} className="front-end_input-wrapper">
-                            <input
-                                className="front-end_input"
-                                onChange={outputOnChange("landingPage")}
-                                style={{
-                                    marginBottom: "16px",
-                                }}
-                                type="text"
-                                name={input}
-                                autoComplete="off"
-                                defaultValue={
-                                    taskTypeState.taskData.landingPage
-                                        ? taskTypeState.taskData.landingPage[input]
-                                        : ""
-                                    
-                                    
-                                       
-                                }
-                                
-                            />
-                            <div className="front-end_input_remove-button">
-                                <img src={minusIcon} alt="" />
-                            </div>
-                        </div>
-            }) : null
+      
+        
         
 
 		return (
@@ -270,8 +244,53 @@ export default class SpaLandingpageComponent extends Component {
 					<span className="validation_error-message"></span>
 				</p>
 
+                <div className="front-end_input-wrapper">
+                                        <input
+                                            className="front-end_input"
+                                            onChange={outputOnChange("landingPage")}
+                                            style={{
+                                                marginBottom: "16px",
+                                            }}
+                                            type="text"
+                                            name="field"
+                                            autoComplete="off"
+                                            defaultValue={
+                                                taskTypeState.taskData.landingPage
+                                                    ? taskTypeState.taskData.landingPage.field
+                                                    : ""    
+                                            }
+                                            
+                                        />
+                                        
+                                    </div>
                 {
-                    mappedInput
+                    taskTypeState.taskData.landingPage ?
+                    taskTypeState.taskData.landingPage.apisFields.map(input => {
+                            return <div key={input} className="front-end_input-wrapper">
+                                        <input
+                                            className="front-end_input"
+                                            onChange={outputOnChange("landingPage")}
+                                            style={{
+                                                marginBottom: "16px",
+                                            }}
+                                            type="text"
+                                            name={input}
+                                            autoComplete="off"
+                                            defaultValue={
+                                                taskTypeState.taskData.landingPage
+                                                    ? taskTypeState.taskData.landingPage[input]
+                                                    : ""
+                                                
+                                                
+                                                   
+                                            }
+                                            
+                                        />
+                                        <div className="front-end_input_remove-button">
+                                            <img src={minusIcon} alt="" />
+                                        </div>
+                                    </div>
+                        }) : null
                 }
                 
                 {/* {taskTypeState.taskData.landingPage

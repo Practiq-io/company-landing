@@ -51,15 +51,15 @@ export default class TaskType extends Component {
 			let taskType = {...this.state.taskType};
 			let taskData = {...this.state.taskData};
 			let editData
+			taskData = containerState.taskData;
 			programming = containerState.programming;
 			taskType = containerState.taskType;
-			taskData = containerState.taskData;
 			editData = containerState.taskData;
 
 			this.setState({
+				taskData,
 				programming,
 				taskType,
-				taskData,
 				editData
 			})
 		}
