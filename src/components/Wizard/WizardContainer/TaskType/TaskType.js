@@ -43,6 +43,8 @@ export default class TaskType extends Component {
 
 	componentDidMount(){
 		if(this.props.containerState){
+			console.log("I DID TRIGGER WITH CONTAINER STATE WITH === container state",this.props.containerState);
+			
 			let containerState = {...this.props.containerState}
 
 			let programming = {...this.state.programming};
@@ -107,7 +109,9 @@ export default class TaskType extends Component {
 	render() {
 		const { prevStep, containerState } = this.props;
 		
-		console.log(this.state, "MAIN STATE I NEED");
+		
+		console.log(this.state, "=== TASK TYPE STATE");
+		
 		
 		
 		return (
@@ -136,6 +140,7 @@ export default class TaskType extends Component {
 							taskTypeDataKey={this.state.editData}
 							removeAttachedFile={this.removeAttachedFile}
 							attachFile={this.attachFile}
+							containerState={containerState}
 						/>
 					</div>
 
