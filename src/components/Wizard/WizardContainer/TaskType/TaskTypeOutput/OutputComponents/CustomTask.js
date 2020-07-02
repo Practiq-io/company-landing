@@ -1,24 +1,22 @@
 import React, { Component } from "react";
 
 export default class CustomTask extends Component {
-	state = {
-		customTask: {
-			taskDescription: ""
-		}
-	};
-
 	componentDidMount() {
-		if (this.props.taskTypeDataKey.customTask) {
-			let dataKey = this.props.taskTypeDataKey.customTask;
-			const customTask = {
-				customTask: {
-					taskDescription: dataKey.taskDescription
-				}
-			};
-			this.props.setTaskTypeState(customTask);
-			this.setState({
-				taskDescription: dataKey.taskDescription
-			});
+		if (this.props.containerState) {
+			if (this.props.containerState.taskType === "Custom backend task") {
+				let customTask = {};
+				let containerState = { ...this.props.containerState };
+				customTask = containerState.taskData;
+
+				this.props.setTaskTypeState(customTask);
+			} else {
+				const customTask = {
+					customTask: {
+						taskDescription: ""
+					}
+				};
+				this.props.setTaskTypeState(customTask);
+			}
 		} else {
 			const customTask = {
 				customTask: {
@@ -26,31 +24,33 @@ export default class CustomTask extends Component {
 				}
 			};
 			this.props.setTaskTypeState(customTask);
-			this.setState(Object.values(customTask)[0]);
 		}
 	}
-
+	
 	render() {
+		const { outputOnChange, taskTypeState } = this.props;
 
-		const { outputOnChange } = this.props;
-
-		return ( 
+		return (
 			<>
 				<p className="modal-content_subtitle">
-                    Task description
+					Task description
 					<span className="validation_error-message"></span>
 				</p>
 				<textarea
-                    onChange={outputOnChange("customTask")}
-                    style={{
-                        marginBottom: "24px",
-                        minHeight: "101px"
-                    }}
+					onChange={outputOnChange("customTask")}
+					style={{
+						marginBottom: "24px",
+						minHeight: "101px",
+					}}
 					type="text"
-                    name="taskDescription"
-                    defaultValue={this.state.taskDescription}
+					name="taskDescription"
+					defaultValue={
+						taskTypeState.taskData.customTask
+							? taskTypeState.taskData.customTask.taskDescription
+							: ""
+					}
+					
 				/>
-
 			</>
 		);
 	}

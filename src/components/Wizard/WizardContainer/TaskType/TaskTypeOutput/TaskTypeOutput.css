@@ -1,7 +1,9 @@
 .attach-file-button {
   color: #1371fd;
+  display: flex;
   font-weight: bold;
   font-size: 14px;
+  width: fit-content;
   cursor: pointer;
 }
 .attached-file_box {
@@ -71,6 +73,10 @@
   justify-content: center;
   align-items: center;
   border-radius: 50%;
+}
+.front-end_input-wrapper .front-end_input_remove-button:hover {
+  transition: 0.1s;
+  border: solid 1px #a1a1a1 !important;
 }
 .front-end_input-wrapper .front-end_input_remove-button img {
   width: auto;

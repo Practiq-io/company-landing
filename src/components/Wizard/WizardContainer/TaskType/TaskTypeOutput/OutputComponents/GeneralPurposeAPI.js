@@ -1,27 +1,26 @@
 import React, { Component } from "react";
 
 export default class GeneralPurposeAPI extends Component {
-	state = {
-		generalApi: {
-			apiRequest: "",
-			apiResponse: ""
-		}
-	};
 
 	componentDidMount() {
-		if (this.props.taskTypeDataKey.generalApi) {
-			let dataKey = this.props.taskTypeDataKey.generalApi;
-			const generalApi = {
-				generalApi: {
-					apiRequest: dataKey.apiRequest,
-					apiResponse: dataKey.apiResponse
-				},
-			};
-			this.props.setTaskTypeState(generalApi);
-			this.setState({
-				apiRequest: dataKey.apiRequest,
-				apiResponse: dataKey.apiResponse,
-			});
+		if (this.props.containerState) {
+
+			if (this.props.containerState.taskType === "General purpose API") {
+				let generalApi = {}
+                let containerState = {...this.props.containerState}
+                generalApi = containerState.taskData
+                
+                this.props.setTaskTypeState(generalApi);
+			} else {
+           
+                const generalApi = {
+					generalApi: {
+						apiRequest: "",
+						apiResponse: ""
+					}
+				};
+				this.props.setTaskTypeState(generalApi);
+			}
 		} else {
 			const generalApi = {
 				generalApi: {
@@ -30,12 +29,11 @@ export default class GeneralPurposeAPI extends Component {
 				}
 			};
 			this.props.setTaskTypeState(generalApi);
-			this.setState(Object.values(generalApi)[0]);
 		}
 	}
 
 	render() {
-		const { outputOnChange } = this.props;
+		const { outputOnChange, taskTypeState } = this.props;
 
 		return (
 			<>
@@ -51,7 +49,11 @@ export default class GeneralPurposeAPI extends Component {
 					}}
 					type="text"
 					name="apiRequest"
-					defaultValue={this.state.apiRequest}
+					defaultValue={
+						taskTypeState.taskData.generalApi
+							? taskTypeState.taskData.generalApi.apiRequest
+							: ""
+					}
 				/>
 				<p className="modal-content_subtitle">
 					API responce (optional)
@@ -64,7 +66,11 @@ export default class GeneralPurposeAPI extends Component {
 					}}
 					type="text"
 					name="apiResponse"
-					defaultValue={this.state.apiResponse}
+					defaultValue={
+						taskTypeState.taskData.generalApi
+							? taskTypeState.taskData.generalApi.apiResponse
+							: ""
+					}
 				/>
 			</>
 		);

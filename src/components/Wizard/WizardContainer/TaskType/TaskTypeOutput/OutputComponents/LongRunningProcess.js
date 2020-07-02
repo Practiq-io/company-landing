@@ -1,38 +1,34 @@
 import React, { Component } from "react";
 
 export default class LongRunningProcess extends Component {
-	state = {
-		longRunningProcess: {
-			datasource: ""
-		}
-	};
-
 	componentDidMount() {
-		if (this.props.taskTypeDataKey.longRunningProcess) {
-			let dataKey = this.props.taskTypeDataKey.longRunningProcess;
-			const longRunningProcess = {
-				longRunningProcess: {
-					datasource: dataKey.datasource
-				}
-			};
-			this.props.setTaskTypeState(longRunningProcess);
-			this.setState({
-				datasource: dataKey.datasource
-			});
+		if (this.props.containerState) {
+			if (this.props.containerState.taskType === "Long running process") {
+				let longRunningProcess = {};
+				let containerState = { ...this.props.containerState };
+				longRunningProcess = containerState.taskData;
+
+				this.props.setTaskTypeState(longRunningProcess);
+			} else {
+				const longRunningProcess = {
+					longRunningProcess: {
+						datasource: "",
+					},
+				};
+				this.props.setTaskTypeState(longRunningProcess);
+			}
 		} else {
 			const longRunningProcess = {
 				longRunningProcess: {
-					datasource: ""
-				}
+					datasource: "",
+				},
 			};
 			this.props.setTaskTypeState(longRunningProcess);
-			this.setState(Object.values(longRunningProcess)[0]);
 		}
 	}
 
 	render() {
-		
-		const { outputOnChange } = this.props;
+		const { outputOnChange, taskTypeState } = this.props;
 
 		return (
 			<>
@@ -48,7 +44,11 @@ export default class LongRunningProcess extends Component {
 					}}
 					type="text"
 					name="datasource"
-					defaultValue={this.state.datasource}
+					defaultValue={
+						taskTypeState.taskData.longRunningProcess
+							? taskTypeState.taskData.longRunningProcess.datasource
+							: ""
+					}
 				/>
 			</>
 		);

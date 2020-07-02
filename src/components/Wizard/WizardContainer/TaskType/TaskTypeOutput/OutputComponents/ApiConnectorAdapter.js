@@ -1,45 +1,38 @@
 import React, { Component } from "react";
 
 export default class ApiConnectorAdapter extends Component {
-	state = {
-		connectorAdapter: {
-			apiRequest: "",
-			apiResponse: "",
-			documentation: ""
-		}
-	};
-
 	componentDidMount() {
-		if (this.props.taskTypeDataKey.connectorAdapter) {
-			let dataKey = this.props.taskTypeDataKey.connectorAdapter;
-			const connectorAdapter = {
-				connectorAdapter: {
-					apiRequest: dataKey.apiRequest,
-					apiResponse: dataKey.apiResponse,
-					documentation: dataKey.documentation
-				}
-			};
-			this.props.setTaskTypeState(connectorAdapter);
-			this.setState({
-				apiRequest: dataKey.apiRequest,
-				apiResponse: dataKey.apiResponse,
-				documentation: dataKey.documentation
-			});
+		if (this.props.containerState) {
+			if (this.props.containerState.taskType === "API Connector/Adapter") {
+				let connectorAdapter = {};
+				let containerState = { ...this.props.containerState };
+				connectorAdapter = containerState.taskData;
+
+				this.props.setTaskTypeState(connectorAdapter);
+			} else {
+				const connectorAdapter = {
+					connectorAdapter: {
+						apiRequest: "",
+						apiResponse: "",
+						documentation: "",
+					},
+				};
+				this.props.setTaskTypeState(connectorAdapter);
+			}
 		} else {
 			const connectorAdapter = {
 				connectorAdapter: {
 					apiRequest: "",
 					apiResponse: "",
-					documentation: ""
-				}
+					documentation: "",
+				},
 			};
 			this.props.setTaskTypeState(connectorAdapter);
-			this.setState(Object.values(connectorAdapter)[0]);
 		}
 	}
 
 	render() {
-		const { outputOnChange } = this.props;
+		const { outputOnChange, taskTypeState } = this.props;
 
 		return (
 			<>
@@ -55,7 +48,11 @@ export default class ApiConnectorAdapter extends Component {
 					type="text"
 					name="documentation"
 					autoComplete="off"
-					defaultValue={this.state.documentation}
+					defaultValue={
+						taskTypeState.taskData.connectorAdapter
+							? taskTypeState.taskData.connectorAdapter.documentation
+							: ""
+					}
 				/>
 				<p className="modal-content_subtitle">
 					API request (optional)
@@ -70,7 +67,11 @@ export default class ApiConnectorAdapter extends Component {
 						marginBottom: "24px",
 						minHeight: "101px",
 					}}
-					defaultValue={this.state.apiRequest}
+					defaultValue={
+						taskTypeState.taskData.connectorAdapter
+							? taskTypeState.taskData.connectorAdapter.apiRequest
+							: ""
+					}
 				/>
 				<p className="modal-content_subtitle">
 					API responce (optional)
@@ -85,7 +86,11 @@ export default class ApiConnectorAdapter extends Component {
 						marginBottom: "24px",
 						minHeight: "101px",
 					}}
-					defaultValue={this.state.apiResponse}
+					defaultValue={
+						taskTypeState.taskData.connectorAdapter
+							? taskTypeState.taskData.connectorAdapter.apiResponse
+							: ""
+					}
 				/>
 			</>
 		);

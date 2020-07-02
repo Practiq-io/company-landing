@@ -26,6 +26,8 @@ export default class TaskTypeOutput extends Component {
 						taskTypeDataKey={taskTypeDataKey}
 						setTaskTypeState={setTaskTypeState}
 						outputOnChange={outputOnChange}
+						containerState={containerState}
+						taskTypeState={taskTypeState}
 					/>
 				);
 			case "API Connector/Adapter":
@@ -34,6 +36,8 @@ export default class TaskTypeOutput extends Component {
 						taskTypeDataKey={taskTypeDataKey}
 						setTaskTypeState={setTaskTypeState}
 						outputOnChange={outputOnChange}
+						containerState={containerState}
+						taskTypeState={taskTypeState}
 					/>
 				);
 			case "Long running process":
@@ -42,6 +46,8 @@ export default class TaskTypeOutput extends Component {
 						taskTypeDataKey={taskTypeDataKey}
 						setTaskTypeState={setTaskTypeState}
 						outputOnChange={outputOnChange}
+						containerState={containerState}
+						taskTypeState={taskTypeState}
 					/>
 				);
 			case "Custom backend task":
@@ -50,6 +56,8 @@ export default class TaskTypeOutput extends Component {
 						taskTypeDataKey={taskTypeDataKey}
 						setTaskTypeState={setTaskTypeState}
 						outputOnChange={outputOnChange}
+						containerState={containerState}
+						taskTypeState={taskTypeState}
 					/>
 				);
 			case "Landing page":

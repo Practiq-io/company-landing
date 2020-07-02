@@ -109,11 +109,6 @@ export default class TaskType extends Component {
 	render() {
 		const { prevStep, containerState } = this.props;
 		
-		
-		console.log(this.state, "=== TASK TYPE STATE");
-		
-		
-		
 		return (
 			<div className="wizard-modal_content-box">
 
