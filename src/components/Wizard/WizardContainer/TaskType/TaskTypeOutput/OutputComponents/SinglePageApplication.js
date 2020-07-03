@@ -81,32 +81,32 @@ export default class SinglePageApplication extends Component {
 					placeholder="Paste link"
 					defaultValue={
 						taskTypeState.taskData.singlePageApplication
-							? taskTypeState.taskData.singlePageApplication.designLink
-							: ""
+						? taskTypeState.taskData.singlePageApplication.designLink
+						: ""
 					}
 				/>
 
 				{taskTypeState.taskData.singlePageApplication
 					? taskTypeState.taskData.singlePageApplication.attachedFiles.map((file) => {
-							return (
-								<div key={uuid()} className="attached-file_box">
-									<div className="attached-file_wrapper">
-										<img className="attached-file-icon" src={fileIcon} alt="" />
-										<img
-											className="attached-file-selected-icon"
-											src={selectedFileIcon}
-											alt=""
-										/>
-										<p className="attached-file-name">{file}</p>
-										<img
-											onClick={() => removeAttachedFile(file, "singlePageApplication")}
-											className="delete-attached-file-icon"
-											src={deleteFileIcon}
-											alt=""
-										/>
-									</div>
+						return (
+							<div key={uuid()} className="attached-file_box">
+								<div className="attached-file_wrapper">
+									<img className="attached-file-icon" src={fileIcon} alt="" />
+									<img
+										className="attached-file-selected-icon"
+										src={selectedFileIcon}
+										alt=""
+									/>
+									<p className="attached-file-name">{file}</p>
+									<img
+										onClick={() => removeAttachedFile(file, "singlePageApplication")}
+										className="delete-attached-file-icon"
+										src={deleteFileIcon}
+										alt=""
+									/>
 								</div>
-							);
+							</div>
+						);
 					  })
 					: null}
 
@@ -137,38 +137,38 @@ export default class SinglePageApplication extends Component {
 						autoComplete="off"
 						defaultValue={
 							taskTypeState.taskData.singlePageApplication
-								? taskTypeState.taskData.singlePageApplication.field
-								: ""
+							? taskTypeState.taskData.singlePageApplication.field
+							: ""
 						}
 					/>
 				</div>
 				{taskTypeState.taskData.singlePageApplication
 					? taskTypeState.taskData.singlePageApplication.apisFields.map((input) => {
-							return (
-								<div key={input} className="front-end_input-wrapper">
-									<input
-										className="front-end_input"
-										onChange={outputOnChange("singlePageApplication")}
-										style={{
-											marginBottom: "16px",
-										}}
-										type="text"
-										name={input}
-										autoComplete="off"
-										defaultValue={
-											taskTypeState.taskData.singlePageApplication
-												? taskTypeState.taskData.singlePageApplication[input]
-												: ""
-										}
-									/>
-									<div
-										onClick={() => removeApiInput("singlePageApplication", input)}
-										className="front-end_input_remove-button"
-									>
-										<img src={minusIcon} alt="" />
-									</div>
+						return (
+							<div key={input} className="front-end_input-wrapper">
+								<input
+									className="front-end_input"
+									onChange={outputOnChange("singlePageApplication")}
+									style={{
+										marginBottom: "16px",
+									}}
+									type="text"
+									name={input}
+									autoComplete="off"
+									defaultValue={
+										taskTypeState.taskData.singlePageApplication
+											? taskTypeState.taskData.singlePageApplication[input]
+											: ""
+									}
+								/>
+								<div
+									onClick={() => removeApiInput("singlePageApplication", input)}
+									className="front-end_input_remove-button"
+								>
+									<img src={minusIcon} alt="" />
 								</div>
-							);
+							</div>
+						);
 					  })
 					: null}
 

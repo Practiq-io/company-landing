@@ -1,13 +1,13 @@
 import React, { Component } from "react";
 
 export default class ApiConnectorAdapter extends Component {
+
 	componentDidMount() {
 		if (this.props.containerState) {
 			if (this.props.containerState.taskType === "API Connector/Adapter") {
 				let connectorAdapter = {};
 				let containerState = { ...this.props.containerState };
 				connectorAdapter = containerState.taskData;
-
 				this.props.setTaskTypeState(connectorAdapter);
 			} else {
 				const connectorAdapter = {
@@ -33,7 +33,6 @@ export default class ApiConnectorAdapter extends Component {
 
 	render() {
 		const { outputOnChange, taskTypeState } = this.props;
-
 		return (
 			<>
 				<p className="modal-content_subtitle">
@@ -50,8 +49,8 @@ export default class ApiConnectorAdapter extends Component {
 					autoComplete="off"
 					defaultValue={
 						taskTypeState.taskData.connectorAdapter
-							? taskTypeState.taskData.connectorAdapter.documentation
-							: ""
+						? taskTypeState.taskData.connectorAdapter.documentation
+						: ""
 					}
 				/>
 				<p className="modal-content_subtitle">
@@ -69,8 +68,8 @@ export default class ApiConnectorAdapter extends Component {
 					}}
 					defaultValue={
 						taskTypeState.taskData.connectorAdapter
-							? taskTypeState.taskData.connectorAdapter.apiRequest
-							: ""
+						? taskTypeState.taskData.connectorAdapter.apiRequest
+						: ""
 					}
 				/>
 				<p className="modal-content_subtitle">
@@ -88,8 +87,8 @@ export default class ApiConnectorAdapter extends Component {
 					}}
 					defaultValue={
 						taskTypeState.taskData.connectorAdapter
-							? taskTypeState.taskData.connectorAdapter.apiResponse
-							: ""
+						? taskTypeState.taskData.connectorAdapter.apiResponse
+						: ""
 					}
 				/>
 			</>

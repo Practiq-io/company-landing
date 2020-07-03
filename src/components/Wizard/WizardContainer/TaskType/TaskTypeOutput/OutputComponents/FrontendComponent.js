@@ -6,6 +6,7 @@ import minusIcon from "../OutputComponentsImg/minus-icon.svg";
 import uuid from "uuid";
 
 export default class FrontendComponent extends Component {
+
 	componentDidMount() {
 		if (this.props.containerState) {
 			if (this.props.containerState.taskType === "Frontend component") {
@@ -81,32 +82,32 @@ export default class FrontendComponent extends Component {
 					placeholder="Paste link"
 					defaultValue={
 						taskTypeState.taskData.frontendComponent
-							? taskTypeState.taskData.frontendComponent.designLink
-							: ""
+						? taskTypeState.taskData.frontendComponent.designLink
+						: ""
 					}
 				/>
 
 				{taskTypeState.taskData.frontendComponent
 					? taskTypeState.taskData.frontendComponent.attachedFiles.map((file) => {
-							return (
-								<div key={uuid()} className="attached-file_box">
-									<div className="attached-file_wrapper">
-										<img className="attached-file-icon" src={fileIcon} alt="" />
-										<img
-											className="attached-file-selected-icon"
-											src={selectedFileIcon}
-											alt=""
-										/>
-										<p className="attached-file-name">{file}</p>
-										<img
-											onClick={() => removeAttachedFile(file, "frontendComponent")}
-											className="delete-attached-file-icon"
-											src={deleteFileIcon}
-											alt=""
-										/>
-									</div>
+						return (
+							<div key={uuid()} className="attached-file_box">
+								<div className="attached-file_wrapper">
+									<img className="attached-file-icon" src={fileIcon} alt="" />
+									<img
+										className="attached-file-selected-icon"
+										src={selectedFileIcon}
+										alt=""
+									/>
+									<p className="attached-file-name">{file}</p>
+									<img
+										onClick={() => removeAttachedFile(file, "frontendComponent")}
+										className="delete-attached-file-icon"
+										src={deleteFileIcon}
+										alt=""
+									/>
 								</div>
-							);
+							</div>
+						);
 					  })
 					: null}
 
@@ -137,41 +138,41 @@ export default class FrontendComponent extends Component {
 						autoComplete="off"
 						defaultValue={
 							taskTypeState.taskData.frontendComponent
-								? taskTypeState.taskData.frontendComponent.field
-								: ""
+							? taskTypeState.taskData.frontendComponent.field
+							: ""
 						}
 					/>
 				</div>
 				{taskTypeState.taskData.frontendComponent
 					? taskTypeState.taskData.frontendComponent.apisFields.map((input) => {
-							return (
-								<div key={input} className="front-end_input-wrapper">
-									<input
-										className="front-end_input"
-										onChange={outputOnChange("frontendComponent")}
-										style={{
-											marginBottom: "16px",
-										}}
-										type="text"
-										name={input}
-										autoComplete="off"
-										defaultValue={
-											taskTypeState.taskData.frontendComponent
-												? taskTypeState.taskData.frontendComponent[input]
-												: ""
-										}
-									/>
-									<div
-										onClick={() => removeApiInput("frontendComponent", input)}
-										className="front-end_input_remove-button"
-									>
-										<img src={minusIcon} alt="" />
-									</div>
+						return (
+							<div key={input} className="front-end_input-wrapper">
+								<input
+									className="front-end_input"
+									onChange={outputOnChange("frontendComponent")}
+									style={{
+										marginBottom: "16px",
+									}}
+									type="text"
+									name={input}
+									autoComplete="off"
+									defaultValue={
+										taskTypeState.taskData.frontendComponent
+										? taskTypeState.taskData.frontendComponent[input]
+										: ""
+									}
+								/>
+								<div
+									onClick={() => removeApiInput("frontendComponent", input)}
+									className="front-end_input_remove-button"
+								>
+									<img src={minusIcon} alt="" />
 								</div>
-							);
+							</div>
+						);
 					  })
 					: null}
-
+					
 				<p
 					onClick={() => addApiInput("frontendComponent")}
 					style={{

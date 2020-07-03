@@ -6,12 +6,11 @@ import addIcon from "../TaskTypeControlsImg/add-icon.svg";
 import selectDot from "../TaskTypeControlsImg/selected-dot.svg";
 
 export default class ControlsBackend extends Component {
-
-	componentDidMount(){
-		if(this.props.containerState){
-            if(this.props.containerState.programming === "backend"){
-                this.props.selectTask(this.props.containerState.taskType);
-            } else {
+	componentDidMount() {
+		if (this.props.containerState) {
+			if (this.props.containerState.programming === "backend") {
+				this.props.selectTask(this.props.containerState.taskType);
+			} else {
 				this.props.selectTask("General purpose API");
 			}
 		} else {

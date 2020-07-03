@@ -13,21 +13,14 @@ export class WizardContainer extends Component {
 	};
 
 	setWizardProperties = (properties) => {
-			 
 		const key = Object.keys(properties)
 		const value = Object.values(properties)
-
 		let data = {...this.state.data}	
 		data[[key[0]]] = value[0]
-
 		this.setState({data})
 	};
 
 	render() {
-
-		
-		
-		
 
 		const containerState = this.state
 		const { back, next, step, toggleWizard } = this.props;

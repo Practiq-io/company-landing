@@ -6,11 +6,9 @@ import TaskTypeOutput from "./TaskTypeOutput/TaskTypeOutput";
 
 export default class TaskType extends Component {
 	state = {
-		programming: "frontend",
-		taskType: "Landing page",
-		taskData: {
-			
-		},
+		programming: "backend",
+		taskType: "",
+		taskData: {},
 		editData: {}
 	};
 
@@ -40,9 +38,8 @@ export default class TaskType extends Component {
 		taskData[taskKey] = key
         this.setState({taskData});
 	}
-	
-	addApiInput = category => {
-		
+
+	addApiInput = category => {	
 		let taskData = {...this.state.taskData};
 		let taskTypeState = {...taskData[category]};
 		let apisFields = [...taskTypeState.apisFields];
@@ -56,7 +53,6 @@ export default class TaskType extends Component {
 			taskData[category] = taskTypeState
 			this.setState({taskData})
 		}
-		
 	}
 
 	removeApiInput = (category, name) => {
@@ -78,10 +74,7 @@ export default class TaskType extends Component {
 
 	componentDidMount(){
 		if(this.props.containerState){
-			console.log("I DID TRIGGER WITH CONTAINER STATE WITH === container state",this.props.containerState);
-			
 			let containerState = {...this.props.containerState}
-
 			let programming = {...this.state.programming};
 			let taskType = {...this.state.taskType};
 			let taskData = {...this.state.taskData};
@@ -90,7 +83,6 @@ export default class TaskType extends Component {
 			programming = containerState.programming;
 			taskType = containerState.taskType;
 			editData = containerState.taskData;
-
 			this.setState({
 				taskData,
 				programming,
@@ -103,11 +95,9 @@ export default class TaskType extends Component {
 	setTaskTypeState = (properties) => {
 		const key = Object.keys(properties)
 		const value = Object.values(properties)
-
 		let taskData = {...this.state.taskData}
 		taskData = {};
 		taskData[[key[0]]] = value[0]
-	
 		this.setState({taskData})
 	}
 
@@ -143,8 +133,6 @@ export default class TaskType extends Component {
 
 	render() {
 		const { prevStep, containerState } = this.props;
-		console.log(this.state, "LOOKING FOR FIELDS KEYS TO BE DELETED");
-		
 		return (
 			<div className="wizard-modal_content-box">
 
@@ -154,7 +142,11 @@ export default class TaskType extends Component {
 						<p>Select technical requirements</p>
 					</div>
 
-					<TaskTypeSwitch toggleFrontend={this.toggleFrontend} toggleBackend={this.toggleBackend} programming={this.state.programming} />
+					<TaskTypeSwitch 
+						toggleFrontend={this.toggleFrontend} 
+						toggleBackend={this.toggleBackend} 
+						programming={this.state.programming} 
+					/>
 
 					<TaskTypeControls 
 						containerState={containerState}

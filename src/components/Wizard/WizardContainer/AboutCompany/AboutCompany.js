@@ -20,11 +20,13 @@ export default class AboutCompany extends Component {
 		let companyNameError = "";
 		let emailError = "";
 		let websiteError = "";
-
+		const blockedRegex = /[\[\]!$%^&*()":{}|<>]/;
 
 		if (this.state.companyName) {
 			if (this.state.companyName.length > 500) {
 				companyNameError = "* too long string";
+			} else if (this.state.companyName.match(blockedRegex)){
+				companyNameError = "* only string values";
 			}
 		} else {
 			companyNameError = "* is required";
@@ -35,6 +37,8 @@ export default class AboutCompany extends Component {
 				emailError = "* too long string";
 			} else if (!this.state.email.includes("@")) {
 				emailError = "* invalid email format";
+			} else if (this.state.email.match(blockedRegex)){
+				emailError = "* only string values";
 			}
 		} else {
 			emailError = "* is required";
@@ -43,6 +47,8 @@ export default class AboutCompany extends Component {
 		if (this.state.website) {
 			if (this.state.website.length > 500) {
 				websiteError = "* too long string";
+			} else if (this.state.website.match(blockedRegex)){
+				websiteError = "* only string values";
 			}
 		}
 
@@ -76,8 +82,6 @@ export default class AboutCompany extends Component {
 	render() {
 		const { companyNameError, emailError, websiteError } = this.state;
 		const { toggleWizard } = this.props;
-		console.log(this.state, "=== FINAL STATE");
-		
 
 		return (
 			<div className="wizard-modal_content-box">
@@ -85,7 +89,6 @@ export default class AboutCompany extends Component {
 					<div className="modal-title">
 						<p>Tell us about your company</p>
 					</div>
-
 					<div className="modal-content_box">
 						<p className="modal-content_subtitle">
 							Company name

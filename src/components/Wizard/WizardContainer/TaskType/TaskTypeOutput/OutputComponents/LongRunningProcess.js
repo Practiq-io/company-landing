@@ -7,7 +7,6 @@ export default class LongRunningProcess extends Component {
 				let longRunningProcess = {};
 				let containerState = { ...this.props.containerState };
 				longRunningProcess = containerState.taskData;
-
 				this.props.setTaskTypeState(longRunningProcess);
 			} else {
 				const longRunningProcess = {
@@ -29,7 +28,6 @@ export default class LongRunningProcess extends Component {
 
 	render() {
 		const { outputOnChange, taskTypeState } = this.props;
-
 		return (
 			<>
 				<p className="modal-content_subtitle">
@@ -46,8 +44,8 @@ export default class LongRunningProcess extends Component {
 					name="datasource"
 					defaultValue={
 						taskTypeState.taskData.longRunningProcess
-							? taskTypeState.taskData.longRunningProcess.datasource
-							: ""
+						? taskTypeState.taskData.longRunningProcess.datasource
+						: ""
 					}
 				/>
 			</>

@@ -4,7 +4,7 @@ import "./WizardModal.css";
 import close from "./WizardModalImg/close.png";
 import WizardProgressBar from "./WizardProgressBar/WizardProgressBar";
 
-export class WizardModal extends Component {
+export default class WizardModal extends Component {
 	state = {
 		step: 3
 	};
@@ -59,5 +59,3 @@ export class WizardModal extends Component {
 		);
 	}
 }
-
-export default WizardModal;

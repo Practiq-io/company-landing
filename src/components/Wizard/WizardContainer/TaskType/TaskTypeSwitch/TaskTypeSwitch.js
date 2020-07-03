@@ -12,8 +12,6 @@ export default class TaskTypeSwitch extends Component {
 
 		return (
 			<div className="task-type-switch_box">
-				
-
                 <div 
                     onClick={toggleFrontend}
                     className="switch_frontend-box"

@@ -81,32 +81,32 @@ export default class LandingPage extends Component {
 					placeholder="Paste link"
 					defaultValue={
 						taskTypeState.taskData.landingPage
-							? taskTypeState.taskData.landingPage.designLink
-							: ""
+						? taskTypeState.taskData.landingPage.designLink
+						: ""
 					}
 				/>
 
 				{taskTypeState.taskData.landingPage
 					? taskTypeState.taskData.landingPage.attachedFiles.map((file) => {
-							return (
-								<div key={uuid()} className="attached-file_box">
-									<div className="attached-file_wrapper">
-										<img className="attached-file-icon" src={fileIcon} alt="" />
-										<img
-											className="attached-file-selected-icon"
-											src={selectedFileIcon}
-											alt=""
-										/>
-										<p className="attached-file-name">{file}</p>
-										<img
-											onClick={() => removeAttachedFile(file, "landingPage")}
-											className="delete-attached-file-icon"
-											src={deleteFileIcon}
-											alt=""
-										/>
-									</div>
+						return (
+							<div key={uuid()} className="attached-file_box">
+								<div className="attached-file_wrapper">
+									<img className="attached-file-icon" src={fileIcon} alt="" />
+									<img
+										className="attached-file-selected-icon"
+										src={selectedFileIcon}
+										alt=""
+									/>
+									<p className="attached-file-name">{file}</p>
+									<img
+										onClick={() => removeAttachedFile(file, "landingPage")}
+										className="delete-attached-file-icon"
+										src={deleteFileIcon}
+										alt=""
+									/>
 								</div>
-							);
+							</div>
+						);
 					  })
 					: null}
 
@@ -137,38 +137,38 @@ export default class LandingPage extends Component {
 						autoComplete="off"
 						defaultValue={
 							taskTypeState.taskData.landingPage
-								? taskTypeState.taskData.landingPage.field
-								: ""
+							? taskTypeState.taskData.landingPage.field
+							: ""
 						}
 					/>
 				</div>
 				{taskTypeState.taskData.landingPage
 					? taskTypeState.taskData.landingPage.apisFields.map((input) => {
-							return (
-								<div key={input} className="front-end_input-wrapper">
-									<input
-										className="front-end_input"
-										onChange={outputOnChange("landingPage")}
-										style={{
-											marginBottom: "16px",
-										}}
-										type="text"
-										name={input}
-										autoComplete="off"
-										defaultValue={
-											taskTypeState.taskData.landingPage
-												? taskTypeState.taskData.landingPage[input]
-												: ""
-										}
-									/>
-									<div
-										onClick={() => removeApiInput("landingPage", input)}
-										className="front-end_input_remove-button"
-									>
-										<img src={minusIcon} alt="" />
-									</div>
+						return (
+							<div key={input} className="front-end_input-wrapper">
+								<input
+									className="front-end_input"
+									onChange={outputOnChange("landingPage")}
+									style={{
+										marginBottom: "16px",
+									}}
+									type="text"
+									name={input}
+									autoComplete="off"
+									defaultValue={
+										taskTypeState.taskData.landingPage
+											? taskTypeState.taskData.landingPage[input]
+											: ""
+									}
+								/>
+								<div
+									onClick={() => removeApiInput("landingPage", input)}
+									className="front-end_input_remove-button"
+								>
+									<img src={minusIcon} alt="" />
 								</div>
-							);
+							</div>
+						);
 					  })
 					: null}
 

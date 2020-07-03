@@ -1,13 +1,13 @@
 import React, { Component } from "react";
 
 export default class CustomFrontendTask extends Component {
+
 	componentDidMount() {
 		if (this.props.containerState) {
 			if (this.props.containerState.taskType === "Custom frontend task") {
 				let customFrontendTask = {};
 				let containerState = { ...this.props.containerState };
 				customFrontendTask = containerState.taskData;
-
 				this.props.setTaskTypeState(customFrontendTask);
 			} else {
 				const customFrontendTask = {
@@ -29,7 +29,6 @@ export default class CustomFrontendTask extends Component {
 
 	render() {
 		const { outputOnChange, taskTypeState } = this.props;
-
 		return (
 			<>
 				<p className="modal-content_subtitle">
@@ -46,8 +45,8 @@ export default class CustomFrontendTask extends Component {
 					name="taskDescription"
 					defaultValue={
 						taskTypeState.taskData.customFrontendTask
-							? taskTypeState.taskData.customFrontendTask.taskDescription
-							: ""
+						? taskTypeState.taskData.customFrontendTask.taskDescription
+						: ""
 					}
 				/>
 			</>

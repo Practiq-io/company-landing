@@ -4,17 +4,14 @@ export default class GeneralPurposeAPI extends Component {
 
 	componentDidMount() {
 		if (this.props.containerState) {
-
 			if (this.props.containerState.taskType === "General purpose API") {
 				let generalApi = {}
                 let containerState = {...this.props.containerState}
                 generalApi = containerState.taskData
-                
                 this.props.setTaskTypeState(generalApi);
 			} else {
-           
                 const generalApi = {
-					generalApi: {
+						generalApi: {
 						apiRequest: "",
 						apiResponse: ""
 					}
@@ -23,7 +20,7 @@ export default class GeneralPurposeAPI extends Component {
 			}
 		} else {
 			const generalApi = {
-				generalApi: {
+					generalApi: {
 					apiRequest: "",
 					apiResponse: ""
 				}
@@ -34,7 +31,6 @@ export default class GeneralPurposeAPI extends Component {
 
 	render() {
 		const { outputOnChange, taskTypeState } = this.props;
-
 		return (
 			<>
 				<p className="modal-content_subtitle">
@@ -51,8 +47,8 @@ export default class GeneralPurposeAPI extends Component {
 					name="apiRequest"
 					defaultValue={
 						taskTypeState.taskData.generalApi
-							? taskTypeState.taskData.generalApi.apiRequest
-							: ""
+						? taskTypeState.taskData.generalApi.apiRequest
+						: ""
 					}
 				/>
 				<p className="modal-content_subtitle">
@@ -68,8 +64,8 @@ export default class GeneralPurposeAPI extends Component {
 					name="apiResponse"
 					defaultValue={
 						taskTypeState.taskData.generalApi
-							? taskTypeState.taskData.generalApi.apiResponse
-							: ""
+						? taskTypeState.taskData.generalApi.apiResponse
+						: ""
 					}
 				/>
 			</>
