@@ -49,7 +49,6 @@
 }
 .react-autosuggest__suggestions-container--open {
   display: block;
-  overflow: hidden;
   position: absolute;
   top: 70px;
   width: 100%;
@@ -67,6 +66,10 @@
   list-style-type: none;
   max-height: 217px;
   overflow: auto;
+}
+.react-autosuggest__suggestions-list::-webkit-scrollbar {
+  width: 0px;
+  background: transparent;
 }
 .react-autosuggest__suggestion {
   cursor: pointer;
