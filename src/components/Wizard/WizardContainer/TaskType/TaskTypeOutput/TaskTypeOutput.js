@@ -4,7 +4,10 @@ import GeneralPurposeApi from "./OutputComponents/GeneralPurposeAPI";
 import ApiConnectorAdapter from "./OutputComponents/ApiConnectorAdapter";
 import LongRunningProcess from "./OutputComponents/LongRunningProcess";
 import LandingPage from "./OutputComponents/LandingPage";
-import CustomTask from "./OutputComponents/CustomTask";
+import CustomBackendTask from "./OutputComponents/CustomBackendTask";
+import SinglePageApplication from "./OutputComponents/SinglePageApplication";
+import FrontendComponent from "./OutputComponents/FrontendComponent";
+import CustomFrontendTask from "./OutputComponents/CustomFrontendTask";
 
 export default class TaskTypeOutput extends Component {
 	render() {
@@ -54,7 +57,7 @@ export default class TaskTypeOutput extends Component {
 				);
 			case "Custom backend task":
 				return (
-					<CustomTask
+					<CustomBackendTask
 						taskTypeDataKey={taskTypeDataKey}
 						setTaskTypeState={setTaskTypeState}
 						outputOnChange={outputOnChange}
@@ -65,7 +68,6 @@ export default class TaskTypeOutput extends Component {
 			case "Landing page":
 				return (
 					<LandingPage
-						taskTypeDataKey={taskTypeDataKey}
 						setTaskTypeState={setTaskTypeState}
 						outputOnChange={outputOnChange}
 						taskTypeState={taskTypeState}
@@ -77,29 +79,44 @@ export default class TaskTypeOutput extends Component {
 					/>
 				);
 			case "Single page application":
-				// return (
-				// 	<SpaLandingpageComponent
-				// 		taskTypeDataKey={taskTypeDataKey}
-				// 		setTaskTypeState={setTaskTypeState}
-				// 		outputOnChange={outputOnChange}
-				// 	/>
-				// );
+				return (
+					<SinglePageApplication 
+						setTaskTypeState={setTaskTypeState}
+						outputOnChange={outputOnChange}
+						taskTypeState={taskTypeState}
+						removeAttachedFile={removeAttachedFile}
+						attachFile={attachFile}
+						containerState={containerState}
+						addApiInput={addApiInput}
+						removeApiInput={removeApiInput}
+					/>
+				);
 			case "Frontend component":
-				// return (
-				// 	<SpaLandingpageComponent
-				// 		taskTypeDataKey={taskTypeDataKey}
-				// 		setTaskTypeState={setTaskTypeState}
-				// 		outputOnChange={outputOnChange}
-				// 	/>
-				// );
+				return (
+					<FrontendComponent 
+						setTaskTypeState={setTaskTypeState}
+						outputOnChange={outputOnChange}
+						taskTypeState={taskTypeState}
+						removeAttachedFile={removeAttachedFile}
+						attachFile={attachFile}
+						containerState={containerState}
+						addApiInput={addApiInput}
+						removeApiInput={removeApiInput}
+					/>
+				);
 			case "Custom frontend task":
-				// return (
-				// 	<SpaLandingpageComponent
-				// 		taskTypeDataKey={taskTypeDataKey}
-				// 		setTaskTypeState={setTaskTypeState}
-				// 		outputOnChange={outputOnChange}
-				// 	/>
-				// );
+				return (
+					<CustomFrontendTask 
+						setTaskTypeState={setTaskTypeState}
+						outputOnChange={outputOnChange}
+						taskTypeState={taskTypeState}
+						removeAttachedFile={removeAttachedFile}
+						attachFile={attachFile}
+						containerState={containerState}
+						addApiInput={addApiInput}
+						removeApiInput={removeApiInput}
+					/>
+				);
 			default:
 				return <h1>Output component didn't find that task type.</h1>;
 		}

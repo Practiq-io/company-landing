@@ -1,32 +1,32 @@
 import React, { Component } from "react";
 
-export default class CustomTask extends Component {
+export default class CustomBackendTask extends Component {
 	componentDidMount() {
 		if (this.props.containerState) {
 			if (this.props.containerState.taskType === "Custom backend task") {
-				let customTask = {};
+				let customBackendTask = {};
 				let containerState = { ...this.props.containerState };
-				customTask = containerState.taskData;
+				customBackendTask = containerState.taskData;
 
-				this.props.setTaskTypeState(customTask);
+				this.props.setTaskTypeState(customBackendTask);
 			} else {
-				const customTask = {
-					customTask: {
-						taskDescription: ""
-					}
+				const customBackendTask = {
+					customBackendTask: {
+						taskDescription: "",
+					},
 				};
-				this.props.setTaskTypeState(customTask);
+				this.props.setTaskTypeState(customBackendTask);
 			}
 		} else {
-			const customTask = {
-				customTask: {
-					taskDescription: ""
-				}
+			const customBackendTask = {
+				customBackendTask: {
+					taskDescription: "",
+				},
 			};
-			this.props.setTaskTypeState(customTask);
+			this.props.setTaskTypeState(customBackendTask);
 		}
 	}
-	
+
 	render() {
 		const { outputOnChange, taskTypeState } = this.props;
 
@@ -37,7 +37,7 @@ export default class CustomTask extends Component {
 					<span className="validation_error-message"></span>
 				</p>
 				<textarea
-					onChange={outputOnChange("customTask")}
+					onChange={outputOnChange("customBackendTask")}
 					style={{
 						marginBottom: "24px",
 						minHeight: "101px",
@@ -45,11 +45,10 @@ export default class CustomTask extends Component {
 					type="text"
 					name="taskDescription"
 					defaultValue={
-						taskTypeState.taskData.customTask
-							? taskTypeState.taskData.customTask.taskDescription
+						taskTypeState.taskData.customBackendTask
+							? taskTypeState.taskData.customBackendTask.taskDescription
 							: ""
 					}
-					
 				/>
 			</>
 		);
