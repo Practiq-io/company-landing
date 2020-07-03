@@ -15,7 +15,9 @@ export default class TaskTypeOutput extends Component {
 			taskTypeDataKey,
 			removeAttachedFile,
 			attachFile,
-			containerState
+			containerState,
+			addApiInput,
+			removeApiInput
 		} = this.props;
 		const taskType = taskTypeState.taskType;
 
@@ -70,6 +72,8 @@ export default class TaskTypeOutput extends Component {
 						removeAttachedFile={removeAttachedFile}
 						attachFile={attachFile}
 						containerState={containerState}
+						addApiInput={addApiInput}
+						removeApiInput={removeApiInput}
 					/>
 				);
 			case "Single page application":

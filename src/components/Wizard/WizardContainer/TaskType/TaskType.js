@@ -39,7 +39,42 @@ export default class TaskType extends Component {
 		key.attachedFiles = attachedFiles;
 		taskData[taskKey] = key
         this.setState({taskData});
-    }
+	}
+	
+	addApiInput = category => {
+		
+		let taskData = {...this.state.taskData};
+		let taskTypeState = {...taskData[category]};
+		let apisFields = [...taskTypeState.apisFields];
+		let apisFieldKeys = [...taskTypeState.apisFieldKeys];
+		if(apisFieldKeys.length > 0){
+			let newInput = apisFieldKeys.splice(0, 1);
+			apisFields.push(newInput[0]);
+			taskTypeState.apisFields = apisFields;
+			taskTypeState.apisFieldKeys = apisFieldKeys;
+			taskTypeState[newInput] = "";
+			taskData[category] = taskTypeState
+			this.setState({taskData})
+		}
+		
+	}
+
+	removeApiInput = (category, name) => {
+		let taskData = {...this.state.taskData};
+		let taskTypeState = {...taskData[category]};
+		let apisFields = [...taskTypeState.apisFields];
+		let apisFieldKeys = [...taskTypeState.apisFieldKeys];
+		if(apisFields.length > 0){
+			let index = apisFields.indexOf(name);
+			let key = apisFields.splice(index, 1);
+			apisFieldKeys.push(key[0]);
+			delete taskTypeState[name];
+			taskTypeState.apisFieldKeys = apisFieldKeys;
+			taskTypeState.apisFields = apisFields;
+			taskData[category] = taskTypeState;
+			this.setState({taskData})
+		}
+	}
 
 	componentDidMount(){
 		if(this.props.containerState){
@@ -108,6 +143,7 @@ export default class TaskType extends Component {
 
 	render() {
 		const { prevStep, containerState } = this.props;
+		console.log(this.state, "LOOKING FOR FIELDS KEYS TO BE DELETED");
 		
 		return (
 			<div className="wizard-modal_content-box">
@@ -136,6 +172,8 @@ export default class TaskType extends Component {
 							removeAttachedFile={this.removeAttachedFile}
 							attachFile={this.attachFile}
 							containerState={containerState}
+							addApiInput={this.addApiInput}
+							removeApiInput={this.removeApiInput}
 						/>
 					</div>
 

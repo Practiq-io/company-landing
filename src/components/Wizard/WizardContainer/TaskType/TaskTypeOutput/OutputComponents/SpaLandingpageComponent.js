@@ -6,56 +6,48 @@ import minusIcon from "../OutputComponentsImg/minus-icon.svg";
 import uuid from "uuid";
 
 export default class SpaLandingpageComponent extends Component {
-
 	componentDidMount() {
-        
-        if(this.props.containerState){
-            if(this.props.containerState.taskType === "Landing page"){
-               
-                let landingPage = {}
-                let containerState = {...this.props.containerState}
-                landingPage = containerState.taskData
-                
-                this.props.setTaskTypeState(landingPage);
-            } else {
-           
-                const landingPage = {
-                    landingPage: {
-                        designLink: "",
-                        attachedFiles: [
-                            "homepage.sketch",
-                            "profile.sketch",
-                            "ilya.sketch",
-                            "roma.sketch",
-                        ],
-                        apisFields: ["field1"],
-                        field: "",
-                        field1: ""
-                    },
-                };
-                this.props.setTaskTypeState(landingPage);
-            }
-            
-        } else {
-           
-            const landingPage = {
-                landingPage: {
-                    designLink: "",
-                    attachedFiles: [
-                        "homepage.sketch",
-                        "profile.sketch",
-                        "ilya.sketch",
-                        "roma.sketch",
-                    ],
-                    apisFields: ["field1"],
-                    field: "",
-                    field1: ""
-                },
-            };
-            this.props.setTaskTypeState(landingPage);
-        }
-        
-    }
+		if (this.props.containerState) {
+			if (this.props.containerState.taskType === "Landing page") {
+				let landingPage = {};
+				let containerState = { ...this.props.containerState };
+				landingPage = containerState.taskData;
+				this.props.setTaskTypeState(landingPage);
+			} else {
+				const landingPage = {
+					landingPage: {
+						designLink: "",
+						attachedFiles: [
+							"homepage.sketch",
+							"profile.sketch",
+							"ilya.sketch",
+							"roma.sketch",
+						],
+						apisFields: [],
+						apisFieldKeys: ["field2","field3","field4","field5"],
+						field: ""
+					},
+				};
+				this.props.setTaskTypeState(landingPage);
+			}
+		} else {
+			const landingPage = {
+				landingPage: {
+					designLink: "",
+					attachedFiles: [
+						"homepage.sketch",
+						"profile.sketch",
+						"ilya.sketch",
+						"roma.sketch",
+					],
+					apisFields: [],
+					apisFieldKeys: ["field2","field3","field4","field5"],
+					field: ""
+				}
+			};
+			this.props.setTaskTypeState(landingPage);
+		}
+	}
 
 	render() {
 		const {
@@ -63,7 +55,13 @@ export default class SpaLandingpageComponent extends Component {
 			taskTypeState,
 			removeAttachedFile,
 			attachFile,
+			addApiInput,
+			removeApiInput,
 		} = this.props;
+
+		const makeApiButtonDisabled = taskTypeState.taskData.landingPage
+			? taskTypeState.taskData.landingPage.apisFieldKeys.length === 0
+			: null;
 
 		return (
 			<>
@@ -88,30 +86,29 @@ export default class SpaLandingpageComponent extends Component {
 					}
 				/>
 
-                {
-                    taskTypeState.taskData.landingPage
-                        ? taskTypeState.taskData.landingPage.attachedFiles.map((file) => {
-                                return (
-                                    <div key={uuid()} className="attached-file_box">
-                                        <div className="attached-file_wrapper">
-                                            <img className="attached-file-icon" src={fileIcon} alt="" />
-                                            <img
-                                                className="attached-file-selected-icon"
-                                                src={selectedFileIcon}
-                                                alt=""
-                                            />
-                                            <p className="attached-file-name">{file}</p>
-                                            <img
-                                                onClick={() => removeAttachedFile(file, "landingPage")}
-                                                className="delete-attached-file-icon"
-                                                src={deleteFileIcon}
-                                                alt=""
-                                            />
-                                        </div>
-                                    </div>
-                                );
-                        }) : null
-                }
+				{taskTypeState.taskData.landingPage
+					? taskTypeState.taskData.landingPage.attachedFiles.map((file) => {
+							return (
+								<div key={uuid()} className="attached-file_box">
+									<div className="attached-file_wrapper">
+										<img className="attached-file-icon" src={fileIcon} alt="" />
+										<img
+											className="attached-file-selected-icon"
+											src={selectedFileIcon}
+											alt=""
+										/>
+										<p className="attached-file-name">{file}</p>
+										<img
+											onClick={() => removeAttachedFile(file, "landingPage")}
+											className="delete-attached-file-icon"
+											src={deleteFileIcon}
+											alt=""
+										/>
+									</div>
+								</div>
+							);
+					  })
+					: null}
 
 				<p
 					onClick={() => attachFile("__test.sketch", "landingPage")}
@@ -128,57 +125,58 @@ export default class SpaLandingpageComponent extends Component {
 					<span className="validation_error-message"></span>
 				</p>
 
-                <div className="front-end_input-wrapper">
-                    <input
-                        className="front-end_input"
-                        onChange={outputOnChange("landingPage")}
-                        style={{
-                            marginBottom: "16px",
-                        }}
-                        type="text"
-                        name="field"
-                        autoComplete="off"
-                        defaultValue={
-                            taskTypeState.taskData.landingPage
-                                ? taskTypeState.taskData.landingPage.field
-                                : ""    
-                        }
-                        
-                    />
-                                        
-                </div>
-                {
-                    taskTypeState.taskData.landingPage ?
-                    taskTypeState.taskData.landingPage.apisFields.map(input => {
-                            return <div key={input} className="front-end_input-wrapper">
-                                        <input
-                                            className="front-end_input"
-                                            onChange={outputOnChange("landingPage")}
-                                            style={{
-                                                marginBottom: "16px",
-                                            }}
-                                            type="text"
-                                            name={input}
-                                            autoComplete="off"
-                                            defaultValue={
-                                                taskTypeState.taskData.landingPage
-                                                    ? taskTypeState.taskData.landingPage[input]
-                                                    : ""
-                                                
-                                                
-                                                   
-                                            }
-                                            
-                                        />
-                                        <div className="front-end_input_remove-button">
-                                            <img src={minusIcon} alt="" />
-                                        </div>
-                                    </div>
-                        }) : null
-                }
+				<div className="front-end_input-wrapper">
+					<input
+						className="front-end_input"
+						onChange={outputOnChange("landingPage")}
+						style={{
+							marginBottom: "16px",
+						}}
+						type="text"
+						name="field"
+						autoComplete="off"
+						defaultValue={
+							taskTypeState.taskData.landingPage
+								? taskTypeState.taskData.landingPage.field
+								: ""
+						}
+					/>
+				</div>
+				{taskTypeState.taskData.landingPage
+					? taskTypeState.taskData.landingPage.apisFields.map((input) => {
+							return (
+								<div key={input} className="front-end_input-wrapper">
+									<input
+										className="front-end_input"
+										onChange={outputOnChange("landingPage")}
+										style={{
+											marginBottom: "16px",
+										}}
+										type="text"
+										name={input}
+										autoComplete="off"
+										defaultValue={
+											taskTypeState.taskData.landingPage
+												? taskTypeState.taskData.landingPage[input]
+												: ""
+										}
+									/>
+									<div
+										onClick={() => removeApiInput("landingPage", input)}
+										className="front-end_input_remove-button"
+									>
+										<img src={minusIcon} alt="" />
+									</div>
+								</div>
+							);
+					  })
+					: null}
 
 				<p
+					onClick={() => addApiInput("landingPage")}
 					style={{
+						color: makeApiButtonDisabled ? "#B1B1B8" : "#1371FD",
+						cursor: makeApiButtonDisabled ? "context-menu" : "pointer",
 						marginBottom: "32px",
 					}}
 					className="attach-file-button"
