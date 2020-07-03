@@ -36,10 +36,10 @@ export class WizardContainer extends Component {
 			case 1:
 				return (
 					<AboutCompany
-						containerState={containerState.data.aboutCompany}
 						nextStep={next}
 						toggleWizard={toggleWizard}
 						setWizardProperties={this.setWizardProperties}
+						containerState={containerState.data.aboutCompany}
 					/>
 				);
 			case 2:

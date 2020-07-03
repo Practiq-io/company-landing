@@ -5,7 +5,7 @@ import deleteFileIcon from "../OutputComponentsImg/delete-file-icon.svg";
 import minusIcon from "../OutputComponentsImg/minus-icon.svg";
 import uuid from "uuid";
 
-export default class SpaLandingpageComponent extends Component {
+export default class LandingPage extends Component {
 	componentDidMount() {
 		if (this.props.containerState) {
 			if (this.props.containerState.taskType === "Landing page") {

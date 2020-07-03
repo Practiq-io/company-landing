@@ -3,7 +3,7 @@ import "./TaskTypeOutput.css";
 import GeneralPurposeApi from "./OutputComponents/GeneralPurposeAPI";
 import ApiConnectorAdapter from "./OutputComponents/ApiConnectorAdapter";
 import LongRunningProcess from "./OutputComponents/LongRunningProcess";
-import SpaLandingpageComponent from "./OutputComponents/SpaLandingpageComponent";
+import LandingPage from "./OutputComponents/LandingPage";
 import CustomTask from "./OutputComponents/CustomTask";
 
 export default class TaskTypeOutput extends Component {
@@ -64,7 +64,7 @@ export default class TaskTypeOutput extends Component {
 				);
 			case "Landing page":
 				return (
-					<SpaLandingpageComponent
+					<LandingPage
 						taskTypeDataKey={taskTypeDataKey}
 						setTaskTypeState={setTaskTypeState}
 						outputOnChange={outputOnChange}
@@ -77,29 +77,29 @@ export default class TaskTypeOutput extends Component {
 					/>
 				);
 			case "Single page application":
-				return (
-					<SpaLandingpageComponent
-						taskTypeDataKey={taskTypeDataKey}
-						setTaskTypeState={setTaskTypeState}
-						outputOnChange={outputOnChange}
-					/>
-				);
+				// return (
+				// 	<SpaLandingpageComponent
+				// 		taskTypeDataKey={taskTypeDataKey}
+				// 		setTaskTypeState={setTaskTypeState}
+				// 		outputOnChange={outputOnChange}
+				// 	/>
+				// );
 			case "Frontend component":
-				return (
-					<SpaLandingpageComponent
-						taskTypeDataKey={taskTypeDataKey}
-						setTaskTypeState={setTaskTypeState}
-						outputOnChange={outputOnChange}
-					/>
-				);
+				// return (
+				// 	<SpaLandingpageComponent
+				// 		taskTypeDataKey={taskTypeDataKey}
+				// 		setTaskTypeState={setTaskTypeState}
+				// 		outputOnChange={outputOnChange}
+				// 	/>
+				// );
 			case "Custom frontend task":
-				return (
-					<SpaLandingpageComponent
-						taskTypeDataKey={taskTypeDataKey}
-						setTaskTypeState={setTaskTypeState}
-						outputOnChange={outputOnChange}
-					/>
-				);
+				// return (
+				// 	<SpaLandingpageComponent
+				// 		taskTypeDataKey={taskTypeDataKey}
+				// 		setTaskTypeState={setTaskTypeState}
+				// 		outputOnChange={outputOnChange}
+				// 	/>
+				// );
 			default:
 				return <h1>Output component didn't find that task type.</h1>;
 		}
