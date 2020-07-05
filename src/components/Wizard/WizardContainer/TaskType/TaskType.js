@@ -8,8 +8,7 @@ export default class TaskType extends Component {
 	state = {
 		programming: "backend",
 		taskType: "",
-		taskData: {},
-		editData: {}
+		taskData: {}
 	};
 
 	setTaskType = taskType => {
@@ -80,16 +79,15 @@ export default class TaskType extends Component {
 			let programming = {...this.state.programming};
 			let taskType = {...this.state.taskType};
 			let taskData = {...this.state.taskData};
-			let editData
+			
 			taskData = containerState.taskData;
 			programming = containerState.programming;
 			taskType = containerState.taskType;
-			editData = containerState.taskData;
+			
 			this.setState({
 				taskData,
 				programming,
-				taskType,
-				editData
+				taskType
 			})
 		}
 	}
