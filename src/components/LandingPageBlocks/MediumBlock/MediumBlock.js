@@ -2,10 +2,7 @@ import React from "react";
 import "./MediumBlock.css";
 import alcohol from "../../../image/alcohol.png";
 import hall from "../../../image/hall.png";
-import notebook from "../../../image/notebook.png";
-import coffee from "../../../image/coffee.png";
 import IkaAvatar from "../../../image/Ika-avatar.png";
-import eye from "../../../image/eye.png";
 
 const MediumBlock = (props) => {
 	return (

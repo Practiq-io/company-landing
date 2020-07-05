@@ -23,7 +23,7 @@ const Footer = () => {
 
 					<div className="contacts">
 						<p>Contacts</p>
-						<a href="#">hello@practiq.com</a>
+						<a href="plugged">hello@practiq.com</a>
 					</div>
 				</div>
 			</div>

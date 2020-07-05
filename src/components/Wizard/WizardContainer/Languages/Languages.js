@@ -118,7 +118,7 @@ const allTags = [
 	},
 ];
 function escapeRegexCharacters(str) {
-	return str.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+	return str.replace(/[.*+?^${}()|[\\]/g, "\\$&");
 }
 function getSuggestions(value) {
 	const escapedValue = escapeRegexCharacters(value.trim());
@@ -180,8 +180,9 @@ export default class Languages extends Component {
 			let index = selectedTags.indexOf(name);
 			selectedTags.splice(index, 1);
 			popularTags.push(name);
-			this.state.inputError = "";
-			this.setState({ popularTags, selectedTags });
+			let inputError = {...this.state.inputError};
+			inputError = "";
+			this.setState({ popularTags, selectedTags, inputError });
 		} else {
 			let selectedTags = [...this.state.selectedTags];
 			let index = selectedTags.indexOf(name);
@@ -190,8 +191,8 @@ export default class Languages extends Component {
 		}
 	};
 	addInputTag = (event) => {
+		const blockedRegex = /[\]!$%^&*()":{}|<>]/;
 		if (event.key === "Enter" && this.state.value) {
-			const blockedRegex = /[\[\]!$%^&*()":{}|<>]/;
 
 			if (this.state.value.match(blockedRegex)) {
 				this.setState({ inputError: "* only string values" });
@@ -222,7 +223,7 @@ export default class Languages extends Component {
 							value = "";
 							this.setState({ selectedTags, value });
 						} else {
-							return;
+							this.setState({ inputError: "* this tag is already selected" });
 						}
 					}
 				} else {

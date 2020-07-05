@@ -20,7 +20,7 @@ export default class AboutCompany extends Component {
 		let companyNameError = "";
 		let emailError = "";
 		let websiteError = "";
-		const blockedRegex = /[\[\]!$%^&*()":{}|<>]/;
+		const blockedRegex = /[\]!$%^&*()":{}|<>]/;
 
 		if (this.state.companyName) {
 			if (this.state.companyName.length > 500) {

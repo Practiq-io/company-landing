@@ -1,4 +1,4 @@
-import React, { useEffect, Component } from "react";
+import React, { Component } from "react";
 import background from "../../../image/bg2.png";
 import working from "../../../image/working.svg";
 import mobileBg from "../../../image/mobileBg.png";
