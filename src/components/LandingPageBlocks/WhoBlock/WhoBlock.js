@@ -13,10 +13,11 @@ const WhoBlock = (props) => {
 				<content className="WB-content">
 					<h2>Who build this</h2>
 
-					<div className="person-card">
+					<div className="person-card" data-aos="fade-left">
 						<div className="person">
 							<div className="person-image">
-								<p>Ilya Sidorovich</p>
+								<p data-aos="fade-left"
+									data-aos-delay="600">Ilya Sidorovich</p>
 
 								<div className="linkid-logo">
 									<img src={linkid} alt="" />
@@ -24,14 +25,15 @@ const WhoBlock = (props) => {
 							</div>
 
 							<p>
-								Co-founder, Tech Senior Software Developer @ Booking.com BSc
+								Co-founder, Tech / Senior Software Developer @ Booking.com BSc
 								Finance & Marketing, KIMEP
 							</p>
 						</div>
 
 						<div className="person liza">
 							<div className="person-image">
-								<p>Elizaveta Kolesnichenko</p>
+								<p data-aos="fade-left"
+									data-aos-delay="600">Elizaveta Kolesnichenko</p>
 
 								<div className="linkid-logo">
 									<img src={linkid} alt="" />
@@ -46,7 +48,8 @@ const WhoBlock = (props) => {
 
 						<div className="person roma">
 							<div className="person-image">
-								<p>Roman Cherepivskiy</p>
+								<p data-aos="fade-left"
+									data-aos-delay="600">Roman Cherepivskiy</p>
 
 								<div className="linkid-logo">
 									<img src={linkid} alt="" />
@@ -66,9 +69,10 @@ const WhoBlock = (props) => {
 								</div>
 
 								<div className="person-card-text">
-									<p>Ilya Sidorovich</p>
+									<p data-aos="fade-left"
+										data-aos-delay="600">Ilya Sidorovich</p>
 									<p>
-										Co-founder, Tech Senior Software Developer @ Booking.com BSc
+										Co-founder, Tech / Senior Software Developer @ Booking.com BSc
 										Finance & Marketing, KIMEP
 									</p>
 									<div className="person-card-logo">
@@ -83,7 +87,8 @@ const WhoBlock = (props) => {
 								</div>
 
 								<div className="person-card-text">
-									<p>Elizaveta Kolesnichenko</p>
+									<p data-aos="fade-left"
+										data-aos-delay="600">Elizaveta Kolesnichenko</p>
 									<p>
 										Co-founder, Product / Strategy Head of Startup Incubation @
 										ACE Incubator MSc Cognitive Neurobiology, UvA
@@ -100,7 +105,8 @@ const WhoBlock = (props) => {
 								</div>
 
 								<div className="person-card-text">
-									<p>Roman Cherepivskiy</p>
+									<p data-aos="fade-left"
+										data-aos-delay="600">Roman Cherepivskiy</p>
 									<p>
 										Senior UI/UX Designer Computer Hardware and Software Almaty
 										technological university

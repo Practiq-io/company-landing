@@ -21,7 +21,8 @@ class HeroBlock extends Component {
 
 				<div className="wrapper">
 					<div className="grid_wrapper">
-						<div className="section_title">
+						<div className="section_title" data-aos="fade-right"
+							data-aos-delay="400">
 							<h1>
 								Let our pre-vetted developers build a
 								<br className="title-animation-linebreak"></br>{" "}
@@ -29,7 +30,8 @@ class HeroBlock extends Component {
 							</h1>
 						</div>
 
-						<div className="section_text">
+						<div className="section_text" data-aos="fade-right"
+							data-aos-delay="600">
 							<p>
 								We are the first freelance platform that invests in
 								<br className="title-animation-linebreak"></br> education of our
@@ -44,7 +46,8 @@ class HeroBlock extends Component {
 
 						<button className="mobile-hero-button">Get started</button>
 
-						<div className="code_window">
+						<div className="code_window" data-aos="fade-left"
+							data-aos-delay="400">
 							<div className="code_block">
 								<div className="code_block_header">
 									<div className="code_block_header_dot red"></div>

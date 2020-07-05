@@ -9,10 +9,6 @@ export default class WizardModal extends Component {
 		step: 3
 	};
 
-	componentWillUnmount() {
-		this.setState({ step: 1 });
-	}
-
 	nextStep = () => {
 		this.setState({ step: this.state.step + 1 });
 	};

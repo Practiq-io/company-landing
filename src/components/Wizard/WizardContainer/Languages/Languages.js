@@ -3,6 +3,7 @@ import "./Languages.css";
 import selectedTagClose from "./Languages_img/tagClose.svg";
 import Autosuggest from "react-autosuggest";
 import "./Autocomplete/Autocomplete.css";
+import uuid from "uuid";
 
 const popularTags = [
 	"C++",
@@ -241,12 +242,11 @@ export default class Languages extends Component {
 		this.setState({ popularTags });
 	}
 	validation = () => {
-
-		if(this.state.selectedTags.length === 0) {
-			this.setState({ inputError: "* choose a language"});
+		if (this.state.selectedTags.length === 0) {
+			this.setState({ inputError: "* choose a language" });
 			return false;
 		}
-		
+
 		return true;
 	};
 	continue = () => {
@@ -299,7 +299,7 @@ export default class Languages extends Component {
 							{this.state.selectedTags
 								? this.state.selectedTags.map((name) => {
 										return (
-											<div className="selected_tag" key={name}>
+											<div className="selected_tag" key={uuid()}>
 												<p>{name}</p>
 												<img
 													onClick={() => this.removeSelectedTag(name)}
@@ -324,7 +324,7 @@ export default class Languages extends Component {
 											<div
 												onClick={() => this.addSelectedTag(name)}
 												className="popular_tag"
-												key={name}
+												key={uuid()}
 											>
 												<p>{name}</p>
 											</div>
