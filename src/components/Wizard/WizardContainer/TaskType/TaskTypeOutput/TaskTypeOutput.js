@@ -15,7 +15,6 @@ export default class TaskTypeOutput extends Component {
 			taskTypeState,
 			setTaskTypeState,
 			outputOnChange,
-			taskTypeDataKey,
 			removeAttachedFile,
 			attachFile,
 			containerState,
@@ -28,7 +27,6 @@ export default class TaskTypeOutput extends Component {
 			case "General purpose API":
 				return (
 					<GeneralPurposeApi
-						taskTypeDataKey={taskTypeDataKey}
 						setTaskTypeState={setTaskTypeState}
 						outputOnChange={outputOnChange}
 						containerState={containerState}
@@ -38,7 +36,6 @@ export default class TaskTypeOutput extends Component {
 			case "API Connector/Adapter":
 				return (
 					<ApiConnectorAdapter
-						taskTypeDataKey={taskTypeDataKey}
 						setTaskTypeState={setTaskTypeState}
 						outputOnChange={outputOnChange}
 						containerState={containerState}
@@ -48,7 +45,6 @@ export default class TaskTypeOutput extends Component {
 			case "Long running process":
 				return (
 					<LongRunningProcess
-						taskTypeDataKey={taskTypeDataKey}
 						setTaskTypeState={setTaskTypeState}
 						outputOnChange={outputOnChange}
 						containerState={containerState}
@@ -58,7 +54,6 @@ export default class TaskTypeOutput extends Component {
 			case "Custom backend task":
 				return (
 					<CustomBackendTask
-						taskTypeDataKey={taskTypeDataKey}
 						setTaskTypeState={setTaskTypeState}
 						outputOnChange={outputOnChange}
 						containerState={containerState}

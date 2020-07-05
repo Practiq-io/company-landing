@@ -56,18 +56,21 @@ export default class SinglePageApplication extends Component {
 			removeAttachedFile,
 			attachFile,
 			addApiInput,
-			removeApiInput,
+			removeApiInput
 		} = this.props;
 
 		const makeApiButtonDisabled = taskTypeState.taskData.singlePageApplication
 			? taskTypeState.taskData.singlePageApplication.apisFieldKeys.length === 0
+			: null;
+		const makeAttachFileButtonDisabled = taskTypeState.taskData.singlePageApplication
+			? taskTypeState.taskData.singlePageApplication.attachedFiles.length === 5
 			: null;
 
 		return (
 			<>
 				<p className="modal-content_subtitle">
 					Design
-					<span className="validation_error-message"></span>
+					<span className="validation_error-message">{taskTypeState.designLinkError}</span>
 				</p>
 
 				<input
@@ -113,6 +116,8 @@ export default class SinglePageApplication extends Component {
 				<p
 					onClick={() => attachFile("__test.sketch", "singlePageApplication")}
 					style={{
+						color: makeAttachFileButtonDisabled ? "#B1B1B8" : "#1371FD",
+						cursor: makeAttachFileButtonDisabled ? "context-menu" : "pointer",
 						marginBottom: "32px",
 					}}
 					className="attach-file-button"
@@ -126,41 +131,58 @@ export default class SinglePageApplication extends Component {
 				</p>
 
 				<div className="front-end_input-wrapper">
-					<input
-						className="front-end_input"
-						onChange={outputOnChange("singlePageApplication")}
+					<label 
+						className="error-message_label"
 						style={{
-							marginBottom: "16px",
+							color: taskTypeState.fieldError ? "#eb5757" : "transparent"
 						}}
-						type="text"
-						name="field"
-						autoComplete="off"
-						defaultValue={
-							taskTypeState.taskData.singlePageApplication
-							? taskTypeState.taskData.singlePageApplication.field
-							: ""
-						}
-					/>
+					>
+						*{taskTypeState.fieldError}
+						<input
+							className="front-end_input"
+							onChange={outputOnChange("singlePageApplication")}
+							style={{
+								marginBottom: "16px",
+							}}
+							type="text"
+							name="field"
+							autoComplete="off"
+							defaultValue={
+								taskTypeState.taskData.singlePageApplication
+								? taskTypeState.taskData.singlePageApplication.field
+								: ""
+							}
+						/>
+					</label>
 				</div>
 				{taskTypeState.taskData.singlePageApplication
 					? taskTypeState.taskData.singlePageApplication.apisFields.map((input) => {
+						const errorKey = input + "Error"
 						return (
 							<div key={input} className="front-end_input-wrapper">
-								<input
-									className="front-end_input"
-									onChange={outputOnChange("singlePageApplication")}
+								<label 
+									className="error-message_label"
 									style={{
-										marginBottom: "16px",
+										color: taskTypeState[errorKey] ? "#eb5757" : "transparent"
 									}}
-									type="text"
-									name={input}
-									autoComplete="off"
-									defaultValue={
-										taskTypeState.taskData.singlePageApplication
-											? taskTypeState.taskData.singlePageApplication[input]
-											: ""
-									}
-								/>
+								>
+									*{taskTypeState[errorKey]}
+									<input
+										className="front-end_input"
+										onChange={outputOnChange("singlePageApplication")}
+										style={{
+											marginBottom: "16px",
+										}}
+										type="text"
+										name={input}
+										autoComplete="off"
+										defaultValue={
+											taskTypeState.taskData.singlePageApplication
+												? taskTypeState.taskData.singlePageApplication[input]
+												: ""
+										}
+									/>
+								</label> 
 								<div
 									onClick={() => removeApiInput("singlePageApplication", input)}
 									className="front-end_input_remove-button"

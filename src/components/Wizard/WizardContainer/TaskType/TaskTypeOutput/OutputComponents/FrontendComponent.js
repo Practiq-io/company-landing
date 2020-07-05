@@ -63,12 +63,15 @@ export default class FrontendComponent extends Component {
 		const makeApiButtonDisabled = taskTypeState.taskData.frontendComponent
 			? taskTypeState.taskData.frontendComponent.apisFieldKeys.length === 0
 			: null;
+		const makeAttachFileButtonDisabled = taskTypeState.taskData.frontendComponent
+			? taskTypeState.taskData.frontendComponent.attachedFiles.length === 5
+			: null;
 
 		return (
 			<>
 				<p className="modal-content_subtitle">
 					Design
-					<span className="validation_error-message"></span>
+					<span className="validation_error-message">{taskTypeState.designLinkError}</span>
 				</p>
 
 				<input
@@ -114,6 +117,8 @@ export default class FrontendComponent extends Component {
 				<p
 					onClick={() => attachFile("__test.sketch", "frontendComponent")}
 					style={{
+						color: makeAttachFileButtonDisabled ? "#B1B1B8" : "#1371FD",
+						cursor: makeAttachFileButtonDisabled ? "context-menu" : "pointer",
 						marginBottom: "32px",
 					}}
 					className="attach-file-button"
@@ -127,41 +132,58 @@ export default class FrontendComponent extends Component {
 				</p>
 
 				<div className="front-end_input-wrapper">
-					<input
-						className="front-end_input"
-						onChange={outputOnChange("frontendComponent")}
+					<label 
+						className="error-message_label"
 						style={{
-							marginBottom: "16px",
+							color: taskTypeState.fieldError ? "#eb5757" : "transparent"
 						}}
-						type="text"
-						name="field"
-						autoComplete="off"
-						defaultValue={
-							taskTypeState.taskData.frontendComponent
-							? taskTypeState.taskData.frontendComponent.field
-							: ""
-						}
-					/>
+					>
+						*{taskTypeState.fieldError}
+						<input
+							className="front-end_input"
+							onChange={outputOnChange("frontendComponent")}
+							style={{
+								marginBottom: "16px",
+							}}
+							type="text"
+							name="field"
+							autoComplete="off"
+							defaultValue={
+								taskTypeState.taskData.frontendComponent
+								? taskTypeState.taskData.frontendComponent.field
+								: ""
+							}
+						/>
+					</label>
 				</div>
 				{taskTypeState.taskData.frontendComponent
 					? taskTypeState.taskData.frontendComponent.apisFields.map((input) => {
+						const errorKey = input + "Error"
 						return (
 							<div key={input} className="front-end_input-wrapper">
-								<input
-									className="front-end_input"
-									onChange={outputOnChange("frontendComponent")}
+								<label 
+									className="error-message_label"
 									style={{
-										marginBottom: "16px",
+										color: taskTypeState[errorKey] ? "#eb5757" : "transparent"
 									}}
-									type="text"
-									name={input}
-									autoComplete="off"
-									defaultValue={
-										taskTypeState.taskData.frontendComponent
-										? taskTypeState.taskData.frontendComponent[input]
-										: ""
-									}
-								/>
+								>
+									*{taskTypeState[errorKey]}
+									<input
+										className="front-end_input"
+										onChange={outputOnChange("frontendComponent")}
+										style={{
+											marginBottom: "16px",
+										}}
+										type="text"
+										name={input}
+										autoComplete="off"
+										defaultValue={
+											taskTypeState.taskData.frontendComponent
+											? taskTypeState.taskData.frontendComponent[input]
+											: ""
+										}
+									/>
+								</label>
 								<div
 									onClick={() => removeApiInput("frontendComponent", input)}
 									className="front-end_input_remove-button"

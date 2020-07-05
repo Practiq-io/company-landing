@@ -33,7 +33,7 @@ export default class CustomBackendTask extends Component {
 			<>
 				<p className="modal-content_subtitle">
 					Task description
-					<span className="validation_error-message"></span>
+					<span className="validation_error-message">{taskTypeState.taskDescriptionError}</span>
 				</p>
 				<textarea
 					onChange={outputOnChange("customBackendTask")}

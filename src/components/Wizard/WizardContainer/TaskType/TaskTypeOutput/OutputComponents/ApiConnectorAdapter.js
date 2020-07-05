@@ -37,7 +37,7 @@ export default class ApiConnectorAdapter extends Component {
 			<>
 				<p className="modal-content_subtitle">
 					Link to documentation
-					<span className="validation_error-message"></span>
+					<span className="validation_error-message">{taskTypeState.documentationError}</span>
 				</p>
 				<input
 					onChange={outputOnChange("connectorAdapter")}
@@ -55,7 +55,7 @@ export default class ApiConnectorAdapter extends Component {
 				/>
 				<p className="modal-content_subtitle">
 					API request (optional)
-					<span className="validation_error-message"></span>
+					<span className="validation_error-message">{taskTypeState.apiRequestError}</span>
 				</p>
 				<textarea
 					onChange={outputOnChange("connectorAdapter")}
@@ -74,7 +74,7 @@ export default class ApiConnectorAdapter extends Component {
 				/>
 				<p className="modal-content_subtitle">
 					API responce (optional)
-					<span className="validation_error-message"></span>
+					<span className="validation_error-message">{taskTypeState.apiResponseError}</span>
 				</p>
 				<textarea
 					onChange={outputOnChange("connectorAdapter")}

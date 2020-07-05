@@ -36,9 +36,7 @@ export default class LandingPage extends Component {
 					designLink: "",
 					attachedFiles: [
 						"homepage.sketch",
-						"profile.sketch",
-						"ilya.sketch",
-						"roma.sketch",
+						"profile.sketch"
 					],
 					apisFields: [],
 					apisFieldKeys: ["field2","field3","field4","field5"],
@@ -56,18 +54,21 @@ export default class LandingPage extends Component {
 			removeAttachedFile,
 			attachFile,
 			addApiInput,
-			removeApiInput,
+			removeApiInput
 		} = this.props;
 
 		const makeApiButtonDisabled = taskTypeState.taskData.landingPage
 			? taskTypeState.taskData.landingPage.apisFieldKeys.length === 0
+			: null;
+		const makeAttachFileButtonDisabled = taskTypeState.taskData.landingPage
+			? taskTypeState.taskData.landingPage.attachedFiles.length === 5
 			: null;
 
 		return (
 			<>
 				<p className="modal-content_subtitle">
 					Design
-					<span className="validation_error-message"></span>
+					<span className="validation_error-message">{taskTypeState.designLinkError}</span>
 				</p>
 
 				<input
@@ -113,6 +114,8 @@ export default class LandingPage extends Component {
 				<p
 					onClick={() => attachFile("__test.sketch", "landingPage")}
 					style={{
+						color: makeAttachFileButtonDisabled ? "#B1B1B8" : "#1371FD",
+						cursor: makeAttachFileButtonDisabled ? "context-menu" : "pointer",
 						marginBottom: "32px",
 					}}
 					className="attach-file-button"
@@ -126,41 +129,63 @@ export default class LandingPage extends Component {
 				</p>
 
 				<div className="front-end_input-wrapper">
-					<input
-						className="front-end_input"
-						onChange={outputOnChange("landingPage")}
+					<label 
+						className="error-message_label"
 						style={{
-							marginBottom: "16px",
+							color: taskTypeState.fieldError ? "#eb5757" : "transparent"
 						}}
-						type="text"
-						name="field"
-						autoComplete="off"
-						defaultValue={
-							taskTypeState.taskData.landingPage
-							? taskTypeState.taskData.landingPage.field
-							: ""
-						}
-					/>
+					>
+						*{taskTypeState.fieldError}
+						<input
+							className="front-end_input"
+							onChange={outputOnChange("landingPage")}
+							style={{
+								marginBottom: "16px",
+							}}
+							type="text"
+							name="field"
+							autoComplete="off"
+							defaultValue={
+								taskTypeState.taskData.landingPage
+								? taskTypeState.taskData.landingPage.field
+								: ""
+							}
+							placeholder={
+								// taskTypeState.fieldError 
+								"Testing Boys"
+							}
+						/>
+				
+					</label>
 				</div>
 				{taskTypeState.taskData.landingPage
 					? taskTypeState.taskData.landingPage.apisFields.map((input) => {
+						const errorKey = input + "Error"
 						return (
 							<div key={input} className="front-end_input-wrapper">
-								<input
-									className="front-end_input"
-									onChange={outputOnChange("landingPage")}
+								<label 
+									className="error-message_label"
 									style={{
-										marginBottom: "16px",
+										color: taskTypeState[errorKey] ? "#eb5757" : "transparent"
 									}}
-									type="text"
-									name={input}
-									autoComplete="off"
-									defaultValue={
-										taskTypeState.taskData.landingPage
-											? taskTypeState.taskData.landingPage[input]
-											: ""
-									}
-								/>
+								>
+									*{taskTypeState[errorKey]}
+									<input
+										className="front-end_input"
+										onChange={outputOnChange("landingPage")}
+										style={{
+											marginBottom: "16px",
+										}}
+										type="text"
+										name={input}
+										autoComplete="off"
+										defaultValue={
+											taskTypeState.taskData.landingPage
+												? taskTypeState.taskData.landingPage[input]
+												: ""
+										}
+									/>
+								</label>
 								<div
 									onClick={() => removeApiInput("landingPage", input)}
 									className="front-end_input_remove-button"

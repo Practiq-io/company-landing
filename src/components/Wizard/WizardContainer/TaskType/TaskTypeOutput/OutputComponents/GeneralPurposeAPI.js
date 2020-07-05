@@ -35,7 +35,7 @@ export default class GeneralPurposeAPI extends Component {
 			<>
 				<p className="modal-content_subtitle">
 					API request (optional)
-					<span className="validation_error-message"></span>
+					<span className="validation_error-message">{taskTypeState.apiRequestError}</span>
 				</p>
 				<textarea
 					onChange={outputOnChange("generalApi")}
@@ -53,7 +53,7 @@ export default class GeneralPurposeAPI extends Component {
 				/>
 				<p className="modal-content_subtitle">
 					API responce (optional)
-					<span className="validation_error-message"></span>
+					<span className="validation_error-message">{taskTypeState.apiResponseError}</span>
 				</p>
 				<textarea
 					onChange={outputOnChange("generalApi")}

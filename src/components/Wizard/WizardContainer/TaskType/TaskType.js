@@ -20,11 +20,13 @@ export default class TaskType extends Component {
 		let key = taskKey
 		let taskData = {...this.state.taskData} 
 		key = {...this.state.taskData[key]}
-        let attachedFiles = [...key.attachedFiles]
-        attachedFiles.push(name);
-		key.attachedFiles = attachedFiles;
-		taskData[taskKey] = key
-        this.setState({taskData});
+		let attachedFiles = [...key.attachedFiles]
+		if(attachedFiles.length < 5){
+			attachedFiles.push(name);
+			key.attachedFiles = attachedFiles;
+			taskData[taskKey] = key
+			this.setState({taskData});
+		}
 	}
 
 	removeAttachedFile = (name, taskKey) => {
@@ -113,16 +115,245 @@ export default class TaskType extends Component {
 		}
 	}
 
-	continue = () => {	
-		const specification = {
-			specification: {
-				taskType: this.state.taskType,
-				programming: this.state.programming,
-				taskData: this.state.taskData
+	generalPurposeApiValidation = () => {
+		let apiRequestError = "";
+		let apiResponseError = "";
+		const blockedRegex = /[\]!$%^&*()":{}|<>]/;
+		const data = this.state.taskData.generalApi;
+
+		if (data.apiRequest) {
+			if (data.apiRequest.length > 500) {
+				apiRequestError = "* too long string";
+			} else if (data.apiRequest.match(blockedRegex)){
+				apiRequestError = "* only string values";
 			}
+		} 
+
+		if (data.apiResponse) {
+			if (data.apiResponse.length > 500) {
+				apiResponseError = "* too long string";
+			} else if (data.apiResponse.match(blockedRegex)){
+				apiResponseError = "* only string values";
+			}
+		} 
+
+		if (apiRequestError || apiResponseError) {
+			this.setState({ apiRequestError, apiResponseError });
+			return false;
 		}
-		this.props.setWizardProperties(specification);
-		this.props.nextStep();
+		
+		return true;
+	}
+
+	apiConnectorAdapterValidation = () => {
+		let apiRequestError = "";
+		let apiResponseError = "";
+		let documentationError ="";
+		const blockedRegex = /[\]!$%^&*()":{}|<>]/;
+		const data = this.state.taskData.connectorAdapter;
+
+		if (data.apiRequest) {
+			if (data.apiRequest.length > 500) {
+				apiRequestError = "* too long string";
+			} else if (data.apiRequest.match(blockedRegex)){
+				apiRequestError = "* only string values";
+			}
+		} 
+
+		if (data.apiResponse) {
+			if (data.apiResponse.length > 500) {
+				apiResponseError = "* too long string";
+			} else if (data.apiResponse.match(blockedRegex)){
+				apiResponseError = "* only string values";
+			}
+		} 
+
+		if (data.documentation) {
+			if (data.documentation.length > 500) {
+				documentationError = "* too long string";
+			} else if (data.documentation.match(blockedRegex)){
+				documentationError = "* only string values";
+			}
+		} else {
+			documentationError = "* is required";
+		} 
+
+		if (apiRequestError || apiResponseError || documentationError) {
+			this.setState({ apiRequestError, apiResponseError, documentationError });
+			return false;
+		}
+		
+		return true;
+	}
+
+	longRunningProcessValidation = () => {
+		let datasourceError = "";
+		const blockedRegex = /[\]!$%^&*()":{}|<>]/;
+		const data = this.state.taskData.longRunningProcess;
+
+		if (data.datasource) {
+			if (data.datasource.length > 500) {
+				datasourceError = "* too long string";
+			} else if (data.datasource.match(blockedRegex)){
+				datasourceError = "* only string values";
+			}
+		} else {
+			datasourceError = "* is required";
+		} 
+
+		if (datasourceError) {
+			this.setState({ datasourceError });
+			return false;
+		}
+		
+		return true;
+	}
+
+	customTaskValidation = category => {
+		let taskDescriptionError = "";
+		const blockedRegex = /[\]!$%^&*()":{}|<>]/;
+		const data = this.state.taskData[category];
+
+		if (data.taskDescription) {
+			if (data.taskDescription.length > 500) {
+				taskDescriptionError = "* too long string";
+			} else if (data.taskDescription.match(blockedRegex)){
+				taskDescriptionError = "* only string values";
+			}
+		} else {
+			taskDescriptionError = "* is required";
+		} 
+
+		if (taskDescriptionError) {
+			this.setState({ taskDescriptionError });
+			return false;
+		}
+		
+		return true;
+	}
+
+	designValidation = category => {
+		let designLinkError = "";
+		let fieldError = "";
+		let field2Error = "";
+		let field3Error = "";
+		let field4Error = "";
+		let field5Error = "";
+		const blockedRegex = /[\]!$%^&*()"{}|<>]/;
+		const data = this.state.taskData[category];
+
+		if (data.designLink) {
+			if (data.designLink.length > 500) {
+				designLinkError = "* too long string";
+			} else if (data.designLink.match(blockedRegex)){
+				designLinkError = "* only string values";
+			}
+		} else {
+			designLinkError = "* is required";
+		}
+		if (data.field) {
+			if (data.field.length > 500) {
+				fieldError = " too long string";
+			} else if (data.field.match(blockedRegex)){
+				fieldError = " only string values";
+			}
+		} else if (data.field === "") {
+			fieldError = " is required";
+		}
+		if (data.field2) {
+			if (data.field2.length > 500) {
+				field2Error = " too long string";
+			} else if (data.field2.match(blockedRegex)){
+				field2Error = " only string values";
+			}
+		} else if (data.field2 === "") {
+			field2Error = " is required";
+		}
+		if (data.field3) {
+			if (data.field3.length > 500) {
+				field3Error = " too long string";
+			} else if (data.field3.match(blockedRegex)){
+				field3Error = " only string values";
+			}
+		} else if (data.field3 === "") {
+			field3Error = " is required";
+		}
+		if (data.field4) {
+			if (data.field4.length > 500) {
+				field4Error = " too long string";
+			} else if (data.field4.match(blockedRegex)){
+				field4Error = " only string values";
+			}
+		} else if (data.field4 === "") {
+			field4Error = " is required";
+		}
+		if (data.field5) {
+			if (data.field5.length > 500) {
+				field5Error = " too long string";
+			} else if (data.field5.match(blockedRegex)){
+				field5Error = " only string values";
+			}
+		} else if (data.field5 === "") {
+			field5Error = " is required";
+		}
+
+		if (designLinkError || fieldError || field2Error || field3Error || field4Error || field5Error) {
+			this.setState({ designLinkError, fieldError, field2Error, field3Error, field4Error, field5Error});
+			return false;
+		}
+		return true;
+	}
+
+	validation = () => {
+		if(this.state.taskData.generalApi){
+
+			return this.generalPurposeApiValidation();
+
+		} else if (this.state.taskData.connectorAdapter){
+
+			return this.apiConnectorAdapterValidation();
+
+		} else if (this.state.taskData.longRunningProcess){
+
+			return this.longRunningProcessValidation();
+
+		} else if (this.state.taskData.customBackendTask){
+
+			return this.customTaskValidation("customBackendTask");
+
+		} else if (this.state.taskData.landingPage){
+
+			return this.designValidation("landingPage");
+			
+		} else if (this.state.taskData.singlePageApplication){
+
+			return this.designValidation("singlePageApplication");
+			
+		} else if (this.state.taskData.frontendComponent){
+
+			return this.designValidation("frontendComponent");
+			
+		} else if (this.state.taskData.customFrontendTask){
+			
+			return this.customTaskValidation("customFrontendTask");
+
+		}
+	}
+
+	continue = () => {
+
+		const isValid = this.validation();
+		if(isValid){
+			const specification = {
+				specification: {
+					taskType: this.state.taskType,
+					programming: this.state.programming,
+					taskData: this.state.taskData
+				}
+			}
+			this.props.setWizardProperties(specification);
+			this.props.nextStep();
+		}
 	}
 
 	taskDataOnChangeHandler = key => e => {
@@ -160,7 +391,6 @@ export default class TaskType extends Component {
 							outputOnChange={this.taskDataOnChangeHandler} 
 							setTaskTypeState={this.setTaskTypeState} 
 							taskTypeState={this.state}
-							taskTypeDataKey={this.state.editData}
 							removeAttachedFile={this.removeAttachedFile}
 							attachFile={this.attachFile}
 							containerState={containerState}

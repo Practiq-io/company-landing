@@ -32,7 +32,7 @@ export default class LongRunningProcess extends Component {
 			<>
 				<p className="modal-content_subtitle">
 					Datasource
-					<span className="validation_error-message"></span>
+					<span className="validation_error-message">{taskTypeState.datasourceError}</span>
 				</p>
 				<textarea
 					onChange={outputOnChange("longRunningProcess")}
