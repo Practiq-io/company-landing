@@ -56,7 +56,6 @@ export default class AboutCompany extends Component {
 			this.setState({ companyNameError, emailError, websiteError });
 			return false;
 		}
-		
 		return true;
 	};
 

@@ -6,10 +6,8 @@ import TaskType from "./TaskType/TaskType";
 import Deliverables from "./Deliverables/Deliverables";
 
 export class WizardContainer extends Component {
-	
 	state = {
-		data : {}
-		
+		data: {},
 	};
 
 	setWizardProperties = (properties) => {
@@ -23,7 +21,6 @@ export class WizardContainer extends Component {
 	render() {
 		const containerState = this.state
 		const { back, next, step, toggleWizard } = this.props;
-	
 		switch (step) {
 			case 1:
 				return (
@@ -35,8 +32,8 @@ export class WizardContainer extends Component {
 					/>
 				);
 			case 2:
-				return(
-					 <Languages
+				return (
+					<Languages
 						toggleWizard={toggleWizard}
 						prevStep={back}
 						nextStep={next}

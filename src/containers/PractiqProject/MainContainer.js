@@ -1,4 +1,6 @@
 import React,{Component} from 'react';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 import HeroBlock from '../../components/LandingPageBlocks/HeroBlock/HeroBlock';
 import PromoBlock from '../../components/LandingPageBlocks/PromoBlock/PromoBlock';
 import TaskBlock from '../../components/LandingPageBlocks/TaskBlock/TaskBlock';
@@ -11,7 +13,14 @@ import WizardModal from '../../components/Wizard/WizardModal';
 
 class MainContainer extends Component {
 
-
+    componentDidMount() {
+        AOS.init({
+            mirror: true,
+            easing: 'ease-out-cubic',
+            duration:800
+        });
+        console.log(AOS);
+    }
     
 
     render(){
