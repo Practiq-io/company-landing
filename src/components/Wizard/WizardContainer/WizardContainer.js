@@ -8,7 +8,18 @@ import Deliverables from "./Deliverables/Deliverables";
 export class WizardContainer extends Component {
 	
 	state = {
-		data : {}
+		data : {
+			taxonomy: {
+				popularTags: ["Java", "React", "Joomla", "Javascript", "Laravel", "Node JS", "Swift", "CSS", "Drupal", "Kotlin", ".NET", "IOS", "Android", "AWS"],
+				selectedTags: [
+					["C#", "junior"],
+					["C++", "senior"],
+					["Ruby", "senior"],
+					["HTML", "middle"],
+					["Wordpress", "junior"]
+				]
+			}
+		}
 		
 	};
 
@@ -38,7 +49,6 @@ export class WizardContainer extends Component {
 			case 2:
 				return(
 					 <Languages
-						toggleWizard={toggleWizard}
 						prevStep={back}
 						nextStep={next}
 						setWizardProperties={this.setWizardProperties}
@@ -57,7 +67,10 @@ export class WizardContainer extends Component {
 			case 4:
 				return (
 					<Deliverables
-						prevStep={back}	
+						prevStep={back}
+						nextStep={next}
+						setWizardProperties={this.setWizardProperties}
+						containerState={containerState.data.taxonomy}
 					/>
 				);
 			case 5:

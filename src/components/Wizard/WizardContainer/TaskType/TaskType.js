@@ -226,7 +226,6 @@ export default class TaskType extends Component {
 			this.setState({ taskDescriptionError });
 			return false;
 		}
-		
 		return true;
 	}
 
