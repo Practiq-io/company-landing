@@ -161,13 +161,14 @@ export default class Languages extends Component {
 			suggestions: [],
 		});
 	};
-	addSelectedTag = (name) => {
+	addPopularTag = (name) => {
 		if (this.state.selectedTags.length < 10) {
+			let newSelectedTag = [name, "junior"];
 			let popularTags = [...this.state.popularTags];
 			let selectedTags = [...this.state.selectedTags];
 			let index = popularTags.indexOf(name);
 			popularTags.splice(index, 1);
-			selectedTags.push(name);
+			selectedTags.push(newSelectedTag);
 			this.setState({ popularTags, selectedTags });
 		} else {
 			this.setState({ inputError: "* exceeded limit" });
@@ -177,16 +178,22 @@ export default class Languages extends Component {
 		if (popularTags.includes(name)) {
 			let selectedTags = [...this.state.selectedTags];
 			let popularTags = [...this.state.popularTags];
-			let index = selectedTags.indexOf(name);
-			selectedTags.splice(index, 1);
-			popularTags.push(name);
 			let inputError = {...this.state.inputError};
+			selectedTags.map((tag, i) => {
+				if (tag[0].includes(name)){
+					selectedTags.splice(i, 1);
+				}
+			})
+			popularTags.push(name);
 			inputError = "";
 			this.setState({ popularTags, selectedTags, inputError });
 		} else {
 			let selectedTags = [...this.state.selectedTags];
-			let index = selectedTags.indexOf(name);
-			selectedTags.splice(index, 1);
+			selectedTags.map((tag, i) => {
+				if (tag[0].includes(name)){
+					selectedTags.splice(i, 1);
+				}
+			})
 			this.setState({ selectedTags });
 		}
 	};
@@ -208,18 +215,20 @@ export default class Languages extends Component {
 					});
 
 					let selectedTagsLowerCase = selectedTags.map((lowerCase) => {
-						return lowerCase.toLowerCase();
+						return lowerCase[0].toLowerCase();
 					});
 
 					if (popularTagsLowerCase.includes(valueLowerCase)) {
 						let index = popularTagsLowerCase.indexOf(valueLowerCase);
-						selectedTags.push(popularTags[index]);
+						let newSelectedTag = [popularTags[index], "junior"];
+						selectedTags.push(newSelectedTag);
 						popularTags.splice(index, 1);
 						value = "";
 						this.setState({ selectedTags, popularTags, value });
 					} else {
 						if (!selectedTagsLowerCase.includes(valueLowerCase)) {
-							selectedTags.push(value);
+							let newSelectedTag = [value, "junior"];
+							selectedTags.push(newSelectedTag);
 							value = "";
 							this.setState({ selectedTags, value });
 						} else {
@@ -236,18 +245,17 @@ export default class Languages extends Component {
 		if (this.props.containerState) {
 			this.setState({
 				popularTags: this.props.containerState.popularTags,
-				selectedTags: this.props.containerState.selectedTags,
+				selectedTags: this.props.containerState.selectedTags
 			});
+		} else {
+			this.setState({ popularTags });
 		}
-		this.setState({ popularTags });
 	}
 	validation = () => {
-
 		if(this.state.selectedTags.length === 0) {
 			this.setState({ inputError: "* choose a language"});
 			return false;
 		}
-		
 		return true;
 	};
 	continue = () => {
@@ -256,8 +264,8 @@ export default class Languages extends Component {
 			const taxonomy = {
 				taxonomy: {
 					selectedTags: this.state.selectedTags,
-					popularTags: this.state.popularTags,
-				},
+					popularTags: this.state.popularTags
+				}
 			};
 			this.props.setWizardProperties(taxonomy);
 			this.props.nextStep();
@@ -271,7 +279,7 @@ export default class Languages extends Component {
 			value,
 			onChange: this.onChange,
 		};
-
+		
 		const { prevStep } = this.props;
 
 		return (
@@ -300,10 +308,10 @@ export default class Languages extends Component {
 							{this.state.selectedTags
 								? this.state.selectedTags.map((name) => {
 										return (
-											<div className="selected_tag" key={name}>
-												<p>{name}</p>
+											<div className="selected_tag" key={name[0]}>
+												<p>{name[0]}</p>
 												<img
-													onClick={() => this.removeSelectedTag(name)}
+													onClick={() => this.removeSelectedTag(name[0])}
 													className="selected-tag_close-button"
 													src={selectedTagClose}
 													alt=""
@@ -323,7 +331,7 @@ export default class Languages extends Component {
 								? this.state.popularTags.map((name) => {
 										return (
 											<div
-												onClick={() => this.addSelectedTag(name)}
+												onClick={() => this.addPopularTag(name)}
 												className="popular_tag"
 												key={name}
 											>

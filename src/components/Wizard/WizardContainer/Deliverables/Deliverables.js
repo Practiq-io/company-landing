@@ -1,13 +1,31 @@
 import React, { Component } from "react";
 import "./Deliverables.css";
 
+
+
 export default class Deliverables extends Component {
 	state = {
-		
+		deliverables : [
+			{skill:"Javascript", level: "junior"},
+			{skill:"Node JS", level: "senior"},
+			{skill:"C++", level: "senior"}
+		],
+		system: [
+			"DOCUMENTATION",
+			"UNIT_TESTS",
+			"END_TO_END_TESTS"
+		]
 	};
 
-	
 	render() {
+
+
+		this.state.deliverables.map(result => {
+			console.log(result.skill);
+			
+		})
+
+
 		const { prevStep } = this.props;
 		
 		return (

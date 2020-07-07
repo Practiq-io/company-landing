@@ -23,7 +23,8 @@ export class WizardContainer extends Component {
 	render() {
 		const containerState = this.state
 		const { back, next, step, toggleWizard } = this.props;
-	
+		console.log(this.state, "LORD BOY");
+		
 		switch (step) {
 			case 1:
 				return (
