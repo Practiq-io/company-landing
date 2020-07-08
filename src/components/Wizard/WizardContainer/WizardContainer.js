@@ -4,23 +4,12 @@ import AboutCompany from "./AboutCompany/AboutCompany";
 import Languages from "./Languages/Languages";
 import TaskType from "./TaskType/TaskType";
 import Deliverables from "./Deliverables/Deliverables";
+import General from "./General/General";
 
 export class WizardContainer extends Component {
 	
 	state = {
-		data : {
-			taxonomy: {
-				popularTags: ["Java", "React", "Joomla", "Javascript", "Laravel", "Node JS", "Swift", "CSS", "Drupal", "Kotlin", ".NET", "IOS", "Android", "AWS"],
-				selectedTags: [
-					["C#", "junior"],
-					["C++", "senior"],
-					["Ruby", "senior"],
-					["HTML", "middle"],
-					["Wordpress", "junior"]
-				]
-			}
-		}
-		
+		data : {}
 	};
 
 	setWizardProperties = (properties) => {
@@ -34,7 +23,6 @@ export class WizardContainer extends Component {
 	render() {
 		const containerState = this.state
 		const { back, next, step, toggleWizard } = this.props;
-		console.log(this.state, "LORD BOY");
 		
 		switch (step) {
 			case 1:
@@ -74,7 +62,14 @@ export class WizardContainer extends Component {
 					/>
 				);
 			case 5:
-				return <h1>General Info</h1>;
+				return (
+					<General
+						prevStep={back}
+						nextStep={next}
+						setWizardProperties={this.setWizardProperties}
+						containerState={containerState.data.taxonomy}
+					/>
+				);
 			case 6:
 				return <h1>Timeline</h1>;
 			case 7:

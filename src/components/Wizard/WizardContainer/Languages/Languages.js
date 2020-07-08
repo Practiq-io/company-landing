@@ -143,6 +143,8 @@ export default class Languages extends Component {
 		value: "",
 		suggestions: [],
 		selectedTags: [],
+		customDeliverables: "",
+		system: [],
 	};
 
 	onChange = (event, { newValue, method }) => {
@@ -178,29 +180,28 @@ export default class Languages extends Component {
 		if (popularTags.includes(name)) {
 			let selectedTags = [...this.state.selectedTags];
 			let popularTags = [...this.state.popularTags];
-			let inputError = {...this.state.inputError};
-			selectedTags.map((tag, i) => {
-				if (tag[0].includes(name)){
+			let inputError = { ...this.state.inputError };
+			selectedTags.forEach((tag, i) => {
+				if (tag[0].includes(name)) {
 					selectedTags.splice(i, 1);
 				}
-			})
+			});
 			popularTags.push(name);
 			inputError = "";
 			this.setState({ popularTags, selectedTags, inputError });
 		} else {
 			let selectedTags = [...this.state.selectedTags];
-			selectedTags.map((tag, i) => {
-				if (tag[0].includes(name)){
+			selectedTags.forEach((tag, i) => {
+				if (tag[0].includes(name)) {
 					selectedTags.splice(i, 1);
 				}
-			})
+			});
 			this.setState({ selectedTags });
 		}
 	};
 	addInputTag = (event) => {
 		const blockedRegex = /[\]!$%^&*()":{}|<>]/;
 		if (event.key === "Enter" && this.state.value) {
-
 			if (this.state.value.match(blockedRegex)) {
 				this.setState({ inputError: "* only string values" });
 			} else {
@@ -243,17 +244,14 @@ export default class Languages extends Component {
 	};
 	componentDidMount() {
 		if (this.props.containerState) {
-			this.setState({
-				popularTags: this.props.containerState.popularTags,
-				selectedTags: this.props.containerState.selectedTags
-			});
+			this.setState(this.props.containerState);
 		} else {
 			this.setState({ popularTags });
 		}
 	}
 	validation = () => {
-		if(this.state.selectedTags.length === 0) {
-			this.setState({ inputError: "* choose a language"});
+		if (this.state.selectedTags.length === 0) {
+			this.setState({ inputError: "* choose a language" });
 			return false;
 		}
 		return true;
@@ -264,8 +262,10 @@ export default class Languages extends Component {
 			const taxonomy = {
 				taxonomy: {
 					selectedTags: this.state.selectedTags,
-					popularTags: this.state.popularTags
-				}
+					popularTags: this.state.popularTags,
+					customDeliverables: this.state.customDeliverables,
+					system: this.state.system,
+				},
 			};
 			this.props.setWizardProperties(taxonomy);
 			this.props.nextStep();
@@ -279,7 +279,7 @@ export default class Languages extends Component {
 			value,
 			onChange: this.onChange,
 		};
-		
+
 		const { prevStep } = this.props;
 
 		return (

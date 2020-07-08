@@ -1,57 +1,73 @@
 .deliverables_frame {
     display: flex;
     flex-direction: column;
-}
 
-.languages-proficiency_output {
-    display: flex;
-    flex-direction: column;
-    border-bottom: 1px solid #E9E9ED;
-    margin: 0 -32px;
-    padding: 0 32px;
-
-}
-
-.language-proficiency_row {
-    
-    padding: 16px 0 16px 0;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    border-bottom: 1px solid #E9E9ED;
-
-    .language-proficiency_row_language-name {
-        color: #171725;
-        font-size: 16px;
-        font-weight: 500;
-    }
-
-    .language-proficiency_row-skill-level_box {
+    .languages-proficiency_output {
         display: flex;
-        background: #F3F3F5;
-        border-radius: 8px;
-        justify-content: space-between;
-        padding: 4px;
+        flex-direction: column;
+        border-bottom: 1px solid #E9E9ED;
+        margin: 0 -32px;
+        padding: 0 32px;
 
-        .middle-button_margin {
-            margin: 0 7px;
-        }
+        .language-proficiency_row {
         
-        .skill-level_button {
-            transition: 0.2s;
+            padding: 16px 0 16px 0;
             display: flex;
+            justify-content: space-between;
             align-items: center;
-            padding: 11px 16px;
-            // background: #1371FD;
-            // color: white;
-            color: #696974;
-            border-radius: 8px;
-            
-            cursor: pointer;
-           
-            p {
+            border-bottom: 1px solid #E9E9ED;
+        
+            .language-proficiency_row_language-name {
+                color: #171725;
+                font-size: 16px;
+                font-weight: 500;
+            }
+        
+            .language-proficiency_row-skill-level_box {
+                display: flex;
+                background: #F3F3F5;
+                border-radius: 8px;
+                justify-content: space-between;
+                padding: 4px;
+        
+                .middle-button_margin {
+                    margin: 0 7px;
+                }
                 
+                .skill-level_button {
+                   
+                    display: flex;
+                    align-items: center;
+                    padding: 11px 16px;
+                    color: #696974;
+                    border-radius: 8px;    
+                    cursor: pointer;
+                }
             }
         }
+    
+    }
+
+    .deliverables-select_box {
+        padding-top: 30px;
+    }
+
+    .custom-deliverables_box {
+        padding-top: 24px;
+        display: flex;
+        flex-direction: column;
+    }
+    
+}
+
+
+
+@media screen and (max-width: 480px) {
+	.language-proficiency_row {
+        flex-direction: column;
+    }
+
+    .language-proficiency_row_language-name {
+        margin-bottom: 15px;
     }
 }

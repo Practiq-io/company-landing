@@ -6,7 +6,7 @@ import WizardProgressBar from "./WizardProgressBar/WizardProgressBar";
 
 export default class WizardModal extends Component {
 	state = {
-		step: 4
+		step: 1,
 	};
 
 	nextStep = () => {
@@ -28,11 +28,7 @@ export default class WizardModal extends Component {
 					<div className="wizard-modal">
 						<div className="wizard-title_box">
 							<p>Get started</p>
-							<img
-								onClick={toggle}
-								src={close}
-								alt="modal button close"
-							/>
+							<img onClick={toggle} src={close} alt="modal button close" />
 						</div>
 
 						<WizardProgressBar step={step} />

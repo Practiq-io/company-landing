@@ -150,10 +150,6 @@ export default class LandingPage extends Component {
 								? taskTypeState.taskData.landingPage.field
 								: ""
 							}
-							placeholder={
-								// taskTypeState.fieldError 
-								"Testing Boys"
-							}
 						/>
 				
 					</label>
