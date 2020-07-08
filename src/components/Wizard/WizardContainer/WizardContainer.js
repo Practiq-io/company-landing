@@ -7,7 +7,6 @@ import Deliverables from "./Deliverables/Deliverables";
 import General from "./General/General";
 
 export class WizardContainer extends Component {
-	
 	state = {
 		data : {}
 	};
@@ -18,12 +17,10 @@ export class WizardContainer extends Component {
 		let data = {...this.state.data}	
 		data[[key[0]]] = value[0]
 		this.setState({data})
-	};
-
-	render() {
-		const containerState = this.state
+	};		
+		const containerState = this.state;
 		const { back, next, step, toggleWizard } = this.props;
-		
+
 		switch (step) {
 			case 1:
 				return (
@@ -35,6 +32,7 @@ export class WizardContainer extends Component {
 					/>
 				);
 			case 2:
+
 				return(
 					 <Languages
 						prevStep={back}
