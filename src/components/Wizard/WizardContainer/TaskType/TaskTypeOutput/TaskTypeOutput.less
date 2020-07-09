@@ -1,8 +1,13 @@
 .attach-file-button {
 	color: #1371fd;
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: -moz-box;
 	display: flex;
 	font-weight: bold;
 	font-size: 14px;
+	width: -webkit-fit-content;
+	width: -moz-fit-content;
 	width: fit-content;
 	cursor: pointer;
 }
@@ -68,12 +73,11 @@
 
 .front-end_input-wrapper {
 	position: relative;
-	
+
 	.error-message_label {
 		pointer-events: none;
 		font-size: 14px;
 		color: transparent;
-		
 	}
 	.front-end_input {
 		pointer-events: auto;
@@ -84,15 +88,25 @@
 		position: absolute;
 		right: 13px;
 		top: 29px;
-		border: 1px solid #E9E9ED;
+		border: 1px solid #e9e9ed;
 		height: 32px;
 		width: 32px;
+		display: -webkit-box;
+		display: -webkit-flex;
+		display: -moz-box;
 		display: flex;
+		-webkit-box-pack: center;
+		-webkit-justify-content: center;
+		-moz-box-pack: center;
 		justify-content: center;
+		-webkit-box-align: center;
+		-webkit-align-items: center;
+		-moz-box-align: center;
 		align-items: center;
 		border-radius: 50%;
 
 		&:hover {
+			-webkit-transition: 0.1s;
 			transition: 0.1s;
 			border: solid 1px #a1a1a1 !important;
 		}

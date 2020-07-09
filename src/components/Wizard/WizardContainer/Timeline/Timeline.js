@@ -15,6 +15,7 @@ export default class Timeline extends Component {
 					</div>
 
 					<div className="card-set">
+
 						<div
 							// onClick={() => this.toggleDeliverables("DOCUMENTATION")}
 							className="task-type_card"
@@ -40,7 +41,7 @@ export default class Timeline extends Component {
 								// 		: "#171725",
 								// }}
 								>
-									Documentation
+									3 days
 								</p>
 							</div>
 
@@ -63,6 +64,7 @@ export default class Timeline extends Component {
 								/>
 							</div>
 						</div>
+
 						<div
 							// onClick={() => this.toggleDeliverables("DOCUMENTATION")}
 							className="task-type_card"
@@ -88,7 +90,107 @@ export default class Timeline extends Component {
 								// 		: "#171725",
 								// }}
 								>
-									Documentation
+									7 days
+								</p>
+							</div>
+
+							<div
+								// style={{
+								// 	border: system.includes("DOCUMENTATION")
+								// 		? "1px solid transparent"
+								// 		: "1px solid #E9E9ED",
+								// }}
+								className="task-type_card--select-circle"
+							>
+								<img
+									// style={{
+									// 	display: system.includes("DOCUMENTATION")
+									// 		? "block"
+									// 		: "none",
+									// }}
+									// src={selectedDot}
+									alt=""
+								/>
+							</div>
+
+						</div>
+
+                        <div
+							// onClick={() => this.toggleDeliverables("DOCUMENTATION")}
+							className="task-type_card"
+							// style={{
+							// 	background: system.includes("DOCUMENTATION")
+							// 		? "#1371FD"
+							// 		: "white",
+							// }}
+						>
+							<div className="task-type_card--info-box">
+								<img
+								// src={
+								// 	system.includes("DOCUMENTATION")
+								// 		? selectedDocumentationIcon
+								// 		: documentationIcon
+								// }
+								// alt=""
+								/>
+								<p
+								// style={{
+								// 	color: system.includes("DOCUMENTATION")
+								// 		? "white"
+								// 		: "#171725",
+								// }}
+								>
+									14 days
+								</p>
+							</div>
+
+							<div
+								// style={{
+								// 	border: system.includes("DOCUMENTATION")
+								// 		? "1px solid transparent"
+								// 		: "1px solid #E9E9ED",
+								// }}
+								className="task-type_card--select-circle"
+							>
+								<img
+									// style={{
+									// 	display: system.includes("DOCUMENTATION")
+									// 		? "block"
+									// 		: "none",
+									// }}
+									// src={selectedDot}
+									alt=""
+								/>
+							</div>
+
+						</div>
+
+                        <div
+							// onClick={() => this.toggleDeliverables("DOCUMENTATION")}
+							className="task-type_card"
+							// style={{
+							// 	background: system.includes("DOCUMENTATION")
+							// 		? "#1371FD"
+							// 		: "white",
+							// }}
+						>
+							<div className="task-type_card--info-box">
+								<img
+								// src={
+								// 	system.includes("DOCUMENTATION")
+								// 		? selectedDocumentationIcon
+								// 		: documentationIcon
+								// }
+								// alt=""
+								/>
+								<p
+								// style={{
+								// 	color: system.includes("DOCUMENTATION")
+								// 		? "white"
+								// 		: "#171725",
+								// }}
+								>
+									Other
 								</p>
 							</div>
 
@@ -114,7 +216,7 @@ export default class Timeline extends Component {
 						</div>
 
 					</div>
-                    
+
 				</div>
 
 				<div className="wizard-button_box">
