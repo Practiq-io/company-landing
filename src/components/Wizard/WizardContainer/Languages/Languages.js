@@ -3,6 +3,7 @@ import "./Languages.css";
 import selectedTagClose from "./Languages_img/tagClose.svg";
 import Autosuggest from "react-autosuggest";
 import "./Autocomplete/Autocomplete.css";
+import uuid from "uuid";
 
 const popularTags = [
 	"C++",
@@ -308,6 +309,7 @@ export default class Languages extends Component {
 							{this.state.selectedTags
 								? this.state.selectedTags.map((name) => {
 										return (
+
 											<div className="selected_tag" key={name[0]}>
 												<p>{name[0]}</p>
 												<img
@@ -333,7 +335,7 @@ export default class Languages extends Component {
 											<div
 												onClick={() => this.addPopularTag(name)}
 												className="popular_tag"
-												key={name}
+												key={uuid()}
 											>
 												<p>{name}</p>
 											</div>
