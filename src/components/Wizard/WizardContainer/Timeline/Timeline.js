@@ -1,12 +1,49 @@
 import React, { Component } from "react";
 import "./Timeline.css";
+import selectedDot from "./TimelineImg/timeline-selected-dot.svg";
+
+const firstTimeline = "3 days";
+const secondTimeline = "7 days";
+const thirdTimeline = "14 days";
 
 export default class Timeline extends Component {
-	state = {};
+	state = {
+		customTimeline: "",
+		timeline: ""
+	};
+
+	onChangeHandler = e => {
+		let timeline = this.state.timeline;
+		if(timeline !== ""){
+			timeline = ""
+			this.setState({timeline})
+		}
+		let customTimeline = this.state.customTimeline;
+		customTimeline = e.target.value;
+		this.setState({customTimeline})
+	}
+
+	selectTimelines = name => {
+		let customTimeline = this.state.customTimeline;
+		if(customTimeline !== ""){
+			customTimeline = "";
+			this.setState({customTimeline});
+		}
+		let timeline = this.state.timeline
+		if(timeline !== name){
+			timeline = name;
+			this.setState({timeline})
+		}
+	}
+
+
 
 	render() {
+		const {customTimeline, timeline} = this.state;
 		const { prevStep } = this.props;
-
+		console.log(this.state, "TIME STATE");
+		
+		
 		return (
 			<div className="wizard-modal_content-box">
 				<div className="modal-position_wrapper">
@@ -15,167 +52,127 @@ export default class Timeline extends Component {
 					</div>
 
 					<div className="card-set_timeline">
+
 						<div
-							// onClick={() => this.toggleDeliverables("DOCUMENTATION")}
+							onClick={() => this.selectTimelines(firstTimeline)}
 							className="timeline_card"
-							// style={{
-							// 	background: system.includes("DOCUMENTATION")
-							// 		? "#1371FD"
-							// 		: "white",
-							// }}
 						>
 							<div className="timeline_card--info-box">
-								<p
-								// style={{
-								// 	color: system.includes("DOCUMENTATION")
-								// 		? "white"
-								// 		: "#171725",
-								// }}
-								>
+								<p>
 									3 days
 								</p>
 							</div>
 
 							<div
-								// style={{
-								// 	border: system.includes("DOCUMENTATION")
-								// 		? "1px solid transparent"
-								// 		: "1px solid #E9E9ED",
-								// }}
+								style={{
+									border: timeline === firstTimeline
+										? "1px solid transparent"
+										: "1px solid #e9e9ed",
+									background: timeline === firstTimeline
+										? "#1371fd"
+										: "white"
+								}}
 								className="timeline_card--select-circle"
 							>
 								<img
-									// style={{
-									// 	display: system.includes("DOCUMENTATION")
-									// 		? "block"
-									// 		: "none",
-									// }}
-									// src={selectedDot}
+									style={{
+										display: timeline === firstTimeline
+											? "block"
+											: "none"
+									}}
+									src={selectedDot}
 									alt=""
 								/>
 							</div>
 						</div>
 
 						<div
-							// onClick={() => this.toggleDeliverables("DOCUMENTATION")}
+							onClick={() => this.selectTimelines(secondTimeline)}
 							className="timeline_card"
-							// style={{
-							// 	background: system.includes("DOCUMENTATION")
-							// 		? "#1371FD"
-							// 		: "white",
-							// }}
 						>
 							<div className="timeline_card--info-box">
-								<p
-								// style={{
-								// 	color: system.includes("DOCUMENTATION")
-								// 		? "white"
-								// 		: "#171725",
-								// }}
-								>
+								<p>
 									7 days
 								</p>
 							</div>
 
 							<div
-								// style={{
-								// 	border: system.includes("DOCUMENTATION")
-								// 		? "1px solid transparent"
-								// 		: "1px solid #E9E9ED",
-								// }}
+								style={{
+									border: timeline === secondTimeline
+										? "1px solid transparent"
+										: "1px solid #e9e9ed",
+									background: timeline === secondTimeline
+										? "#1371fd"
+										: "white"
+								}}
 								className="timeline_card--select-circle"
 							>
 								<img
-									// style={{
-									// 	display: system.includes("DOCUMENTATION")
-									// 		? "block"
-									// 		: "none",
-									// }}
-									// src={selectedDot}
+									style={{
+										display: timeline === secondTimeline
+											? "block"
+											: "none"
+									}}
+									src={selectedDot}
 									alt=""
 								/>
 							</div>
 						</div>
 
 						<div
-							// onClick={() => this.toggleDeliverables("DOCUMENTATION")}
+							onClick={() => this.selectTimelines(thirdTimeline)}
 							className="timeline_card"
-							// style={{
-							// 	background: system.includes("DOCUMENTATION")
-							// 		? "#1371FD"
-							// 		: "white",
-							// }}
 						>
 							<div className="timeline_card--info-box">
-								<p
-								// style={{
-								// 	color: system.includes("DOCUMENTATION")
-								// 		? "white"
-								// 		: "#171725",
-								// }}
-								>
+								<p>
 									14 days
 								</p>
 							</div>
 
 							<div
-								// style={{
-								// 	border: system.includes("DOCUMENTATION")
-								// 		? "1px solid transparent"
-								// 		: "1px solid #E9E9ED",
-								// }}
+								style={{
+									border: timeline === thirdTimeline
+										? "1px solid transparent"
+										: "1px solid #e9e9ed",
+									background: timeline === thirdTimeline
+										? "#1371fd"
+										: "white"
+								}}
 								className="timeline_card--select-circle"
 							>
 								<img
-									// style={{
-									// 	display: system.includes("DOCUMENTATION")
-									// 		? "block"
-									// 		: "none",
-									// }}
-									// src={selectedDot}
+									style={{
+										display: timeline === thirdTimeline
+											? "block"
+											: "none"
+									}}
+									src={selectedDot}
 									alt=""
 								/>
 							</div>
 						</div>
 
-						<input
-							// onChange={outputOnChange("landingPage")}
-							// style={{
-							// 	marginBottom: "16px",
-							// }}
-							className="custom-timeline_input"
-							type="text"
-							name="customTimeline"
-							autoComplete="off"
-							placeholder="Other"
-							// defaultValue={
-							// 	taskTypeState.taskData.landingPage
-							// 		? taskTypeState.taskData.landingPage.designLink
-							// 		: ""
-							// }
-						/>
-
-						{/* <div
-							// onClick={() => this.toggleDeliverables("DOCUMENTATION")}
-							className="timeline_card"
-							// style={{
-							// 	background: system.includes("DOCUMENTATION")
-							// 		? "#1371FD"
-							// 		: "white",
-							// }}
-						>
-							<div className="timeline_card--info-box">
-								<p
+						<div className="timeline_position-wrapper">
+							<label 
+								className="error-message_label"
+								id="timeline_label"
 								// style={{
-								// 	color: system.includes("DOCUMENTATION")
-								// 		? "white"
-								// 		: "#171725",
+								// 	color: taskTypeState.fieldError ? "#eb5757" : "transparent"
 								// }}
-								>
-									Other
-								</p>
-							</div>
-						</div> */}
+								for="timeline_input"
+							>
+								{/* * is required */}
+							</label>
+							<input
+								id="timeline_input"
+								onChange={this.onChangeHandler}
+								className="custom-timeline_input"
+								type="text"
+								autoComplete="off"
+								placeholder="Other"
+								value={customTimeline}
+							/>
+						</div>
 
 					</div>
 				</div>
@@ -186,7 +183,7 @@ export default class Timeline extends Component {
 					</div>
 
 					<div className="wizard_button wizard-next_button">
-						<p>Next</p>
+						<p>Complete</p>
 					</div>
 				</div>
 			</div>

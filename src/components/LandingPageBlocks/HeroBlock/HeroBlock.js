@@ -54,7 +54,7 @@ class HeroBlock extends Component {
 								<div className="code-block-frame">
 									<div className="code_block_title">
 										<p>
-											// <span id="comment_block-animation-txt"></span>
+											{`//`} <span id="comment_block-animation-txt"></span>
 										</p>
 									</div>
 									<p id="code_block-animation-txt">
