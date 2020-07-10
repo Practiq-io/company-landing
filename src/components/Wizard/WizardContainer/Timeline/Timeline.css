@@ -1,3 +1,6 @@
+.timeline-empty-error {
+  font-size: 14px;
+}
 .card-set_timeline {
   display: -webkit-box;
   display: -webkit-flex;
@@ -81,7 +84,13 @@
 }
 .card-set_timeline .timeline_position-wrapper {
   position: relative;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
   display: flex;
+  -webkit-box-flex: 1;
+  -webkit-flex-grow: 1;
+  -moz-box-flex: 1;
   flex-grow: 1;
   max-width: 132px;
 }
@@ -110,8 +119,15 @@
   }
   .timeline_position-wrapper {
     position: relative;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -moz-box;
     display: flex;
+    -webkit-box-flex: 1;
+    -webkit-flex-grow: 1;
+    -moz-box-flex: 1;
     flex-grow: 1;
+    min-width: -webkit-calc(42%) !important;
     min-width: calc(50% - 8px) !important;
   }
   .timeline_position-wrapper .custom-timeline_input {
@@ -127,7 +143,7 @@
 }
 @media screen and (max-width: 417px) {
   .timeline_position-wrapper {
-    max-width: 100%!important;
+    max-width: 100% !important;
   }
   .timeline_card {
     min-width: 100% !important;

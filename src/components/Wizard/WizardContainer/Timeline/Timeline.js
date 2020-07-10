@@ -9,76 +9,118 @@ const thirdTimeline = "14 days";
 export default class Timeline extends Component {
 	state = {
 		customTimeline: "",
-		timeline: ""
+		timeline: "",
 	};
 
-	onChangeHandler = e => {
+	componentDidMount() {
+		if (this.props.containerState) {
+			this.setState(this.props.containerState);
+		}
+	}
+
+	onChangeHandler = (e) => {
 		let timeline = this.state.timeline;
-		if(timeline !== ""){
-			timeline = ""
-			this.setState({timeline})
+		if (timeline !== "") {
+			timeline = "";
+			this.setState({ timeline });
 		}
 		let customTimeline = this.state.customTimeline;
 		customTimeline = e.target.value;
-		this.setState({customTimeline})
-	}
+		this.setState({ customTimeline });
+	};
 
-	selectTimelines = name => {
+	selectTimelines = (name) => {
 		let customTimeline = this.state.customTimeline;
-		if(customTimeline !== ""){
+		if (customTimeline !== "") {
 			customTimeline = "";
-			this.setState({customTimeline});
+			this.setState({ customTimeline });
 		}
-		let timeline = this.state.timeline
-		if(timeline !== name){
+		let timeline = this.state.timeline;
+		if (timeline !== name) {
 			timeline = name;
-			this.setState({timeline})
+			this.setState({ timeline });
 		}
-	}
+	};
 
+	validation = () => {
+		let customTimelineError = "";
+		let emptyTimelineError = "";
+		const blockedRegex = /[\]!$%^&*()":{}|<>]/;
 
+		if (this.state.timeline === "" && this.state.customTimeline === "") {
+			emptyTimelineError = "* please set the timelines";
+		}
+		if (this.state.customTimeline.length > 30) {
+			customTimelineError = "* too long string";
+		} else {
+			if (this.state.customTimeline.match(blockedRegex)) {
+				customTimelineError = "* only string values";
+			}
+		}
+		if (customTimelineError || emptyTimelineError) {
+			this.setState({ customTimelineError, emptyTimelineError });
+			return false;
+		}
+		return true;
+	};
+
+	continue = () => {
+		let isValid = this.validation();
+		if (isValid) {
+			const projectTimelines = {
+				projectTimelines: {
+					customTimeline: this.state.customTimeline,
+					timeline: this.state.timeline,
+				},
+			};
+			this.props.setWizardProperties(projectTimelines);
+			this.props.nextStep();
+		}
+	};
 
 	render() {
-		const {customTimeline, timeline} = this.state;
+		const {
+			customTimeline,
+			timeline,
+			customTimelineError,
+			emptyTimelineError,
+		} = this.state;
 		const { prevStep } = this.props;
-		console.log(this.state, "TIME STATE");
-		
-		
+
 		return (
 			<div className="wizard-modal_content-box">
 				<div className="modal-position_wrapper">
 					<div className="modal-title">
-						<p>Set project timelines</p>
+						<p>
+							Set project timelines
+							<span className="validation_error-message timeline-empty-error">
+								{emptyTimelineError}
+							</span>
+						</p>
 					</div>
 
 					<div className="card-set_timeline">
-
 						<div
 							onClick={() => this.selectTimelines(firstTimeline)}
 							className="timeline_card"
 						>
 							<div className="timeline_card--info-box">
-								<p>
-									3 days
-								</p>
+								<p>3 days</p>
 							</div>
 
 							<div
 								style={{
-									border: timeline === firstTimeline
-										? "1px solid transparent"
-										: "1px solid #e9e9ed",
-									background: timeline === firstTimeline
-										? "#1371fd"
-										: "white"
+									border:
+										timeline === firstTimeline
+											? "1px solid transparent"
+											: "1px solid #e9e9ed",
+									background: timeline === firstTimeline ? "#1371fd" : "white",
 								}}
 								className="timeline_card--select-circle"
 							>
 								<img
 									style={{
-										display: timeline === firstTimeline
-											? "block"
-											: "none"
+										display: timeline === firstTimeline ? "block" : "none",
 									}}
 									src={selectedDot}
 									alt=""
@@ -91,27 +133,22 @@ export default class Timeline extends Component {
 							className="timeline_card"
 						>
 							<div className="timeline_card--info-box">
-								<p>
-									7 days
-								</p>
+								<p>7 days</p>
 							</div>
 
 							<div
 								style={{
-									border: timeline === secondTimeline
-										? "1px solid transparent"
-										: "1px solid #e9e9ed",
-									background: timeline === secondTimeline
-										? "#1371fd"
-										: "white"
+									border:
+										timeline === secondTimeline
+											? "1px solid transparent"
+											: "1px solid #e9e9ed",
+									background: timeline === secondTimeline ? "#1371fd" : "white",
 								}}
 								className="timeline_card--select-circle"
 							>
 								<img
 									style={{
-										display: timeline === secondTimeline
-											? "block"
-											: "none"
+										display: timeline === secondTimeline ? "block" : "none",
 									}}
 									src={selectedDot}
 									alt=""
@@ -124,27 +161,22 @@ export default class Timeline extends Component {
 							className="timeline_card"
 						>
 							<div className="timeline_card--info-box">
-								<p>
-									14 days
-								</p>
+								<p>14 days</p>
 							</div>
 
 							<div
 								style={{
-									border: timeline === thirdTimeline
-										? "1px solid transparent"
-										: "1px solid #e9e9ed",
-									background: timeline === thirdTimeline
-										? "#1371fd"
-										: "white"
+									border:
+										timeline === thirdTimeline
+											? "1px solid transparent"
+											: "1px solid #e9e9ed",
+									background: timeline === thirdTimeline ? "#1371fd" : "white",
 								}}
 								className="timeline_card--select-circle"
 							>
 								<img
 									style={{
-										display: timeline === thirdTimeline
-											? "block"
-											: "none"
+										display: timeline === thirdTimeline ? "block" : "none",
 									}}
 									src={selectedDot}
 									alt=""
@@ -153,15 +185,12 @@ export default class Timeline extends Component {
 						</div>
 
 						<div className="timeline_position-wrapper">
-							<label 
+							<label
 								className="error-message_label"
 								id="timeline_label"
-								// style={{
-								// 	color: taskTypeState.fieldError ? "#eb5757" : "transparent"
-								// }}
 								for="timeline_input"
 							>
-								{/* * is required */}
+								{customTimelineError}
 							</label>
 							<input
 								id="timeline_input"
@@ -173,7 +202,6 @@ export default class Timeline extends Component {
 								value={customTimeline}
 							/>
 						</div>
-
 					</div>
 				</div>
 
@@ -182,7 +210,10 @@ export default class Timeline extends Component {
 						<p>Back</p>
 					</div>
 
-					<div className="wizard_button wizard-next_button">
+					<div
+						onClick={this.continue}
+						className="wizard_button wizard-next_button"
+					>
 						<p>Complete</p>
 					</div>
 				</div>

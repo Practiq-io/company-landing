@@ -6,6 +6,7 @@ import TaskType from "./TaskType/TaskType";
 import Deliverables from "./Deliverables/Deliverables";
 import General from "./General/General";
 import Timeline from "./Timeline/Timeline";
+import Success from "./Success/Success";
 
 export class WizardContainer extends Component {
 	
@@ -77,11 +78,18 @@ export class WizardContainer extends Component {
 						prevStep={back}
 						nextStep={next}
 						setWizardProperties={this.setWizardProperties}
-						// containerState={containerState.data.generalInformation}
+						containerState={containerState.data.projectTimelines}
 					/>
 				);
 			case 7:
-				return <h1>Thank you</h1>;
+				return (
+					<Success
+						prevStep={back}
+						nextStep={next}
+						setWizardProperties={this.setWizardProperties}
+						containerState={containerState.data}
+					/>
+				);
 			default:
 				return <h1>Returned Default</h1>;
 		}

@@ -1,3 +1,7 @@
+.timeline-empty-error {
+	font-size: 14px;
+}
+
 .card-set_timeline {
 	display: -webkit-box;
 	display: -webkit-flex;
@@ -86,7 +90,13 @@
 
 	.timeline_position-wrapper {
 		position: relative;
+		display: -webkit-box;
+		display: -webkit-flex;
+		display: -moz-box;
 		display: flex;
+		-webkit-box-flex: 1;
+		-webkit-flex-grow: 1;
+		-moz-box-flex: 1;
 		flex-grow: 1;
 		max-width: 132px;
 	}
@@ -99,9 +109,9 @@
 	}
 
 	.custom-timeline_input {
-        max-width: 132px;
-        border-radius: 12px;
-        font-size: 15px;
+		max-width: 132px;
+		border-radius: 12px;
+		font-size: 15px;
 	}
 }
 
@@ -120,12 +130,18 @@
 
 	.timeline_position-wrapper {
 		position: relative;
+		display: -webkit-box;
+		display: -webkit-flex;
+		display: -moz-box;
 		display: flex;
+		-webkit-box-flex: 1;
+		-webkit-flex-grow: 1;
+		-moz-box-flex: 1;
 		flex-grow: 1;
+		min-width: -webkit-calc(50% - 8px) !important;
 		min-width: calc(50% - 8px) !important;
 
 		.custom-timeline_input {
-			
 			min-width: 100% !important;
 			max-height: 64px;
 		}
@@ -140,9 +156,8 @@
 }
 
 @media screen and (max-width: 417px) {
-
 	.timeline_position-wrapper {
-		max-width: 100%!important;
+		max-width: 100% !important;
 	}
 
 	.timeline_card {
