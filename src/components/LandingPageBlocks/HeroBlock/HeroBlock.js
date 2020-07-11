@@ -1,4 +1,4 @@
-import React, { useEffect, Component } from "react";
+import React, { Component } from "react";
 import background from "../../../image/bg2.png";
 import working from "../../../image/working.svg";
 import mobileBg from "../../../image/mobileBg.png";
@@ -57,7 +57,7 @@ class HeroBlock extends Component {
 								<div className="code-block-frame">
 									<div className="code_block_title">
 										<p>
-											// <span id="comment_block-animation-txt"></span>
+											{`//`} <span id="comment_block-animation-txt"></span>
 										</p>
 									</div>
 									<p id="code_block-animation-txt">

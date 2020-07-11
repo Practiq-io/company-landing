@@ -14,23 +14,46 @@
 	background: white;
 	border-radius: 18px;
 	z-index: 101;
+	-webkit-transition: 0.3s;
+	transition: 0.3s;
 }
-
+.modal-content_subtitle {
+	color: #696974;
+	margin-bottom: 17px;
+	-webkit-transition: 0.2s;
+	transition: 0.2s;
+}
 .wizard-frame {
-	position: fixed;
+	position: absolute;
 	width: 100%;
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: -moz-box;
 	display: flex;
 	padding-top: 90px;
+	-webkit-box-pack: center;
+	-webkit-justify-content: center;
+	-moz-box-pack: center;
 	justify-content: center;
 	z-index: 99;
 	top: 0;
 	left: 0;
+	-webkit-transition: 0.3s;
 	transition: 0.3s;
 }
 
 .wizard-title_box {
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: -moz-box;
 	display: flex;
+	-webkit-box-pack: justify;
+	-webkit-justify-content: space-between;
+	-moz-box-pack: justify;
 	justify-content: space-between;
+	-webkit-box-align: center;
+	-webkit-align-items: center;
+	-moz-box-align: center;
 	align-items: center;
 	margin-bottom: 30px;
 	p {
@@ -62,20 +85,34 @@
 
 .wizard-step-box {
 	color: #b1b1b8;
-	margin-bottom: 20px;
+	margin-bottom: 17px;
 }
 
 .wizard-button_box {
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: -moz-box;
 	display: flex;
 	padding-top: 30px;
+	-webkit-box-pack: end;
+	-webkit-justify-content: flex-end;
+	-moz-box-pack: end;
 	justify-content: flex-end;
 }
 
 .wizard_button {
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: -moz-box;
 	display: flex;
+	-webkit-box-align: center;
+	-webkit-align-items: center;
+	-moz-box-align: center;
 	align-items: center;
+	justify-content: center;
 	padding: 17px 60px;
 	border-radius: 4px;
+	max-width: 155px;
 	cursor: pointer;
 }
 
@@ -83,10 +120,12 @@
 	margin-left: 16px;
 	background: #1371fd;
 	color: white;
+	-webkit-transition: 0.1s;
 	transition: 0.1s;
 
 	&:hover {
 		background: #115dcf;
+		-webkit-transition: 0.1s;
 		transition: 0.1s;
 	}
 }
@@ -94,13 +133,13 @@
 .modal-title {
 	color: #171725;
 	font-weight: bold;
-    font-size: 20px;
-    margin-bottom: 40px;
+	font-size: 20px;
+	margin-bottom: 40px;
 }
 
 .wizard-back_button {
 	border: 1px solid #e9e9ed;
-	color: #b1b1b8;
+	color: #696974;
 }
 
 @media screen and (max-width: 660px) {
@@ -113,15 +152,30 @@
 	}
 
 	.wizard-frame {
-		position: fixed;
 		width: 100%;
+		display: -webkit-box;
+		display: -webkit-flex;
+		display: -moz-box;
 		display: flex;
 		padding-top: 1em;
+		-webkit-box-pack: center;
+		-webkit-justify-content: center;
+		-moz-box-pack: center;
 		justify-content: center;
 		z-index: 99;
 		top: 0;
 		left: 0;
+		-webkit-transition: 0.3s;
 		transition: 0.3s;
+	}
+}
+
+@media screen and (max-width: 417px) {
+	.wizard_button {
+		padding: 10px 10px;
+		width: 100px;
+		border-radius: 4px;
+		cursor: pointer;
 	}
 }
 

@@ -119,7 +119,7 @@ const allTags = [
 	},
 ];
 function escapeRegexCharacters(str) {
-	return str.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+	return str.replace(/[.*+?^${}()|[\\]/g, "\\$&");
 }
 function getSuggestions(value) {
 	const escapedValue = escapeRegexCharacters(value.trim());
@@ -144,6 +144,8 @@ export default class Languages extends Component {
 		value: "",
 		suggestions: [],
 		selectedTags: [],
+		customDeliverables: "",
+		system: [],
 	};
 
 	onChange = (event, { newValue, method }) => {
@@ -162,13 +164,14 @@ export default class Languages extends Component {
 			suggestions: [],
 		});
 	};
-	addSelectedTag = (name) => {
+	addPopularTag = (name) => {
 		if (this.state.selectedTags.length < 10) {
+			let newSelectedTag = [name, "junior"];
 			let popularTags = [...this.state.popularTags];
 			let selectedTags = [...this.state.selectedTags];
 			let index = popularTags.indexOf(name);
 			popularTags.splice(index, 1);
-			selectedTags.push(name);
+			selectedTags.push(newSelectedTag);
 			this.setState({ popularTags, selectedTags });
 		} else {
 			this.setState({ inputError: "* exceeded limit" });
@@ -178,53 +181,65 @@ export default class Languages extends Component {
 		if (popularTags.includes(name)) {
 			let selectedTags = [...this.state.selectedTags];
 			let popularTags = [...this.state.popularTags];
-			let index = selectedTags.indexOf(name);
-			selectedTags.splice(index, 1);
+			let inputError = { ...this.state.inputError };
+			selectedTags.forEach((tag, i) => {
+				if (tag[0].includes(name)) {
+					selectedTags.splice(i, 1);
+				}
+			});
 			popularTags.push(name);
-			this.state.inputError = "";
-			this.setState({ popularTags, selectedTags });
+			inputError = "";
+			this.setState({ popularTags, selectedTags, inputError });
 		} else {
 			let selectedTags = [...this.state.selectedTags];
-			let index = selectedTags.indexOf(name);
-			selectedTags.splice(index, 1);
+			selectedTags.forEach((tag, i) => {
+				if (tag[0].includes(name)) {
+					selectedTags.splice(i, 1);
+				}
+			});
 			this.setState({ selectedTags });
 		}
 	};
 	addInputTag = (event) => {
+		const blockedRegex = /[\]!$%^&*()":{}|<>]/;
 		if (event.key === "Enter" && this.state.value) {
-			const blockedRegex = /[\[\]!@$%^&*(),?":{}|<>]/;
-
 			if (this.state.value.match(blockedRegex)) {
 				this.setState({ inputError: "* only string values" });
 			} else {
 				if (this.state.value.length < 30) {
-					let value = this.state.value;
-					let valueLowerCase = this.state.value.toLowerCase();
-					let selectedTags = [...this.state.selectedTags];
-					let popularTags = [...this.state.popularTags];
+					if (this.state.selectedTags.length < 10) {
+						let value = this.state.value;
+						let valueLowerCase = this.state.value.toLowerCase();
+						let selectedTags = [...this.state.selectedTags];
+						let popularTags = [...this.state.popularTags];
 
-					let popularTagsLowerCase = popularTags.map((lowerCase) => {
-						return lowerCase.toLowerCase();
-					});
+						let popularTagsLowerCase = popularTags.map((lowerCase) => {
+							return lowerCase.toLowerCase();
+						});
 
-					let selectedTagsLowerCase = selectedTags.map((lowerCase) => {
-						return lowerCase.toLowerCase();
-					});
+						let selectedTagsLowerCase = selectedTags.map((lowerCase) => {
+							return lowerCase[0].toLowerCase();
+						});
 
-					if (popularTagsLowerCase.includes(valueLowerCase)) {
-						let index = popularTagsLowerCase.indexOf(valueLowerCase);
-						selectedTags.push(popularTags[index]);
-						popularTags.splice(index, 1);
-						value = "";
-						this.setState({ selectedTags, popularTags, value });
-					} else {
-						if (!selectedTagsLowerCase.includes(valueLowerCase)) {
-							selectedTags.push(value);
+						if (popularTagsLowerCase.includes(valueLowerCase)) {
+							let index = popularTagsLowerCase.indexOf(valueLowerCase);
+							let newSelectedTag = [popularTags[index], "junior"];
+							selectedTags.push(newSelectedTag);
+							popularTags.splice(index, 1);
 							value = "";
-							this.setState({ selectedTags, value });
+							this.setState({ selectedTags, popularTags, value });
 						} else {
-							return;
+							if (!selectedTagsLowerCase.includes(valueLowerCase)) {
+								let newSelectedTag = [value, "junior"];
+								selectedTags.push(newSelectedTag);
+								value = "";
+								this.setState({ selectedTags, value });
+							} else {
+								this.setState({ inputError: "* this tag is already selected" });
+							}
 						}
+					} else {
+						this.setState({ inputError: "* exceeded limit" });
 					}
 				} else {
 					this.setState({ inputError: "* too long string" });
@@ -234,19 +249,16 @@ export default class Languages extends Component {
 	};
 	componentDidMount() {
 		if (this.props.containerState) {
-			this.setState({
-				popularTags: this.props.containerState.popularTags,
-				selectedTags: this.props.containerState.selectedTags,
-			});
+			this.setState(this.props.containerState);
+		} else {
+			this.setState({ popularTags });
 		}
-		this.setState({ popularTags });
 	}
 	validation = () => {
 		if (this.state.selectedTags.length === 0) {
 			this.setState({ inputError: "* choose a language" });
 			return false;
 		}
-
 		return true;
 	};
 	continue = () => {
@@ -256,6 +268,8 @@ export default class Languages extends Component {
 				taxonomy: {
 					selectedTags: this.state.selectedTags,
 					popularTags: this.state.popularTags,
+					customDeliverables: this.state.customDeliverables,
+					system: this.state.system,
 				},
 			};
 			this.props.setWizardProperties(taxonomy);
@@ -274,7 +288,7 @@ export default class Languages extends Component {
 		const { prevStep } = this.props;
 
 		return (
-			<div className="languages_frame" onKeyPress={this.addInputTag}>
+			<div className="wizard-modal_content-box" onKeyPress={this.addInputTag}>
 				<div className="modal-position_wrapper">
 					<div className="modal-title">
 						<p>What languages and frameworks are you looking for?</p>
@@ -299,10 +313,10 @@ export default class Languages extends Component {
 							{this.state.selectedTags
 								? this.state.selectedTags.map((name) => {
 										return (
-											<div className="selected_tag" key={uuid()}>
-												<p>{name}</p>
+											<div className="selected_tag" key={name[0]}>
+												<p>{name[0]}</p>
 												<img
-													onClick={() => this.removeSelectedTag(name)}
+													onClick={() => this.removeSelectedTag(name[0])}
 													className="selected-tag_close-button"
 													src={selectedTagClose}
 													alt=""
@@ -322,7 +336,7 @@ export default class Languages extends Component {
 								? this.state.popularTags.map((name) => {
 										return (
 											<div
-												onClick={() => this.addSelectedTag(name)}
+												onClick={() => this.addPopularTag(name)}
 												className="popular_tag"
 												key={uuid()}
 											>
