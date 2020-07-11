@@ -33,9 +33,12 @@ export default class WizardModal extends Component {
 
 						<WizardProgressBar step={step} />
 
-						<div className="wizard-step-box">
-							<p>step {step} of 6</p>
-						</div>
+						{
+							this.state.step < 7 ?
+								<div className="wizard-step-box">
+								<p>step {step} of 6</p>
+							</div> : null
+						}
 
 						<div className="wizard-modal-component_output">
 							<WizardContainer
