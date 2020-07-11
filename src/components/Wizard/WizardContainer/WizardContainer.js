@@ -9,8 +9,8 @@ import Timeline from "./Timeline/Timeline";
 import Success from "./Success/Success";
 
 export class WizardContainer extends Component {
-	
 	state = {
+
 		data : {}
 	};
 
@@ -25,7 +25,7 @@ export class WizardContainer extends Component {
 	render() {
 		const containerState = this.state
 		const { back, next, step, toggleWizard } = this.props;
-		
+
 		switch (step) {
 			case 1:
 				return (
