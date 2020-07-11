@@ -13,7 +13,7 @@ import selectedTestIcon from "./DeliverablesImg/selected-test-icon.svg";
 export default class Deliverables extends Component {
 	state = {
 		system: [],
-		customDeliverables: ""
+		customDeliverables: "",
 	};
 
 	onChangeHandler = (e) => {
@@ -24,10 +24,10 @@ export default class Deliverables extends Component {
 
 	toggleDeliverables = (type) => {
 		let system = [...this.state.system];
-		let customDeliverables = this.state.customDeliverables
+		let customDeliverables = this.state.customDeliverables;
 		if (system.includes(type)) {
-			if(type === "CUSTOM_DELIVERABLES"){
-				customDeliverables = ""
+			if (type === "CUSTOM_DELIVERABLES") {
+				customDeliverables = "";
 			}
 			let index = system.indexOf(type);
 			system.splice(index, 1);
@@ -90,7 +90,7 @@ export default class Deliverables extends Component {
 	render() {
 		const { system } = this.state;
 		const { prevStep, containerState } = this.props;
-		
+
 		return (
 			<div className="wizard-modal_content-box">
 				<div className="modal-position_wrapper">

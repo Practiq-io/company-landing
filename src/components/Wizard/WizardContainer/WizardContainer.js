@@ -84,14 +84,12 @@ export class WizardContainer extends Component {
 			case 7:
 				return (
 					<Success
-						prevStep={back}
-						nextStep={next}
-						setWizardProperties={this.setWizardProperties}
+						toggleWizard={toggleWizard}
 						containerState={containerState.data}
 					/>
 				);
 			default:
-				return <h1>Returned Default</h1>;
+				return <h1>An error has occurred in "WizardModal component" - step state "{step}"</h1>;
 		}
 	}
 }

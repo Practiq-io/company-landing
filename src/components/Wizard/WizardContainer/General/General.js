@@ -13,7 +13,7 @@ export default class General extends Component {
 	};
 
 	componentDidMount() {
-		if(this.props.containerState){
+		if (this.props.containerState) {
 			this.setState(this.props.containerState);
 		}
 	}
@@ -22,13 +22,11 @@ export default class General extends Component {
 		const blockedRegex = /[\]!$%^&*()":{}|<>]/;
 		let generalInformationError = "";
 
-		
-			if (this.state.generalInformation.length === 0) {
-				generalInformationError = "* is Required";
-			} else if (this.state.generalInformation.match(blockedRegex)) {
-				generalInformationError = "* only string values";
-			}
-		
+		if (this.state.generalInformation.length === 0) {
+			generalInformationError = "* is Required";
+		} else if (this.state.generalInformation.match(blockedRegex)) {
+			generalInformationError = "* only string values";
+		}
 
 		if (generalInformationError) {
 			this.setState({ generalInformationError });
@@ -43,8 +41,8 @@ export default class General extends Component {
 		if (isValid) {
 			const generalInformation = {
 				generalInformation: {
-					generalInformation: this.state.generalInformation
-				}
+					generalInformation: this.state.generalInformation,
+				},
 			};
 			this.props.setWizardProperties(generalInformation);
 			this.props.nextStep();
@@ -53,7 +51,7 @@ export default class General extends Component {
 
 	render() {
 		const { prevStep } = this.props;
-		
+
 		return (
 			<div className="wizard-modal_content-box">
 				<div className="modal-position_wrapper">
@@ -85,7 +83,10 @@ export default class General extends Component {
 						<p>Back</p>
 					</div>
 
-					<div onClick={this.continue} className="wizard_button wizard-next_button">
+					<div
+						onClick={this.continue}
+						className="wizard_button wizard-next_button"
+					>
 						<p>Next</p>
 					</div>
 				</div>

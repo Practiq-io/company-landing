@@ -206,35 +206,39 @@ export default class Languages extends Component {
 				this.setState({ inputError: "* only string values" });
 			} else {
 				if (this.state.value.length < 30) {
-					let value = this.state.value;
-					let valueLowerCase = this.state.value.toLowerCase();
-					let selectedTags = [...this.state.selectedTags];
-					let popularTags = [...this.state.popularTags];
+					if (this.state.selectedTags.length < 10) {
+						let value = this.state.value;
+						let valueLowerCase = this.state.value.toLowerCase();
+						let selectedTags = [...this.state.selectedTags];
+						let popularTags = [...this.state.popularTags];
 
-					let popularTagsLowerCase = popularTags.map((lowerCase) => {
-						return lowerCase.toLowerCase();
-					});
+						let popularTagsLowerCase = popularTags.map((lowerCase) => {
+							return lowerCase.toLowerCase();
+						});
 
-					let selectedTagsLowerCase = selectedTags.map((lowerCase) => {
-						return lowerCase[0].toLowerCase();
-					});
+						let selectedTagsLowerCase = selectedTags.map((lowerCase) => {
+							return lowerCase[0].toLowerCase();
+						});
 
-					if (popularTagsLowerCase.includes(valueLowerCase)) {
-						let index = popularTagsLowerCase.indexOf(valueLowerCase);
-						let newSelectedTag = [popularTags[index], "junior"];
-						selectedTags.push(newSelectedTag);
-						popularTags.splice(index, 1);
-						value = "";
-						this.setState({ selectedTags, popularTags, value });
-					} else {
-						if (!selectedTagsLowerCase.includes(valueLowerCase)) {
-							let newSelectedTag = [value, "junior"];
+						if (popularTagsLowerCase.includes(valueLowerCase)) {
+							let index = popularTagsLowerCase.indexOf(valueLowerCase);
+							let newSelectedTag = [popularTags[index], "junior"];
 							selectedTags.push(newSelectedTag);
+							popularTags.splice(index, 1);
 							value = "";
-							this.setState({ selectedTags, value });
+							this.setState({ selectedTags, popularTags, value });
 						} else {
-							this.setState({ inputError: "* this tag is already selected" });
+							if (!selectedTagsLowerCase.includes(valueLowerCase)) {
+								let newSelectedTag = [value, "junior"];
+								selectedTags.push(newSelectedTag);
+								value = "";
+								this.setState({ selectedTags, value });
+							} else {
+								this.setState({ inputError: "* this tag is already selected" });
+							}
 						}
+					} else {
+						this.setState({ inputError: "* exceeded limit" });
 					}
 				} else {
 					this.setState({ inputError: "* too long string" });
