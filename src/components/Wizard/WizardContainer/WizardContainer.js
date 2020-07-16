@@ -8,12 +8,10 @@ import General from "./General/General";
 import Timeline from "./Timeline/Timeline";
 import Success from "./Success/Success";
 import { Animated } from "react-animated-css";
-import TestOutput from "./TestOutput/TestOutput";
-
 
 export class WizardContainer extends Component {
 	state = {
-		data: {},
+		data: {}
 	};
 
 	componentWillUnmount() {
@@ -50,7 +48,7 @@ export class WizardContainer extends Component {
 						/>
 					</Animated>
 				) : null}
-				
+
 				{step === 2 ? (
 					<Animated
 						animationIn="fadeIn"
@@ -138,15 +136,9 @@ export class WizardContainer extends Component {
 						/>
 					</Animated>
 				) : null}
-				<TestOutput 
-					containerState={containerState.data}
-					step={step}
-				/>	
 			</>
 		);
 	}
-
-	
 }
 
 export default WizardContainer;
