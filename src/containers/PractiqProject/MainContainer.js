@@ -10,6 +10,8 @@ import WizardModal from "../../components/Wizard/WizardModal";
 import "./MainContainer.css";
 import { CSSTransition } from "react-transition-group";
 
+
+
 class MainContainer extends Component {
 	render() {
 		const { showWizard, toggle } = this.props.wizard;
@@ -37,6 +39,8 @@ class MainContainer extends Component {
 					/>
                 
 				</CSSTransition>
+					
+				
 
 				<HeroBlock toggle={toggle} />
 				<PromoBlock />
