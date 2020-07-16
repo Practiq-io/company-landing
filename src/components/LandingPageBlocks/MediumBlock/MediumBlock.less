@@ -1,0 +1,286 @@
+.MB-Section {
+	.MB-content {
+		h2 {
+			text-align: center;
+			padding: 100px 0 80px 0;
+			position: relative;
+			
+			@media screen and (max-width: 1000px) {
+				padding: 40px 0 40px 0;
+
+				position: relative;
+
+				&::after {
+					content: "";
+					position: absolute;
+					display: block;
+					width: 40px;
+					height: 2px;
+					left: calc(50% - 20px);
+					bottom: 30px;
+					background-color: #1371fd;
+				}
+			}
+		}
+
+		.article-block {
+			display: -webkit-box;
+			display: -webkit-flex;
+			display: -moz-box;
+			display: flex;
+			-webkit-box-pack: justify;
+			-webkit-justify-content: space-between;
+			-moz-box-pack: justify;
+			justify-content: space-between;
+			margin-bottom: 40px;
+
+			a:visited {
+				text-decoration: none;
+				text-decoration-color: inherit;
+			}
+
+			@media screen and (max-width: 1000px) {
+				-webkit-box-orient: vertical;
+				-webkit-box-direction: normal;
+				-webkit-flex-direction: column;
+				-moz-box-orient: vertical;
+				-moz-box-direction: normal;
+				flex-direction: column;
+				-webkit-box-align: center;
+				-webkit-align-items: center;
+				-moz-box-align: center;
+				align-items: center;
+				margin-bottom: 0;
+			}
+			.article-card {
+				max-width: -webkit-calc(50% - 20px);
+				max-width: calc(50% - 20px);
+				padding: 20px;
+				border: 1px solid #c4c4c4;
+				border-radius: 12px;
+
+				@media screen and (max-width: 1000px) {
+					max-width: 60%;
+					margin-bottom: 20px;
+				}
+
+				@media screen and (max-width: 720px) {
+					max-width: 70%;
+				}
+
+				@media screen and (max-width: 620px) {
+					max-width: 80%;
+				}
+
+				@media screen and (max-width: 500px) {
+					max-width: 100%;
+				}
+
+				display: grid;
+				grid-template-columns: 2fr 3fr 1fr;
+				grid-template-rows: repeat(
+					3,
+					minmax(-webkit-min-content, -webkit-max-content)
+				);
+				grid-template-rows: repeat(3, minmax(min-content, max-content));
+				grid-gap: 20px;
+				-webkit-align-content: center;
+				align-content: center;
+				grid-template-areas:
+					"image title  title"
+					"image text   text"
+					"image writer viewed";
+
+				@media screen and (max-width: 1000px) {
+					grid-template-areas:
+						"image title   title"
+						"image writer  viewed"
+						"text  text    text";
+
+					grid-template-columns: 1.5fr 3fr 1fr;
+					grid-gap: 10px;
+				}
+
+				.article-image {
+					grid-area: image;
+					align-self: center;
+				}
+
+				.article-title {
+					grid-area: title;
+					color: #171725;
+					font-family: "DINE-1451";
+					font-size: 1.375rem;
+					transition: 0.2s;
+
+					&:hover {
+						color: #4084dd;
+						transition: 0.2s;
+					}
+
+					@media screen and (max-width: 1000px) {
+						font-size: 1.125rem;
+
+						display: -webkit-box;
+
+						display: -webkit-flex;
+
+						display: -moz-box;
+
+						display: flex;
+						-webkit-box-align: center;
+						-webkit-align-items: center;
+						-moz-box-align: center;
+						align-items: center;
+					}
+				}
+
+				.article-text {
+					grid-area: text;
+					color: #696974;
+					// font-size: 0.875rem;
+					font-size: 1rem;
+					line-height: 20px;
+					font-family: 'Circle-Regular';
+				}
+
+				.article-writer {
+					display: -webkit-box;
+					display: -webkit-flex;
+					display: -moz-box;
+					display: flex;
+					-webkit-box-align: center;
+					-webkit-align-items: center;
+					-moz-box-align: center;
+					align-items: center;
+					grid-area: writer;
+
+					.writer-avatar {
+						width: 40px;
+						height: 40px;
+
+						@media screen and (max-width: 1000px) {
+							display: none;
+						}
+					}
+
+					.writer-info {
+						display: -webkit-box;
+						display: -webkit-flex;
+						display: -moz-box;
+						display: flex;
+						-webkit-box-orient: vertical;
+						-webkit-box-direction: normal;
+						-webkit-flex-direction: column;
+						-moz-box-orient: vertical;
+						-moz-box-direction: normal;
+						flex-direction: column;
+						// justify-content: space-around;
+
+						font-family: "RobotoMono-Regular";
+						font-size: 0.75rem;
+
+						padding-left: 5px;
+
+						@media screen and (max-width: 1000px) {
+							-webkit-box-orient: horizontal;
+							-webkit-box-direction: normal;
+							-webkit-flex-direction: row;
+							-moz-box-orient: horizontal;
+							-moz-box-direction: normal;
+							flex-direction: row;
+							-webkit-box-align: center;
+							-webkit-align-items: center;
+							-moz-box-align: center;
+							align-items: center;
+						}
+
+						p:nth-child(1) {
+							color: #171725;
+						}
+
+						p:nth-child(2) {
+							color: #b1b1b8;
+							padding-top: 5px;
+
+							@media screen and (max-width: 1000px) {
+								padding-left: 5px;
+								padding-top: 0;
+							}
+						}
+					}
+				}
+
+				.viewed {
+					grid-area: viewed;
+					display: -webkit-box;
+					display: -webkit-flex;
+					display: -moz-box;
+					display: flex;
+					-webkit-box-orient: vertical;
+					-webkit-box-direction: normal;
+					-webkit-flex-direction: column;
+					-moz-box-orient: vertical;
+					-moz-box-direction: normal;
+					flex-direction: column;
+					-webkit-box-pack: center;
+					-webkit-justify-content: center;
+					-moz-box-pack: center;
+					justify-content: center;
+
+					p {
+						display: -webkit-box;
+						display: -webkit-flex;
+						display: -moz-box;
+						display: flex;
+						-webkit-box-align: center;
+						-webkit-align-items: center;
+						-moz-box-align: center;
+						align-items: center;
+						font-family: "RobotoMono-Regular";
+						font-size: 0.75rem;
+						color: #b1b1b8;
+					}
+
+					p > img {
+						width: 16px;
+						height: 16px;
+						margin-right: 5px;
+					}
+				}
+			}
+		}
+
+		.all-articles {
+			display: -webkit-box;
+			display: -webkit-flex;
+			display: -moz-box;
+			display: flex;
+			-webkit-box-pack: center;
+			-webkit-justify-content: center;
+			-moz-box-pack: center;
+			justify-content: center;
+			padding: 40px 0 100px 0;
+
+			@media screen and (max-width: 1000px) {
+				padding: 10px 0 40px 0;
+			}
+			> a {
+				font-family: "RobotoMono-Regular";
+				font-size: 1rem;
+				color: #1371fd;
+				font-weight: 600;
+				border: 2px solid #1371fd;
+				padding: 12px 30px;
+				border-radius: 4px;
+				transition: 0.2s;
+
+				&:hover {
+					color: #6aa5fd;
+					border: 2px solid #6aa5fd;
+					transition: 0.2s;
+				}
+			}
+		}
+	}
+}

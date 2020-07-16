@@ -1,0 +1,89 @@
+.SB-Section {
+  padding: 120px 0;
+  background: #fafafc;
+  width: 100%;
+}
+.SB-section-wrapper {
+  background: red;
+  width: 100%;
+}
+.upperServicesBox {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+  -moz-box-orient: vertical;
+  -moz-box-direction: normal;
+  flex-direction: column;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -moz-box-align: center;
+  align-items: center;
+}
+.servicesTitle {
+  margin-bottom: 80px;
+  color: #171725;
+}
+.servicesButtonBox {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: flex;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -moz-box-pack: justify;
+  justify-content: space-between;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -moz-box-align: center;
+  align-items: center;
+  padding: 0 43px;
+  min-width: 282px;
+  min-height: 48px;
+  border-radius: 32px;
+  font-size: 18px;
+  letter-spacing: 0.05em;
+  line-height: 160%;
+  font-family: "DINE-1451";
+  background: #e9e9ed;
+  position: relative;
+  font-weight: normal;
+  font-style: normal;
+  margin-bottom: 80px;
+}
+.buttonSwitch {
+  position: absolute;
+  right: 0;
+  border-radius: 32px;
+  z-index: 1;
+  min-width: 139px;
+  min-height: 48px;
+  background: #1371fd;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+}
+.frontendButton {
+  cursor: pointer;
+  z-index: 2;
+  color: #171725;
+  padding: 5px 5px 5px 0;
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
+}
+.backendButton {
+  cursor: pointer;
+  z-index: 2;
+  color: white;
+  padding: 5px 0 5px 5px;
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
+}
+@media screen and (max-width: 696px) {
+  .SB-Section {
+    padding: 40px 0 120px 0;
+    background: #fafafc;
+  }
+}
