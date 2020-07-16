@@ -1,3 +1,17 @@
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+textarea:-webkit-autofill,
+textarea:-webkit-autofill:hover,
+textarea:-webkit-autofill:focus,
+select:-webkit-autofill,
+select:-webkit-autofill:hover,
+select:-webkit-autofill:focus {
+	-webkit-box-shadow: 0 0 0px 1000px rgba(0, 0, 0, 0) inset;
+	-webkit-transition: background-color 5000s ease-in-out 0s;
+	transition: background-color 5000s ease-in-out 0s;
+}
+
 input {
 	padding: 20px 16px;
 	border-radius: 8px;
@@ -14,10 +28,25 @@ input {
 		border: solid 1px rgba(19, 113, 253, 0.3);
 	}
 
+	&::-webkit-input-placeholder {
+		color: #b1b1b8;
+	}
+
+	&::-moz-placeholder {
+		color: #b1b1b8;
+	}
+
+	&:-ms-input-placeholder {
+		color: #b1b1b8;
+	}
+
+	&::-ms-input-placeholder {
+		color: #b1b1b8;
+	}
+
 	&::placeholder {
 		color: #b1b1b8;
 	}
-	
 }
 
 textarea {
@@ -40,6 +69,18 @@ textarea {
 
 @media screen and (max-width: 410px) {
 	input {
+		&::-webkit-input-placeholder {
+			font-size: 13px;
+		}
+		&::-moz-placeholder {
+			font-size: 13px;
+		}
+		&:-ms-input-placeholder {
+			font-size: 13px;
+		}
+		&::-ms-input-placeholder {
+			font-size: 13px;
+		}
 		&::placeholder {
 			font-size: 13px;
 		}
@@ -48,74 +89,70 @@ textarea {
 
 @media screen and (max-width: 368px) {
 	input {
+		&::-webkit-input-placeholder {
+			color: transparent !important;
+		}
+		&::-moz-placeholder {
+			color: transparent !important;
+		}
+		&:-ms-input-placeholder {
+			color: transparent !important;
+		}
+		&::-ms-input-placeholder {
+			color: transparent !important;
+		}
 		&::placeholder {
-			color: transparent!important;
+			color: transparent !important;
 		}
 	}
 }
 
-// .wizard-content {
-	
-	
-// 	overflow: hidden;
-// }
-
-// .wizard-content-appear {
-// 	opacity: 0;
-// }
-
-// .wizard-content-appear-active {
-// 	opacity: 1;
-// 	transition: opacity 500ms linear;
-// }
-
-.headerForm-enter {
-    animation: 0.8s flipInX ease;
-}
-
-.headerForm-leave {
-    animation: 0.5s flipOutX ease;
-}
-
 .tags-fade-enter {
 	opacity: 0;
+	-webkit-transform: scale(0.9);
 	transform: scale(0.9);
 }
 
 .tags-fade-enter-active {
 	opacity: 1;
+	-webkit-transform: translateX(0);
 	transform: translateX(0);
+	-webkit-transition: opacity 300ms, -webkit-transform 500ms;
+	transition: opacity 300ms, -webkit-transform 500ms;
 	transition: opacity 300ms, transform 500ms;
+	transition: opacity 300ms, transform 500ms, -webkit-transform 500ms;
 }
+
 .tags-fade-exit {
 	opacity: 1;
 }
+
 .tags-fade-exit-active {
 	opacity: 0;
+	-webkit-transform: scale(0.9);
 	transform: scale(0.9);
+	-webkit-transition: opacity 300ms, -webkit-transform 500ms;
+	transition: opacity 300ms, -webkit-transform 500ms;
 	transition: opacity 300ms, transform 500ms;
+	transition: opacity 300ms, transform 500ms, -webkit-transform 500ms;
 }
-
-
-
 
 .wizard-content-enter {
 	opacity: 0;
-	// transform: scale(0.9);
 }
+
 .wizard-content-enter-active {
 	opacity: 1;
+	-webkit-transition: opacity 500ms;
 	transition: opacity 500ms;
-	// transform: translateX(0);
-	// transition: opacity 300ms, transform 300ms;
 }
+
 .wizard-content-exit {
 	opacity: 1;
 }
+
 .wizard-content-exit-active {
 	opacity: 0;
+	-webkit-transition: opacity 500ms;
 	transition: opacity 500ms;
-	// transform: scale(0.9);
-	// transition: opacity 200ms, transform 300ms;
 }
-
