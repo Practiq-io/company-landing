@@ -24,7 +24,7 @@ const HowItWorksBlock = (props) => {
 					<h2>How it Works</h2>
 
 					<div className="HIWB-blocks block01">
-						<div className="HIWB-info" data-aos="fade-right">
+						<div className="HIWB-info">
 							<div className="HIWB-title block01">
 								<p>01</p>
 								<p>You submit the development request</p>
@@ -51,7 +51,7 @@ const HowItWorksBlock = (props) => {
 					</div>
 
 					<div className="HIWB-blocks blockPosition">
-						<div className="HIWB-info" data-aos="fade-left">
+						<div className="HIWB-info">
 							<div className="HIWB-title">
 								<p>02</p>
 								<p>
@@ -78,7 +78,7 @@ const HowItWorksBlock = (props) => {
 					</div>
 
 					<div className="HIWB-blocks block03">
-						<div className="HIWB-info" data-aos="fade-right">
+						<div className="HIWB-info">
 							<div className="HIWB-title">
 								<p>03</p>
 								<p>We assign a group of developers to work on your request</p>
@@ -123,7 +123,7 @@ const HowItWorksBlock = (props) => {
 					</div>
 
 					<div className="HIWB-blocks blockPosition block04">
-						<div className="HIWB-info" data-aos="fade-left">
+						<div className="HIWB-info">
 							<div className="HIWB-title">
 								<p>04</p>
 								<p>
@@ -147,7 +147,7 @@ const HowItWorksBlock = (props) => {
 					</div>
 
 					<div className="HIWB-blocks block05">
-						<div className="HIWB-info" data-aos="fade-right">
+						<div className="HIWB-info">
 							<div className="HIWB-title">
 								<p>05</p>
 								<p>
@@ -170,7 +170,7 @@ const HowItWorksBlock = (props) => {
 					</div>
 
 					<div className="HIWB-blocks blockPosition block06">
-						<div className="HIWB-info" data-aos="fade-left">
+						<div className="HIWB-info">
 							<div className="HIWB-title">
 								<p>06</p>
 								<p>You can check in with any of the developers at any point </p>

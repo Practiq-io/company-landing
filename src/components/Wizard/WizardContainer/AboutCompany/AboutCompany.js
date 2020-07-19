@@ -21,7 +21,7 @@ export default class AboutCompany extends Component {
 		let emailError = "";
 		let websiteError = "";
 		const blockedRegex = /[\]!$%^&*()":{}|<>]/;
-    
+
 		if (this.state.companyName) {
 			if (this.state.companyName.length > 500) {
 				companyNameError = "* too long string";
@@ -56,6 +56,7 @@ export default class AboutCompany extends Component {
 			this.setState({ companyNameError, emailError, websiteError });
 			return false;
 		}
+		
 		return true;
 	};
 
@@ -81,7 +82,7 @@ export default class AboutCompany extends Component {
 	render() {
 		const { companyNameError, emailError, websiteError } = this.state;
 		const { toggleWizard } = this.props;
-
+	
 		return (
 			<div className="wizard-modal_content-box">
 				<div className="modal-position_wrapper">

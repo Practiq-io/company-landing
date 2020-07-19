@@ -4,7 +4,8 @@ import connectorIcon from "../TaskTypeControlsImg/connector-icon.svg";
 import longProcess from "../TaskTypeControlsImg/long-icon.svg";
 import addIcon from "../TaskTypeControlsImg/add-icon.svg";
 import selectDot from "../TaskTypeControlsImg/selected-dot.svg";
-
+import { Animated } from "react-animated-css";
+		
 export default class ControlsBackend extends Component {
 	componentDidMount() {
 		if (this.props.containerState) {
@@ -29,7 +30,13 @@ export default class ControlsBackend extends Component {
 						className="task-type_card"
 					>
 						<div className="task-type_card--info-box">
+						<Animated
+							animationIn="fadeIn"
+							animationOut="fadeOut"
+							isVisible={true}
+						>
 							<img src={genApiIcon} alt="" />
+							</Animated>
 							<p>General purpose API</p>
 						</div>
 
@@ -60,7 +67,13 @@ export default class ControlsBackend extends Component {
 						className="task-type_card"
 					>
 						<div className="task-type_card--info-box">
+						<Animated
+							animationIn="fadeIn"
+							animationOut="fadeOut"
+							isVisible={true}
+						>
 							<img src={connectorIcon} alt="" />
+							</Animated>
 							<p>API Connector/Adapter</p>
 						</div>
 
@@ -93,7 +106,13 @@ export default class ControlsBackend extends Component {
 						className="task-type_card"
 					>
 						<div className="task-type_card--info-box">
+						<Animated
+							animationIn="fadeIn"
+							animationOut="fadeOut"
+							isVisible={true}
+						>
 							<img src={longProcess} alt="" />
+							</Animated>
 							<p>Long running process</p>
 						</div>
 
@@ -124,7 +143,13 @@ export default class ControlsBackend extends Component {
 						className="task-type_card task-type_card-mobile-margin-bottom"
 					>
 						<div className="task-type_card--info-box">
+						<Animated
+							animationIn="fadeIn"
+							animationOut="fadeOut"
+							isVisible={true}
+						>
 							<img src={addIcon} alt="" />
+							</Animated>
 							<p>Add my own task</p>
 						</div>
 

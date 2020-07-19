@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import "./Success.css";
 import successIcon from "./SuccessImg/success-icon.svg";
+import { Animated } from "react-animated-css";
 
 export default class Success extends Component {
 	state = {};
@@ -12,8 +13,13 @@ export default class Success extends Component {
 			<div className="wizard-modal_content-box">
 				<div className="modal-position_wrapper">
 					<div className="success_frame">
-						<img className="success-icon" src={successIcon} alt="" />
-
+						<Animated
+							animationIn="fadeIn"
+							animationOut="fadeOut"
+							isVisible={true}
+						>
+							<img className="success-icon" src={successIcon} alt="" />
+						</Animated>
 						<p className="success_title">Thank you for submitting your task!</p>
 
 						<p className="success_subtitle">

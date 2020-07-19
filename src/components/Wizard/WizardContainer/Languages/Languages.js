@@ -3,7 +3,7 @@ import "./Languages.css";
 import selectedTagClose from "./Languages_img/tagClose.svg";
 import Autosuggest from "react-autosuggest";
 import "./Autocomplete/Autocomplete.css";
-import uuid from "uuid";
+import { CSSTransition, TransitionGroup } from "react-transition-group";
 
 const popularTags = [
 	"C++",
@@ -200,50 +200,63 @@ export default class Languages extends Component {
 			this.setState({ selectedTags });
 		}
 	};
-	addInputTag = (event) => {
+	addInputTagFunction = (event) => {
 		const blockedRegex = /[\]!$%^&*()":{}|<>]/;
-		if (event.key === "Enter" && this.state.value) {
-			if (this.state.value.match(blockedRegex)) {
-				this.setState({ inputError: "* only string values" });
-			} else {
-				if (this.state.value.length < 30) {
-					if (this.state.selectedTags.length < 10) {
-						let value = this.state.value;
-						let valueLowerCase = this.state.value.toLowerCase();
-						let selectedTags = [...this.state.selectedTags];
-						let popularTags = [...this.state.popularTags];
+		if (this.state.value.match(blockedRegex)) {
+			this.setState({ inputError: "* only string values" });
+		} else {
+			if (this.state.value.length < 30) {
+				if (this.state.selectedTags.length < 10) {
+					let value = this.state.value;
+					let valueLowerCase = this.state.value.toLowerCase();
+					let selectedTags = [...this.state.selectedTags];
+					let popularTags = [...this.state.popularTags];
 
-						let popularTagsLowerCase = popularTags.map((lowerCase) => {
-							return lowerCase.toLowerCase();
-						});
+					let popularTagsLowerCase = popularTags.map((lowerCase) => {
+						return lowerCase.toLowerCase();
+					});
 
-						let selectedTagsLowerCase = selectedTags.map((lowerCase) => {
-							return lowerCase[0].toLowerCase();
-						});
+					let selectedTagsLowerCase = selectedTags.map((lowerCase) => {
+						return lowerCase[0].toLowerCase();
+					});
 
-						if (popularTagsLowerCase.includes(valueLowerCase)) {
-							let index = popularTagsLowerCase.indexOf(valueLowerCase);
-							let newSelectedTag = [popularTags[index], "junior"];
-							selectedTags.push(newSelectedTag);
-							popularTags.splice(index, 1);
-							value = "";
-							this.setState({ selectedTags, popularTags, value });
-						} else {
-							if (!selectedTagsLowerCase.includes(valueLowerCase)) {
-								let newSelectedTag = [value, "junior"];
-								selectedTags.push(newSelectedTag);
-								value = "";
-								this.setState({ selectedTags, value });
-							} else {
-								this.setState({ inputError: "* this tag is already selected" });
-							}
-						}
+					if (popularTagsLowerCase.includes(valueLowerCase)) {
+						let index = popularTagsLowerCase.indexOf(valueLowerCase);
+						let newSelectedTag = [popularTags[index], "junior"];
+						selectedTags.push(newSelectedTag);
+						popularTags.splice(index, 1);
+						value = "";
+						this.setState({ selectedTags, popularTags, value });
 					} else {
-						this.setState({ inputError: "* exceeded limit" });
+						if (!selectedTagsLowerCase.includes(valueLowerCase)) {
+							let newSelectedTag = [value, "junior"];
+							selectedTags.push(newSelectedTag);
+							value = "";
+							this.setState({ selectedTags, value });
+						} else {
+							this.setState({ inputError: "* this tag is already selected" });
+						}
 					}
 				} else {
-					this.setState({ inputError: "* too long string" });
+					this.setState({ inputError: "* exceeded limit" });
 				}
+			} else {
+				this.setState({ inputError: "* too long string" });
+			}
+		}
+	};
+	addInputTag = (event) => {
+		if (event.key === "Enter") {
+			if (this.state.value) {
+				this.addInputTagFunction();
+			} else {
+				this.setState({ inputError: "* language input is empty" });
+			}
+		} else if (event.type === "click") {
+			if (this.state.value) {
+				this.addInputTagFunction();
+			} else {
+				this.setState({ inputError: "* language input is empty" });
 			}
 		}
 	};
@@ -300,52 +313,77 @@ export default class Languages extends Component {
 							<span className="validation_error-message">{inputError}</span>
 						</p>
 
-						<Autosuggest
-							suggestions={suggestions}
-							onSuggestionsFetchRequested={this.onSuggestionsFetchRequested}
-							onSuggestionsClearRequested={this.onSuggestionsClearRequested}
-							getSuggestionValue={getSuggestionValue}
-							renderSuggestion={renderSuggestion}
-							inputProps={inputProps}
-						/>
+						<div className="mobile-add-button_wrapper">
+							<Autosuggest
+								suggestions={suggestions}
+								onSuggestionsFetchRequested={this.onSuggestionsFetchRequested}
+								onSuggestionsClearRequested={this.onSuggestionsClearRequested}
+								getSuggestionValue={getSuggestionValue}
+								renderSuggestion={renderSuggestion}
+								inputProps={inputProps}
+							/>
+							<p
+								onClick={this.addInputTag}
+								style={{
+									color: this.state.value ? "#1371FD" : "#B1B1B8",
+									cursor: this.state.value ? "pointer" : "context-menu",
+									pointerEvents: this.state.value ? "auto" : "none",
+									marginBottom: "32px",
+								}}
+								className="mobile-add-button"
+							>
+								+ Add tag
+							</p>
+						</div>
 
-						<div className="languages-selected-tags_output">
+						<TransitionGroup className="languages-selected-tags_output">
 							{this.state.selectedTags
 								? this.state.selectedTags.map((name) => {
 										return (
-											<div className="selected_tag" key={name[0]}>
-												<p>{name[0]}</p>
-												<img
-													onClick={() => this.removeSelectedTag(name[0])}
-													className="selected-tag_close-button"
-													src={selectedTagClose}
-													alt=""
-												/>
-											</div>
+											<CSSTransition
+												key={name[0]}
+												timeout={100}
+												classNames="tags-fade"
+											>
+												<div className="selected_tag" key={name[0]}>
+													<p>{name[0]}</p>
+													<img
+														onClick={() => this.removeSelectedTag(name[0])}
+														className="selected-tag_close-button"
+														src={selectedTagClose}
+														alt=""
+													/>
+												</div>
+											</CSSTransition>
 										);
 								  })
 								: null}
-						</div>
+						</TransitionGroup>
 
 						<p className="modal-content_subtitle">
 							Or select from the following:
 						</p>
-
-						<div className="languages-popular-tags_output">
+						<TransitionGroup className="languages-popular-tags_output">
 							{this.state.popularTags
-								? this.state.popularTags.map((name) => {
+								? this.state.popularTags.map(name => {
 										return (
-											<div
-												onClick={() => this.addPopularTag(name)}
-												className="popular_tag"
-												key={uuid()}
+											<CSSTransition
+												key={name}
+												timeout={100}
+												classNames="tags-fade"
 											>
-												<p>{name}</p>
-											</div>
+												<div
+													onClick={() => this.addPopularTag(name)}
+													className="popular_tag"
+													key={name}
+												>
+													<p>{name}</p>
+												</div>
+											</CSSTransition>
 										);
 								  })
 								: null}
-						</div>
+						</TransitionGroup>
 					</div>
 				</div>
 

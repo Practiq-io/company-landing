@@ -9,6 +9,10 @@ export default class WizardModal extends Component {
 		step: 1
 	};
 
+	componentWillUnmount() {
+		this.setState({ step: 1 });
+	}
+
 	nextStep = () => {
 		this.setState({ step: this.state.step + 1 });
 	};
@@ -20,11 +24,10 @@ export default class WizardModal extends Component {
 	render() {
 		const { step } = this.state;
 		const { toggle } = this.props;
+		
 		return (
 			<>
 				<div className="wizard-frame">
-					<div className="wizard-backdrop"></div>
-
 					<div className="wizard-modal">
 						<div className="wizard-title_box">
 							<p>Get started</p>
@@ -33,14 +36,18 @@ export default class WizardModal extends Component {
 
 						<WizardProgressBar step={step} />
 
-						{
-							this.state.step < 7 ?
-								<div className="wizard-step-box">
+						{this.state.step < 7 ? (
+							<div className="wizard-step-box">
 								<p>step {step} of 6</p>
-							</div> : null
-						}
+							</div>
+						) : null}
 
-						<div className="wizard-modal-component_output">
+						<div
+							className="wizard-modal-component_output"
+							ref={(divElement) => {
+								this.divElement = divElement;
+							}}
+						>
 							<WizardContainer
 								toggleWizard={toggle}
 								step={step}
