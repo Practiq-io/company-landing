@@ -104,6 +104,7 @@ export default class Deliverables extends Component {
 								if (i === containerState.selectedTags.length - 1) {
 									return (
 										<div
+											key={language}
 											className="language-proficiency_row"
 											style={{
 												borderBottom: "none",
@@ -161,7 +162,7 @@ export default class Deliverables extends Component {
 									);
 								} else {
 									return (
-										<div className="language-proficiency_row">
+										<div key={language} className="language-proficiency_row">
 											<p className="language-proficiency_row_language-name">
 												{language[0]}
 											</p>

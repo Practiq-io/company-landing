@@ -23,9 +23,8 @@ class ServicesCard extends Component {
 
 	render() {
 		return (
-			<div className="servicesCardBody" data-aos="fade-right">
-				<div className="mobileWrap" data-aos="fade-right"
-						data-aos-delay="500">
+			<div className="servicesCardBody">
+				<div className="mobileWrap">
 					<div className="servicesCardImgbox">
 						<img
 							className="servicesCardImg"
@@ -39,14 +38,12 @@ class ServicesCard extends Component {
 				
 				<div className="cardStructure">
 					<div className="cardInfoBox">
-						<div className="servicesCardUpperBox" data-aos="fade-left"
-						data-aos-delay="600">
+						<div className="servicesCardUpperBox">
 							<p className="servicesCardTitle">{this.props.title}</p>
 							<p className="servicesCardSubTitle">{this.props.subTitle}</p>
 						</div>
 
-						<div className="servicesCardLowerBox" data-aos="fade-left"
-						data-aos-delay="800">
+						<div className="servicesCardLowerBox">
 							<p className="servicesCardExample">Example:</p>
 							<p className="servicesCardTextBody">
 								{this.state.displayedString}

@@ -188,7 +188,7 @@ export default class Timeline extends Component {
 							<label
 								className="error-message_label"
 								id="timeline_label"
-								for="timeline_input"
+								htmlFor="timeline_input"
 							>
 								{customTimelineError}
 							</label>

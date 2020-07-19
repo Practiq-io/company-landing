@@ -7,19 +7,11 @@ import docerFiles from "../../../image/docker.svg";
 import endTesting from "../../../image/unitTest.svg";
 
 const PromoBlock = (props) => {
-	const leftAnimation = {
-		delay: 400,
-		class: "fade-right"
-	};
-	const rightAnimation = {
-		delay: 400,
-		class: "fade-left"
-	}
 	return (
 		<section className="PB-Section">
 			<div className="wrapper">
 				<div className="content_wrapper">
-					<div className="weCode" data-aos="fade-right">
+					<div className="weCode">
 						<h2>We code for production</h2>
 
 						<p>
@@ -46,7 +38,6 @@ const PromoBlock = (props) => {
 							textBody={
 								"Code and it’s use cases are documented so you know how to use and extend it"
 							}
-							animation={leftAnimation}
 							imgPath={documentation}
 						/>
 						<PromoCard
@@ -55,14 +46,12 @@ const PromoBlock = (props) => {
 							textBody={
 								"Project is ready to be seamlessly deployed into your infra"
 							}
-							animation={rightAnimation}
 							imgPath={docerFiles}
 						/>
 						<PromoCard
 							title={"Unit and End to End testing"}
 							subTitle={"JUnit, Jest, Nightwatch"}
 							textBody={"Results are secured through unit and e2e tests"}
-							animation={leftAnimation}
 							imgPath={endTesting}
 						/>
 
@@ -72,7 +61,6 @@ const PromoBlock = (props) => {
 							textBody={
 								"Project is ready to be seamlessly deployed into your infrastructure"
 							}
-							animation={rightAnimation}
 						/>
 					</div>
 				</div>
