@@ -31,7 +31,7 @@ export class WizardContainer extends Component {
 	render() {
 		const containerState = this.state;
 		const { back, next, step, toggleWizard } = this.props;
-
+		console.log(this.state.data,"Final state");
 		return (
 			<>
 				{step === 1 ? (

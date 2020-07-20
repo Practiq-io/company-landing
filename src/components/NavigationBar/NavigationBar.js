@@ -28,6 +28,9 @@ class NavigationBar extends Component {
 						<div className="nav_wrapper">
 							<div className="logo">
 								<img
+									data-aos="fade-in"
+									data-aos-delay="70"
+									data-aos-duration="700"
 									src={logo}
 									alt="practiq logo"
 									className="logo-desktop-nav"
@@ -40,7 +43,12 @@ class NavigationBar extends Component {
 							</div>
 
 							<div className="navigation">
-								<div className="nav_desctop">
+								<div 
+									className="nav_desctop"
+									data-aos="fade-in"
+									data-aos-delay="70"
+									data-aos-duration="700"
+								>
 									<a href="#services-block_anchor">What we do</a>
 									<a href="#how-it-works_anchor">How it works</a>
 									<a href="#who-block_anchor">About us</a>

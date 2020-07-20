@@ -1,7 +1,15 @@
 import React from "react";
 import "./PromoCard.css";
 
-const PromoCard = (props) => {
+const PromoCard = props => {
+
+	
+
+	const delay = props.animation.delay ? props.animation.delay : "0";
+	const aosName = props.animation.name ? props.animation.name : "fade-in";
+	const duration = props.animation.duration ? props.animation.duration : "0";
+	const trigger = props.animation.trigger ? props.animation.trigger : "bottom-bottom";
+
 	let title = null;
 	if (props.title) {
 		title = (
@@ -30,7 +38,14 @@ const PromoCard = (props) => {
 	}
 
 	return (
-		<div className="promo-card-body">
+		<div
+			// name, delay, duration, trigger
+			data-aos-anchor-placement={trigger}
+			data-aos={aosName}
+			data-aos-duration={duration}
+			data-aos-delay={delay}
+			className="promo-card-body"
+		>
 			<div className="promo-card-img-box">
 				<div className="pc-img">
 					<img src={props.imgPath} alt="" />
