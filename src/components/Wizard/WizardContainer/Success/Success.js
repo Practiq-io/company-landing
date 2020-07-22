@@ -4,7 +4,7 @@ import successIcon from "./SuccessImg/success-icon.svg";
 import { Animated } from "react-animated-css";
 
 export default class Success extends Component {
-	state = {};
+	
 
 	render() {
 		const { toggleWizard } = this.props;

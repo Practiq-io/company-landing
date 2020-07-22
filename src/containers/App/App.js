@@ -10,12 +10,30 @@ export default class App extends Component {
 		showWizard: false,
 		toggle: () => {
 			this.setState({ showWizard: !this.state.showWizard });
-		}
+		},
+		bodyIsVisible: false
 	};
+
+	handleLoad = () => {
+		this.setState({bodyIsVisible: true})
+	}
+
+	componentDidMount(){
+		window.addEventListener('load', this.handleLoad);
+	}
+
+	componentWillUnmount(){
+		window.removeEventListener('load', this.handleLoad)
+	}
 
 	render() {
 		return (
-			<div className="App">
+			<div
+				style= {{
+					opacity: this.state.bodyIsVisible ? "1" : "0"
+				}}
+				className="App"
+			>
 				<NavigationBar />
 				
 				<MainContainer wizard={this.state} />

@@ -15,7 +15,7 @@ const PromoBlock = (props) => {
 			trigger: trigger,
 		};
 	};
-	const cardAnimationFirst = animationByClass("fade-up-left", "450", "1000", "bottom-bottom")
+	const cardIconAnimation = animationByClass("fade-up-left", "450", "1000", "bottom-bottom")
 
 	return (
 		<section className="PB-Section">
@@ -55,11 +55,14 @@ const PromoBlock = (props) => {
 						</p>
 					</div>
 
-					<div className="card_block">
+					<div data-aos-anchor-placement="top-center" className="card_block">
 						<PromoCard  
 						// name, delay, duration, trigger
-							
-							animation={animationByClass("fade-up-left", "450", "800", "bottom-bottom")}
+							cardLogoAnimation={animationByClass("zoom-in", "1350", "600",)}
+							cardTitleAnimation={animationByClass("fade-right", "750", "600", )}
+							cardTextAnimation={animationByClass("fade-right", "950", "600",)}
+
+							cardBodyAnimation={animationByClass("fade-up-left", "450", "400", "bottom-bottom")}
 							title={"Documentation"}
 							subTitle={"Swagger, Javadoc, etc."}
 							textBody={
@@ -68,7 +71,11 @@ const PromoBlock = (props) => {
 							imgPath={documentation}
 						/>
 						<PromoCard
-							animation={animationByClass("fade-up-left", "750", "800", "bottom-bottom")}
+							cardLogoAnimation={animationByClass("zoom-in", "1650", "600")}
+							cardTitleAnimation={animationByClass("fade-right", "1050", "600" )}
+							cardTextAnimation={animationByClass("fade-right", "1250", "600")}
+
+							cardBodyAnimation={animationByClass("fade-up-left", "750", "400")}
 							title={"Docker files"}
 							subTitle={""}
 							textBody={
@@ -77,7 +84,11 @@ const PromoBlock = (props) => {
 							imgPath={docerFiles}
 						/>
 						<PromoCard
-							animation={animationByClass("fade-up-left", "950", "800", "bottom-bottom")}
+							cardLogoAnimation={animationByClass("zoom-in", "1950", "600")}
+							cardTitleAnimation={animationByClass("fade-right", "1350", "600" )}
+							cardTextAnimation={animationByClass("fade-right", "1850", "600")}
+
+							cardBodyAnimation={animationByClass("fade-up-left", "1050", "400")}
 							title={"Unit and End to End testing"}
 							subTitle={"JUnit, Jest, Nightwatch"}
 							textBody={"Results are secured through unit and e2e tests"}
@@ -85,6 +96,11 @@ const PromoBlock = (props) => {
 						/>
 
 						<PromoCardCustomize
+							cardLogoAnimation={animationByClass("zoom-in", "2250", "600")}
+							cardTitleAnimation={animationByClass("fade-right", "1650", "600", )}
+							cardTextAnimation={animationByClass("fade-right", "1950", "600")}
+
+							cardBodyAnimation={animationByClass("fade-up-left", "1350", "400")}
 							title={"Add your own deliverable standard"}
 							subTitle={""}
 							textBody={

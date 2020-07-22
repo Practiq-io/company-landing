@@ -14,6 +14,79 @@ export class WizardContainer extends Component {
 		data: {}
 	};
 
+	prepareObject = () => {
+		
+		let data = {...this.state.data};
+		let taxonomy = data.taxonomy.selectedTags.map(item => {
+			return {skill: item[0], level: item[1]}
+		})
+		let specification = {}
+		let taskData = Object.values(data.specification.taskData)[0]
+		if(taskData.designLink){
+			specification.links = [taskData.designLink]
+		}
+		let backendData = {
+			user: {
+				email: data.aboutCompany.email,
+				companyName: data.aboutCompany.companyName,
+				website: data.aboutCompany.website
+			},
+			description: data.generalInformation.generalInformation,
+			type: data.specification.taskType,
+			requirements:{
+				taxonomy: taxonomy
+			},
+			deliverables : {}
+		}
+
+		
+		
+		// user: {
+		// 	email: "timarot@gmail.com",
+		// 	companyName: "Timarot",
+		// 	website: "http://www.timarot.com"
+		// },
+		// description: "description text",
+		// type: "GENERAL_API",
+		// requirements: {
+		// 	taxonomy: [
+		// 		{skill: "Javascript", level: "junior"},
+		// 		{skill: "npm", level: "junior"},
+		// 		{skill: "Babel", level: "junior"},
+		// 		{skill: "React", level: "junior"},
+		// 		{skill: "Express", level: "junior"}
+		// 	],
+		// 	specification: {
+		// 		links: [
+		// 			"https://www.figma.com/file/eVzBEi3zsKd4sbewZ50ED5/Practiq-Design",
+		// 			"https://www.figma.com/file/eVzBEi3zsKd4sbewZ50ED5/Practiq-Design1",
+		// 			"https://www.figma.com/file/eVzBEi3zsKd4sbewZ50ED5/Practiq-Design2",
+		// 			"https://www.figma.com/file/eVzBEi3zsKd4sbewZ50ED5/Practiq-Design3",
+		// 		],
+		// 		attachments: [
+		// 			"image_base64"    
+		// 		],
+		// 		datasource: "url",
+		// 		apis: [
+		// 			{
+		// 				request: "request_json",
+		// 				response: "response_json",
+		// 				action: "action description"
+		// 			}    
+		// 		]
+		// 	},
+		// 	deliverables: {
+		// 		system: [
+		// 			"DOCUMENTATION",
+		// 			"UNIT_TESTS",
+		// 			"END_TO_END_TESTS"
+		// 		],
+		// 		custom: "description of custom deliverable"
+		// 	}
+		// }
+
+	}
+
 	componentWillUnmount() {
 		let data = { ...this.state.data };
 		data = {};
@@ -26,6 +99,10 @@ export class WizardContainer extends Component {
 		let data = { ...this.state.data };
 		data[[key[0]]] = value[0];
 		this.setState({ data });
+
+		if(this.props.step === 7){
+			this.prepareObject()
+		}
 	};
 
 	render() {

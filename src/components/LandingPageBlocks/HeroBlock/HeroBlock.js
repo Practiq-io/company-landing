@@ -18,9 +18,6 @@ class HeroBlock extends Component {
 
 		return (
 			<section
-				data-aos="fade-in"
-				data-aos-delay="150"
-				data-aos-duration="1000"
 				className="wrapper"
 			>
 				<img src={background} className="large_image" alt="" />

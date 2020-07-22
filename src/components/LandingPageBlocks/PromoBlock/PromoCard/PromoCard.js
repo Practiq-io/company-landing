@@ -3,17 +3,34 @@ import "./PromoCard.css";
 
 const PromoCard = props => {
 
-	
+	const cardBodyDelay = props.cardBodyAnimation.delay ? props.cardBodyAnimation.delay : null;
+	const cardBodyAosName = props.cardBodyAnimation.name ? props.cardBodyAnimation.name : null;
+	const cardBodyDuration = props.cardBodyAnimation.duration ? props.cardBodyAnimation.duration : null;
+	const cardBodyTrigger = props.cardBodyAnimation.trigger ? props.cardBodyAnimation.trigger : null;
 
-	const delay = props.animation.delay ? props.animation.delay : "0";
-	const aosName = props.animation.name ? props.animation.name : "fade-in";
-	const duration = props.animation.duration ? props.animation.duration : "0";
-	const trigger = props.animation.trigger ? props.animation.trigger : "bottom-bottom";
+	const cardLogoDelay = props.cardLogoAnimation.delay ? props.cardLogoAnimation.delay : null;
+	const cardLogoAosName = props.cardLogoAnimation.name ? props.cardLogoAnimation.name : null;
+	const cardLogoDuration = props.cardLogoAnimation.duration ? props.cardLogoAnimation.duration : null;
+
+	const cardTitleDelay = props.cardTitleAnimation.delay ? props.cardTitleAnimation.delay : null;
+	const cardTitleAosName = props.cardTitleAnimation.name ? props.cardTitleAnimation.name : null;
+	const cardTitleDuration = props.cardTitleAnimation.duration ? props.cardTitleAnimation.duration : null;
+
+	const cardTextDelay = props.cardTextAnimation.delay ? props.cardTextAnimation.delay : null;
+	const cardTextAosName = props.cardTextAnimation.name ? props.cardTextAnimation.name : null;
+	const cardTextDuration = props.cardTextAnimation.duration ? props.cardTextAnimation.duration : null;
+	
 
 	let title = null;
 	if (props.title) {
 		title = (
-			<div className="pc-title">
+			<div
+				data-aos={cardTitleAosName}
+				data-aos-duration={cardTitleDuration}
+				data-aos-delay={cardTitleDelay}
+
+				className="pc-title"
+			>
 				<p>{props.title}</p>
 			</div>
 		);
@@ -22,7 +39,13 @@ const PromoCard = props => {
 	let subTitle = null;
 	if (props.subTitle) {
 		subTitle = (
-			<div className="pc-subtitle">
+			<div
+				data-aos={cardTitleAosName}
+				data-aos-duration={cardTitleDuration}
+				data-aos-delay={cardTitleDelay} 
+
+				className="pc-subtitle"
+			>
 				<p>{props.subTitle}</p>
 			</div>
 		);
@@ -31,7 +54,13 @@ const PromoCard = props => {
 	let textBody = null;
 	if (props.textBody) {
 		textBody = (
-			<div className="pc-text-body">
+			<div 
+				data-aos={cardTextAosName}
+				data-aos-duration={cardTextDuration}
+				data-aos-delay={cardTextDelay} 
+				
+				className="pc-text-body"
+			>
 				<p>{props.textBody}</p>
 			</div>
 		);
@@ -39,16 +68,21 @@ const PromoCard = props => {
 
 	return (
 		<div
-			// name, delay, duration, trigger
-			data-aos-anchor-placement={trigger}
-			data-aos={aosName}
-			data-aos-duration={duration}
-			data-aos-delay={delay}
+			data-aos-anchor-placement={cardBodyTrigger}
+			data-aos={cardBodyAosName}
+			data-aos-duration={cardBodyDuration}
+			data-aos-delay={cardBodyDelay}
 			className="promo-card-body"
 		>
 			<div className="promo-card-img-box">
-				<div className="pc-img">
-					<img src={props.imgPath} alt="" />
+				<div 
+					data-aos={cardLogoAosName}
+					data-aos-duration={cardLogoDuration}
+					data-aos-delay={cardLogoDelay}
+					
+					className="pc-img"
+				>
+					<img src={props.imgPath} alt=""/>
 				</div>
 			</div>
 
