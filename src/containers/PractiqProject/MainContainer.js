@@ -19,7 +19,6 @@ class MainContainer extends Component {
 	componentDidMount(){
 		AOS.init({
 			once: true, 
-  			mirror: false,
 			easing: 'ease-out-cubic',
 			duration:800
 		  });
