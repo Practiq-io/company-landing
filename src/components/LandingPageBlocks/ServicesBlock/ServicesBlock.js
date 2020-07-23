@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import "./ServicesBlock.css";
 import FrontEnd from "./FrontEnd/FrontEnd";
 import BackEnd from "./BackEnd/BackEnd";
+import { Animated } from "react-animated-css";
 
 class ServicesBlock extends Component {
 	state = {
@@ -22,26 +23,28 @@ class ServicesBlock extends Component {
 	};
 
 	render() {
-		const { animationSettings } = this.props;
+		const {animationSettings} = this.props;
 
 		return (
 			<section className="SB-Section" id="services-block_anchor">
 				<div className="wrapper">
 					<content className="upperServicesBox">
-						<h2
+						<h2 
 							data-aos-anchor="#services-animation-trigger"
-							data-aos="fade-down"
-							data-aos-duration="800"
+							data-aos="fade-down" 
+							data-aos-duration="800" 
+
 							className="servicesTitle"
 						>
 							What we can build for you
 						</h2>
 						<div className="ui_mobile_dash"></div>
-						<div
+						<div 
 							data-aos-anchor="#services-animation-trigger"
 							data-aos="fade-in"
 							data-aos-duration="800"
 							data-aos-delay="450"
+
 							className="servicesButtonBox"
 						>
 							<p
@@ -73,19 +76,33 @@ class ServicesBlock extends Component {
 					</content>
 
 					<content className="lowerServicesBox">
-						{this.state.displayed === "backend" ? (
-							<BackEnd animationSettings={animationSettings} />
+						{ this.state.displayed === "backend" ? (
+							<Animated
+								animationIn="fadeIn"
+								animationOut="fadeOut"
+								isVisible={this.state.displayed === "backend"}
+							>
+								<BackEnd
+									animationSettings={animationSettings}
+								/>
+							</Animated>
+						) : null}
+						
+						{ this.state.displayed === "frontend" ? (
+							<Animated
+								animationIn="fadeIn"
+								animationOut="fadeOut"
+								isVisible={this.state.displayed === "frontend"}
+							>
+								<FrontEnd 
+									animationSettings={animationSettings}
+								/>
+							</Animated>
 						) : null}
 
-						{this.state.displayed === "frontend" ? (
-							<FrontEnd animationSettings={animationSettings} />
-						) : null}
 					</content>
 				</div>
-				<div
-					id="services-animation-trigger"
-					className="services-block_trigger-box"
-				></div>
+				<div id="services-animation-trigger" className="services-block_trigger-box"></div>
 			</section>
 		);
 	}

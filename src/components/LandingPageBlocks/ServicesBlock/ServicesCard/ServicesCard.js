@@ -10,8 +10,6 @@ class ServicesCard extends Component {
 		displayedString: false,
 	};
 
-	
-
 	componentDidMount() {
 		let cut = this.state.textBody.slice(150, this.state.textBody.length);
 		let display = this.state.textBody.slice(0, 150);
@@ -59,7 +57,6 @@ class ServicesCard extends Component {
 		const cardButtonAosName = cardButtonAnimation.name ? cardButtonAnimation.name : null;
 		const cardButtonDuration = cardButtonAnimation.duration ? cardButtonAnimation.duration : null;
 		
-
 		return (
 			<div 
 				data-aos-anchor={cardAnimationTrigger}
@@ -133,11 +130,7 @@ class ServicesCard extends Component {
 
 								className="services-animation-wrapper"
 							>
-								<p 
-									
-
-									className="servicesCardTextBody"
-								>
+								<p className="servicesCardTextBody">
 									{this.state.displayedString}
 									<span
 										className="servicesCardMainSpan"

@@ -44,7 +44,6 @@ const PromoBlock = (props) => {
 							data-aos="fade-right"
 							data-aos-duration="600"
 							data-aos-delay="850"
-							
 						>
 							As a result you are free to choose from many deliverables that
 							lets you seamlessly fit the results into your infrastructure.
@@ -52,8 +51,7 @@ const PromoBlock = (props) => {
 					</div>
 					
 					<div data-aos-anchor="#promo-animation-trigger" className="card_block">
-						<PromoCard  
-						// name, delay, duration, trigger
+						<PromoCard
 							cardLogoAnimation={animationSettings("zoom-in", "1350", "600",)}
 							cardTitleAnimation={animationSettings("fade-right", "750", "600", )}
 							cardTextAnimation={animationSettings("fade-right", "950", "600",)}
@@ -90,7 +88,6 @@ const PromoBlock = (props) => {
 							textBody={"Results are secured through unit and e2e tests"}
 							imgPath={endTesting}
 						/>
-
 						<PromoCardCustomize
 							cardLogoAnimation={animationSettings("zoom-in", "2250", "600")}
 							cardTitleAnimation={animationSettings("fade-right", "1650", "600", )}
@@ -104,7 +101,7 @@ const PromoBlock = (props) => {
 							}
 						/>
 					</div>
-					
+	
 				</div>
 			</div>
 			<div id="promo-animation-trigger" className="promo-block_trigger-box"></div>
