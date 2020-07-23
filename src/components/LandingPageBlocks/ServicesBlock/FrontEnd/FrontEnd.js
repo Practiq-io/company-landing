@@ -5,11 +5,21 @@ import landingPageIcon from "../ServicesCard/ServicesCardImg/landingPage.svg";
 import SPAIcon from "../ServicesCard/ServicesCardImg/frontSPA.svg";
 import componentIcon from "../ServicesCard/ServicesCardImg/component.svg";
 
-const FrontEnd = () => {
+const FrontEnd = props => {
+	const {animationSettings} = props;
 	return (
 		<div className="frontendCarouselFrame">
 			<ServicesCarousel>
 				<ServicesCard
+					cardBodyAnimation={animationSettings("fade-up", "450", "800")}
+					cardLogoAnimation={animationSettings("zoom-in", "1150", "600")}
+					cardTitleAnimation={animationSettings("fade-right", "750", "600" )}
+					cardSubTitleAnimation={animationSettings("fade-right", "950", "600" )}
+					cardExampleAnimation={animationSettings("fade-right", "1150", "600" )}
+					cardTextAnimation={animationSettings("fade-right", "1350", "600")}
+					cardButtonAnimation={animationSettings("zoom-in", "1550", "800")}
+					cardAnimationTrigger={"#services-animation-trigger"}
+
 					id={"Landingpage"}
 					imgPath={landingPageIcon}
 					title={"Landing page"}
@@ -22,6 +32,15 @@ const FrontEnd = () => {
 				/>
 
 				<ServicesCard
+					cardBodyAnimation={animationSettings("fade-up", "750", "800")}
+					cardLogoAnimation={animationSettings("zoom-in", "1150", "600")}
+					cardTitleAnimation={animationSettings("fade-right", "750", "600" )}
+					cardSubTitleAnimation={animationSettings("fade-right", "950", "600" )}
+					cardExampleAnimation={animationSettings("fade-right", "1150", "600" )}
+					cardTextAnimation={animationSettings("fade-right", "1350", "600")}
+					cardButtonAnimation={animationSettings("zoom-in", "1550", "800")}
+					cardAnimationTrigger={"#services-animation-trigger"}
+
 					id={"Single page web application"}
 					imgPath={SPAIcon}
 					title={"Single page web application"}
@@ -34,6 +53,15 @@ const FrontEnd = () => {
 				/>
 
 				<ServicesCard
+					cardBodyAnimation={animationSettings("fade-up", "1050", "800")}
+					cardLogoAnimation={animationSettings("zoom-in", "1150", "600")}
+					cardTitleAnimation={animationSettings("fade-right", "750", "600" )}
+					cardSubTitleAnimation={animationSettings("fade-right", "950", "600" )}
+					cardExampleAnimation={animationSettings("fade-right", "1150", "600" )}
+					cardTextAnimation={animationSettings("fade-right", "1350", "600")}
+					cardButtonAnimation={animationSettings("zoom-in", "1550", "800")}
+					cardAnimationTrigger={"#services-animation-trigger"}
+
 					id={"Frontendcomponent"}
 					imgPath={componentIcon}
 					title={"Frontend component"}

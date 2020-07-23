@@ -20,7 +20,6 @@ const BackEnd = props => {
 					cardTextAnimation={animationSettings("fade-right", "1350", "600")}
 					cardButtonAnimation={animationSettings("zoom-in", "1550", "800")}
 					cardAnimationTrigger={"#services-animation-trigger"}
-					
 
 					id={"api"}
 					imgPath={API}
