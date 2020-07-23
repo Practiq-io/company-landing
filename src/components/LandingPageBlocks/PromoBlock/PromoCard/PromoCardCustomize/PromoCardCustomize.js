@@ -7,7 +7,7 @@ const PromoCardCustomize = (props) => {
 	const delay = props.cardBodyAnimation.delay ? props.cardBodyAnimation.delay : null;
 	const aosName = props.cardBodyAnimation.name ? props.cardBodyAnimation.name : null;
 	const duration = props.cardBodyAnimation.duration ? props.cardBodyAnimation.duration : null;
-	const trigger = props.cardBodyAnimation.trigger ? props.cardBodyAnimation.trigger : null;
+	const cardAnimationTrigger = props.cardAnimationTrigger ? props.cardAnimationTrigger : null;
 
 	const cardLogoDelay = props.cardLogoAnimation.delay ? props.cardLogoAnimation.delay : null;
 	const cardLogoAosName = props.cardLogoAnimation.name ? props.cardLogoAnimation.name : null;
@@ -28,6 +28,7 @@ const PromoCardCustomize = (props) => {
 				data-aos={cardTitleAosName}
 				data-aos-duration={cardTitleDuration}
 				data-aos-delay={cardTitleDelay}
+				data-aos-anchor={cardAnimationTrigger}
 				className="pc-Customize-title"
 			>
 				<p>{props.title}</p>
@@ -41,7 +42,8 @@ const PromoCardCustomize = (props) => {
 			<div 
 				data-aos={cardTitleAosName}
 				data-aos-duration={cardTitleDuration}
-				data-aos-delay={cardTitleDelay} 
+				data-aos-delay={cardTitleDelay}
+				data-aos-anchor={cardAnimationTrigger}
 				className="pc-Customize-subtitle"
 			>
 				<p>{props.subTitle}</p>
@@ -56,6 +58,7 @@ const PromoCardCustomize = (props) => {
 				data-aos={cardTextAosName}
 				data-aos-duration={cardTextDuration}
 				data-aos-delay={cardTextDelay}
+				data-aos-anchor={cardAnimationTrigger}
 				className="pc-Customize-text-body"
 			>
 				<p>{props.textBody}</p>
@@ -65,7 +68,7 @@ const PromoCardCustomize = (props) => {
 
 	return (
 		<div
-			data-aos-anchor-placement={trigger}
+			data-aos-anchor={cardAnimationTrigger}
 			data-aos={aosName}
 			data-aos-duration={duration}
 			data-aos-delay={delay}
@@ -76,7 +79,7 @@ const PromoCardCustomize = (props) => {
 					data-aos={cardLogoAosName}
 					data-aos-duration={cardLogoDuration}
 					data-aos-delay={cardLogoDelay}
-					
+					data-aos-anchor={cardAnimationTrigger}	
 					className="pc-Customize-img"
 				>
 					<img src={addCard} alt="" />

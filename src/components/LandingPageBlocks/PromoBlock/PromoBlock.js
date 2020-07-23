@@ -15,18 +15,19 @@ const PromoBlock = (props) => {
 			trigger: trigger,
 		};
 	};
-	const cardIconAnimation = animationByClass("fade-up-left", "450", "1000", "bottom-bottom")
-
+	
+	
 	return (
 		<section className="PB-Section">
 			<div className="wrapper">
 				<div className="content_wrapper">
-					<div data-aos-anchor-placement="bottom-bottom" className="weCode">
-						<h2 data-aos="fade-right" data-aos-duration="800">
+					<div   className="weCode">
+						<h2 data-aos-anchor="#promo-animation-trigger" data-aos="fade-right" data-aos-duration="800">
 							We code for production
 						</h2>
 
 						<p
+							data-aos-anchor="#promo-animation-trigger"
 							data-aos="fade-right"
 							data-aos-duration="600"
 							data-aos-delay="450"
@@ -35,7 +36,8 @@ const PromoBlock = (props) => {
 							development and production requirements.{" "}
 						</p>
 
-						<p
+						<p	
+							data-aos-anchor="#promo-animation-trigger"
 							data-aos="fade-right"
 							data-aos-duration="600"
 							data-aos-delay="650"
@@ -46,23 +48,25 @@ const PromoBlock = (props) => {
 						</p>
 
 						<p
+							data-aos-anchor="#promo-animation-trigger"
 							data-aos="fade-right"
 							data-aos-duration="600"
 							data-aos-delay="850"
+							
 						>
 							As a result you are free to choose from many deliverables that
 							lets you seamlessly fit the results into your infrastructure.
 						</p>
 					</div>
 
-					<div data-aos-anchor-placement="top-center" className="card_block">
+					<div data-aos-anchor="#promo-animation-trigger" className="card_block">
 						<PromoCard  
 						// name, delay, duration, trigger
 							cardLogoAnimation={animationByClass("zoom-in", "1350", "600",)}
 							cardTitleAnimation={animationByClass("fade-right", "750", "600", )}
 							cardTextAnimation={animationByClass("fade-right", "950", "600",)}
-
-							cardBodyAnimation={animationByClass("fade-up-left", "450", "400", "bottom-bottom")}
+							cardAnimationTrigger={"#promo-animation-trigger"}
+							cardBodyAnimation={animationByClass("fade-up-left", "450", "400")}
 							title={"Documentation"}
 							subTitle={"Swagger, Javadoc, etc."}
 							textBody={
@@ -74,7 +78,7 @@ const PromoBlock = (props) => {
 							cardLogoAnimation={animationByClass("zoom-in", "1650", "600")}
 							cardTitleAnimation={animationByClass("fade-right", "1050", "600" )}
 							cardTextAnimation={animationByClass("fade-right", "1250", "600")}
-
+							cardAnimationTrigger={"#promo-animation-trigger"}
 							cardBodyAnimation={animationByClass("fade-up-left", "750", "400")}
 							title={"Docker files"}
 							subTitle={""}
@@ -87,7 +91,7 @@ const PromoBlock = (props) => {
 							cardLogoAnimation={animationByClass("zoom-in", "1950", "600")}
 							cardTitleAnimation={animationByClass("fade-right", "1350", "600" )}
 							cardTextAnimation={animationByClass("fade-right", "1850", "600")}
-
+							cardAnimationTrigger={"#promo-animation-trigger"}
 							cardBodyAnimation={animationByClass("fade-up-left", "1050", "400")}
 							title={"Unit and End to End testing"}
 							subTitle={"JUnit, Jest, Nightwatch"}
@@ -99,7 +103,7 @@ const PromoBlock = (props) => {
 							cardLogoAnimation={animationByClass("zoom-in", "2250", "600")}
 							cardTitleAnimation={animationByClass("fade-right", "1650", "600", )}
 							cardTextAnimation={animationByClass("fade-right", "1950", "600")}
-
+							cardAnimationTrigger={"#promo-animation-trigger"}
 							cardBodyAnimation={animationByClass("fade-up-left", "1350", "400")}
 							title={"Add your own deliverable standard"}
 							subTitle={""}
@@ -108,8 +112,10 @@ const PromoBlock = (props) => {
 							}
 						/>
 					</div>
+					
 				</div>
 			</div>
+			<div id="promo-animation-trigger" className="trigger-box"></div>
 		</section>
 	);
 };
