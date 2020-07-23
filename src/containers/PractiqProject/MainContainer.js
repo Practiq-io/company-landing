@@ -70,7 +70,9 @@ class MainContainer extends Component {
 				<TaskBlock 
 					animationSettings={animationByClass}
 				/>
-				<ServicesBlock />
+				<ServicesBlock 
+					animationSettings={animationByClass}
+				/>
 				<HowItWorksBlock />
 				<WhoBlock />
 				<MediumBlock />

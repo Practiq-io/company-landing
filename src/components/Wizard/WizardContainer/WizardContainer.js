@@ -39,52 +39,6 @@ export class WizardContainer extends Component {
 			deliverables : {}
 		}
 
-		
-		
-		// user: {
-		// 	email: "timarot@gmail.com",
-		// 	companyName: "Timarot",
-		// 	website: "http://www.timarot.com"
-		// },
-		// description: "description text",
-		// type: "GENERAL_API",
-		// requirements: {
-		// 	taxonomy: [
-		// 		{skill: "Javascript", level: "junior"},
-		// 		{skill: "npm", level: "junior"},
-		// 		{skill: "Babel", level: "junior"},
-		// 		{skill: "React", level: "junior"},
-		// 		{skill: "Express", level: "junior"}
-		// 	],
-		// 	specification: {
-		// 		links: [
-		// 			"https://www.figma.com/file/eVzBEi3zsKd4sbewZ50ED5/Practiq-Design",
-		// 			"https://www.figma.com/file/eVzBEi3zsKd4sbewZ50ED5/Practiq-Design1",
-		// 			"https://www.figma.com/file/eVzBEi3zsKd4sbewZ50ED5/Practiq-Design2",
-		// 			"https://www.figma.com/file/eVzBEi3zsKd4sbewZ50ED5/Practiq-Design3",
-		// 		],
-		// 		attachments: [
-		// 			"image_base64"    
-		// 		],
-		// 		datasource: "url",
-		// 		apis: [
-		// 			{
-		// 				request: "request_json",
-		// 				response: "response_json",
-		// 				action: "action description"
-		// 			}    
-		// 		]
-		// 	},
-		// 	deliverables: {
-		// 		system: [
-		// 			"DOCUMENTATION",
-		// 			"UNIT_TESTS",
-		// 			"END_TO_END_TESTS"
-		// 		],
-		// 		custom: "description of custom deliverable"
-		// 	}
-		// }
-
 	}
 
 	componentWillUnmount() {
@@ -108,7 +62,7 @@ export class WizardContainer extends Component {
 	render() {
 		const containerState = this.state;
 		const { back, next, step, toggleWizard } = this.props;
-		console.log(this.state.data,"Final state");
+		
 		return (
 			<>
 				{step === 1 ? (

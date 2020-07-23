@@ -42,12 +42,7 @@ export default class WizardModal extends Component {
 							</div>
 						) : null}
 
-						<div
-							className="wizard-modal-component_output"
-							ref={(divElement) => {
-								this.divElement = divElement;
-							}}
-						>
+						<div className="wizard-modal-component_output">
 							<WizardContainer
 								toggleWizard={toggle}
 								step={step}

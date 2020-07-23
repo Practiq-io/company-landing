@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import "./ServicesBlock.css";
 import FrontEnd from "./FrontEnd/FrontEnd";
 import BackEnd from "./BackEnd/BackEnd";
+import { Animated } from "react-animated-css";
 
 class ServicesBlock extends Component {
 	state = {
@@ -22,57 +23,87 @@ class ServicesBlock extends Component {
 	};
 
 	render() {
-        
-		let carouselTypeOutput;
-		if (this.state.displayed === "backend") {
-			carouselTypeOutput = <BackEnd />;
-		} else if (this.state.displayed === "frontend") {
-			carouselTypeOutput = <FrontEnd />;
-		}
+		const {animationSettings} = this.props;
 
 		return (
 			<section className="SB-Section" id="services-block_anchor">
 				<div className="wrapper">
+					<content className="upperServicesBox">
+						<h2 
+							data-aos-anchor="#services-animation-trigger"
+							data-aos="fade-down" 
+							data-aos-duration="800" 
 
-				
-				<content className="upperServicesBox">
-					<h2 className="servicesTitle">What we can build for you</h2>
-					<div className="ui_mobile_dash"></div>
-					<div className="servicesButtonBox">
-						<p
-							onClick={this.switchToFrontEnd}
-							className="frontendButton"
-							style={{
-								color: this.state.switched ? "white" : "#171725"
-							}}
+							className="servicesTitle"
 						>
-							Frontend
-						</p>
-						<p
-							onClick={this.switchToBackEnd}
-							className="backendButton"
-							style={{
-								color: this.state.switched ? "#171725" : "white"
-							}}
+							What we can build for you
+						</h2>
+						<div className="ui_mobile_dash"></div>
+						<div 
+							data-aos-anchor="#services-animation-trigger"
+							data-aos="fade-in"
+							data-aos-duration="800"
+							data-aos-delay="450"
+
+							className="servicesButtonBox"
 						>
-							Backend
-						</p>
+							<p
+								onClick={this.switchToFrontEnd}
+								className="frontendButton"
+								style={{
+									color: this.state.switched ? "white" : "#171725",
+								}}
+							>
+								Frontend
+							</p>
+							<p
+								onClick={this.switchToBackEnd}
+								className="backendButton"
+								style={{
+									color: this.state.switched ? "#171725" : "white",
+								}}
+							>
+								Backend
+							</p>
 
-						<div
-							className="buttonSwitch"
-							style={{
-								right: this.state.switched ? "143px" : "0"
-							}}
-						></div>
-					</div>
-				</content>
+							<div
+								className="buttonSwitch"
+								style={{
+									right: this.state.switched ? "143px" : "0",
+								}}
+							></div>
+						</div>
+					</content>
 
-				<content className="lowerServicesBox">
+					<content className="lowerServicesBox">
+						{ this.state.displayed === "backend" ? (
+							<Animated
+								animationIn="fadeIn"
+								animationOut="fadeOut"
+								isVisible={true}
+							>
+								<BackEnd
+									animationSettings={animationSettings}
+								/>
+							</Animated>
+						) : null}
+						
 
-                    {carouselTypeOutput}
+						{ this.state.displayed === "frontend" ? (
+							<Animated
+								animationIn="fadeIn"
+								animationOut="fadeOut"
+								isVisible={true}
+							>
+								<FrontEnd 
+									animationSettings={animationSettings}
+								/>
+							</Animated>
+						) : null}
 
-                </content>
+					</content>
 				</div>
+				<div id="services-animation-trigger" className="services-block_trigger-box"></div>
 			</section>
 		);
 	}

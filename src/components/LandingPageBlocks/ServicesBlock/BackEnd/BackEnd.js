@@ -6,11 +6,22 @@ import connector from "../ServicesCard/ServicesCardImg/connectorLogo.svg";
 import longProcess from "../ServicesCard/ServicesCardImg/longRunning.svg";
 import landingComponentIcon from '../ServicesCard/ServicesCardImg/BACKENDSPA.svg';
 
-const BackEnd = () => {
+const BackEnd = props => {
+	const {animationSettings} = props;
 	return (
 		<div className="backendCarouselFrame">
 			<ServicesCarousel>
 				<ServicesCard
+					cardBodyAnimation={animationSettings("fade-up", "450", "800")}
+					cardLogoAnimation={animationSettings("zoom-in", "1150", "600")}
+					cardTitleAnimation={animationSettings("fade-right", "750", "600" )}
+					cardSubTitleAnimation={animationSettings("fade-right", "950", "600" )}
+					cardExampleAnimation={animationSettings("fade-right", "1150", "600" )}
+					cardTextAnimation={animationSettings("fade-right", "1350", "600")}
+					cardButtonAnimation={animationSettings("zoom-in", "1550", "800")}
+					cardAnimationTrigger={"#services-animation-trigger"}
+					
+
 					id={"api"}
 					imgPath={API}
 					title={"General purpose API"}
@@ -23,6 +34,15 @@ const BackEnd = () => {
 				/>
 
 				<ServicesCard
+					cardBodyAnimation={animationSettings("fade-up", "750", "800")}
+					cardLogoAnimation={animationSettings("zoom-in", "1150", "600")}
+					cardTitleAnimation={animationSettings("fade-right", "750", "600" )}
+					cardSubTitleAnimation={animationSettings("fade-right", "950", "600" )}
+					cardExampleAnimation={animationSettings("fade-right", "1150", "600" )}
+					cardTextAnimation={animationSettings("fade-right", "1350", "600")}
+					cardButtonAnimation={animationSettings("zoom-in", "1550", "800")}
+					cardAnimationTrigger={"#services-animation-trigger"}
+
 					id={"connector"}
 					imgPath={connector}
 					title={"API Connector/Adapter"}
@@ -35,6 +55,15 @@ const BackEnd = () => {
 				/>
 
 				<ServicesCard
+					cardBodyAnimation={animationSettings("fade-up", "1050", "800")}
+					cardLogoAnimation={animationSettings("zoom-in", "1150", "600")}
+					cardTitleAnimation={animationSettings("fade-right", "750", "600" )}
+					cardSubTitleAnimation={animationSettings("fade-right", "950", "600" )}
+					cardExampleAnimation={animationSettings("fade-right", "1150", "600" )}
+					cardTextAnimation={animationSettings("fade-right", "1350", "600")}
+					cardButtonAnimation={animationSettings("zoom-in", "1550", "800")}
+					cardAnimationTrigger={"#services-animation-trigger"}
+
 					id={"longprocess"}
 					imgPath={longProcess}
 					title={"Long running process"}
@@ -47,6 +76,15 @@ const BackEnd = () => {
 				/>
 
 				<ServicesCard
+					cardBodyAnimation={animationSettings("fade-up", "1350", "800")}
+					cardLogoAnimation={animationSettings("zoom-in", "1150", "600")}
+					cardTitleAnimation={animationSettings("fade-right", "750", "600" )}
+					cardSubTitleAnimation={animationSettings("fade-right", "950", "600" )}
+					cardExampleAnimation={animationSettings("fade-right", "1150", "600" )}
+					cardTextAnimation={animationSettings("fade-right", "1350", "600")}
+					cardButtonAnimation={animationSettings("fade-zoom-in", "1550", "200")}
+					cardAnimationTrigger={"#services-animation-trigger"}
+
 					id={"Landing page / SPA / Component"}
 					imgPath={landingComponentIcon}
 					title={"Landing page / SPA / Component"}
