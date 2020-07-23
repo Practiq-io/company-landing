@@ -68,7 +68,6 @@ const PromoCard = props => {
 
 	return (
 		<div
-		
 			data-aos-anchor={cardAnimationTrigger}
 			data-aos={cardBodyAosName}
 			data-aos-duration={cardBodyDuration}

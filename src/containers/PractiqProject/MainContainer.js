@@ -26,6 +26,14 @@ class MainContainer extends Component {
 
 	render() {
 		const { showWizard, toggle } = this.props.wizard;
+		const animationByClass = (name, delay, duration, trigger) => {
+			return {
+				delay: delay,
+				name: name,
+				duration: duration,
+				trigger: trigger,
+			};
+		};
 
 		return (
 			<>
@@ -53,9 +61,15 @@ class MainContainer extends Component {
 					
 				
 
-				<HeroBlock toggle={toggle} />
-				<PromoBlock />
-				<TaskBlock />
+				<HeroBlock
+					toggle={toggle} 
+				/>
+				<PromoBlock 
+					animationSettings={animationByClass}
+				/>
+				<TaskBlock 
+					animationSettings={animationByClass}
+				/>
 				<ServicesBlock />
 				<HowItWorksBlock />
 				<WhoBlock />

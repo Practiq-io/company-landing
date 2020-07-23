@@ -11,15 +11,28 @@ import TaskCardRequest from "./TaskCard/TaskCardRequest/TaskCardRequest";
 
 
 const TaskBlock = (props) => {
+	const {animationSettings} = props;
+
 	return (
 		<section className="TB-Section">
 			<div className="wrapper">
 				<content className="TB-content">
 					<div className="TB-title">
-						<h2 className="TB-title-h2">
+						<h2 
+							data-aos-anchor="#task-animation-trigger"
+						 	data-aos="fade-down" 
+						 	data-aos-duration="800" 
+						 	className="TB-title-h2"
+						>
 							Practiq empowers developers to grow their skills and knowledge
 						</h2>
-						<p className="TB-title-p">
+						<p 	
+							data-aos-anchor="#task-animation-trigger"
+							data-aos="fade-in" 
+							data-aos-duration="800"
+							data-aos-delay="450"
+							className="TB-title-p"
+						>
 							Every developer has access to courses that help to increase the
 							quality of their work.
 						</p>
@@ -27,6 +40,8 @@ const TaskBlock = (props) => {
 
 					<div className="TB-code-box">
 						<TaskCard
+							cardBodyAnimation={animationSettings("fade-up", "850", "600", null)}
+							cardAnimationTrigger={"#task-animation-trigger"}
 							bgImgPath={ReactBgImg}
 							logoPath={ReactLogo}
 							textBody={
@@ -39,6 +54,8 @@ const TaskBlock = (props) => {
 						/>
 
 						<TaskCard
+							cardBodyAnimation={animationSettings("fade-up", "1250", "600", null)}
+							cardAnimationTrigger={"#task-animation-trigger"}
 							bgImgPath={NodeBgImg}
 							logoPath={NodeLogo}
 							textBody={
@@ -50,6 +67,8 @@ const TaskBlock = (props) => {
 						/>
 
 						<TaskCard
+							cardBodyAnimation={animationSettings("fade-up", "1650", "600", null)}
+							cardAnimationTrigger={"#task-animation-trigger"}
 							bgImgPath={JavaBgImg}
 							logoPath={JavaLogo}
 							textBody={
@@ -62,10 +81,14 @@ const TaskBlock = (props) => {
 							}
 						/>
 
-						<TaskCardRequest />
+						<TaskCardRequest 
+							cardBodyAnimation={animationSettings("fade-up", "2050", "600", null)}
+							cardAnimationTrigger={"#task-animation-trigger"}
+						/>
 					</div>
 				</content>
 			</div>
+			<div id="task-animation-trigger" className="task-block_trigger-box"></div>
 		</section>
 	);
 };

@@ -7,16 +7,8 @@ import docerFiles from "../../../image/docker.svg";
 import endTesting from "../../../image/unitTest.svg";
 
 const PromoBlock = (props) => {
-	const animationByClass = (name, delay, duration, trigger) => {
-		return {
-			delay: delay,
-			name: name,
-			duration: duration,
-			trigger: trigger,
-		};
-	};
-	
-	
+	const {animationSettings} = props;
+
 	return (
 		<section className="PB-Section">
 			<div className="wrapper">
@@ -58,15 +50,15 @@ const PromoBlock = (props) => {
 							lets you seamlessly fit the results into your infrastructure.
 						</p>
 					</div>
-
+					
 					<div data-aos-anchor="#promo-animation-trigger" className="card_block">
 						<PromoCard  
 						// name, delay, duration, trigger
-							cardLogoAnimation={animationByClass("zoom-in", "1350", "600",)}
-							cardTitleAnimation={animationByClass("fade-right", "750", "600", )}
-							cardTextAnimation={animationByClass("fade-right", "950", "600",)}
+							cardLogoAnimation={animationSettings("zoom-in", "1350", "600",)}
+							cardTitleAnimation={animationSettings("fade-right", "750", "600", )}
+							cardTextAnimation={animationSettings("fade-right", "950", "600",)}
 							cardAnimationTrigger={"#promo-animation-trigger"}
-							cardBodyAnimation={animationByClass("fade-up-left", "450", "400")}
+							cardBodyAnimation={animationSettings("fade-up-left", "450", "400")}
 							title={"Documentation"}
 							subTitle={"Swagger, Javadoc, etc."}
 							textBody={
@@ -75,11 +67,11 @@ const PromoBlock = (props) => {
 							imgPath={documentation}
 						/>
 						<PromoCard
-							cardLogoAnimation={animationByClass("zoom-in", "1650", "600")}
-							cardTitleAnimation={animationByClass("fade-right", "1050", "600" )}
-							cardTextAnimation={animationByClass("fade-right", "1250", "600")}
+							cardLogoAnimation={animationSettings("zoom-in", "1650", "600")}
+							cardTitleAnimation={animationSettings("fade-right", "1050", "600" )}
+							cardTextAnimation={animationSettings("fade-right", "1250", "600")}
 							cardAnimationTrigger={"#promo-animation-trigger"}
-							cardBodyAnimation={animationByClass("fade-up-left", "750", "400")}
+							cardBodyAnimation={animationSettings("fade-up-left", "750", "400")}
 							title={"Docker files"}
 							subTitle={""}
 							textBody={
@@ -88,11 +80,11 @@ const PromoBlock = (props) => {
 							imgPath={docerFiles}
 						/>
 						<PromoCard
-							cardLogoAnimation={animationByClass("zoom-in", "1950", "600")}
-							cardTitleAnimation={animationByClass("fade-right", "1350", "600" )}
-							cardTextAnimation={animationByClass("fade-right", "1850", "600")}
+							cardLogoAnimation={animationSettings("zoom-in", "1950", "600")}
+							cardTitleAnimation={animationSettings("fade-right", "1350", "600" )}
+							cardTextAnimation={animationSettings("fade-right", "1850", "600")}
 							cardAnimationTrigger={"#promo-animation-trigger"}
-							cardBodyAnimation={animationByClass("fade-up-left", "1050", "400")}
+							cardBodyAnimation={animationSettings("fade-up-left", "1050", "400")}
 							title={"Unit and End to End testing"}
 							subTitle={"JUnit, Jest, Nightwatch"}
 							textBody={"Results are secured through unit and e2e tests"}
@@ -100,11 +92,11 @@ const PromoBlock = (props) => {
 						/>
 
 						<PromoCardCustomize
-							cardLogoAnimation={animationByClass("zoom-in", "2250", "600")}
-							cardTitleAnimation={animationByClass("fade-right", "1650", "600", )}
-							cardTextAnimation={animationByClass("fade-right", "1950", "600")}
+							cardLogoAnimation={animationSettings("zoom-in", "2250", "600")}
+							cardTitleAnimation={animationSettings("fade-right", "1650", "600", )}
+							cardTextAnimation={animationSettings("fade-right", "1950", "600")}
 							cardAnimationTrigger={"#promo-animation-trigger"}
-							cardBodyAnimation={animationByClass("fade-up-left", "1350", "400")}
+							cardBodyAnimation={animationSettings("fade-up-left", "1350", "400")}
 							title={"Add your own deliverable standard"}
 							subTitle={""}
 							textBody={
@@ -115,7 +107,7 @@ const PromoBlock = (props) => {
 					
 				</div>
 			</div>
-			<div id="promo-animation-trigger" className="trigger-box"></div>
+			<div id="promo-animation-trigger" className="promo-block_trigger-box"></div>
 		</section>
 	);
 };

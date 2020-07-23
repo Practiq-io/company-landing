@@ -1,5 +1,5 @@
 .TB-Section {
-	
+	position: relative;
 	padding-top: 120px;
 	padding-bottom: 120px;
 }
@@ -117,4 +117,12 @@ h2 {
 	.TB-title-p {
 		font-size: 17px;
 	}
+}
+
+.task-block_trigger-box {
+	height: 50px;
+	width: 50px;
+	bottom: 100px;
+	background: transparent;
+	position: absolute;
 }
