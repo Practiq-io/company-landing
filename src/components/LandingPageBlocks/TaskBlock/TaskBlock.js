@@ -21,7 +21,8 @@ const TaskBlock = (props) => {
 						<h2 
 							data-aos-anchor="#task-animation-trigger"
 						 	data-aos="fade-down" 
-						 	data-aos-duration="800" 
+							data-aos-duration="800"
+							  
 						 	className="TB-title-h2"
 						>
 							Practiq empowers developers to grow their skills and knowledge
@@ -31,6 +32,7 @@ const TaskBlock = (props) => {
 							data-aos="fade-in" 
 							data-aos-duration="800"
 							data-aos-delay="450"
+
 							className="TB-title-p"
 						>
 							Every developer has access to courses that help to increase the
