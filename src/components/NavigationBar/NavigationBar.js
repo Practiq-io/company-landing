@@ -16,7 +16,9 @@ class NavigationBar extends Component {
 	render() {
 		return (
 			<>
-				<nav className="Navigation-Panel">
+				<nav
+					
+				className="Navigation-Panel">
 					<div className="mobile-navigation_display">
 						<MobileNavigation
 							display={this.state.mobileNavigation}
@@ -28,6 +30,7 @@ class NavigationBar extends Component {
 						<div className="nav_wrapper">
 							<div className="logo">
 								<img
+									
 									src={logo}
 									alt="practiq logo"
 									className="logo-desktop-nav"
@@ -44,7 +47,12 @@ class NavigationBar extends Component {
 									<a href="#services-block_anchor">What we do</a>
 									<a href="#how-it-works_anchor">How it works</a>
 									<a href="#who-block_anchor">About us</a>
-									<a href="#start">Get started</a>
+									<a 
+										
+										href="#start"
+									>
+										Get started
+									</a>
 								</div>
 							</div>
 						</div>

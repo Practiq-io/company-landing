@@ -192,6 +192,7 @@
 .HIWB-Section {
   padding-top: 120px;
   padding-bottom: 120px;
+  position: relative;
 }
 @media screen and (max-width: 1000px) {
   .HIWB-Section {
@@ -205,16 +206,16 @@
   padding: 15px 35px;
   border-radius: 30px;
 }
-.HIWB-Section .HIWB-content h2 {
+.HIWB-Section .HIWB-content .HIW-title {
   text-align: center;
   padding-bottom: 80px;
 }
 @media screen and (max-width: 1000px) {
-  .HIWB-Section .HIWB-content h2 {
+  .HIWB-Section .HIWB-content .HIW-title {
     padding-bottom: 40px;
     position: relative;
   }
-  .HIWB-Section .HIWB-content h2::after {
+  .HIWB-Section .HIWB-content .HIW-title::after {
     content: "";
     position: absolute;
     display: block;
@@ -717,4 +718,25 @@
   .HIWB-blocks.block01 {
     padding-top: 10px !important;
   }
+}
+.HIW-block_trigger-box {
+  height: 50px;
+  width: 50px;
+  background: transparent;
+  position: absolute;
+  top: 700px;
+}
+.HIW-set-five-block_trigger-box {
+  height: 50px;
+  width: 50px;
+  background: transparent;
+  position: absolute;
+  bottom: -100px;
+}
+.HIW-set-six-block_trigger-box {
+  height: 50px;
+  width: 50px;
+  z-index: 900;
+  position: absolute;
+  bottom: -300px;
 }

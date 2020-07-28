@@ -70,10 +70,10 @@ nav .wrapper .nav_wrapper .navigation .nav_desctop a {
   font-weight: 500;
 }
 nav .wrapper .nav_wrapper .navigation .nav_desctop a:last-of-type {
-  color: blue;
-  padding: 8px 16px;
-  background-color: white;
-  border-radius: 6px;
+  color: blue!important;
+  padding: 8px 16px!important;
+  background-color: white!important;
+  border-radius: 6px!important;
 }
 .mobile-navigation_display {
   display: none;

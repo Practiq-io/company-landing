@@ -1,5 +1,6 @@
 .WB-Section {
   background-color: #f9f9fb;
+  position: relative;
 }
 .WB-Section .WB-content {
   display: -webkit-box;
@@ -88,6 +89,8 @@
   }
 }
 .WB-Section .WB-content .person-card .person {
+  position: relative;
+  z-index: 2;
   display: -webkit-box;
   display: -webkit-flex;
   display: -moz-box;
@@ -98,8 +101,17 @@
   -moz-box-orient: vertical;
   -moz-box-direction: normal;
   flex-direction: column;
+  background: #2473ea;
+  border-radius: 12px;
   max-width: 300px;
   height: 403px;
+}
+.WB-Section .WB-content .person-card .person .who-block-text {
+  padding: 16px 20px ;
+  color: white;
+  font-family: 'Circle-Regular';
+  font-size: 1rem;
+  line-height: 20px;
 }
 @media screen and (max-width: 1220px) {
   .WB-Section .WB-content .person-card .person {
@@ -166,17 +178,6 @@
   padding: 24px 0 40px 0;
   width: 20px;
   height: 20px;
-}
-.WB-Section .WB-content .person-card .person .person-image + p {
-  margin-top: auto;
-  padding: 16px 20px;
-  background-color: #2473ea;
-  color: white;
-  font-family: 'Circle-Regular';
-  font-size: 1rem;
-  line-height: 20px;
-  border-bottom-right-radius: 12px;
-  border-bottom-left-radius: 12px;
 }
 .WB-Section .WB-content .person-card .person.liza {
   height: 424px !important;
@@ -276,4 +277,11 @@
 }
 .WB-Section .WB-content .person-card .person-mobile-block .person-card-mobile.roma {
   padding-top: 20px;
+}
+.HB-block_trigger-box {
+  height: 50px;
+  width: 50px;
+  background: transparent;
+  position: absolute;
+  bottom: 0;
 }

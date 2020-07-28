@@ -1,4 +1,6 @@
 import React, { Component } from "react";
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 import HeroBlock from "../../components/LandingPageBlocks/HeroBlock/HeroBlock";
 import PromoBlock from "../../components/LandingPageBlocks/PromoBlock/PromoBlock";
 import TaskBlock from "../../components/LandingPageBlocks/TaskBlock/TaskBlock";
@@ -13,8 +15,25 @@ import { CSSTransition } from "react-transition-group";
 
 
 class MainContainer extends Component {
+
+	componentDidMount(){
+		AOS.init({
+			once: true, 
+			easing: 'ease-out-cubic',
+			duration:800
+		  });
+	}
+
 	render() {
 		const { showWizard, toggle } = this.props.wizard;
+		const animationByClass = (name, delay, duration, trigger) => {
+			return {
+				delay: delay,
+				name: name,
+				duration: duration,
+				trigger: trigger,
+			};
+		};
 
 		return (
 			<>
@@ -42,10 +61,18 @@ class MainContainer extends Component {
 					
 				
 
-				<HeroBlock toggle={toggle} />
-				<PromoBlock />
-				<TaskBlock />
-				<ServicesBlock />
+				<HeroBlock
+					toggle={toggle} 
+				/>
+				<PromoBlock 
+					animationSettings={animationByClass}
+				/>
+				<TaskBlock 
+					animationSettings={animationByClass}
+				/>
+				<ServicesBlock 
+					animationSettings={animationByClass}
+				/>
 				<HowItWorksBlock />
 				<WhoBlock />
 				<MediumBlock />

@@ -5,7 +5,14 @@ import footerLogo from "../../image/logo.png";
 const Footer = () => {
 	return (
 		<footer className="footer-main">
-			<div className="footer-wrapper wrapper">
+			<div 
+				data-aos-anchor="#medium-animation-trigger"
+				data-aos="fade-ib"
+				data-aos-delay="1550"
+				data-aos-duration="1000"
+
+				className="footer-wrapper wrapper"
+			>
 				<div className="footer-logoch">
 					<div className="content">
 						<img src={footerLogo} alt="" />

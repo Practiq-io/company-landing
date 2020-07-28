@@ -11,52 +11,140 @@ const WhoBlock = (props) => {
 		<section className="WB-Section" id="who-block_anchor">
 			<div className="wrapper">
 				<content className="WB-content">
-					<h2>Who build this</h2>
+					<h2
+						data-aos-anchor="#HB-animation-trigger"
+						data-aos="fade-right"
+						data-aos-duration="800"
+					>
+						Who build this
+					</h2>
 
 					<div className="person-card">
-						<div className="person">
-							<div className="person-image">
-								<p>Ilya Sidorovich</p>
 
-								<div className="linkid-logo">
+						<div 
+							data-aos-anchor="#HB-animation-trigger"
+							data-aos="fade-left"
+							data-aos-delay="650"
+							data-aos-duration="1000"
+
+							className="person"
+						>
+							<div className="person-image">
+								<p
+									data-aos-anchor="#HB-animation-trigger"
+									data-aos="fade-left"
+									data-aos-delay="850"
+									data-aos-duration="1000"
+								>
+									Ilya Sidorovich
+								</p>
+
+								<div 
+									data-aos-anchor="#HB-animation-trigger"
+									data-aos="fade-in"
+									data-aos-delay="1550"
+									data-aos-duration="1000"
+
+									className="linkid-logo"
+								>
 									<img src={linkid} alt="" />
 								</div>
 							</div>
-
-							<p>
-								Co-founder, Tech Senior Software Developer @ Booking.com BSc
-								Finance & Marketing, KIMEP
-							</p>
+							<div className="who-block-text">
+								<p
+									data-aos-anchor="#HB-animation-trigger"
+									data-aos="fade-in"
+									data-aos-delay="1850"
+									data-aos-duration="1000"
+								>
+									Co-founder, Tech Senior Software Developer @ Booking.com BSc
+									Finance & Marketing, KIMEP
+								</p>
+							</div>
 						</div>
 
-						<div className="person liza">
-							<div className="person-image">
-								<p>Elizaveta Kolesnichenko</p>
+						<div 
+							data-aos-anchor="#HB-animation-trigger"
+							data-aos="fade-left"
+							data-aos-delay="850"
+							data-aos-duration="1000"
 
-								<div className="linkid-logo">
+							className="person liza"
+						>
+							<div className="person-image">
+								<p
+									data-aos-anchor="#HB-animation-trigger"
+									data-aos="fade-left"
+									data-aos-delay="1050"
+									data-aos-duration="1000"
+								>
+									Elizaveta Kolesnichenko
+								</p>
+
+								<div 
+									data-aos-anchor="#HB-animation-trigger"
+									data-aos="fade-in"
+									data-aos-delay="1750"
+									data-aos-duration="1000"
+
+									className="linkid-logo"
+								>
 									<img src={linkid} alt="" />
 								</div>
 							</div>
-
-							<p>
-								Co-founder, Product / Strategy Head of Startup Incubation @ ACE
-								Incubator MSc Cognitive Neurobiology, UvA
-							</p>
+							<div className="who-block-text">
+								<p
+									data-aos-anchor="#HB-animation-trigger"
+									data-aos="fade-in"
+									data-aos-delay="2050"
+									data-aos-duration="1000"
+								>
+									Co-founder, Product / Strategy Head of Startup Incubation @ ACE
+									Incubator MSc Cognitive Neurobiology, UvA
+								</p>
+							</div>
 						</div>
 
-						<div className="person roma">
-							<div className="person-image">
-								<p>Roman Cherepivskiy</p>
+						<div 
+							data-aos-anchor="#HB-animation-trigger"
+							data-aos="fade-left"
+							data-aos-delay="1050"
+							data-aos-duration="1000"
 
-								<div className="linkid-logo">
+							className="person roma"
+						>
+							<div className="person-image">
+								<p
+									data-aos-anchor="#HB-animation-trigger"
+									data-aos="fade-left"
+									data-aos-delay="1250"
+									data-aos-duration="1000"
+								>
+									Roman Cherepivskiy
+								</p>
+
+								<div 
+									data-aos-anchor="#HB-animation-trigger"
+									data-aos="fade-in"
+									data-aos-delay="1950"
+									data-aos-duration="1000"
+
+									className="linkid-logo"
+								>
 									<img src={linkid} alt="" />
 								</div>
 							</div>
-
-							<p>
-								Senior UI/UX Designer Computer Hardware and Software Almaty
-								technological university
-							</p>
+							<div className="who-block-text">
+								<p
+									data-aos-anchor="#HB-animation-trigger"
+									data-aos="fade-in"
+									data-aos-delay="2250"
+									data-aos-duration="1000"
+								>
+									Senior UI/UX Designer Computer Hardware and Software Almaty
+									technological university
+								</p>
+							</div>
 						</div>
 
 						<div className="person-mobile-block">
@@ -114,6 +202,7 @@ const WhoBlock = (props) => {
 					</div>
 				</content>
 			</div>
+			<div id="HB-animation-trigger" className="HB-block_trigger-box"></div>
 		</section>
 	);
 };

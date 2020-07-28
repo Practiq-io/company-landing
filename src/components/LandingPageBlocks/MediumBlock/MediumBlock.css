@@ -1,3 +1,6 @@
+.MB-Section {
+  position: relative;
+}
 .MB-Section .MB-content h2 {
   text-align: center;
   padding: 100px 0 80px 0;
@@ -254,4 +257,11 @@
   color: #6aa5fd;
   border: 2px solid #6aa5fd;
   transition: 0.2s;
+}
+.medium-block_trigger-box {
+  height: 50px;
+  width: 50px;
+  background: transparent;
+  position: absolute;
+  bottom: 0;
 }

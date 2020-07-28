@@ -14,6 +14,33 @@ export class WizardContainer extends Component {
 		data: {}
 	};
 
+	prepareObject = () => {
+		
+		let data = {...this.state.data};
+		let taxonomy = data.taxonomy.selectedTags.map(item => {
+			return {skill: item[0], level: item[1]}
+		})
+		let specification = {}
+		let taskData = Object.values(data.specification.taskData)[0]
+		if(taskData.designLink){
+			specification.links = [taskData.designLink]
+		}
+		let backendData = {
+			user: {
+				email: data.aboutCompany.email,
+				companyName: data.aboutCompany.companyName,
+				website: data.aboutCompany.website
+			},
+			description: data.generalInformation.generalInformation,
+			type: data.specification.taskType,
+			requirements:{
+				taxonomy: taxonomy
+			},
+			deliverables : {}
+		}
+
+	}
+
 	componentWillUnmount() {
 		let data = { ...this.state.data };
 		data = {};
@@ -26,12 +53,16 @@ export class WizardContainer extends Component {
 		let data = { ...this.state.data };
 		data[[key[0]]] = value[0];
 		this.setState({ data });
+
+		if(this.props.step === 7){
+			this.prepareObject()
+		}
 	};
 
 	render() {
 		const containerState = this.state;
 		const { back, next, step, toggleWizard } = this.props;
-
+		
 		return (
 			<>
 				{step === 1 ? (

@@ -207,16 +207,15 @@
 		line-height: 30px;
 	}
 }
-
-
-
-
 @media screen and (max-width: 1000px) {
 	h2 {
 		font-size: 2rem !important;
-		
 	}
-
-	
 }
-
+.promo-block_trigger-box {
+	height: 50px;
+	width: 50px;
+	bottom: 100px;
+	background: transparent;
+	position: absolute;
+}

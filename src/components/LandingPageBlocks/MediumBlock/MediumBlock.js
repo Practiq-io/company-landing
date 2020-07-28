@@ -9,10 +9,23 @@ const MediumBlock = (props) => {
 		<section className="MB-Section">
 			<div className="wrapper">
 				<content className="MB-content">
-					<h2>Our Medium Blog</h2>
+					<h2
+						data-aos-anchor="#medium-animation-trigger"
+						data-aos="fade-down"
+						data-aos-duration="1000"
+					>
+						Our Medium Blog
+					</h2>
 
 					<div className="article-block">
-						<div className="article-card fiveKiller">
+						<div 
+							data-aos-anchor="#medium-animation-trigger"
+							data-aos="fade-right"
+							data-aos-delay="450"
+							data-aos-duration="1000"
+
+							className="article-card fiveKiller"
+						>
 							<div className="article-image">
 								<img src={alcohol} alt="" />
 							</div>
@@ -55,7 +68,14 @@ const MediumBlock = (props) => {
 							</div>
 						</div>
 
-						<div className="article-card">
+						<div 
+							data-aos-anchor="#medium-animation-trigger"
+							data-aos="fade-left"
+							data-aos-delay="450"
+							data-aos-duration="1000"
+
+							className="article-card"
+						>
 							<div className="article-image">
 								<img src={hall} alt="" />
 							</div>
@@ -96,7 +116,14 @@ const MediumBlock = (props) => {
 						</div>
 					</div>
 
-					<div className="all-articles">
+					<div 
+						data-aos-anchor="#medium-animation-trigger"
+						data-aos="fade-up"
+						data-aos-delay="750"
+						data-aos-duration="1000"
+
+						className="all-articles"
+					>
 						<a
 							rel="noopener noreferrer"
 							target="_blank"
@@ -107,6 +134,7 @@ const MediumBlock = (props) => {
 					</div>
 				</content>
 			</div>
+			<div id="medium-animation-trigger" className="medium-block_trigger-box"></div>
 		</section>
 	);
 };
