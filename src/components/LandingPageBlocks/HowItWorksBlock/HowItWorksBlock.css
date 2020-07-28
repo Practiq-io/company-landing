@@ -737,7 +737,6 @@
   height: 50px;
   width: 50px;
   z-index: 900;
-  background: transparent;
   position: absolute;
-  bottom: -350px;
+  bottom: -300px;
 }
