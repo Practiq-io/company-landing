@@ -462,6 +462,8 @@ const HowItWorksBlock = (props) => {
 									<div className="you">
 										<div className="you-content">
 											<div 
+												id="fourth-set-animation-trigger"
+												
 												data-aos-anchor="#sixth-set-animation-trigger"
 												data-aos="zoom-in-right"
 												data-aos-delay="1050"
@@ -495,7 +497,7 @@ const HowItWorksBlock = (props) => {
 										</div>
 									</div>
 
-									<div id="fourth-set-animation-trigger" className="someone">
+									<div  className="someone">
 										<div 
 											data-aos-anchor="#sixth-set-animation-trigger"
 											data-aos="zoom-in-left"
