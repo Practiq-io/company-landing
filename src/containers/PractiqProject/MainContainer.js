@@ -16,15 +16,33 @@ import { CSSTransition } from "react-transition-group";
 
 class MainContainer extends Component {
 
+	componentWillMount(){
+		this.updateWindowDimensions();
+	}
+
 	componentDidMount(){
-		AOS.init({
-			once: true, 
-			easing: 'ease-out-cubic',
-			duration:800
-		  });
+
+		
+		if(this.state.windowHeight > 720 && this.state.windowWidth > 1000){
+			AOS.init({
+				once: true, 
+				easing: 'ease-out-cubic',
+				duration:800
+			});
+		} else {
+			AOS.init({
+				disable: true
+			});
+		}
+		
+	}
+
+	updateWindowDimensions() {
+		this.setState({ windowHeight: window.innerHeight, windowWidth: window.innerWidth });
 	}
 
 	render() {
+		console.log(this.state,"NIGA BITCH");
 		const { showWizard, toggle } = this.props.wizard;
 		const animationByClass = (name, delay, duration, trigger) => {
 			return {
