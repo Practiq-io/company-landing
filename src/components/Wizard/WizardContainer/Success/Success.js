@@ -5,6 +5,9 @@ import { Animated } from "react-animated-css";
 
 export default class Success extends Component {
 	
+	componentDidMount(){
+		this.props.backendData();
+	}
 
 	render() {
 		const { toggleWizard } = this.props;

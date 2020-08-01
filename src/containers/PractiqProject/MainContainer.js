@@ -42,7 +42,7 @@ class MainContainer extends Component {
 	}
 
 	render() {
-		console.log(this.state,"NIGA BITCH");
+		
 		const { showWizard, toggle } = this.props.wizard;
 		const animationByClass = (name, delay, duration, trigger) => {
 			return {
