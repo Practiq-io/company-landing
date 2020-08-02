@@ -13,7 +13,6 @@ import "./MainContainer.css";
 import { CSSTransition } from "react-transition-group";
 
 
-
 class MainContainer extends Component {
 
 	componentWillMount(){
@@ -22,7 +21,6 @@ class MainContainer extends Component {
 
 	componentDidMount(){
 
-		
 		if(this.state.windowWidth > 1000){
 			AOS.init({
 				once: true, 
@@ -69,7 +67,6 @@ class MainContainer extends Component {
 					classNames="wizardModal"
 					unmountOnExit
 				>
-
 					<WizardModal
 						showWizard={showWizard}
 						toggle={toggle}
@@ -77,8 +74,6 @@ class MainContainer extends Component {
                 
 				</CSSTransition>
 					
-				
-
 				<HeroBlock
 					toggle={toggle} 
 				/>
