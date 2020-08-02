@@ -60,7 +60,6 @@ export class WizardContainer extends Component {
 				projectTimelines: projectTimelines
 			}
 		}
-		console.log(backendData,"BACKEND BOY BOY BOY");
 	}
 
 	componentWillUnmount() {
@@ -84,7 +83,7 @@ export class WizardContainer extends Component {
 	render() {
 		const containerState = this.state;
 		const { back, next, step, toggleWizard } = this.props;
-		console.log(this.state, "LORD-BOY");
+		
 		return (
 			<>
 				{step === 1 ? (
