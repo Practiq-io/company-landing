@@ -23,7 +23,7 @@ class MainContainer extends Component {
 	componentDidMount(){
 
 		
-		if(this.state.windowHeight > 720 && this.state.windowWidth > 1000){
+		if(this.state.windowWidth > 1000){
 			AOS.init({
 				once: true, 
 				easing: 'ease-out-cubic',
@@ -38,11 +38,11 @@ class MainContainer extends Component {
 	}
 
 	updateWindowDimensions() {
-		this.setState({ windowHeight: window.innerHeight, windowWidth: window.innerWidth });
+		this.setState({ windowWidth: window.innerWidth });
 	}
 
 	render() {
-		console.log(this.state,"NIGA BITCH");
+		
 		const { showWizard, toggle } = this.props.wizard;
 		const animationByClass = (name, delay, duration, trigger) => {
 			return {

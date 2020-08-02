@@ -21,9 +21,25 @@ export class WizardContainer extends Component {
 			return {skill: item[0], level: item[1]}
 		})
 		let specification = {}
-		let taskData = Object.values(data.specification.taskData)[0]
-		if(taskData.designLink){
-			specification.links = [taskData.designLink]
+		if(data.specification.taskType === "Single page application"){
+			let spaData = data.specification.taskData.singlePageApplication;
+			let links = [spaData.designLink];
+			let attachments = spaData.attachedFiles;
+			let apis = [];
+			Object.keys(spaData).forEach(key => {
+				if(key === "field" || key === "field2" || key === "field3" || key === "field4" || key === "field5"){
+					apis.push({apiField: spaData[key]})
+				}
+			})
+			specification.links = links;
+			specification.attachments = attachments;
+			specification.apis = apis
+		}
+		let projectTimelines = [];
+		if(data.projectTimelines.customTimeline){
+			projectTimelines = data.projectTimelines.customTimeline
+		} else {
+			projectTimelines = data.projectTimelines.timeline
 		}
 		let backendData = {
 			user: {
@@ -34,11 +50,16 @@ export class WizardContainer extends Component {
 			description: data.generalInformation.generalInformation,
 			type: data.specification.taskType,
 			requirements:{
-				taxonomy: taxonomy
-			},
-			deliverables : {}
-		}
+				taxonomy: taxonomy,
+				specification: specification,
 
+			},
+			deliverables : {
+				system: data.taxonomy.system,
+				custom: data.taxonomy.customDeliverables,
+				projectTimelines: projectTimelines
+			}
+		}
 	}
 
 	componentWillUnmount() {
@@ -162,6 +183,7 @@ export class WizardContainer extends Component {
 						isVisible={step === 7}
 					>
 						<Success
+							backendData={this.prepareObject}
 							toggleWizard={toggleWizard}
 							containerState={containerState.data}
 						/>
