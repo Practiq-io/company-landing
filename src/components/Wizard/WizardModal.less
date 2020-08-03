@@ -31,10 +31,19 @@
 	padding-bottom: 90px;
 	overscroll-behavior: contain;
 	border-radius: 18px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	width: 640px;
+
 	&::-webkit-scrollbar {
 		display: none;
-	  }
-
+	}
+	@media screen and (max-width: 660px) {
+		.sneaky-scroll {
+			width: 100%;
+		}
+	}
 }
 .wizard-title_box {
 	display: -webkit-box;
