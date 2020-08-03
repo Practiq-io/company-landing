@@ -77,7 +77,7 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   line-height: 1;
-  
+  -webkit-font-smoothing: antialiased;
 }
 ol, ul {
 	list-style: none;
