@@ -10,8 +10,9 @@
 	margin-bottom: 17px;
 }
 .wizard-frame {
-	position: absolute;
+	position: fixed;
 	width: 100%;
+	height: 100%;
 	display: -webkit-box;
 	display: -webkit-flex;
 	display: -moz-box;
@@ -25,7 +26,25 @@
 	top: 0;
 	left: 0;
 }
+.sneaky-scroll {
+	overflow-y: scroll;
+	padding-bottom: 90px;
+	overscroll-behavior: contain;
+	border-radius: 18px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	width: 640px;
 
+	&::-webkit-scrollbar {
+		display: none;
+	}
+	@media screen and (max-width: 660px) {
+		.sneaky-scroll {
+			width: 100%;
+		}
+	}
+}
 .wizard-title_box {
 	display: -webkit-box;
 	display: -webkit-flex;

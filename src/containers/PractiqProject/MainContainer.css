@@ -5,7 +5,7 @@
   bottom: 0;
   left: 0;
   background: #000000;
-  z-index: 100;
+  z-index: 70;
   transition: 0.5s;
 }
 .wizardModal-enter {
