@@ -9,8 +9,9 @@
   margin-bottom: 17px;
 }
 .wizard-frame {
-  position: absolute;
+  position: fixed;
   width: 100%;
+  height: 100%;
   display: -webkit-box;
   display: -webkit-flex;
   display: -moz-box;
@@ -23,6 +24,15 @@
   z-index: 101;
   top: 0;
   left: 0;
+}
+.sneaky-scroll {
+  overflow-y: scroll;
+  padding-bottom: 90px;
+  overscroll-behavior: contain;
+  border-radius: 18px;
+}
+.sneaky-scroll::-webkit-scrollbar {
+  display: none;
 }
 .wizard-title_box {
   display: -webkit-box;

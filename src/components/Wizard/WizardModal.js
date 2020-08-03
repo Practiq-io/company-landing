@@ -28,27 +28,29 @@ export default class WizardModal extends Component {
 		return (
 			<>
 				<div className="wizard-frame">
-					<div className="wizard-modal">
-						<div className="wizard-title_box">
-							<p>Get started</p>
-							<img onClick={toggle} src={close} alt="modal button close" />
-						</div>
-
-						<WizardProgressBar step={step} />
-
-						{this.state.step < 7 ? (
-							<div className="wizard-step-box">
-								<p>step {step} of 6</p>
+					<div className="sneaky-scroll">
+						<div className="wizard-modal">
+							<div className="wizard-title_box">
+								<p>Get started</p>
+								<img onClick={toggle} src={close} alt="modal button close" />
 							</div>
-						) : null}
 
-						<div className="wizard-modal-component_output">
-							<WizardContainer
-								toggleWizard={toggle}
-								step={step}
-								next={this.nextStep}
-								back={this.prevStep}
-							/>
+							<WizardProgressBar step={step} />
+
+							{this.state.step < 7 ? (
+								<div className="wizard-step-box">
+									<p>step {step} of 6</p>
+								</div>
+							) : null}
+
+							<div className="wizard-modal-component_output">
+								<WizardContainer
+									toggleWizard={toggle}
+									step={step}
+									next={this.nextStep}
+									back={this.prevStep}
+								/>
+							</div>
 						</div>
 					</div>
 				</div>
