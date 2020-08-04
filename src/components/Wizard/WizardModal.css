@@ -38,8 +38,9 @@
   display: none;
 }
 @media screen and (max-width: 660px) {
-  .sneaky-scroll .sneaky-scroll {
-    width: 90%;
+  .sneaky-scroll {
+    width: 100%;
+    padding: 5px 5px 5px 5px;
   }
 }
 .wizard-title_box {

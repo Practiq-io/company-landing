@@ -5,22 +5,15 @@ import landingPageIcon from "../ServicesCard/ServicesCardImg/landingPage.svg";
 import SPAIcon from "../ServicesCard/ServicesCardImg/frontSPA.svg";
 import componentIcon from "../ServicesCard/ServicesCardImg/component.svg";
 
-const FrontEnd = props => {
-	const {animationSettings, toggleSpecificTask} = props;
+const FrontEnd = (props) => {
+	const { toggleSpecificTask } = props;
 	return (
 		<div className="frontendCarouselFrame">
 			<ServicesCarousel>
 				<ServicesCard
-					cardBodyAnimation={animationSettings("fade-up", "450", "800")}
-					cardLogoAnimation={animationSettings("zoom-in", "1150", "600")}
-					cardTitleAnimation={animationSettings("fade-right", "750", "600" )}
-					cardSubTitleAnimation={animationSettings("fade-right", "950", "600" )}
-					cardExampleAnimation={animationSettings("fade-right", "1150", "600" )}
-					cardTextAnimation={animationSettings("fade-right", "1350", "600")}
-					cardButtonAnimation={animationSettings("zoom-in", "1550", "800")}
-					cardAnimationTrigger={"#services-animation-trigger"}
-
-					toggleSpecificTask={() => toggleSpecificTask("Landing page","frontend")}
+					toggleSpecificTask={() =>
+						toggleSpecificTask("Landing page", "frontend")
+					}
 					id={"Landingpage"}
 					imgPath={landingPageIcon}
 					title={"Landing page"}
@@ -33,16 +26,9 @@ const FrontEnd = props => {
 				/>
 
 				<ServicesCard
-					cardBodyAnimation={animationSettings("fade-up", "750", "800")}
-					cardLogoAnimation={animationSettings("zoom-in", "1150", "600")}
-					cardTitleAnimation={animationSettings("fade-right", "750", "600" )}
-					cardSubTitleAnimation={animationSettings("fade-right", "950", "600" )}
-					cardExampleAnimation={animationSettings("fade-right", "1150", "600" )}
-					cardTextAnimation={animationSettings("fade-right", "1350", "600")}
-					cardButtonAnimation={animationSettings("zoom-in", "1550", "800")}
-					cardAnimationTrigger={"#services-animation-trigger"}
-
-					toggleSpecificTask={() => toggleSpecificTask("Single page application","frontend")}
+					toggleSpecificTask={() =>
+						toggleSpecificTask("Single page application", "frontend")
+					}
 					id={"Single page web application"}
 					imgPath={SPAIcon}
 					title={"Single page web application"}
@@ -55,16 +41,9 @@ const FrontEnd = props => {
 				/>
 
 				<ServicesCard
-					cardBodyAnimation={animationSettings("fade-up", "1050", "800")}
-					cardLogoAnimation={animationSettings("zoom-in", "1150", "600")}
-					cardTitleAnimation={animationSettings("fade-right", "750", "600" )}
-					cardSubTitleAnimation={animationSettings("fade-right", "950", "600" )}
-					cardExampleAnimation={animationSettings("fade-right", "1150", "600" )}
-					cardTextAnimation={animationSettings("fade-right", "1350", "600")}
-					cardButtonAnimation={animationSettings("zoom-in", "1550", "800")}
-					cardAnimationTrigger={"#services-animation-trigger"}
-
-					toggleSpecificTask={() => toggleSpecificTask("Frontend component","frontend")}
+					toggleSpecificTask={() =>
+						toggleSpecificTask("Frontend component", "frontend")
+					}
 					id={"Frontendcomponent"}
 					imgPath={componentIcon}
 					title={"Frontend component"}
