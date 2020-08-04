@@ -60,7 +60,7 @@ class HeroBlock extends Component {
 							</div>
 						</div>
 
-						<button className="mobile-hero-button">Get started</button>
+						<button onClick={toggle} className="mobile-hero-button">Get started</button>
 
 						<div className="code_window">
 							<div 

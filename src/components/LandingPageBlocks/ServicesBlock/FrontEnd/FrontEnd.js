@@ -6,7 +6,7 @@ import SPAIcon from "../ServicesCard/ServicesCardImg/frontSPA.svg";
 import componentIcon from "../ServicesCard/ServicesCardImg/component.svg";
 
 const FrontEnd = props => {
-	const {animationSettings} = props;
+	const {animationSettings, toggleSpecificTask} = props;
 	return (
 		<div className="frontendCarouselFrame">
 			<ServicesCarousel>
@@ -20,6 +20,7 @@ const FrontEnd = props => {
 					cardButtonAnimation={animationSettings("zoom-in", "1550", "800")}
 					cardAnimationTrigger={"#services-animation-trigger"}
 
+					toggleSpecificTask={() => toggleSpecificTask("Landing page","frontend")}
 					id={"Landingpage"}
 					imgPath={landingPageIcon}
 					title={"Landing page"}
@@ -41,6 +42,7 @@ const FrontEnd = props => {
 					cardButtonAnimation={animationSettings("zoom-in", "1550", "800")}
 					cardAnimationTrigger={"#services-animation-trigger"}
 
+					toggleSpecificTask={() => toggleSpecificTask("Single page application","frontend")}
 					id={"Single page web application"}
 					imgPath={SPAIcon}
 					title={"Single page web application"}
@@ -62,6 +64,7 @@ const FrontEnd = props => {
 					cardButtonAnimation={animationSettings("zoom-in", "1550", "800")}
 					cardAnimationTrigger={"#services-animation-trigger"}
 
+					toggleSpecificTask={() => toggleSpecificTask("Frontend component","frontend")}
 					id={"Frontendcomponent"}
 					imgPath={componentIcon}
 					title={"Frontend component"}

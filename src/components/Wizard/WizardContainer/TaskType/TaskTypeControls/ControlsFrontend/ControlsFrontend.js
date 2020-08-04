@@ -14,6 +14,8 @@ export default class ControlsFrontend extends Component {
 			} else {
 				this.props.selectTask("Landing page");
 			}
+		} else if (this.props.specificTask){
+			this.props.selectTask(this.props.specificTask);
 		} else {
 			this.props.selectTask("Landing page");
 		}

@@ -134,11 +134,12 @@ export class WizardContainer extends Component {
 		}
 		console.log("Wizard data for backend :", backendData);
 	}
-
+	
 	componentWillUnmount() {
 		let data = { ...this.state.data };
 		data = {};
 		this.setState({ data });
+		this.props.resetWizardTask();
 	}
 
 	setWizardProperties = (properties) => {
@@ -155,7 +156,7 @@ export class WizardContainer extends Component {
 
 	render() {
 		const containerState = this.state;
-		const { back, next, step, toggleWizard } = this.props;
+		const { back, next, step, toggleWizard, specificTask, programmingType } = this.props;
 		
 		return (
 			<>
@@ -200,6 +201,8 @@ export class WizardContainer extends Component {
 							nextStep={next}
 							setWizardProperties={this.setWizardProperties}
 							containerState={containerState.data.specification}
+							specificTask={specificTask}
+							programmingType={programmingType}
 						/>
 					</Animated>
 				) : null}
@@ -258,7 +261,6 @@ export class WizardContainer extends Component {
 						<Success
 							backendData={this.prepareObject}
 							toggleWizard={toggleWizard}
-							containerState={containerState.data}
 						/>
 					</Animated>
 				) : null}

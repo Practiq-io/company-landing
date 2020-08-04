@@ -25,7 +25,8 @@ class ServicesCard extends Component {
 		const {
 			cardBodyAnimation, cardLogoAnimation, cardTitleAnimation, 
 			cardTextAnimation, cardExampleAnimation, 
-			cardButtonAnimation, cardSubTitleAnimation 
+			cardButtonAnimation, cardSubTitleAnimation, 
+			toggleSpecificTask
 		} = this.props;
 
 		const cardBodyDelay = cardBodyAnimation.delay ? cardBodyAnimation.delay : null;
@@ -164,7 +165,8 @@ class ServicesCard extends Component {
 						</div>
 					</div>
 
-					<div 
+					<div
+						onClick={() => toggleSpecificTask()}
 						data-aos-anchor={cardAnimationTrigger}
 						data-aos={cardButtonAosName}
 						data-aos-duration={cardButtonDuration}

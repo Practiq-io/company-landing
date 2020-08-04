@@ -33,6 +33,7 @@
 	display: none;
 }
 .mobile-hero-button {
+	cursor: pointer;
 	display: none;
 }
 section .grid_wrapper .code_window .code_block {

@@ -4,10 +4,9 @@ import ServicesCard from "../ServicesCard/ServicesCard";
 import API from "../ServicesCard/ServicesCardImg/apiLogo.svg";
 import connector from "../ServicesCard/ServicesCardImg/connectorLogo.svg";
 import longProcess from "../ServicesCard/ServicesCardImg/longRunning.svg";
-import landingComponentIcon from '../ServicesCard/ServicesCardImg/BACKENDSPA.svg';
 
 const BackEnd = props => {
-	const {animationSettings} = props;
+	const {animationSettings, toggleSpecificTask} = props;
 	return (
 		<div className="backendCarouselFrame">
 			<ServicesCarousel>
@@ -21,6 +20,7 @@ const BackEnd = props => {
 					cardButtonAnimation={animationSettings("zoom-in", "1550", "800")}
 					cardAnimationTrigger={"#services-animation-trigger"}
 
+					toggleSpecificTask={() => toggleSpecificTask("General purpose API","backend")}
 					id={"api"}
 					imgPath={API}
 					title={"General purpose API"}
@@ -42,6 +42,7 @@ const BackEnd = props => {
 					cardButtonAnimation={animationSettings("zoom-in", "1550", "800")}
 					cardAnimationTrigger={"#services-animation-trigger"}
 
+					toggleSpecificTask={() => toggleSpecificTask("API Connector/Adapter","backend")}
 					id={"connector"}
 					imgPath={connector}
 					title={"API Connector/Adapter"}
@@ -63,6 +64,7 @@ const BackEnd = props => {
 					cardButtonAnimation={animationSettings("zoom-in", "1550", "800")}
 					cardAnimationTrigger={"#services-animation-trigger"}
 
+					toggleSpecificTask={() => toggleSpecificTask("Long running process","backend")}
 					id={"longprocess"}
 					imgPath={longProcess}
 					title={"Long running process"}
@@ -74,26 +76,6 @@ const BackEnd = props => {
 					}
 				/>
 
-				<ServicesCard
-					cardBodyAnimation={animationSettings("fade-up", "1350", "800")}
-					cardLogoAnimation={animationSettings("zoom-in", "1150", "600")}
-					cardTitleAnimation={animationSettings("fade-right", "750", "600" )}
-					cardSubTitleAnimation={animationSettings("fade-right", "950", "600" )}
-					cardExampleAnimation={animationSettings("fade-right", "1150", "600" )}
-					cardTextAnimation={animationSettings("fade-right", "1350", "600")}
-					cardButtonAnimation={animationSettings("fade-zoom-in", "1550", "200")}
-					cardAnimationTrigger={"#services-animation-trigger"}
-
-					id={"Landing page / SPA / Component"}
-					imgPath={landingComponentIcon}
-					title={"Landing page / SPA / Component"}
-					subTitle={
-						"General purpose script that is not deployed anywhere and can be executed on demand on any machine."
-					}
-					textBody={
-						"・A script that scrapes a competitors website to deduplicate products based on the existing base and add competitive pricing data.・Script that parses Excel data and creates a certain report based on it (actual problem in audit firms. They have reporting departments for that)"
-					}
-				/>
 			</ServicesCarousel>
 		</div>
 	);
