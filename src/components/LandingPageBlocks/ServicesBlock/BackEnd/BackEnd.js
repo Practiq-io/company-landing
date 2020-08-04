@@ -7,7 +7,7 @@ import longProcess from "../ServicesCard/ServicesCardImg/longRunning.svg";
 import landingComponentIcon from '../ServicesCard/ServicesCardImg/BACKENDSPA.svg';
 
 const BackEnd = props => {
-	const {animationSettings} = props;
+	const {animationSettings, toggle} = props;
 	return (
 		<div className="backendCarouselFrame">
 			<ServicesCarousel>
@@ -21,6 +21,7 @@ const BackEnd = props => {
 					cardButtonAnimation={animationSettings("zoom-in", "1550", "800")}
 					cardAnimationTrigger={"#services-animation-trigger"}
 
+					toggle={toggle}
 					id={"api"}
 					imgPath={API}
 					title={"General purpose API"}

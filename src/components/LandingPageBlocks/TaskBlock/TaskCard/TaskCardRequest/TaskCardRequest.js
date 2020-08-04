@@ -27,7 +27,7 @@ const TaskCardRequest = (props) => {
 					</p>
 				</div>
 
-				<div className="TCR-Card-button">
+				<div onClick={() => props.toggle()} className="TCR-Card-button">
 					<p>Send request</p>
 				</div>
 				

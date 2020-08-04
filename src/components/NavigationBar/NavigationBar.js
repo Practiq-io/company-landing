@@ -14,6 +14,7 @@ class NavigationBar extends Component {
 	}
   
 	render() {
+		const {toggle} = this.props;
 		return (
 			<>
 				<nav
@@ -23,6 +24,7 @@ class NavigationBar extends Component {
 						<MobileNavigation
 							display={this.state.mobileNavigation}
 							toggle={this.toggleMobileMenu}
+							toggleWizard={toggle}
 						/>
 					</div>
 
@@ -48,7 +50,7 @@ class NavigationBar extends Component {
 									<a href="#how-it-works_anchor">How it works</a>
 									<a href="#who-block_anchor">About us</a>
 									<a 
-										
+										onClick={toggle}
 										href="#start"
 									>
 										Get started

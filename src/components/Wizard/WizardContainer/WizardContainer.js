@@ -156,7 +156,7 @@ export class WizardContainer extends Component {
 	render() {
 		const containerState = this.state;
 		const { back, next, step, toggleWizard } = this.props;
-		
+		console.log("need to copy this state", this.state );
 		return (
 			<>
 				{step === 1 ? (

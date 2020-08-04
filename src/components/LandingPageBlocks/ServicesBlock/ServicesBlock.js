@@ -23,7 +23,7 @@ class ServicesBlock extends Component {
 	};
 
 	render() {
-		const {animationSettings} = this.props;
+		const {animationSettings, toggle} = this.props;
 
 		return (
 			<section className="SB-Section" id="services-block_anchor">
@@ -83,6 +83,7 @@ class ServicesBlock extends Component {
 								isVisible={this.state.displayed === "backend"}
 							>
 								<BackEnd
+									toggle={toggle}
 									animationSettings={animationSettings}
 								/>
 							</Animated>

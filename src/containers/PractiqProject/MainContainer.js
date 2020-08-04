@@ -82,9 +82,11 @@ class MainContainer extends Component {
 				/>
 				<TaskBlock 
 					animationSettings={animationByClass}
+					toggle={toggle} 
 				/>
 				<ServicesBlock 
 					animationSettings={animationByClass}
+					toggle={toggle}
 				/>
 				<HowItWorksBlock />
 				<WhoBlock />

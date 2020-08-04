@@ -11,6 +11,9 @@ export default class App extends Component {
 		toggle: () => {
 			this.setState({ showWizard: !this.state.showWizard });
 		},
+		toggleSpecificTask: () => {
+			this.setState({ showWizard: !this.state.showWizard });
+		},
 		bodyIsVisible: false
 	};
 
@@ -34,7 +37,7 @@ export default class App extends Component {
 				}}
 				className="App"
 			>
-				<NavigationBar />
+				<NavigationBar toggle={this.state.toggle} />
 				
 				<MainContainer wizard={this.state} />
 

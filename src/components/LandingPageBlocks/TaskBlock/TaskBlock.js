@@ -11,7 +11,7 @@ import TaskCardRequest from "./TaskCard/TaskCardRequest/TaskCardRequest";
 
 
 const TaskBlock = (props) => {
-	const {animationSettings} = props;
+	const {animationSettings, toggle} = props;
 
 	return (
 		<section className="TB-Section">
@@ -83,7 +83,8 @@ const TaskBlock = (props) => {
 							}
 						/>
 
-						<TaskCardRequest 
+						<TaskCardRequest
+							toggle={toggle}
 							cardBodyAnimation={animationSettings("fade-up", "2050", "600", null)}
 							cardAnimationTrigger={"#task-animation-trigger"}
 						/>
