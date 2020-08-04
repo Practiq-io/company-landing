@@ -23,28 +23,26 @@ class ServicesBlock extends Component {
 	};
 
 	render() {
-		const {animationSettings, toggleSpecificTask} = this.props;
+		const { toggleSpecificTask } = this.props;
 
 		return (
 			<section className="SB-Section" id="services-block_anchor">
 				<div className="wrapper">
 					<content className="upperServicesBox">
-						<h2 
+						<h2
 							data-aos-anchor="#services-animation-trigger"
-							data-aos="fade-down" 
-							data-aos-duration="800" 
-
+							data-aos="fade-down"
+							data-aos-duration="800"
 							className="servicesTitle"
 						>
 							What we can build for you
 						</h2>
 						<div className="ui_mobile_dash"></div>
-						<div 
+						<div
 							data-aos-anchor="#services-animation-trigger"
 							data-aos="fade-in"
 							data-aos-duration="800"
 							data-aos-delay="450"
-
 							className="servicesButtonBox"
 						>
 							<p
@@ -76,35 +74,42 @@ class ServicesBlock extends Component {
 					</content>
 
 					<content className="lowerServicesBox">
-						{ this.state.displayed === "backend" ? (
+						{this.state.displayed === "backend" ? (
 							<Animated
 								animationIn="fadeIn"
 								animationOut="fadeOut"
 								isVisible={this.state.displayed === "backend"}
 							>
-								<BackEnd
-									toggleSpecificTask={toggleSpecificTask}
-									animationSettings={animationSettings}
+								<BackEnd 
+									data-aos="fade-down" 
+									data-aos-duration="800"
+									data-aos-delay="800"
+
+									toggleSpecificTask={toggleSpecificTask} 
 								/>
 							</Animated>
 						) : null}
-						
-						{ this.state.displayed === "frontend" ? (
+
+						{this.state.displayed === "frontend" ? (
 							<Animated
 								animationIn="fadeIn"
 								animationOut="fadeOut"
 								isVisible={this.state.displayed === "frontend"}
 							>
-								<FrontEnd
-									toggleSpecificTask={toggleSpecificTask}
-									animationSettings={animationSettings}
+								<FrontEnd 
+									data-aos="fade-down" 
+									data-aos-duration="800"
+									data-aos-delay="800"
+									toggleSpecificTask={toggleSpecificTask} 
 								/>
 							</Animated>
 						) : null}
-
 					</content>
 				</div>
-				<div id="services-animation-trigger" className="services-block_trigger-box"></div>
+				<div
+					id="services-animation-trigger"
+					className="services-block_trigger-box"
+				></div>
 			</section>
 		);
 	}

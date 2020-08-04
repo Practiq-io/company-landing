@@ -5,22 +5,15 @@ import API from "../ServicesCard/ServicesCardImg/apiLogo.svg";
 import connector from "../ServicesCard/ServicesCardImg/connectorLogo.svg";
 import longProcess from "../ServicesCard/ServicesCardImg/longRunning.svg";
 
-const BackEnd = props => {
-	const {animationSettings, toggleSpecificTask} = props;
+const BackEnd = (props) => {
+	const { toggleSpecificTask } = props;
 	return (
 		<div className="backendCarouselFrame">
 			<ServicesCarousel>
 				<ServicesCard
-					cardBodyAnimation={animationSettings("fade-up", "450", "800")}
-					cardLogoAnimation={animationSettings("zoom-in", "1150", "600")}
-					cardTitleAnimation={animationSettings("fade-right", "750", "600" )}
-					cardSubTitleAnimation={animationSettings("fade-right", "950", "600" )}
-					cardExampleAnimation={animationSettings("fade-right", "1150", "600" )}
-					cardTextAnimation={animationSettings("fade-right", "1350", "600")}
-					cardButtonAnimation={animationSettings("zoom-in", "1550", "800")}
-					cardAnimationTrigger={"#services-animation-trigger"}
-
-					toggleSpecificTask={() => toggleSpecificTask("General purpose API","backend")}
+					toggleSpecificTask={() =>
+						toggleSpecificTask("General purpose API", "backend")
+					}
 					id={"api"}
 					imgPath={API}
 					title={"General purpose API"}
@@ -33,16 +26,9 @@ const BackEnd = props => {
 				/>
 
 				<ServicesCard
-					cardBodyAnimation={animationSettings("fade-up", "750", "800")}
-					cardLogoAnimation={animationSettings("zoom-in", "1150", "600")}
-					cardTitleAnimation={animationSettings("fade-right", "750", "600" )}
-					cardSubTitleAnimation={animationSettings("fade-right", "950", "600" )}
-					cardExampleAnimation={animationSettings("fade-right", "1150", "600" )}
-					cardTextAnimation={animationSettings("fade-right", "1350", "600")}
-					cardButtonAnimation={animationSettings("zoom-in", "1550", "800")}
-					cardAnimationTrigger={"#services-animation-trigger"}
-
-					toggleSpecificTask={() => toggleSpecificTask("API Connector/Adapter","backend")}
+					toggleSpecificTask={() =>
+						toggleSpecificTask("API Connector/Adapter", "backend")
+					}
 					id={"connector"}
 					imgPath={connector}
 					title={"API Connector/Adapter"}
@@ -55,16 +41,9 @@ const BackEnd = props => {
 				/>
 
 				<ServicesCard
-					cardBodyAnimation={animationSettings("fade-up", "1050", "800")}
-					cardLogoAnimation={animationSettings("zoom-in", "1150", "600")}
-					cardTitleAnimation={animationSettings("fade-right", "750", "600" )}
-					cardSubTitleAnimation={animationSettings("fade-right", "950", "600" )}
-					cardExampleAnimation={animationSettings("fade-right", "1150", "600" )}
-					cardTextAnimation={animationSettings("fade-right", "1350", "600")}
-					cardButtonAnimation={animationSettings("zoom-in", "1550", "800")}
-					cardAnimationTrigger={"#services-animation-trigger"}
-
-					toggleSpecificTask={() => toggleSpecificTask("Long running process","backend")}
+					toggleSpecificTask={() =>
+						toggleSpecificTask("Long running process", "backend")
+					}
 					id={"longprocess"}
 					imgPath={longProcess}
 					title={"Long running process"}
@@ -75,7 +54,6 @@ const BackEnd = props => {
 						"・A process that is listening to a stock market, aggregating the data and saving it somewhere for further analysis."
 					}
 				/>
-
 			</ServicesCarousel>
 		</div>
 	);

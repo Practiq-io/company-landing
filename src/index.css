@@ -104,13 +104,11 @@ a {
 	-moz-box-sizing: border-box;
 	     box-sizing: border-box;
 }
-
 .overflow_wrapper {
 	overflow-x: hidden;
 }
-
 :active, :focus {
 	outline: 0;
 	border: none;
 	-moz-outline-style: none;
-  }
+}

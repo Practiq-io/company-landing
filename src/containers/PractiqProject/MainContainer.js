@@ -1,6 +1,4 @@
 import React, { Component } from "react";
-import AOS from 'aos';
-import 'aos/dist/aos.css';
 import HeroBlock from "../../components/LandingPageBlocks/HeroBlock/HeroBlock";
 import PromoBlock from "../../components/LandingPageBlocks/PromoBlock/PromoBlock";
 import TaskBlock from "../../components/LandingPageBlocks/TaskBlock/TaskBlock";
@@ -11,6 +9,8 @@ import MediumBlock from "../../components/LandingPageBlocks/MediumBlock/MediumBl
 import WizardModal from "../../components/Wizard/WizardModal";
 import "./MainContainer.css";
 import { CSSTransition } from "react-transition-group";
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
 
 class MainContainer extends Component {
@@ -18,10 +18,13 @@ class MainContainer extends Component {
 	componentWillMount(){
 		this.updateWindowDimensions();
 	}
+	
+	updateWindowDimensions() {
+		this.setState({ windowWidth: window.innerWidth });
+	}
 
 	componentDidMount(){
-
-		if(this.state.windowWidth > 1000){
+		if(this.state.windowWidth >= 1000){
 			AOS.init({
 				once: true, 
 				easing: 'ease-out-cubic',
@@ -35,12 +38,7 @@ class MainContainer extends Component {
 		
 	}
 
-	updateWindowDimensions() {
-		this.setState({ windowWidth: window.innerWidth });
-	}
-
 	render() {
-		
 		const { showWizard, toggle, toggleSpecificTask, specificTask, programmingType, resetWizardTask } = this.props.wizard;
 		const animationByClass = (name, delay, duration, trigger) => {
 			return {
@@ -87,7 +85,6 @@ class MainContainer extends Component {
 					toggle={toggle} 
 				/>
 				<ServicesBlock
-					animationSettings={animationByClass}
 					toggle={toggle}
 					toggleSpecificTask={toggleSpecificTask}
 				/>
