@@ -14,6 +14,8 @@ export default class ControlsBackend extends Component {
 			} else {
 				this.props.selectTask("General purpose API");
 			}
+		} else if (this.props.specificTask){
+			this.props.selectTask(this.props.specificTask);
 		} else {
 			this.props.selectTask("General purpose API");
 		}

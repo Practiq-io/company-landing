@@ -41,7 +41,7 @@ class MainContainer extends Component {
 
 	render() {
 		
-		const { showWizard, toggle } = this.props.wizard;
+		const { showWizard, toggle, toggleSpecificTask, specificTask, programmingType, resetWizardTask } = this.props.wizard;
 		const animationByClass = (name, delay, duration, trigger) => {
 			return {
 				delay: delay,
@@ -68,10 +68,12 @@ class MainContainer extends Component {
 					unmountOnExit
 				>
 					<WizardModal
+						resetWizardTask={resetWizardTask}
+						specificTask={specificTask}
+						programmingType={programmingType}
 						showWizard={showWizard}
 						toggle={toggle}
-					/>
-                
+					/>                
 				</CSSTransition>
 					
 				<HeroBlock
@@ -84,9 +86,10 @@ class MainContainer extends Component {
 					animationSettings={animationByClass}
 					toggle={toggle} 
 				/>
-				<ServicesBlock 
+				<ServicesBlock
 					animationSettings={animationByClass}
 					toggle={toggle}
+					toggleSpecificTask={toggleSpecificTask}
 				/>
 				<HowItWorksBlock />
 				<WhoBlock />

@@ -20,10 +20,10 @@ export default class WizardModal extends Component {
 	prevStep = () => {
 		this.setState({ step: this.state.step - 1 });
 	};
-
+	
 	render() {
 		const { step } = this.state;
-		const { toggle } = this.props;
+		const { toggle , specificTask , programmingType, resetWizardTask } = this.props;
 		
 		return (
 			<>
@@ -45,6 +45,9 @@ export default class WizardModal extends Component {
 
 							<div className="wizard-modal-component_output">
 								<WizardContainer
+									resetWizardTask={resetWizardTask}
+									specificTask={specificTask}
+									programmingType={programmingType}
 									toggleWizard={toggle}
 									step={step}
 									next={this.nextStep}
