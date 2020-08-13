@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import "./NavigationBar.css";
-import logo from "../../image/logo.png";
-import mobileLogo from "../../image/mobileLogo.png";
+import logo from "../../image/logo.svg";
+import mobileLogo from "../../image/mobileLogo.svg";
 import MobileNavigation from "./mobileNavigation/mobileNavigation";
 
 class NavigationBar extends Component {

@@ -50,6 +50,7 @@
     display: block;
     width: 40px;
     height: 2px;
+    left: -webkit-calc(30%);
     left: calc(50% - 20px);
     bottom: 30px;
     background-color: #1371fd;
@@ -112,6 +113,15 @@
   font-family: 'Circle-Regular';
   font-size: 1rem;
   line-height: 20px;
+  background: -webkit-gradient(linear, left top, right top, from(#2473EA), to(#6fa1ec));
+  background: -webkit-linear-gradient(left, #2473EA, #6fa1ec);
+  background: linear-gradient(to right, #2473EA, #6fa1ec);
+  border-bottom-left-radius: 12px;
+  border-bottom-right-radius: 12px;
+}
+.WB-Section .WB-content .person-card .person .who-block-text p {
+  letter-spacing: 0.7px;
+  line-height: 22px;
 }
 @media screen and (max-width: 1220px) {
   .WB-Section .WB-content .person-card .person {

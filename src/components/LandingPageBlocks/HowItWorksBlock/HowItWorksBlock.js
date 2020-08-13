@@ -1,16 +1,16 @@
 import React from "react";
 import "./HowItWorksBlock.css";
-import faceLogo from "../../../image/face.png";
+import faceLogo from "../../../image/face.svg";
 import dotsDesc from "../../../image/dots-desctop.png";
 import dotsDesctopBlock2 from "../../../image/dotsDesctopBlock2.png";
 import dotsDesctopBlock3 from "../../../image/dotsDesctopBlock3.png";
 import dotsDesctopBlock4 from "../../../image/dotsDesctopBlock4.png";
-import Lisa from "../../../image/Lisa.png";
-import Mark from "../../../image/Mark.png";
-import Michael from "../../../image/Michael.png";
-import Lana from "../../../image/Lana.png";
-import codeWindow from "../../../image/codeWindow.png";
-import GitHub from "../../../image/GitHub.png";
+import Lisa from "../../../image/Lisa.svg";
+import Mark from "../../../image/Mark.svg";
+import Michael from "../../../image/Michael.svg";
+import Lana from "../../../image/Lana.svg";
+import codeWindow from "../../../image/codeWindow.svg";
+import GitHub from "../../../image/GitHub.svg";
 import dotsMobileBlock1 from "../../../image/dotsMobileBlock1.png";
 import dotsMobileBlock2 from "../../../image/dotsMobileBlock2.png";
 import dotsMobileBlock3 from "../../../image/dotsMobileBlock3.png";
@@ -78,7 +78,7 @@ const HowItWorksBlock = (props) => {
 
 									className="discription-text"
 								>
-									<p>I need to build CRM system for my online market</p>
+								
 								</div>
 							</div>
 						</div>
@@ -491,7 +491,7 @@ const HowItWorksBlock = (props) => {
 
 													className="mobilePosition"
 												>
-													How is your work going?
+												
 												</p>
 											</div>
 										</div>
@@ -524,7 +524,7 @@ const HowItWorksBlock = (props) => {
 												data-aos-delay="2850"
 												data-aos-duration="1000"
 											>
-												Hi!
+											
 											</p>
 											<p 
 												data-aos-anchor="#sixth-set-animation-trigger"
@@ -532,7 +532,7 @@ const HowItWorksBlock = (props) => {
 												data-aos-delay="3000"
 												data-aos-duration="1000"
 											>
-												All perfectly
+											
 											</p>
 										</div>
 									</div>
