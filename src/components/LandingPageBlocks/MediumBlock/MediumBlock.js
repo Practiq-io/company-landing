@@ -1,8 +1,8 @@
 import React from "react";
 import "./MediumBlock.css";
-import alcohol from "../../../image/alcohol.png";
-import hall from "../../../image/hall.png";
-import IkaAvatar from "../../../image/Ika-avatar.png";
+import alcohol from "../../../image/alcohol.svg";
+import hall from "../../../image/hall.svg";
+import IkaAvatar from "../../../image/Ika-avatar.svg";
 
 const MediumBlock = (props) => {
 	return (

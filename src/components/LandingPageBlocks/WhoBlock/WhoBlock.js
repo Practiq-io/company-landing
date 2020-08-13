@@ -1,10 +1,10 @@
 import React from "react";
 import "./WhoBlock.css";
-import linkid from "../../../image/linkid.png";
+import linkid from "../../../image/linkid.svg";
 import IkaMobile from "../../../image/Ika-mobile.png";
 import LizaMobile from "../../../image/Liza-mobile.png";
 import RomaMobile from "../../../image/Roma-mobile.png";
-import linkidMobile from "../../../image/linkid-blue.png";
+import linkidMobile from "../../../image/linkid-blue.svg";
 
 const WhoBlock = (props) => {
 	return (
