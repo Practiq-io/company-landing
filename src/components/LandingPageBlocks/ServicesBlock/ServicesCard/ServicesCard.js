@@ -28,7 +28,7 @@ class ServicesCard extends Component {
 			<div 
 				data-aos={this.props.animationName}
 				data-aos-delay={this.props.animationDelay}
-				data-aos-anchor-placement={this.props.animationAnchor}
+				
 
 				className="servicesCardBody"
 			>

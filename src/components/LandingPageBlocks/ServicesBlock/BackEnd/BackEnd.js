@@ -24,7 +24,7 @@ const BackEnd = (props) => {
 						"・Can be a back office API that just serves denormalized data from a number of other APIs or data storages."
 					}
 					
-					animationAnchor={"bottom-bottom"}
+					
 					animationName={"fade-up"}
 					animationDelay={"450"}
 				/>
