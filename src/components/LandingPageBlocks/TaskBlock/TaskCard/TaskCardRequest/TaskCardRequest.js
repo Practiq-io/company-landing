@@ -6,7 +6,6 @@ const TaskCardRequest = (props) => {
 	const cardBodyDelay = props.cardBodyAnimation.delay ? props.cardBodyAnimation.delay : null;
 	const cardBodyAosName = props.cardBodyAnimation.name ? props.cardBodyAnimation.name : null;
 	const cardBodyDuration = props.cardBodyAnimation.duration ? props.cardBodyAnimation.duration : null;
-	const cardAnimationTrigger = props.cardAnimationTrigger ? props.cardAnimationTrigger : null;
 
 	return (
 		<div 

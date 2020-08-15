@@ -118,26 +118,7 @@ const allTags = [
 		name: "Java10",
 	},
 ];
-function escapeRegexCharacters(str) {
-	return str.replace(/[.*+?^${}()|[\\]/g, "\\$&");
-}
-function getSuggestions(value) {
-	const escapedValue = escapeRegexCharacters(value.trim());
 
-	if (escapedValue === "") {
-		return [];
-	}
-
-	const regex = new RegExp("^" + escapedValue, "i");
-
-	return allTags.filter((language) => regex.test(language.name));
-}
-function getSuggestionValue(suggestion) {
-	return suggestion.name;
-}
-function renderSuggestion(suggestion) {
-	return <div className="custom-styles_span">{suggestion.name}</div>;
-}
 
 export default class Languages extends Component {
 	state = {
@@ -147,16 +128,41 @@ export default class Languages extends Component {
 		customDeliverables: "",
 		system: [],
 	};
-
 	onChange = (event, { newValue, method }) => {
 		this.setState({
 			value: newValue,
 			inputError: "",
 		});
 	};
+	escapeRegexCharacters(str) {
+		return str.replace(/[.*+?^${}()|[\\]/g, "\\$&");
+	}
+	getSuggestions(value) {
+		const escapedValue = this.escapeRegexCharacters(value.trim());
+	
+		if (escapedValue === "") {
+			return [];
+		}
+	
+		const regex = new RegExp("^" + escapedValue, "i");
+	
+		return allTags.filter((language) => regex.test(language.name));
+	}
+	getSuggestionValue(suggestion) {
+		return suggestion.name;
+	}
+	renderSuggestion(suggestion) {
+		return (
+			<div
+				className="custom-styles_span"
+			>
+				{suggestion.name}
+			</div>
+		);
+	}
 	onSuggestionsFetchRequested = ({ value }) => {
 		this.setState({
-			suggestions: getSuggestions(value),
+			suggestions: this.getSuggestions(value),
 		});
 	};
 	onSuggestionsClearRequested = () => {
@@ -164,6 +170,7 @@ export default class Languages extends Component {
 			suggestions: [],
 		});
 	};
+	
 	addPopularTag = (name) => {
 		if (this.state.selectedTags.length < 10) {
 			let newSelectedTag = [name, "junior"];
@@ -200,7 +207,7 @@ export default class Languages extends Component {
 			this.setState({ selectedTags });
 		}
 	};
-	addInputTagFunction = (event) => {
+	addInputTagFunction = () => {
 		const blockedRegex = /[\]!$%^&*()":{}|<>]/;
 		if (this.state.value.match(blockedRegex)) {
 			this.setState({ inputError: "* only string values" });
@@ -245,6 +252,54 @@ export default class Languages extends Component {
 			}
 		}
 	};
+
+	addInputTagAutosuggest = (name) => {
+		let languageName = name;
+		const blockedRegex = /[\]!$%^&*()":{}|<>]/;
+		if (languageName.match(blockedRegex)) {
+			this.setState({ inputError: "* only string values" });
+		} else {
+			if (languageName.length < 30) {
+				if (this.state.selectedTags.length < 10) {
+					let value = languageName;
+					let valueLowerCase = languageName.toLowerCase();
+					let selectedTags = [...this.state.selectedTags];
+					let popularTags = [...this.state.popularTags];
+
+					let popularTagsLowerCase = popularTags.map((lowerCase) => {
+						return lowerCase.toLowerCase();
+					});
+
+					let selectedTagsLowerCase = selectedTags.map((lowerCase) => {
+						return lowerCase[0].toLowerCase();
+					});
+
+					if (popularTagsLowerCase.includes(valueLowerCase)) {
+						let index = popularTagsLowerCase.indexOf(valueLowerCase);
+						let newSelectedTag = [popularTags[index], "junior"];
+						selectedTags.push(newSelectedTag);
+						popularTags.splice(index, 1);
+						value = "";
+						this.setState({ selectedTags, popularTags, value });
+					} else {
+						if (!selectedTagsLowerCase.includes(valueLowerCase)) {
+							let newSelectedTag = [value, "junior"];
+							selectedTags.push(newSelectedTag);
+							value = "";
+							this.setState({ selectedTags, value });
+						} else {
+							this.setState({ inputError: "* this tag is already selected" });
+						}
+					}
+				} else {
+					this.setState({ inputError: "* exceeded limit" });
+				}
+			} else {
+				this.setState({ inputError: "* too long string" });
+			}
+		}
+	};
+
 	addInputTag = (event) => {
 		if (event.key === "Enter") {
 			if (this.state.value) {
@@ -289,13 +344,16 @@ export default class Languages extends Component {
 			this.props.nextStep();
 		}
 	};
+	onSuggestionSelected = (event, { suggestion, suggestionValue, suggestionIndex, sectionIndex, method }) =>{
+		this.addInputTagAutosuggest(suggestionValue)
+    };	
 
 	render() {
 		const { value, suggestions, inputError } = this.state;
 		const inputProps = {
 			placeholder: "e.g., Java, React, Drupal, etc.",
 			value,
-			onChange: this.onChange,
+			onChange: this.onChange
 		};
 
 		const { prevStep } = this.props;
@@ -318,9 +376,10 @@ export default class Languages extends Component {
 								suggestions={suggestions}
 								onSuggestionsFetchRequested={this.onSuggestionsFetchRequested}
 								onSuggestionsClearRequested={this.onSuggestionsClearRequested}
-								getSuggestionValue={getSuggestionValue}
-								renderSuggestion={renderSuggestion}
+								getSuggestionValue={this.getSuggestionValue}
+								renderSuggestion={this.renderSuggestion}
 								inputProps={inputProps}
+								onSuggestionSelected={this.onSuggestionSelected}
 							/>
 							<p
 								onClick={this.addInputTag}
@@ -365,7 +424,7 @@ export default class Languages extends Component {
 						</p>
 						<TransitionGroup className="languages-popular-tags_output">
 							{this.state.popularTags
-								? this.state.popularTags.map(name => {
+								? this.state.popularTags.map((name) => {
 										return (
 											<CSSTransition
 												key={name}

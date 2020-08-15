@@ -44,12 +44,18 @@ export default class App extends Component {
 		return (
 			<>
 				<div
-					
+					style={{
+						display: this.state.bodyIsVisible ? "none" : "block"
+					}} 
 					className="loader-position"
 				>
-					<div style={{
-						display: this.state.bodyIsVisible ? "none" : "block"
-					}} className="loader"></div>
+					<div 
+						style={{
+							display: this.state.bodyIsVisible ? "none" : "block"
+						}} 
+						className="loader"
+					>
+					</div>
 				</div>
 				
 				<div

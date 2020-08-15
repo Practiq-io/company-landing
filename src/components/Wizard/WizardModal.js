@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import WizardContainer from "./WizardContainer/WizardContainer";
 import "./WizardModal.css";
-import close from "./WizardModalImg/close.png";
+import close from "./WizardModalImg/wizardClose.svg";
 import WizardProgressBar from "./WizardProgressBar/WizardProgressBar";
 
 export default class WizardModal extends Component {

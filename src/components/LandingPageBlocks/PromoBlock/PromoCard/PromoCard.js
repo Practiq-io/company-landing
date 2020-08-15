@@ -6,7 +6,6 @@ const PromoCard = props => {
 	const cardBodyDelay = props.cardBodyAnimation.delay ? props.cardBodyAnimation.delay : null;
 	const cardBodyAosName = props.cardBodyAnimation.name ? props.cardBodyAnimation.name : null;
 	const cardBodyDuration = props.cardBodyAnimation.duration ? props.cardBodyAnimation.duration : null;
-	const cardAnimationTrigger = props.cardAnimationTrigger ? props.cardAnimationTrigger : null;
 
 	const cardLogoDelay = props.cardLogoAnimation.delay ? props.cardLogoAnimation.delay : null;
 	const cardLogoAosName = props.cardLogoAnimation.name ? props.cardLogoAnimation.name : null;
@@ -28,7 +27,7 @@ const PromoCard = props => {
 				data-aos={cardTitleAosName}
 				data-aos-duration={cardTitleDuration}
 				data-aos-delay={cardTitleDelay}
-				data-aos-anchor-placement="bottom-bottom"
+				data-aos-anchor-placement="center-center"
 				className="pc-title"
 			>
 				<p>{props.title}</p>
@@ -43,7 +42,7 @@ const PromoCard = props => {
 				data-aos={cardTitleAosName}
 				data-aos-duration={cardTitleDuration}
 				data-aos-delay={cardTitleDelay} 
-				data-aos-anchor-placement="bottom-bottom"
+				data-aos-anchor-placement="center-center"
 				className="pc-subtitle"
 			>
 				<p>{props.subTitle}</p>
@@ -58,7 +57,7 @@ const PromoCard = props => {
 				data-aos={cardTextAosName}
 				data-aos-duration={cardTextDuration}
 				data-aos-delay={cardTextDelay} 
-				data-aos-anchor-placement="bottom-bottom"
+				data-aos-anchor-placement="center-center"
 				className="pc-text-body"
 			>
 				<p>{props.textBody}</p>
@@ -68,7 +67,7 @@ const PromoCard = props => {
 
 	return (
 		<div
-			data-aos-anchor-placement="bottom-bottom"
+			data-aos-anchor-placement="center-center"
 			data-aos={cardBodyAosName}
 			data-aos-duration={cardBodyDuration}
 			data-aos-delay={cardBodyDelay}
@@ -79,7 +78,7 @@ const PromoCard = props => {
 					data-aos={cardLogoAosName}
 					data-aos-duration={cardLogoDuration}
 					data-aos-delay={cardLogoDelay}
-					data-aos-anchor-placement="bottom-bottom"
+					data-aos-anchor-placement="center-center"
 					className="pc-img"
 				>
 					<img src={props.imgPath} alt=""/>

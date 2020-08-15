@@ -14,12 +14,12 @@ const PromoBlock = (props) => {
 			<div className="wrapper">
 				<div className="content_wrapper">
 					<div   className="weCode">
-						<h2 data-aos-anchor-placement="bottom-bottom" data-aos="fade-right" data-aos-duration="800">
+						<h2 data-aos-anchor-placement="center-center" data-aos="fade-right" data-aos-duration="800">
 							We code for production
 						</h2>
 
 						<p
-							data-aos-anchor-placement="bottom-bottom"
+							data-aos-anchor-placement="center-center"
 							data-aos="fade-right"
 							data-aos-duration="600"
 							data-aos-delay="450"
@@ -29,7 +29,7 @@ const PromoBlock = (props) => {
 						</p>
 
 						<p	
-							data-aos-anchor-placement="bottom-bottom"
+							data-aos-anchor-placement="center-center"
 							data-aos="fade-right"
 							data-aos-duration="600"
 							data-aos-delay="650"
@@ -40,7 +40,7 @@ const PromoBlock = (props) => {
 						</p>
 
 						<p
-							data-aos-anchor-placement="bottom-bottom"
+							data-aos-anchor-placement="center-center"
 							data-aos="fade-right"
 							data-aos-duration="600"
 							data-aos-delay="850"
@@ -50,7 +50,7 @@ const PromoBlock = (props) => {
 						</p>
 					</div>
 					
-					<div data-aos-anchor-placement="bottom-bottom" className="card_block">
+					<div data-aos-anchor-placement="center-center" className="card_block">
 						<PromoCard
 							cardLogoAnimation={animationSettings("zoom-in", "1350", "600",)}
 							cardTitleAnimation={animationSettings("fade-right", "750", "600", )}

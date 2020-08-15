@@ -6,7 +6,6 @@ import mobileCodePlaceholder from "../../../image/mobile-codeblock-plug.png";
 import "./HeroBlock.css";
 import { startAnimation } from "./animationScripts/animationScript";
 
-
 class HeroBlock extends Component {
 	componentDidMount() {
 		startAnimation();
@@ -17,9 +16,7 @@ class HeroBlock extends Component {
 		
 
 		return (
-			<section
-				className="wrapper"
-			>
+			<section>
 				<img src={background} className="large_image" alt="" />
 				<img src={mobileBg} className="mobile_image" alt="" />
 
@@ -32,9 +29,8 @@ class HeroBlock extends Component {
 							data-aos-duration="700"
 						>
 							<h1>
-								Let our pre-vetted developers build a
-								<br className="title-animation-linebreak"></br>{" "}
-								<span id="code_block-animation-title"></span> for you
+								Let our pre-vetted developers build a {" "}
+								<span className="lineBreakFix">{"< "}<span id="code_block-animation-title"></span>{" />"}</span><br className="title-animation-linebreak"></br> for you
 							</h1>
 						</div>
 
