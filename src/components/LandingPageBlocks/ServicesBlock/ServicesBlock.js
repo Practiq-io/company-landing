@@ -30,7 +30,7 @@ class ServicesBlock extends Component {
 				<div className="wrapper">
 					<content className="upperServicesBox">
 						<h2
-							data-aos-anchor-placement="bottom-bottom"
+							data-aos-anchor-placement="center-center"
 							data-aos="fade-down"
 							data-aos-duration="800"
 							className="servicesTitle"
@@ -39,7 +39,7 @@ class ServicesBlock extends Component {
 						</h2>
 						<div className="ui_mobile_dash"></div>
 						<div
-							data-aos-anchor-placement="bottom-bottom"
+							data-aos-anchor-placement="center-center"
 							data-aos="fade-in"
 							data-aos-duration="800"
 							data-aos-delay="450"

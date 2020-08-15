@@ -28,6 +28,7 @@
 #code_block-animation-title {
 	white-space: pre;
 	line-height: 71px;
+	display:inline-block;
 }
 .mobileCodeBlockPlaceholder {
 	display: none;
@@ -148,9 +149,14 @@ section .grid_wrapper {
 	grid-template-rows: repeat(3, minmax(min-content, max-content));
 	grid-template-areas: "section_title  code" "section_text  image " "button        image";
 }
+.lineBreakFix {
+	display: inline-block;
+	border-bottom: none!important;
+}
 section .grid_wrapper .section_title {
 	grid-area: section_title;
 	align-self: center;
+	display: inline-block;
 }
 section .grid_wrapper .section_title h1 {
 	font-family: "DINE-1451";
@@ -223,8 +229,9 @@ section .grid_wrapper .button button {
 	-webkit-align-items: center;
 	-moz-box-align: center;
 	align-items: center;
-	font-family: "RobotoMono-Regular";
-	font-size: 1rem;
+	font-family: 'Roboto Mono', monospace;
+	font-size: 16px;
+	font-weight: 300;
 	color: white;
 	padding: 13px 32px;
 	border: none;
@@ -361,7 +368,8 @@ section .grid_wrapper .working_image img {
 	section .grid_wrapper .section_title h1 {
 		color: white;
 		font-size: 1.75rem;
-		width: 280px;
+		width: 330px;
+		
 		line-height: 7px;
 		text-align: center;
 	}
