@@ -23,6 +23,10 @@ const BackEnd = (props) => {
 					textBody={
 						"・Can be a back office API that just serves denormalized data from a number of other APIs or data storages."
 					}
+					
+					animationAnchor={"bottom-bottom"}
+					animationName={"fade-up"}
+					animationDelay={"450"}
 				/>
 
 				<ServicesCard
@@ -38,6 +42,9 @@ const BackEnd = (props) => {
 					textBody={
 						"・Silenium.inc is a company that uses multiple payment providers and based on a payment event or a call needs to make a request to one of the providers・Flywithus is a flights ticket seller and needs to integrate new airline by integrating with their API"
 					}
+
+					animationName={"fade-up"}
+					animationDelay={"750"}
 				/>
 
 				<ServicesCard
@@ -53,6 +60,9 @@ const BackEnd = (props) => {
 					textBody={
 						"・A process that is listening to a stock market, aggregating the data and saving it somewhere for further analysis."
 					}
+
+					animationName={"fade-up"}
+					animationDelay={"1050"}
 				/>
 			</ServicesCarousel>
 		</div>

@@ -11,7 +11,8 @@ const TaskCard = (props) => {
 	return (
 		<div 
 			className="TC-Cardbox"
-			data-aos-anchor={cardAnimationTrigger}
+			
+			data-aos-anchor-placement="bottom-bottom"
 			data-aos={cardBodyAosName}
 			data-aos-duration={cardBodyDuration}
 			data-aos-delay={cardBodyDelay}

@@ -298,8 +298,6 @@ section .grid_wrapper .working_image img {
 	}
 	.mobile-hero-button {
 		display: block;
-	}
-	.mobile-hero-button {
 		font-size: 16px;
 		font-family: 'RobotoMono-Bold';
 		font-weight: 600;
@@ -312,7 +310,7 @@ section .grid_wrapper .working_image img {
 		align-self: start;
 		border-style: none;
 		padding: 10px 20px;
-		background-color: white;
+		background: white;
 		color: #1371fd;
 		margin-bottom: 25px;
 	}

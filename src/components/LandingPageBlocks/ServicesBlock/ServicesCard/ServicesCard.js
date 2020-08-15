@@ -25,7 +25,13 @@ class ServicesCard extends Component {
 		const { toggleSpecificTask } = this.props;
 
 		return (
-			<div className="servicesCardBody">
+			<div 
+				data-aos={this.props.animationName}
+				data-aos-delay={this.props.animationDelay}
+				data-aos-anchor-placement={this.props.animationAnchor}
+
+				className="servicesCardBody"
+			>
 				<div className="mobileWrap">
 					<div className="servicesCardImgbox">
 						<img
