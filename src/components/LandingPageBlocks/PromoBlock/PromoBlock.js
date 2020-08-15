@@ -19,7 +19,7 @@ const PromoBlock = (props) => {
 						</h2>
 
 						<p
-							data-aos-anchor-placement="center-center"
+							data-aos-anchor-placement="bottom-bottom"
 							data-aos="fade-right"
 							data-aos-duration="600"
 							data-aos-delay="450"
@@ -29,7 +29,7 @@ const PromoBlock = (props) => {
 						</p>
 
 						<p	
-							data-aos-anchor-placement="center-center"
+							data-aos-anchor-placement="bottom-bottom"
 							data-aos="fade-right"
 							data-aos-duration="600"
 							data-aos-delay="650"
@@ -40,7 +40,7 @@ const PromoBlock = (props) => {
 						</p>
 
 						<p
-							data-aos-anchor-placement="center-center"
+							data-aos-anchor-placement="bottom-bottom"
 							data-aos="fade-right"
 							data-aos-duration="600"
 							data-aos-delay="850"
@@ -50,7 +50,7 @@ const PromoBlock = (props) => {
 						</p>
 					</div>
 					
-					<div data-aos-anchor-placement="center-center" className="card_block">
+					<div data-aos-anchor-placement="bottom-bottom" className="card_block">
 						<PromoCard
 							cardLogoAnimation={animationSettings("zoom-in", "1350", "600",)}
 							cardTitleAnimation={animationSettings("fade-right", "750", "600", )}
@@ -89,7 +89,7 @@ const PromoBlock = (props) => {
 							imgPath={endTesting}
 						/>
 						<PromoCardCustomize
-							cardLogoAnimation={animationSettings("zoom-in", "2250", "600")}
+							cardLogoAnimation={animationSettings("zoom-in", "2050", "600")}
 							cardTitleAnimation={animationSettings("fade-right", "1650", "600", )}
 							cardTextAnimation={animationSettings("fade-right", "1950", "600")}
 							

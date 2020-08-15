@@ -27,7 +27,7 @@ const PromoCard = props => {
 				data-aos={cardTitleAosName}
 				data-aos-duration={cardTitleDuration}
 				data-aos-delay={cardTitleDelay}
-				data-aos-anchor-placement="center-center"
+				data-aos-anchor-placement="bottom-bottom"
 				className="pc-title"
 			>
 				<p>{props.title}</p>
@@ -42,7 +42,7 @@ const PromoCard = props => {
 				data-aos={cardTitleAosName}
 				data-aos-duration={cardTitleDuration}
 				data-aos-delay={cardTitleDelay} 
-				data-aos-anchor-placement="center-center"
+				data-aos-anchor-placement="bottom-bottom"
 				className="pc-subtitle"
 			>
 				<p>{props.subTitle}</p>
@@ -57,7 +57,7 @@ const PromoCard = props => {
 				data-aos={cardTextAosName}
 				data-aos-duration={cardTextDuration}
 				data-aos-delay={cardTextDelay} 
-				data-aos-anchor-placement="center-center"
+				data-aos-anchor-placement="bottom-bottom"
 				className="pc-text-body"
 			>
 				<p>{props.textBody}</p>
@@ -67,7 +67,7 @@ const PromoCard = props => {
 
 	return (
 		<div
-			data-aos-anchor-placement="center-center"
+			data-aos-anchor-placement="bottom-bottom"
 			data-aos={cardBodyAosName}
 			data-aos-duration={cardBodyDuration}
 			data-aos-delay={cardBodyDelay}
@@ -78,7 +78,7 @@ const PromoCard = props => {
 					data-aos={cardLogoAosName}
 					data-aos-duration={cardLogoDuration}
 					data-aos-delay={cardLogoDelay}
-					data-aos-anchor-placement="center-center"
+					data-aos-anchor-placement="bottom-bottom"
 					className="pc-img"
 				>
 					<img src={props.imgPath} alt=""/>

@@ -26,7 +26,6 @@
 	-webkit-tap-highlight-color: transparent;
 }
 #code_block-animation-title {
-	white-space: pre;
 	line-height: 71px;
 	display:inline-block;
 }
@@ -261,6 +260,9 @@ section .grid_wrapper .working_image img {
 	z-index: 2;
 }
 @media screen and (max-width: 1200px) {
+	#code_block-animation-title {
+		display:inline;
+	}
 	section .grid_wrapper .code_window .code_block {
 		width: 368px;
 		height: 180px;
@@ -289,6 +291,7 @@ section .grid_wrapper .working_image img {
 	section .grid_wrapper .section_title h1 {
 		font-size: 2.7rem;
 		line-height: 50px;
+		padding: 0 15px;
 	}
 	section .grid_wrapper .section_text p {
 		font-size: 0.8rem;

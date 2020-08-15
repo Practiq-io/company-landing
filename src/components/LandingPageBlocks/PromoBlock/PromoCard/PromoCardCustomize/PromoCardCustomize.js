@@ -27,7 +27,7 @@ const PromoCardCustomize = (props) => {
 				data-aos={cardTitleAosName}
 				data-aos-duration={cardTitleDuration}
 				data-aos-delay={cardTitleDelay}
-				data-aos-anchor-placement="center-center"
+				data-aos-anchor-placement="bottom-bottom"
 				className="pc-Customize-title"
 			>
 				<p>{props.title}</p>
@@ -42,7 +42,7 @@ const PromoCardCustomize = (props) => {
 				data-aos={cardTitleAosName}
 				data-aos-duration={cardTitleDuration}
 				data-aos-delay={cardTitleDelay}
-				data-aos-anchor-placement="center-center"
+				data-aos-anchor-placement="bottom-bottom"
 				className="pc-Customize-subtitle"
 			>
 				<p>{props.subTitle}</p>
@@ -57,7 +57,7 @@ const PromoCardCustomize = (props) => {
 				data-aos={cardTextAosName}
 				data-aos-duration={cardTextDuration}
 				data-aos-delay={cardTextDelay}
-				data-aos-anchor-placement="center-center"
+				data-aos-anchor-placement="bottom-bottom"
 				className="pc-Customize-text-body"
 			>
 				<p>{props.textBody}</p>
@@ -67,7 +67,7 @@ const PromoCardCustomize = (props) => {
 
 	return (
 		<div
-			data-aos-anchor-placement="center-center"
+			data-aos-anchor-placement="bottom-bottom"
 			data-aos={aosName}
 			data-aos-duration={duration}
 			data-aos-delay={delay}
@@ -78,7 +78,7 @@ const PromoCardCustomize = (props) => {
 					data-aos={cardLogoAosName}
 					data-aos-duration={cardLogoDuration}
 					data-aos-delay={cardLogoDelay}
-					data-aos-anchor-placement="center-center"	
+					data-aos-anchor-placement="bottom-bottom"	
 					className="pc-Customize-img"
 				>
 					<img src={addCard} alt="" />
