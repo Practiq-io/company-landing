@@ -149,6 +149,7 @@ section .grid_wrapper {
 	grid-template-areas: "section_title  code" "section_text  image " "button        image";
 }
 .lineBreakFix {
+	line-height: 74px;
 	display: inline-block;
 	border-bottom: none!important;
 }
