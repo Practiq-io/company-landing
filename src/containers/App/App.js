@@ -42,18 +42,29 @@ export default class App extends Component {
 
 	render() {
 		return (
-			<div
-				style={{
-					opacity: this.state.bodyIsVisible ? "1" : "0",
-				}}
-				className="App"
-			>
-				<NavigationBar toggle={this.state.toggle} />
+			<>
+				<div
+					
+					className="loader-position"
+				>
+					<div style={{
+						display: this.state.bodyIsVisible ? "none" : "block"
+					}} className="loader"></div>
+				</div>
+				
+				<div
+					style={{
+						opacity: this.state.bodyIsVisible ? "1" : "0",
+					}}
+					className="App"
+				>
+					<NavigationBar toggle={this.state.toggle} />
 
-				<MainContainer wizard={this.state} />
+					<MainContainer wizard={this.state} />
 
-				<Footer />
-			</div>
+					<Footer />
+				</div>
+			</>
 		);
 	}
 }

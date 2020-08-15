@@ -118,11 +118,3 @@ h2 {
 		font-size: 17px;
 	}
 }
-
-.task-block_trigger-box {
-	height: 50px;
-	width: 50px;
-	bottom: 100px;
-	background: transparent;
-	position: absolute;
-}

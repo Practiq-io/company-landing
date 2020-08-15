@@ -212,10 +212,3 @@
 		font-size: 2rem !important;
 	}
 }
-.promo-block_trigger-box {
-	height: 50px;
-	width: 50px;
-	bottom: 100px;
-	background: transparent;
-	position: absolute;
-}

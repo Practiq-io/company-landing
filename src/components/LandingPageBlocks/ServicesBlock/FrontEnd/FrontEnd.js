@@ -23,6 +23,10 @@ const FrontEnd = (props) => {
 					textBody={
 						"・A retail company wants to build a landing page for it’s new product category based on the design provided by their internal designer ・Personal page for a real estate agent that will be promoted on forums and facebook"
 					}
+
+					animationAnchor={"bottom-bottom"}
+					animationName={"fade-up"}
+					animationDelay={"450"}
 				/>
 
 				<ServicesCard
@@ -38,6 +42,10 @@ const FrontEnd = (props) => {
 					textBody={
 						"・A retail company wants to build a backoffice management app based on existing API that is serving their Frontend ・An mobile-first order application with a wizard to collect customer information"
 					}
+
+					animationAnchor={"bottom-bottom"}
+					animationName={"fade-up"}
+					animationDelay={"750"}
 				/>
 
 				<ServicesCard
@@ -53,6 +61,10 @@ const FrontEnd = (props) => {
 					textBody={
 						"・A Frontend calendar that exposes an API with user interaction events ・Mortgage calculator that works based on your Backend Mortgage API that let’s the customer understand the amount of mortgage that she can get"
 					}
+
+					animationAnchor={"bottom-bottom"}
+					animationName={"fade-up"}
+					animationDelay={"1050"}
 				/>
 			</ServicesCarousel>
 		</div>

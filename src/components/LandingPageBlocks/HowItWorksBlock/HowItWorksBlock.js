@@ -17,13 +17,13 @@ import dotsMobileBlock3 from "../../../image/dotsMobileBlock3.png";
 import dotsMobileBlock4 from "../../../image/dotsMobileBlock4.png";
 import dotsMobileBlock5 from "../../../image/dotsMobileBlock5.png";
 
-const HowItWorksBlock = (props) => {
+const HowItWorksBlock = () => {
 	return (
 		<section className="HIWB-Section" id="how-it-works_anchor">
 			<div className="wrapper">
 				<content className="HIWB-content">
 					<h2
-						data-aos-anchor="#HIW-top-animation-trigger"
+						data-aos-anchor-placement="bottom-bottom"
 						data-aos="fade-down"
 						data-aos-duration="800"
 
@@ -36,7 +36,7 @@ const HowItWorksBlock = (props) => {
 						<div className="HIWB-info">
 							<div className="HIWB-title block01">
 								<p
-									data-aos-anchor="#HIW-top-animation-trigger"
+									data-aos-anchor-placement="bottom-bottom"
 									data-aos="fade-right"
 									data-aos-delay="450"
 									data-aos-duration="800"
@@ -45,7 +45,7 @@ const HowItWorksBlock = (props) => {
 								</p>
 
 								<p
-									data-aos-anchor="#HIW-top-animation-trigger"
+									data-aos-anchor-placement="bottom-bottom"
 									data-aos="fade-right"
 									data-aos-delay="650"
 									data-aos-duration="800"
@@ -53,13 +53,20 @@ const HowItWorksBlock = (props) => {
 									You submit the development request
 								</p>
 
-								<div className="HIWB-dotsMobile">
+								<div 
+									data-aos-anchor-placement="bottom-bottom"
+									data-aos="fade-zoom-in"
+									data-aos-delay="650"
+									data-aos-duration="800"
+
+									className="HIWB-dotsMobile"
+								>
 									<img src={dotsMobileBlock1} alt="" />
 								</div>
 							</div>
 							<div className="discription">
 								<div 
-									data-aos-anchor="#HIW-top-animation-trigger"
+									data-aos-anchor-placement="bottom-bottom"
 									data-aos="zoom-in"
 									data-aos-delay="850"
 									data-aos-duration="1000"
@@ -71,22 +78,21 @@ const HowItWorksBlock = (props) => {
 								</div>
 
 								<div 
-									data-aos-anchor="#HIW-top-animation-trigger"
+									data-aos-anchor-placement="bottom-bottom"
 									data-aos="fade-right"
 									data-aos-delay="950"
 									data-aos-duration="1000"
 
 									className="discription-text"
 								>
-								
 								</div>
 							</div>
 						</div>
 						
 						<div 
-							data-aos-anchor="#HIW-top-animation-trigger"
+							data-aos-anchor-placement="bottom-bottom"
 							data-aos="fade-zoom-in"
-							data-aos-delay="1450"
+							data-aos-delay="650"
 							data-aos-duration="800"
 
 							className="HIWB-dots-image"
@@ -99,7 +105,7 @@ const HowItWorksBlock = (props) => {
 						<div className="HIWB-info">
 							<div className="HIWB-title">
 								<p
-									data-aos-anchor="#second-set-animation-trigger"
+									data-aos-anchor-placement="bottom-bottom"
 									data-aos="fade-left"
 									data-aos-delay="650"
 									data-aos-duration="800"
@@ -107,7 +113,7 @@ const HowItWorksBlock = (props) => {
 									02
 								</p>
 								<p
-									data-aos-anchor="#second-set-animation-trigger"
+									data-aos-anchor-placement="bottom-bottom"
 									data-aos="fade-left"
 									data-aos-delay="850"
 									data-aos-duration="800"
@@ -116,13 +122,20 @@ const HowItWorksBlock = (props) => {
 									required for the task execution.{" "}
 								</p>
 
-								<div className="HIWB-dotsMobile">
+								<div
+									data-aos-anchor-placement="bottom-bottom"
+									data-aos="fade-zoom-in"
+									data-aos-delay="650"
+									data-aos-duration="800"
+
+									className="HIWB-dotsMobile"
+								>
 									<img src={dotsMobileBlock2} alt="" />
 								</div>
 							</div>
 							<div className="discription">
 								<p
-									data-aos-anchor="#second-set-animation-trigger"
+									data-aos-anchor-placement="bottom-bottom"
 									data-aos="zoom-in-up"
 									data-aos-delay="1050"
 									data-aos-duration="1000"
@@ -130,25 +143,25 @@ const HowItWorksBlock = (props) => {
 									Backend
 								</p>
 								<p
-									data-aos-anchor="#second-set-animation-trigger"
+									data-aos-anchor-placement="bottom-bottom"
 									data-aos="zoom-in-up"
 									data-aos-delay="1250"
 									data-aos-duration="900"
 								>Java</p>
 								<p
-									data-aos-anchor="#second-set-animation-trigger"
+									data-aos-anchor-placement="bottom-bottom"
 									data-aos="zoom-in-up"
 									data-aos-delay="1450"
 									data-aos-duration="900"
 								>Ruby</p>
 								<p
-									data-aos-anchor="#second-set-animation-trigger"
+									data-aos-anchor-placement="bottom-bottom"
 									data-aos="zoom-in-up"
 									data-aos-delay="1650"
 									data-aos-duration="900"
 								>Laravel</p>
 								<p
-									data-aos-anchor="#second-set-animation-trigger"
+									data-aos-anchor-placement="bottom-bottom"
 									data-aos="zoom-in-up"
 									data-aos-delay="1850"
 									data-aos-duration="900"
@@ -157,9 +170,9 @@ const HowItWorksBlock = (props) => {
 						</div>
 
 						<div 
-							data-aos-anchor="#second-set-animation-trigger"
+							data-aos-anchor-placement="bottom-bottom"
 							data-aos="fade-zoom-in"
-							data-aos-delay="2250"
+							data-aos-delay="650"
 							data-aos-duration="800"
 
 							className="HIWB-dots-image"
@@ -167,14 +180,12 @@ const HowItWorksBlock = (props) => {
 							<img src={dotsDesctopBlock2} alt="" />
 						</div>
 					</div>
-					
-					
 
 					<div className="HIWB-blocks block03">
 						<div className="HIWB-info">
 							<div className="HIWB-title">
 								<p
-									data-aos-anchor="#third-set-animation-trigger"
+									data-aos-anchor-placement="bottom-bottom"
 									data-aos="fade-right"
 									data-aos-delay="650"
 									data-aos-duration="800"
@@ -182,7 +193,7 @@ const HowItWorksBlock = (props) => {
 									03
 								</p>
 								<p
-									data-aos-anchor="#third-set-animation-trigger"
+									data-aos-anchor-placement="bottom-bottom"
 									data-aos="fade-right"
 									data-aos-delay="850"
 									data-aos-duration="800"
@@ -190,7 +201,14 @@ const HowItWorksBlock = (props) => {
 									We assign a group of developers to work on your request
 								</p>
 
-								<div className="HIWB-dotsMobile">
+								<div
+									data-aos-anchor-placement="bottom-bottom"
+									data-aos="fade-zoom-in"
+									data-aos-delay="650"
+									data-aos-duration="800"
+
+									className="HIWB-dotsMobile"
+								>
 									<img src={dotsMobileBlock3} alt="" />
 								</div>
 							</div>
@@ -200,7 +218,7 @@ const HowItWorksBlock = (props) => {
 									className="discription-content row"
 								>
 									<div 
-										data-aos-anchor="#third-set-animation-trigger"
+										data-aos-anchor-placement="bottom-bottom"
 										data-aos="zoom-in-up"
 										data-aos-delay="1050"
 										data-aos-duration="1000"
@@ -209,7 +227,7 @@ const HowItWorksBlock = (props) => {
 									>
 										<img src={Lisa} alt="" />
 										<p 
-											data-aos-anchor="#third-set-animation-trigger"
+											data-aos-anchor-placement="bottom-bottom"
 											data-aos="zoom-in-up"
 											data-aos-delay="1150"
 											data-aos-duration="1000"
@@ -217,7 +235,7 @@ const HowItWorksBlock = (props) => {
 											Lisa
 										</p>
 										<p
-											data-aos-anchor="#third-set-animation-trigger"
+											data-aos-anchor-placement="bottom-bottom"
 											data-aos="zoom-in-up"
 											data-aos-delay="1250"
 											data-aos-duration="1000"
@@ -226,7 +244,7 @@ const HowItWorksBlock = (props) => {
 										</p>
 									</div>
 									<div 
-										data-aos-anchor="#third-set-animation-trigger"
+										data-aos-anchor-placement="bottom-bottom"
 										data-aos="zoom-in-up"
 										data-aos-delay="1250"
 										data-aos-duration="1000"
@@ -235,7 +253,7 @@ const HowItWorksBlock = (props) => {
 									>
 										<img src={Mark} alt="" />
 										<p
-											data-aos-anchor="#third-set-animation-trigger"
+											data-aos-anchor-placement="bottom-bottom"
 											data-aos="zoom-in-up"
 											data-aos-delay="1350"
 											data-aos-duration="1000"
@@ -243,7 +261,7 @@ const HowItWorksBlock = (props) => {
 											Mark
 										</p>
 										<p
-											data-aos-anchor="#third-set-animation-trigger"
+											data-aos-anchor-placement="bottom-bottom"
 											data-aos="zoom-in-up"
 											data-aos-delay="1450"
 											data-aos-duration="1000"
@@ -252,7 +270,7 @@ const HowItWorksBlock = (props) => {
 										</p>
 									</div>
 									<div 
-										data-aos-anchor="#third-set-animation-trigger"
+										data-aos-anchor-placement="bottom-bottom"
 										data-aos="zoom-in-up"
 										data-aos-delay="1450"
 										data-aos-duration="1000"
@@ -261,7 +279,7 @@ const HowItWorksBlock = (props) => {
 									>
 										<img src={Michael} alt="" />
 										<p
-											data-aos-anchor="#third-set-animation-trigger"
+											data-aos-anchor-placement="bottom-bottom"
 											data-aos="zoom-in-up"
 											data-aos-delay="1550"
 											data-aos-duration="1000"
@@ -269,7 +287,7 @@ const HowItWorksBlock = (props) => {
 											Michael
 										</p>
 										<p
-											data-aos-anchor="#third-set-animation-trigger"
+											data-aos-anchor-placement="bottom-bottom"
 											data-aos="zoom-in-up"
 											data-aos-delay="1650"
 											data-aos-duration="1000"
@@ -278,7 +296,7 @@ const HowItWorksBlock = (props) => {
 										</p>
 									</div>
 									<div 
-										data-aos-anchor="#third-set-animation-trigger"
+										data-aos-anchor-placement="bottom-bottom"
 										data-aos="zoom-in-up"
 										data-aos-delay="1650"
 										data-aos-duration="1000"
@@ -287,7 +305,7 @@ const HowItWorksBlock = (props) => {
 									>
 										<img src={Lana} alt="" />
 										<p
-											data-aos-anchor="#third-set-animation-trigger"
+											data-aos-anchor-placement="bottom-bottom"
 											data-aos="zoom-in-up"
 											data-aos-delay="1750"
 											data-aos-duration="1000"
@@ -295,7 +313,7 @@ const HowItWorksBlock = (props) => {
 											Lana
 										</p>
 										<p
-											data-aos-anchor="#third-set-animation-trigger"
+											data-aos-anchor-placement="bottom-bottom"
 											data-aos="zoom-in-up"
 											data-aos-delay="1850"
 											data-aos-duration="1000"
@@ -304,7 +322,7 @@ const HowItWorksBlock = (props) => {
 										</p>
 									</div>
 									<div
-										data-aos-anchor="#third-set-animation-trigger"
+										data-aos-anchor-placement="bottom-bottom"
 										data-aos="zoom-in"
 										data-aos-delay="1850"
 										data-aos-duration="1000"
@@ -313,7 +331,7 @@ const HowItWorksBlock = (props) => {
 									>
 										<p>+4</p>
 										<p
-											data-aos-anchor="#third-set-animation-trigger"
+											data-aos-anchor-placement="bottom-bottom"
 											data-aos="zoom-in-up"
 											data-aos-delay="1950"
 											data-aos-duration="1000"
@@ -326,9 +344,9 @@ const HowItWorksBlock = (props) => {
 						</div>
 
 						<div 
-							data-aos-anchor="#third-set-animation-trigger"
+							data-aos-anchor-placement="bottom-bottom"
 							data-aos="fade-zoom-in"
-							data-aos-delay="2350"
+							data-aos-delay="650"
 							data-aos-duration="800"
 
 							className="HIWB-dots-image"
@@ -341,7 +359,7 @@ const HowItWorksBlock = (props) => {
 						<div className="HIWB-info">
 							<div className="HIWB-title">
 								<p
-									data-aos-anchor="#fourth-set-animation-trigger"
+									data-aos-anchor-placement="bottom-bottom"
 									data-aos="fade-left"
 									data-aos-delay="650"
 									data-aos-duration="800"
@@ -349,7 +367,7 @@ const HowItWorksBlock = (props) => {
 									04
 								</p>
 								<p
-									data-aos-anchor="#fourth-set-animation-trigger"
+									data-aos-anchor-placement="bottom-bottom"
 									data-aos="fade-left"
 									data-aos-delay="850"
 									data-aos-duration="800"
@@ -359,17 +377,23 @@ const HowItWorksBlock = (props) => {
 									standards{" "}
 								</p>
 
-								<div className="HIWB-dotsMobile">
+								<div 
+									data-aos-anchor-placement="bottom-bottom"
+									data-aos="fade-zoom-in"
+									data-aos-delay="650"
+									data-aos-duration="800"
+
+									className="HIWB-dotsMobile"
+								>
 									<img src={dotsMobileBlock4} alt="" />
 								</div>
 							</div>
 							<div 
-								data-aos-anchor="#fourth-set-animation-trigger"
+								data-aos-anchor-placement="bottom-bottom"
 								data-aos="fade-left"
 								data-aos-delay="1250"
 								data-aos-duration="800"
 
-								id="second-set-animation-trigger" 
 								className="discription"
 							>
 								<img src={codeWindow} alt="" />
@@ -377,9 +401,9 @@ const HowItWorksBlock = (props) => {
 						</div>
 
 						<div 
-							data-aos-anchor="#fourth-set-animation-trigger"
+							data-aos-anchor-placement="bottom-bottom"
 							data-aos="fade-zoom-in"
-							data-aos-delay="1850"
+							data-aos-delay="650"
 							data-aos-duration="800"
 
 							className="HIWB-dots-image"
@@ -392,7 +416,7 @@ const HowItWorksBlock = (props) => {
 						<div className="HIWB-info">
 							<div className="HIWB-title">
 								<p
-									data-aos-anchor="#fifth-set-animation-trigger"
+									data-aos-anchor-placement="bottom-bottom"
 									data-aos="fade-right"
 									data-aos-delay="650"
 									data-aos-duration="800"
@@ -400,7 +424,7 @@ const HowItWorksBlock = (props) => {
 									05
 								</p>
 								<p
-									data-aos-anchor="#fifth-set-animation-trigger"
+									data-aos-anchor-placement="bottom-bottom"
 									data-aos="fade-right"
 									data-aos-delay="850"
 									data-aos-duration="800"
@@ -409,12 +433,19 @@ const HowItWorksBlock = (props) => {
 									requirements
 								</p>
 
-								<div className="HIWB-dotsMobile">
+								<div
+									data-aos-anchor-placement="bottom-bottom"
+									data-aos="fade-zoom-in"
+									data-aos-delay="650"
+									data-aos-duration="800"
+
+									className="HIWB-dotsMobile"
+								>
 									<img src={dotsMobileBlock5} alt="" />
 								</div>
 							</div>
 							<div
-								data-aos-anchor="#fifth-set-animation-trigger"
+								data-aos-anchor-placement="bottom-bottom"
 								data-aos="zoom-in"
 								data-aos-delay="1050"
 								data-aos-duration="800"
@@ -426,9 +457,9 @@ const HowItWorksBlock = (props) => {
 						</div>
 
 						<div 
-							data-aos-anchor="#fifth-set-animation-trigger"
+							data-aos-anchor-placement="bottom-bottom"
 							data-aos="fade-zoom-in"
-							data-aos-delay="1650"
+							data-aos-delay="650"
 							data-aos-duration="800"
 
 							className="HIWB-dots-image"
@@ -441,7 +472,7 @@ const HowItWorksBlock = (props) => {
 						<div className="HIWB-info">
 							<div className="HIWB-title">
 								<p 
-									data-aos-anchor="#sixth-set-animation-trigger"
+									data-aos-anchor-placement="bottom-bottom"
 									data-aos="fade-left"
 									data-aos-delay="650"
 									data-aos-duration="800"
@@ -449,7 +480,7 @@ const HowItWorksBlock = (props) => {
 									06
 								</p>
 								<p
-									data-aos-anchor="#sixth-set-animation-trigger"
+									data-aos-anchor-placement="bottom-bottom"
 									data-aos="fade-left"
 									data-aos-delay="850"
 									data-aos-duration="800"
@@ -461,10 +492,8 @@ const HowItWorksBlock = (props) => {
 								<div className="chat">
 									<div className="you">
 										<div className="you-content">
-											<div 
-												id="fourth-set-animation-trigger"
-												
-												data-aos-anchor="#sixth-set-animation-trigger"
+											<div
+												data-aos-anchor-placement="bottom-bottom"
 												data-aos="zoom-in-right"
 												data-aos-delay="1050"
 												data-aos-duration="1000"
@@ -476,7 +505,7 @@ const HowItWorksBlock = (props) => {
 											</div>
 
 											<div 
-												data-aos-anchor="#sixth-set-animation-trigger"
+												data-aos-anchor-placement="bottom-bottom"
 												data-aos="zoom-in-left"
 												data-aos-delay="1250"
 												data-aos-duration="1000"
@@ -484,7 +513,7 @@ const HowItWorksBlock = (props) => {
 												className="message"
 											>
 												<p 
-													data-aos-anchor="#sixth-set-animation-trigger"
+													data-aos-anchor-placement="bottom-bottom"
 													data-aos="fade-in"
 													data-aos-delay="1850"	
 													data-aos-duration="1000"
@@ -499,7 +528,7 @@ const HowItWorksBlock = (props) => {
 
 									<div  className="someone">
 										<div 
-											data-aos-anchor="#sixth-set-animation-trigger"
+											data-aos-anchor-placement="bottom-bottom"
 											data-aos="zoom-in-left"
 											data-aos-delay="2050"
 											data-aos-duration="1000"
@@ -511,7 +540,7 @@ const HowItWorksBlock = (props) => {
 										</div>
 
 										<div 
-											data-aos-anchor="#sixth-set-animation-trigger"
+											data-aos-anchor-placement="bottom-bottom"
 											data-aos="zoom-in-up"
 											data-aos-delay="2250"
 											data-aos-duration="1000"
@@ -519,7 +548,7 @@ const HowItWorksBlock = (props) => {
 											className="message"
 										>
 											<p
-												data-aos-anchor="#sixth-set-animation-trigger"
+												data-aos-anchor-placement="bottom-bottom"
 												data-aos="fade-in"
 												data-aos-delay="2850"
 												data-aos-duration="1000"
@@ -527,7 +556,7 @@ const HowItWorksBlock = (props) => {
 											
 											</p>
 											<p 
-												data-aos-anchor="#sixth-set-animation-trigger"
+												data-aos-anchor-placement="bottom-bottom"
 												data-aos="fade-in"
 												data-aos-delay="3000"
 												data-aos-duration="1000"
@@ -542,9 +571,6 @@ const HowItWorksBlock = (props) => {
 					</div>
 				</content>
 			</div>
-			<div id="HIW-top-animation-trigger" className="HIW-block_trigger-box"></div>
-			<div id="fifth-set-animation-trigger" className="HIW-set-five-block_trigger-box"></div>
-			<div id="sixth-set-animation-trigger" className="HIW-set-six-block_trigger-box"></div>
 		</section>
 	);
 };

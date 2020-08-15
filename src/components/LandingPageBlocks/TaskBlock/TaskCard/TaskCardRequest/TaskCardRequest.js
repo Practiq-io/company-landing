@@ -11,7 +11,7 @@ const TaskCardRequest = (props) => {
 	return (
 		<div 
 			className="TCR-Cardbox"
-			data-aos-anchor={cardAnimationTrigger}
+			data-aos-anchor-placement="bottom-bottom"
 			data-aos={cardBodyAosName}
 			data-aos-duration={cardBodyDuration}
 			data-aos-delay={cardBodyDelay}

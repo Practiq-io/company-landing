@@ -19,19 +19,20 @@ const TaskBlock = (props) => {
 				<content className="TB-content">
 					<div className="TB-title">
 						<h2 
-							data-aos-anchor="#task-animation-trigger"
+							data-aos-anchor-placement="bottom-bottom"
 						 	data-aos="fade-down" 
 							data-aos-duration="800"
-							  
+							data-aos-delay="450"
+							
 						 	className="TB-title-h2"
 						>
 							Practiq empowers developers to grow their skills and knowledge
 						</h2>
 						<p 	
-							data-aos-anchor="#task-animation-trigger"
+							data-aos-anchor-placement="bottom-bottom"
 							data-aos="fade-in" 
 							data-aos-duration="800"
-							data-aos-delay="450"
+							data-aos-delay="550"
 
 							className="TB-title-p"
 						>
@@ -43,7 +44,7 @@ const TaskBlock = (props) => {
 					<div className="TB-code-box">
 						<TaskCard
 							cardBodyAnimation={animationSettings("fade-up", "850", "600", null)}
-							cardAnimationTrigger={"#task-animation-trigger"}
+							
 							bgImgPath={ReactBgImg}
 							logoPath={ReactLogo}
 							textBody={
@@ -57,7 +58,7 @@ const TaskBlock = (props) => {
 
 						<TaskCard
 							cardBodyAnimation={animationSettings("fade-up", "1250", "600", null)}
-							cardAnimationTrigger={"#task-animation-trigger"}
+							
 							bgImgPath={NodeBgImg}
 							logoPath={NodeLogo}
 							textBody={
@@ -70,15 +71,14 @@ const TaskBlock = (props) => {
 
 						<TaskCard
 							cardBodyAnimation={animationSettings("fade-up", "1650", "600", null)}
-							cardAnimationTrigger={"#task-animation-trigger"}
+							
 							bgImgPath={JavaBgImg}
 							logoPath={JavaLogo}
 							textBody={
 								<span>
 									Using jakarta to integrate
 									<br className="tb-card-linebreak" /> Javadocs into your build
-									<br className="tb-card-linebreak" /> process for Java
-									applications
+									<br className="tb-card-linebreak" /> process for Java applications
 								</span>
 							}
 						/>
@@ -86,12 +86,10 @@ const TaskBlock = (props) => {
 						<TaskCardRequest
 							toggle={toggle}
 							cardBodyAnimation={animationSettings("fade-up", "2050", "600", null)}
-							cardAnimationTrigger={"#task-animation-trigger"}
 						/>
 					</div>
 				</content>
 			</div>
-			<div id="task-animation-trigger" className="task-block_trigger-box"></div>
 		</section>
 	);
 };

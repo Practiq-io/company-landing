@@ -12,7 +12,7 @@ const WhoBlock = (props) => {
 			<div className="wrapper">
 				<content className="WB-content">
 					<h2
-						data-aos-anchor="#HB-animation-trigger"
+						data-aos-anchor-placement="bottom-bottom"
 						data-aos="fade-right"
 						data-aos-duration="800"
 					>
@@ -22,7 +22,7 @@ const WhoBlock = (props) => {
 					<div className="person-card">
 
 						<div 
-							data-aos-anchor="#HB-animation-trigger"
+							data-aos-anchor-placement="bottom-bottom"
 							data-aos="fade-left"
 							data-aos-delay="650"
 							data-aos-duration="1000"
@@ -31,7 +31,7 @@ const WhoBlock = (props) => {
 						>
 							<div className="person-image">
 								<p
-									data-aos-anchor="#HB-animation-trigger"
+									data-aos-anchor-placement="bottom-bottom"
 									data-aos="fade-left"
 									data-aos-delay="850"
 									data-aos-duration="1000"
@@ -40,7 +40,7 @@ const WhoBlock = (props) => {
 								</p>
 
 								<div 
-									data-aos-anchor="#HB-animation-trigger"
+									data-aos-anchor-placement="bottom-bottom"
 									data-aos="fade-in"
 									data-aos-delay="1550"
 									data-aos-duration="1000"
@@ -52,7 +52,7 @@ const WhoBlock = (props) => {
 							</div>
 							<div className="who-block-text">
 								<p
-									data-aos-anchor="#HB-animation-trigger"
+									data-aos-anchor-placement="bottom-bottom"
 									data-aos="fade-in"
 									data-aos-delay="1850"
 									data-aos-duration="1000"
@@ -64,7 +64,7 @@ const WhoBlock = (props) => {
 						</div>
 
 						<div 
-							data-aos-anchor="#HB-animation-trigger"
+							data-aos-anchor-placement="bottom-bottom"
 							data-aos="fade-left"
 							data-aos-delay="850"
 							data-aos-duration="1000"
@@ -73,7 +73,7 @@ const WhoBlock = (props) => {
 						>
 							<div className="person-image">
 								<p
-									data-aos-anchor="#HB-animation-trigger"
+									data-aos-anchor-placement="bottom-bottom"
 									data-aos="fade-left"
 									data-aos-delay="1050"
 									data-aos-duration="1000"
@@ -82,7 +82,7 @@ const WhoBlock = (props) => {
 								</p>
 
 								<div 
-									data-aos-anchor="#HB-animation-trigger"
+									data-aos-anchor-placement="bottom-bottom"
 									data-aos="fade-in"
 									data-aos-delay="1750"
 									data-aos-duration="1000"
@@ -94,7 +94,7 @@ const WhoBlock = (props) => {
 							</div>
 							<div className="who-block-text">
 								<p
-									data-aos-anchor="#HB-animation-trigger"
+									data-aos-anchor-placement="bottom-bottom"
 									data-aos="fade-in"
 									data-aos-delay="2050"
 									data-aos-duration="1000"
@@ -106,7 +106,7 @@ const WhoBlock = (props) => {
 						</div>
 
 						<div 
-							data-aos-anchor="#HB-animation-trigger"
+							data-aos-anchor-placement="bottom-bottom"
 							data-aos="fade-left"
 							data-aos-delay="1050"
 							data-aos-duration="1000"
@@ -115,7 +115,7 @@ const WhoBlock = (props) => {
 						>
 							<div className="person-image">
 								<p
-									data-aos-anchor="#HB-animation-trigger"
+									data-aos-anchor-placement="bottom-bottom"
 									data-aos="fade-left"
 									data-aos-delay="1250"
 									data-aos-duration="1000"
@@ -124,7 +124,7 @@ const WhoBlock = (props) => {
 								</p>
 
 								<div 
-									data-aos-anchor="#HB-animation-trigger"
+									data-aos-anchor-placement="bottom-bottom"
 									data-aos="fade-in"
 									data-aos-delay="1950"
 									data-aos-duration="1000"
@@ -136,7 +136,7 @@ const WhoBlock = (props) => {
 							</div>
 							<div className="who-block-text">
 								<p
-									data-aos-anchor="#HB-animation-trigger"
+									data-aos-anchor-placement="bottom-bottom"
 									data-aos="fade-in"
 									data-aos-delay="2250"
 									data-aos-duration="1000"
@@ -149,13 +149,32 @@ const WhoBlock = (props) => {
 
 						<div className="person-mobile-block">
 							<div className="person-card-mobile ika">
-								<div className="person-card-image">
+								<div 
+									data-aos-anchor-placement="bottom-bottom"
+									data-aos="zoom-in"
+									data-aos-delay="1500"
+									data-aos-duration="1000"
+									
+									className="person-card-image"
+								>
 									<img src={IkaMobile} alt="" />
 								</div>
 
 								<div className="person-card-text">
-									<p>Ilya Sidorovich</p>
-									<p>
+									<p
+										data-aos-anchor-placement="bottom-bottom"
+										data-aos="fade-right"
+										data-aos-delay="450"
+										data-aos-duration="1000"
+									>
+										Ilya Sidorovich
+									</p>
+									<p
+										data-aos-anchor-placement="bottom-bottom"
+										data-aos="fade-right"
+										data-aos-delay="950"
+										data-aos-duration="1000"
+									>
 										Co-founder, Tech Senior Software Developer @ Booking.com BSc
 										Finance & Marketing, KIMEP
 									</p>
@@ -166,13 +185,32 @@ const WhoBlock = (props) => {
 							</div>
 
 							<div className="person-card-mobile liza">
-								<div className="person-card-image">
+								<div 
+									data-aos-anchor-placement="bottom-bottom"
+									data-aos="zoom-in"
+									data-aos-delay="1500"
+									data-aos-duration="1000"
+
+									className="person-card-image"
+								>
 									<img src={LizaMobile} alt="" />
 								</div>
 
 								<div className="person-card-text">
-									<p>Elizaveta Kolesnichenko</p>
-									<p>
+									<p
+										data-aos-anchor-placement="bottom-bottom"
+										data-aos="fade-right"
+										data-aos-delay="450"
+										data-aos-duration="1000"
+									>
+										Elizaveta Kolesnichenko
+									</p>
+									<p
+										data-aos-anchor-placement="bottom-bottom"
+										data-aos="fade-right"
+										data-aos-delay="950"
+										data-aos-duration="1000"
+									>
 										Co-founder, Product / Strategy Head of Startup Incubation @
 										ACE Incubator MSc Cognitive Neurobiology, UvA
 									</p>
@@ -183,13 +221,32 @@ const WhoBlock = (props) => {
 							</div>
 
 							<div className="person-card-mobile roma">
-								<div className="person-card-image">
+								<div 
+									data-aos-anchor-placement="bottom-bottom"
+									data-aos="zoom-in"
+									data-aos-delay="1500"
+									data-aos-duration="1000"
+
+									className="person-card-image"
+								>
 									<img src={RomaMobile} alt="" />
 								</div>
 
 								<div className="person-card-text">
-									<p>Roman Cherepivskiy</p>
-									<p>
+									<p
+										data-aos-anchor-placement="bottom-bottom"
+										data-aos="fade-right"
+										data-aos-delay="450"
+										data-aos-duration="1000"
+									>
+										Roman Cherepivskiy
+									</p>
+									<p
+										data-aos-anchor-placement="bottom-bottom"
+										data-aos="fade-right"
+										data-aos-delay="950"
+										data-aos-duration="1000"
+									>
 										Senior UI/UX Designer Computer Hardware and Software Almaty
 										technological university
 									</p>
@@ -202,7 +259,6 @@ const WhoBlock = (props) => {
 					</div>
 				</content>
 			</div>
-			<div id="HB-animation-trigger" className="HB-block_trigger-box"></div>
 		</section>
 	);
 };

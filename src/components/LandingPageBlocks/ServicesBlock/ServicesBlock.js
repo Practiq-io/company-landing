@@ -30,7 +30,7 @@ class ServicesBlock extends Component {
 				<div className="wrapper">
 					<content className="upperServicesBox">
 						<h2
-							data-aos-anchor="#services-animation-trigger"
+							data-aos-anchor-placement="bottom-bottom"
 							data-aos="fade-down"
 							data-aos-duration="800"
 							className="servicesTitle"
@@ -39,7 +39,7 @@ class ServicesBlock extends Component {
 						</h2>
 						<div className="ui_mobile_dash"></div>
 						<div
-							data-aos-anchor="#services-animation-trigger"
+							data-aos-anchor-placement="bottom-bottom"
 							data-aos="fade-in"
 							data-aos-duration="800"
 							data-aos-delay="450"
@@ -81,10 +81,6 @@ class ServicesBlock extends Component {
 								isVisible={this.state.displayed === "backend"}
 							>
 								<BackEnd 
-									data-aos="fade-down" 
-									data-aos-duration="800"
-									data-aos-delay="800"
-
 									toggleSpecificTask={toggleSpecificTask} 
 								/>
 							</Animated>
@@ -97,19 +93,12 @@ class ServicesBlock extends Component {
 								isVisible={this.state.displayed === "frontend"}
 							>
 								<FrontEnd 
-									data-aos="fade-down" 
-									data-aos-duration="800"
-									data-aos-delay="800"
 									toggleSpecificTask={toggleSpecificTask} 
 								/>
 							</Animated>
 						) : null}
 					</content>
 				</div>
-				<div
-					id="services-animation-trigger"
-					className="services-block_trigger-box"
-				></div>
 			</section>
 		);
 	}
