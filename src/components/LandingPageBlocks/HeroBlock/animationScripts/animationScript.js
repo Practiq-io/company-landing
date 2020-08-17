@@ -2,9 +2,9 @@ let codeSnippetCounter = 0;
 let codeFlag = 0;
 let titleFlag = 0;
 let commentFlag = 0;
-let codeSpeed = 12;
+let codeSpeed = 7;
 let titleSpeed = 35;
-let commentSpeed = 12;
+let commentSpeed = 1;
 const codeSnippets = [
 	{
 		title: "React SPA",
@@ -66,9 +66,9 @@ const removeComment = (txt) => {
 			"comment_block-animation-txt"
 		).innerHTML = txt = txt.slice(0, commentFlag - 1);
 		commentFlag--;
-		setTimeout(() => removeComment(txt), 10);
+		setTimeout(() => removeComment(txt), 7);
 	} else {
-		setTimeout(() => animationLogic(), 10);
+		setTimeout(() => animationLogic(), 1);
 	}
 };
 
@@ -81,7 +81,7 @@ const writeCode = (txt) => {
 		codeFlag++;
 		setTimeout(() => writeCode(txt), codeSpeed);
 	} else if (codeFlag === txt.length) {
-		setTimeout(() => removeCode(txt), 2500);
+		setTimeout(() => removeCode(txt), 1500);
 	}
 };
 
@@ -93,9 +93,9 @@ const removeCode = (txt) => {
 			"code_block-animation-txt"
 		).innerHTML = txt = txt.slice(0, codeFlag - 1);
 		codeFlag--;
-		setTimeout(() => removeCode(txt), 10);
+		setTimeout(() => removeCode(txt), 1);
 	} else {
-		setTimeout(() => removeComment(codeSnippets[codeSnippetCounter].comment), 50);
+		setTimeout(() => removeComment(codeSnippets[codeSnippetCounter].comment), 1);
 	}
 };
 
@@ -126,15 +126,15 @@ const removeTitle = (txt) => {
 		} else {
 			codeSnippetCounter++
 		}
-		setTimeout(() => animationLogic(), 10);
+		setTimeout(() => animationLogic(), 1);
 	}
 };
 
 const animationLogic = () => {
 	if (titleFlag < codeSnippets[codeSnippetCounter].title.length) {
-		setTimeout(() => writeTitle(codeSnippets[codeSnippetCounter].title), 10);
+		setTimeout(() => writeTitle(codeSnippets[codeSnippetCounter].title), 1);
 	} else if (titleFlag === codeSnippets[codeSnippetCounter].title.length) {
-		setTimeout(() => removeTitle(codeSnippets[codeSnippetCounter].title), 50);
+		setTimeout(() => removeTitle(codeSnippets[codeSnippetCounter].title), 1);
 	}
 };
 

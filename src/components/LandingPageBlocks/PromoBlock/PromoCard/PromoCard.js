@@ -78,7 +78,7 @@ const PromoCard = props => {
 					data-aos={cardLogoAosName}
 					data-aos-duration={cardLogoDuration}
 					data-aos-delay={cardLogoDelay}
-					data-aos-anchor-placement="bottom-bottom"
+					data-aos-anchor=".promo-card-body"
 					className="pc-img"
 				>
 					<img src={props.imgPath} alt=""/>
