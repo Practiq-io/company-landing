@@ -6,6 +6,8 @@
 }
 .mozila-padding-wrapper {
   padding: 90px 5px;
+  width: 100%;
+  display: flex;
 }
 .modal-content_subtitle {
   color: #696974;
@@ -44,6 +46,9 @@
   .sneaky-scroll {
     width: 100%;
     padding: 5px 5px 5px 5px;
+  }
+  .mozila-padding-wrapper {
+    padding: 0;
   }
 }
 .wizard-title_box {
