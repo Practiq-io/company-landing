@@ -2,7 +2,6 @@ import React, { Component } from "react";
 import "./ServicesBlock.css";
 import FrontEnd from "./FrontEnd/FrontEnd";
 import BackEnd from "./BackEnd/BackEnd";
-import { Animated } from "react-animated-css";
 
 class ServicesBlock extends Component {
 	state = {
@@ -21,6 +20,10 @@ class ServicesBlock extends Component {
 			this.setState({ displayed: "frontend", switched: true });
 		}
 	};
+
+	componentDidMount() {
+		this.setState({ screenWidth: window.innerWidth });
+	}
 
 	render() {
 		const { toggleSpecificTask } = this.props;
@@ -72,30 +75,13 @@ class ServicesBlock extends Component {
 							></div>
 						</div>
 					</content>
-
 					<content className="lowerServicesBox">
 						{this.state.displayed === "backend" ? (
-							<Animated
-								animationIn="fadeIn"
-								animationOut="fadeOut"
-								isVisible={this.state.displayed === "backend"}
-							>
-								<BackEnd 
-									toggleSpecificTask={toggleSpecificTask} 
-								/>
-							</Animated>
+							<BackEnd toggleSpecificTask={toggleSpecificTask} />
 						) : null}
 
 						{this.state.displayed === "frontend" ? (
-							<Animated
-								animationIn="fadeIn"
-								animationOut="fadeOut"
-								isVisible={this.state.displayed === "frontend"}
-							>
-								<FrontEnd 
-									toggleSpecificTask={toggleSpecificTask} 
-								/>
-							</Animated>
+							<FrontEnd toggleSpecificTask={toggleSpecificTask} />
 						) : null}
 					</content>
 				</div>

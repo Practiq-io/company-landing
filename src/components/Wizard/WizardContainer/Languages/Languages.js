@@ -126,7 +126,7 @@ export default class Languages extends Component {
 		suggestions: [],
 		selectedTags: [],
 		customDeliverables: "",
-		system: [],
+		system: []
 	};
 	onChange = (event, { newValue, method }) => {
 		this.setState({
@@ -170,7 +170,6 @@ export default class Languages extends Component {
 			suggestions: [],
 		});
 	};
-	
 	addPopularTag = (name) => {
 		if (this.state.selectedTags.length < 10) {
 			let newSelectedTag = [name, "junior"];
@@ -252,7 +251,6 @@ export default class Languages extends Component {
 			}
 		}
 	};
-
 	addInputTagAutosuggest = (name) => {
 		let languageName = name;
 		const blockedRegex = /[\]!$%^&*()":{}|<>]/;
@@ -299,7 +297,6 @@ export default class Languages extends Component {
 			}
 		}
 	};
-
 	addInputTag = (event) => {
 		if (event.key === "Enter") {
 			if (this.state.value) {
@@ -321,6 +318,7 @@ export default class Languages extends Component {
 		} else {
 			this.setState({ popularTags });
 		}
+		this.setState({ screenWidth: window.innerWidth });
 	}
 	validation = () => {
 		if (this.state.selectedTags.length === 0) {
@@ -349,9 +347,9 @@ export default class Languages extends Component {
     };	
 
 	render() {
-		const { value, suggestions, inputError } = this.state;
+		const { value, suggestions, inputError, screenWidth } = this.state;
 		const inputProps = {
-			placeholder: "e.g., Java, React, Drupal, etc.",
+			placeholder: screenWidth > 370 ? "e.g., Java, React, Drupal, etc." : "",
 			value,
 			onChange: this.onChange
 		};
@@ -373,6 +371,7 @@ export default class Languages extends Component {
 
 						<div className="mobile-add-button_wrapper">
 							<Autosuggest
+								className="autosuggest-input"
 								suggestions={suggestions}
 								onSuggestionsFetchRequested={this.onSuggestionsFetchRequested}
 								onSuggestionsClearRequested={this.onSuggestionsClearRequested}

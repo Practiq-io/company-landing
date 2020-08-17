@@ -507,7 +507,7 @@ const HowItWorksBlock = () => {
 											<div 
 												data-aos-anchor-placement="bottom-bottom"
 												data-aos="zoom-in-left"
-												data-aos-delay="1250"
+												data-aos-delay="1050"
 												data-aos-duration="1000"
 
 												className="message"
@@ -530,7 +530,7 @@ const HowItWorksBlock = () => {
 										<div 
 											data-aos-anchor-placement="bottom-bottom"
 											data-aos="zoom-in-left"
-											data-aos-delay="2050"
+											data-aos-delay="1350"
 											data-aos-duration="1000"
 
 											className="avatar"
@@ -542,27 +542,11 @@ const HowItWorksBlock = () => {
 										<div 
 											data-aos-anchor-placement="bottom-bottom"
 											data-aos="zoom-in-up"
-											data-aos-delay="2250"
+											data-aos-delay="1450"
 											data-aos-duration="1000"
 
 											className="message"
 										>
-											<p
-												data-aos-anchor-placement="bottom-bottom"
-												data-aos="fade-in"
-												data-aos-delay="2850"
-												data-aos-duration="1000"
-											>
-											
-											</p>
-											<p 
-												data-aos-anchor-placement="bottom-bottom"
-												data-aos="fade-in"
-												data-aos-delay="3000"
-												data-aos-duration="1000"
-											>
-											
-											</p>
 										</div>
 									</div>
 								</div>

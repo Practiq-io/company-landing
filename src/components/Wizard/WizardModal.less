@@ -5,6 +5,9 @@
 	background: white;
 	border-radius: 18px;
 }
+.mozila-padding-wrapper {
+	padding: 90px 5px;
+}
 .modal-content_subtitle {
 	color: #696974;
 	margin-bottom: 17px;
@@ -17,7 +20,6 @@
 	display: -webkit-flex;
 	display: -moz-box;
 	display: flex;
-	
 	-webkit-box-pack: center;
 	-webkit-justify-content: center;
 	-moz-box-pack: center;
@@ -27,21 +29,19 @@
 	left: 0;
 }
 .sneaky-scroll {
+	scrollbar-width: none;
 	overflow-y: scroll;
-	padding: 90px 5px;
 	overscroll-behavior: contain;
-	
 	display: flex;
 	flex-direction: column;
 	align-items: center;
 	width: 640px;
 	will-change: transform;
-
 	&::-webkit-scrollbar {
 		display: none;
 	}
-	
 }
+
 @media screen and (max-width: 660px) {
 	.sneaky-scroll {
 		width: 100%;
@@ -74,7 +74,6 @@
 		}
 	}
 }
-
 .wizard-step-progress-box {
 	width: 100%;
 	background: #e9e9ed;
@@ -90,12 +89,10 @@
 		transition-timing-function: ease-in-out;
 	}
 }
-
 .wizard-step-box {
 	color: #b1b1b8;
 	margin-bottom: 17px;
 }
-
 .wizard-button_box {
 	display: -webkit-box;
 	display: -webkit-flex;
@@ -107,7 +104,6 @@
 	-moz-box-pack: end;
 	justify-content: flex-end;
 }
-
 .wizard_button {
 	display: -webkit-box;
 	display: -webkit-flex;
@@ -123,7 +119,6 @@
 	max-width: 155px;
 	cursor: pointer;
 }
-
 .wizard-next_button {
 	margin-left: 16px;
 	background: #1371fd;
@@ -137,19 +132,16 @@
 		transition: 0.1s;
 	}
 }
-
 .modal-title {
 	color: #171725;
 	font-weight: bold;
 	font-size: 20px;
 	margin-bottom: 40px;
 }
-
 .wizard-back_button {
 	border: 1px solid #e9e9ed;
 	color: #696974;
 }
-
 @media screen and (max-width: 660px) {
 	.wizard-modal {
 		width: 100%;
@@ -170,7 +162,6 @@
 		left: 0;
 	}
 }
-
 @media screen and (max-width: 417px) {
 	.wizard_button {
 		padding: 10px 10px;
@@ -179,7 +170,6 @@
 		cursor: pointer;
 	}
 }
-
 .validation_error-message {
 	color: #eb5757;
 }

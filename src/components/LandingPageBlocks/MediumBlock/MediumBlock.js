@@ -117,7 +117,7 @@ const MediumBlock = (props) => {
 					</div>
 
 					<div 
-						data-aos-anchor-placement="center-center"
+						data-aos-anchor-placement="bottom-bottom"
 						data-aos="fade-up"
 						data-aos-delay="750"
 						data-aos-duration="1000"

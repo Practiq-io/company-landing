@@ -8,11 +8,11 @@ import linkidMobile from "../../../image/linkid-blue.svg";
 
 const WhoBlock = (props) => {
 	return (
-		<section className="WB-Section" id="who-block_anchor">
+		<section className="WB-Section">
 			<div className="wrapper">
 				<content className="WB-content">
 					<h2
-						data-aos-anchor-placement="center-center"
+						data-aos-anchor-placement="bottom-bottom"
 						data-aos="fade-right"
 						data-aos-duration="800"
 					>
@@ -22,7 +22,7 @@ const WhoBlock = (props) => {
 					<div className="person-card">
 
 						<div 
-							data-aos-anchor-placement="center-center"
+							data-aos-anchor-placement="bottom-bottom"
 							data-aos="fade-left"
 							data-aos-delay="650"
 							data-aos-duration="1000"
@@ -33,14 +33,14 @@ const WhoBlock = (props) => {
 								<p
 									data-aos-anchor-placement="bottom-bottom"
 									data-aos="fade-left"
-									data-aos-delay="850"
+									data-aos-delay="1250"
 									data-aos-duration="1000"
 								>
 									Ilya Sidorovich
 								</p>
 
 								<div 
-									data-aos-anchor-placement="center-center"
+									data-aos-anchor-placement="bottom-bottom"
 									data-aos="fade-in"
 									data-aos-delay="1550"
 									data-aos-duration="1000"
@@ -52,7 +52,7 @@ const WhoBlock = (props) => {
 							</div>
 							<div className="who-block-text">
 								<p
-									data-aos-anchor-placement="center-center"
+									data-aos-anchor-placement="bottom-bottom"
 									data-aos="fade-in"
 									data-aos-delay="1850"
 									data-aos-duration="1000"
@@ -64,16 +64,16 @@ const WhoBlock = (props) => {
 						</div>
 
 						<div 
-							data-aos-anchor-placement="center-center"
+							data-aos-anchor-placement="bottom-bottom"
 							data-aos="fade-left"
-							data-aos-delay="850"
+							data-aos-delay="950"
 							data-aos-duration="1000"
 
 							className="person liza"
 						>
 							<div className="person-image">
 								<p
-									data-aos-anchor-placement="center-center"
+									data-aos-anchor-placement="bottom-bottom"
 									data-aos="fade-left"
 									data-aos-delay="1050"
 									data-aos-duration="1000"
@@ -82,7 +82,7 @@ const WhoBlock = (props) => {
 								</p>
 
 								<div 
-									data-aos-anchor-placement="center-center"
+									data-aos-anchor-placement="bottom-bottom"
 									data-aos="fade-in"
 									data-aos-delay="1750"
 									data-aos-duration="1000"
@@ -94,7 +94,7 @@ const WhoBlock = (props) => {
 							</div>
 							<div className="who-block-text">
 								<p
-									data-aos-anchor-placement="center-center"
+									data-aos-anchor-placement="bottom-bottom"
 									data-aos="fade-in"
 									data-aos-delay="2050"
 									data-aos-duration="1000"
@@ -106,16 +106,16 @@ const WhoBlock = (props) => {
 						</div>
 
 						<div 
-							data-aos-anchor-placement="center-center"
+							data-aos-anchor-placement="bottom-bottom"
 							data-aos="fade-left"
-							data-aos-delay="1050"
+							data-aos-delay="1250"
 							data-aos-duration="1000"
 
 							className="person roma"
 						>
 							<div className="person-image">
 								<p
-									data-aos-anchor-placement="center-center"
+									data-aos-anchor-placement="bottom-bottom"
 									data-aos="fade-left"
 									data-aos-delay="1250"
 									data-aos-duration="1000"
@@ -124,7 +124,7 @@ const WhoBlock = (props) => {
 								</p>
 
 								<div 
-									data-aos-anchor-placement="center-center"
+									data-aos-anchor-placement="bottom-bottom"
 									data-aos="fade-in"
 									data-aos-delay="1950"
 									data-aos-duration="1000"
@@ -136,7 +136,7 @@ const WhoBlock = (props) => {
 							</div>
 							<div className="who-block-text">
 								<p
-									data-aos-anchor-placement="center-center"
+									data-aos-anchor-placement="bottom-bottom"
 									data-aos="fade-in"
 									data-aos-delay="2250"
 									data-aos-duration="1000"
@@ -147,12 +147,15 @@ const WhoBlock = (props) => {
 							</div>
 						</div>
 
+
+
+
 						<div className="person-mobile-block">
 							<div className="person-card-mobile ika">
 								<div 
-									data-aos-anchor-placement="center-center"
+									data-aos-anchor-placement="top"
 									data-aos="zoom-in"
-									data-aos-delay="1500"
+									data-aos-delay="1200"
 									data-aos-duration="1000"
 									
 									className="person-card-image"
@@ -162,7 +165,7 @@ const WhoBlock = (props) => {
 
 								<div className="person-card-text">
 									<p
-										data-aos-anchor-placement="center-center"
+										data-aos-anchor-placement="top"
 										data-aos="fade-right"
 										data-aos-delay="450"
 										data-aos-duration="1000"
@@ -170,9 +173,9 @@ const WhoBlock = (props) => {
 										Ilya Sidorovich
 									</p>
 									<p
-										data-aos-anchor-placement="center-center"
+										data-aos-anchor-placement="top"
 										data-aos="fade-right"
-										data-aos-delay="950"
+										data-aos-delay="750"
 										data-aos-duration="1000"
 									>
 										Co-founder, Tech Senior Software Developer @ Booking.com BSc
@@ -186,9 +189,9 @@ const WhoBlock = (props) => {
 
 							<div className="person-card-mobile liza">
 								<div 
-									data-aos-anchor-placement="center-center"
+									data-aos-anchor-placement="top"
 									data-aos="zoom-in"
-									data-aos-delay="1500"
+									data-aos-delay="1200"
 									data-aos-duration="1000"
 
 									className="person-card-image"
@@ -198,7 +201,7 @@ const WhoBlock = (props) => {
 
 								<div className="person-card-text">
 									<p
-										data-aos-anchor-placement="center-center"
+										data-aos-anchor-placement="top"
 										data-aos="fade-right"
 										data-aos-delay="450"
 										data-aos-duration="1000"
@@ -206,9 +209,9 @@ const WhoBlock = (props) => {
 										Elizaveta Kolesnichenko
 									</p>
 									<p
-										data-aos-anchor-placement="center-center"
+										data-aos-anchor-placement="top"
 										data-aos="fade-right"
-										data-aos-delay="950"
+										data-aos-delay="750"
 										data-aos-duration="1000"
 									>
 										Co-founder, Product / Strategy Head of Startup Incubation @
@@ -222,9 +225,9 @@ const WhoBlock = (props) => {
 
 							<div className="person-card-mobile roma">
 								<div 
-									data-aos-anchor-placement="center-center"
+									data-aos-anchor-placement="top"
 									data-aos="zoom-in"
-									data-aos-delay="1500"
+									data-aos-delay="800"
 									data-aos-duration="1000"
 
 									className="person-card-image"
@@ -234,17 +237,17 @@ const WhoBlock = (props) => {
 
 								<div className="person-card-text">
 									<p
-										data-aos-anchor-placement="center-center"
+										data-aos-anchor-placement="top"
 										data-aos="fade-right"
-										data-aos-delay="450"
+										data-aos-delay="350"
 										data-aos-duration="1000"
 									>
 										Roman Cherepivskiy
 									</p>
 									<p
-										data-aos-anchor-placement="center-center"
+										data-aos-anchor-placement="top"
 										data-aos="fade-right"
-										data-aos-delay="950"
+										data-aos-delay="450"
 										data-aos-duration="1000"
 									>
 										Senior UI/UX Designer Computer Hardware and Software Almaty
