@@ -4,6 +4,9 @@
   background: white;
   border-radius: 18px;
 }
+.mozila-padding-wrapper {
+  padding: 90px 5px;
+}
 .modal-content_subtitle {
   color: #696974;
   margin-bottom: 17px;
@@ -25,8 +28,8 @@
   left: 0;
 }
 .sneaky-scroll {
+  scrollbar-width: none;
   overflow-y: scroll;
-  padding: 90px 5px;
   overscroll-behavior: contain;
   display: flex;
   flex-direction: column;

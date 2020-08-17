@@ -73,23 +73,6 @@ textarea:focus {
     font-size: 13px;
   }
 }
-@media screen and (max-width: 368px) {
-  input::-webkit-input-placeholder {
-    color: transparent !important;
-  }
-  input::-moz-placeholder {
-    color: transparent !important;
-  }
-  input:-ms-input-placeholder {
-    color: transparent !important;
-  }
-  input::-ms-input-placeholder {
-    color: transparent !important;
-  }
-  input::placeholder {
-    color: transparent !important;
-  }
-}
 .tags-fade-enter {
   opacity: 0;
   -webkit-transform: scale(0.9);
