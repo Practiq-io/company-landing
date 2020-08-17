@@ -43,7 +43,7 @@ const TaskBlock = (props) => {
 
 					<div className="TB-code-box">
 						<TaskCard
-							cardBodyAnimation={animationSettings("fade-up", "850", "600", null)}
+							cardBodyAnimation={animationSettings("fade-up", "450", "600", null)}
 							
 							bgImgPath={ReactBgImg}
 							logoPath={ReactLogo}
@@ -57,7 +57,7 @@ const TaskBlock = (props) => {
 						/>
 
 						<TaskCard
-							cardBodyAnimation={animationSettings("fade-up", "1250", "600", null)}
+							cardBodyAnimation={animationSettings("fade-up", "750", "600", null)}
 							
 							bgImgPath={NodeBgImg}
 							logoPath={NodeLogo}
@@ -70,7 +70,7 @@ const TaskBlock = (props) => {
 						/>
 
 						<TaskCard
-							cardBodyAnimation={animationSettings("fade-up", "1650", "600", null)}
+							cardBodyAnimation={animationSettings("fade-up", "1050", "600", null)}
 							
 							bgImgPath={JavaBgImg}
 							logoPath={JavaLogo}
@@ -85,7 +85,7 @@ const TaskBlock = (props) => {
 
 						<TaskCardRequest
 							toggle={toggle}
-							cardBodyAnimation={animationSettings("fade-up", "2050", "600", null)}
+							cardBodyAnimation={animationSettings("fade-up", "1350", "600", null)}
 						/>
 					</div>
 				</content>

@@ -35,12 +35,12 @@ class MainContainer extends Component {
 			programmingType,
 			resetWizardTask,
 		} = this.props.wizard;
-		const animationByClass = (name, delay, duration, trigger) => {
+		const animationByClass = (name, delay, duration, trigger, customTrigger) => {
 			return {
 				delay: delay,
 				name: name,
 				duration: duration,
-				trigger: trigger,
+				trigger: trigger
 			};
 		};
 

@@ -1,6 +1,6 @@
 .PB-Section {
 	background-color: #f8f8fa;
-	margin-top: 250px;
+	margin-top: 150px;
 	z-index: -2;
 	position: relative;
 }
@@ -29,7 +29,21 @@
 	-moz-box-pack: end;
 	justify-content: flex-end;
 }
+.flex-container {
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: -moz-box;
+	display: flex;
+	margin-bottom: 40px;
+}
 @media screen and (max-width: 1150px) {
+	.flex-container {
+		-webkit-box-pack: space-evenly;
+		-webkit-justify-content: space-evenly;
+		-moz-box-pack: space-evenly;
+		justify-content: space-evenly;
+		margin-bottom: 20px;
+	}
 	.PB-Section .content_wrapper .card_block {
 		-webkit-box-pack: center;
 		-webkit-justify-content: center;
@@ -75,7 +89,6 @@
 .PB-Section .content_wrapper .weCode h2 {
 	font-size: 3rem;
 	font-family: "DIN";
-	
 }
 
 .PB-Section .content_wrapper .weCode p {
@@ -101,6 +114,14 @@
 	padding: 20px;
 }
 @media screen and (max-width: 1000px) {
+	.flex-container {
+		display: -webkit-box;
+		display: -webkit-flex;
+		display: -moz-box;
+		display: flex;
+		margin-bottom: 20px;
+	}
+
 	.PB-Section {
 		display: -webkit-box;
 		display: -webkit-flex;
@@ -117,7 +138,6 @@
 		align-content: center;
 		width: 60%;
 		margin-bottom: 0;
-		
 	}
 	.PB-Section .content_wrapper {
 		padding: 100px 15px 0 15px;
@@ -140,12 +160,19 @@
 		left: -webkit-calc(50% - 20px);
 		left: calc(50% - 20px);
 		bottom: -16px;
-		background-color: #1371FD;
+		background-color: #1371fd;
 	}
 
 	@media screen and (max-width: 600px) {
 		.PB-Section .content_wrapper .weCode p::after {
 			left: 0;
+		}
+		.flex-container {
+			display: -webkit-box;
+			display: -webkit-flex;
+			display: -moz-box;
+			display: flex;
+			margin-bottom: 10px;
 		}
 	}
 
@@ -168,6 +195,17 @@
 	}
 	.PB-Section .content_wrapper .card_block .card_content {
 		margin-left: 0;
+	}
+}
+@media screen and (max-width: 720px) {
+	.flex-container {
+		-webkit-box-orient: vertical;
+		-webkit-box-direction: normal;
+		-webkit-flex-direction: column;
+		-moz-box-orient: vertical;
+		-moz-box-direction: normal;
+		flex-direction: column;
+		margin: 0;
 	}
 }
 .PB-Section .content_wrapper .card_block .card_content .img .image {

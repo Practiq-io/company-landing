@@ -26,7 +26,6 @@ const HowItWorksBlock = () => {
 						data-aos-anchor-placement="bottom-bottom"
 						data-aos="fade-down"
 						data-aos-duration="800"
-
 						className="HIW-title"
 					>
 						How it Works
@@ -53,48 +52,43 @@ const HowItWorksBlock = () => {
 									You submit the development request
 								</p>
 
-								<div 
+								<div
 									data-aos-anchor-placement="bottom-bottom"
 									data-aos="fade-zoom-in"
 									data-aos-delay="650"
 									data-aos-duration="800"
-
 									className="HIWB-dotsMobile"
 								>
 									<img src={dotsMobileBlock1} alt="" />
 								</div>
 							</div>
 							<div className="discription">
-								<div 
+								<div
 									data-aos-anchor-placement="bottom-bottom"
 									data-aos="zoom-in"
 									data-aos-delay="850"
 									data-aos-duration="1000"
-
 									className="discription-content"
 								>
 									<img src={faceLogo} alt="" />
 									You
 								</div>
 
-								<div 
+								<div
 									data-aos-anchor-placement="bottom-bottom"
 									data-aos="fade-right"
 									data-aos-delay="950"
 									data-aos-duration="1000"
-
 									className="discription-text"
-								>
-								</div>
+								></div>
 							</div>
 						</div>
-						
-						<div 
+
+						<div
 							data-aos-anchor-placement="bottom-bottom"
 							data-aos="fade-zoom-in"
 							data-aos-delay="650"
 							data-aos-duration="800"
-
 							className="HIWB-dots-image"
 						>
 							<img src={dotsDesc} alt="" />
@@ -127,7 +121,6 @@ const HowItWorksBlock = () => {
 									data-aos="fade-zoom-in"
 									data-aos-delay="650"
 									data-aos-duration="800"
-
 									className="HIWB-dotsMobile"
 								>
 									<img src={dotsMobileBlock2} alt="" />
@@ -147,34 +140,41 @@ const HowItWorksBlock = () => {
 									data-aos="zoom-in-up"
 									data-aos-delay="1250"
 									data-aos-duration="900"
-								>Java</p>
+								>
+									Java
+								</p>
 								<p
 									data-aos-anchor-placement="bottom-bottom"
 									data-aos="zoom-in-up"
 									data-aos-delay="1450"
 									data-aos-duration="900"
-								>Ruby</p>
+								>
+									Ruby
+								</p>
 								<p
 									data-aos-anchor-placement="bottom-bottom"
 									data-aos="zoom-in-up"
 									data-aos-delay="1650"
 									data-aos-duration="900"
-								>Laravel</p>
+								>
+									Laravel
+								</p>
 								<p
 									data-aos-anchor-placement="bottom-bottom"
 									data-aos="zoom-in-up"
 									data-aos-delay="1850"
 									data-aos-duration="900"
-								>Python</p>
+								>
+									Python
+								</p>
 							</div>
 						</div>
 
-						<div 
+						<div
 							data-aos-anchor-placement="bottom-bottom"
 							data-aos="fade-zoom-in"
 							data-aos-delay="650"
 							data-aos-duration="800"
-
 							className="HIWB-dots-image"
 						>
 							<img src={dotsDesctopBlock2} alt="" />
@@ -206,27 +206,22 @@ const HowItWorksBlock = () => {
 									data-aos="fade-zoom-in"
 									data-aos-delay="650"
 									data-aos-duration="800"
-
 									className="HIWB-dotsMobile"
 								>
 									<img src={dotsMobileBlock3} alt="" />
 								</div>
 							</div>
 							<div className="discription">
-								<div 
-									
-									className="discription-content row"
-								>
-									<div 
+								<div className="discription-content row">
+									<div
 										data-aos-anchor-placement="bottom-bottom"
 										data-aos="zoom-in-up"
 										data-aos-delay="1050"
 										data-aos-duration="1000"
-
 										className="account"
 									>
 										<img src={Lisa} alt="" />
-										<p 
+										<p
 											data-aos-anchor-placement="bottom-bottom"
 											data-aos="zoom-in-up"
 											data-aos-delay="1150"
@@ -243,12 +238,11 @@ const HowItWorksBlock = () => {
 											Backend
 										</p>
 									</div>
-									<div 
+									<div
 										data-aos-anchor-placement="bottom-bottom"
 										data-aos="zoom-in-up"
 										data-aos-delay="1250"
 										data-aos-duration="1000"
-
 										className="account"
 									>
 										<img src={Mark} alt="" />
@@ -269,12 +263,11 @@ const HowItWorksBlock = () => {
 											Backend
 										</p>
 									</div>
-									<div 
+									<div
 										data-aos-anchor-placement="bottom-bottom"
 										data-aos="zoom-in-up"
 										data-aos-delay="1450"
 										data-aos-duration="1000"
-
 										className="account"
 									>
 										<img src={Michael} alt="" />
@@ -295,12 +288,11 @@ const HowItWorksBlock = () => {
 											Backend
 										</p>
 									</div>
-									<div 
+									<div
 										data-aos-anchor-placement="bottom-bottom"
 										data-aos="zoom-in-up"
 										data-aos-delay="1650"
 										data-aos-duration="1000"
-
 										className="account"
 									>
 										<img src={Lana} alt="" />
@@ -326,7 +318,6 @@ const HowItWorksBlock = () => {
 										data-aos="zoom-in"
 										data-aos-delay="1850"
 										data-aos-duration="1000"
-
 										className="add"
 									>
 										<p>+4</p>
@@ -343,12 +334,11 @@ const HowItWorksBlock = () => {
 							</div>
 						</div>
 
-						<div 
+						<div
 							data-aos-anchor-placement="bottom-bottom"
 							data-aos="fade-zoom-in"
 							data-aos-delay="650"
 							data-aos-duration="800"
-
 							className="HIWB-dots-image"
 						>
 							<img src={dotsDesctopBlock3} alt="" />
@@ -377,35 +367,32 @@ const HowItWorksBlock = () => {
 									standards{" "}
 								</p>
 
-								<div 
+								<div
 									data-aos-anchor-placement="bottom-bottom"
 									data-aos="fade-zoom-in"
 									data-aos-delay="650"
 									data-aos-duration="800"
-
 									className="HIWB-dotsMobile"
 								>
 									<img src={dotsMobileBlock4} alt="" />
 								</div>
 							</div>
-							<div 
+							<div
 								data-aos-anchor-placement="bottom-bottom"
 								data-aos="fade-left"
 								data-aos-delay="1250"
 								data-aos-duration="800"
-
 								className="discription"
 							>
 								<img src={codeWindow} alt="" />
 							</div>
 						</div>
 
-						<div 
+						<div
 							data-aos-anchor-placement="bottom-bottom"
 							data-aos="fade-zoom-in"
 							data-aos-delay="650"
 							data-aos-duration="800"
-
 							className="HIWB-dots-image"
 						>
 							<img src={dotsDesctopBlock4} alt="" />
@@ -438,7 +425,6 @@ const HowItWorksBlock = () => {
 									data-aos="fade-zoom-in"
 									data-aos-delay="650"
 									data-aos-duration="800"
-
 									className="HIWB-dotsMobile"
 								>
 									<img src={dotsMobileBlock5} alt="" />
@@ -449,29 +435,30 @@ const HowItWorksBlock = () => {
 								data-aos="zoom-in"
 								data-aos-delay="1050"
 								data-aos-duration="800"
-
 								className="discription"
 							>
-								<img  className="HIWB-github-logo" src={GitHub} alt="" />
+								<img className="HIWB-github-logo" src={GitHub} alt="" />
 							</div>
 						</div>
 
-						<div 
+						<div
 							data-aos-anchor-placement="bottom-bottom"
 							data-aos="fade-zoom-in"
 							data-aos-delay="650"
 							data-aos-duration="800"
-
 							className="HIWB-dots-image"
 						>
 							<img src={dotsDesc} alt="" />
 						</div>
 					</div>
 
-					<div id="third-set-animation-trigger" className="HIWB-blocks blockPosition block06">
+					<div
+						id="third-set-animation-trigger"
+						className="HIWB-blocks blockPosition block06"
+					>
 						<div className="HIWB-info">
 							<div className="HIWB-title">
-								<p 
+								<p
 									data-aos-anchor-placement="bottom-bottom"
 									data-aos="fade-left"
 									data-aos-delay="650"
@@ -485,7 +472,7 @@ const HowItWorksBlock = () => {
 									data-aos-delay="850"
 									data-aos-duration="800"
 								>
-									You can check in with any of the developers at any point 
+									You can check in with any of the developers at any point
 								</p>
 							</div>
 							<div className="discription">
@@ -497,57 +484,49 @@ const HowItWorksBlock = () => {
 												data-aos="zoom-in-right"
 												data-aos-delay="1050"
 												data-aos-duration="1000"
-
 												className="avatar"
 											>
 												<img src={faceLogo} alt="" />
 												<p>You</p>
 											</div>
 
-											<div 
+											<div
 												data-aos-anchor-placement="bottom-bottom"
 												data-aos="zoom-in-left"
 												data-aos-delay="1050"
 												data-aos-duration="1000"
-
 												className="message"
 											>
-												<p 
+												<p
 													data-aos-anchor-placement="bottom-bottom"
 													data-aos="fade-in"
-													data-aos-delay="1850"	
+													data-aos-delay="1850"
 													data-aos-duration="1000"
-
 													className="mobilePosition"
-												>
-												
-												</p>
+												></p>
 											</div>
 										</div>
 									</div>
 
-									<div  className="someone">
-										<div 
+									<div className="someone">
+										<div
 											data-aos-anchor-placement="bottom-bottom"
 											data-aos="zoom-in-left"
 											data-aos-delay="1350"
 											data-aos-duration="1000"
-
 											className="avatar"
 										>
 											<img src={Mark} alt="" />
 											<p>Mark</p>
 										</div>
 
-										<div 
+										<div
 											data-aos-anchor-placement="bottom-bottom"
 											data-aos="zoom-in-up"
 											data-aos-delay="1450"
 											data-aos-duration="1000"
-
 											className="message"
-										>
-										</div>
+										></div>
 									</div>
 								</div>
 							</div>
