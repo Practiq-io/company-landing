@@ -26,8 +26,6 @@ export default class App extends Component {
 		bodyIsVisible: false,
 	};
 
-	
-
 	handleLoad = () => {
 		this.setState({ bodyIsVisible: true });
 	};

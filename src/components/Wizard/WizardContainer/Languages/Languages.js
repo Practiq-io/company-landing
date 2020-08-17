@@ -126,8 +126,7 @@ export default class Languages extends Component {
 		suggestions: [],
 		selectedTags: [],
 		customDeliverables: "",
-		system: [],
-		isSmallScreen: false
+		system: []
 	};
 	onChange = (event, { newValue, method }) => {
 		this.setState({

@@ -52,11 +52,11 @@ const PromoBlock = (props) => {
 					
 					<div data-aos-anchor-placement="bottom-bottom" className="card_block">
 						<PromoCard
-							cardLogoAnimation={animationSettings("zoom-in", "1350", "600",)}
-							cardTitleAnimation={animationSettings("fade-right", "750", "600", )}
-							cardTextAnimation={animationSettings("fade-right", "950", "600",)}
+							cardLogoAnimation={animationSettings("zoom-in", "1350", "1000",)}
+							cardTitleAnimation={animationSettings("fade-right", "750", "800", )}
+							cardTextAnimation={animationSettings("fade-right", "950", "800",)}
 							
-							cardBodyAnimation={animationSettings("fade-up-left", "450", "400")}
+							cardBodyAnimation={animationSettings("fade-up-left", "450", "600")}
 							title={"Documentation"}
 							subTitle={"Swagger, Javadoc, etc."}
 							textBody={
@@ -65,11 +65,11 @@ const PromoBlock = (props) => {
 							imgPath={documentation}
 						/>
 						<PromoCard
-							cardLogoAnimation={animationSettings("zoom-in", "1650", "600")}
-							cardTitleAnimation={animationSettings("fade-right", "1050", "600" )}
-							cardTextAnimation={animationSettings("fade-right", "1250", "600")}
+							cardLogoAnimation={animationSettings("zoom-in", "1650", "1000")}
+							cardTitleAnimation={animationSettings("fade-right", "1050", "800" )}
+							cardTextAnimation={animationSettings("fade-right", "1250", "800")}
 							
-							cardBodyAnimation={animationSettings("fade-up-left", "750", "400")}
+							cardBodyAnimation={animationSettings("fade-up-left", "750", "600")}
 							title={"Docker files"}
 							subTitle={""}
 							textBody={
@@ -78,22 +78,22 @@ const PromoBlock = (props) => {
 							imgPath={docerFiles}
 						/>
 						<PromoCard
-							cardLogoAnimation={animationSettings("zoom-in", "1950", "600")}
-							cardTitleAnimation={animationSettings("fade-right", "1350", "600" )}
-							cardTextAnimation={animationSettings("fade-right", "1850", "600")}
+							cardLogoAnimation={animationSettings("zoom-in", "1950", "1000")}
+							cardTitleAnimation={animationSettings("fade-right", "1350", "800" )}
+							cardTextAnimation={animationSettings("fade-right", "1850", "800")}
 							
-							cardBodyAnimation={animationSettings("fade-up-left", "1050", "400")}
+							cardBodyAnimation={animationSettings("fade-up-left", "1050", "600")}
 							title={"Unit and End to End testing"}
 							subTitle={"JUnit, Jest, Nightwatch"}
 							textBody={"Results are secured through unit and e2e tests"}
 							imgPath={endTesting}
 						/>
 						<PromoCardCustomize
-							cardLogoAnimation={animationSettings("zoom-in", "2050", "600")}
-							cardTitleAnimation={animationSettings("fade-right", "1650", "600", )}
-							cardTextAnimation={animationSettings("fade-right", "1950", "600")}
+							cardLogoAnimation={animationSettings("zoom-in", "2250", "1000")}
+							cardTitleAnimation={animationSettings("fade-right", "1650", "800", )}
+							cardTextAnimation={animationSettings("fade-right", "1950", "800")}
 							
-							cardBodyAnimation={animationSettings("fade-up-left", "1350", "400")}
+							cardBodyAnimation={animationSettings("fade-up-left", "1350", "600")}
 							title={"Add your own deliverable standard"}
 							subTitle={""}
 							textBody={

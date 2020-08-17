@@ -19,6 +19,10 @@ class MainContainer extends Component {
 			once: true,
 			easing: "ease-out-cubic",
 			duration: 800,
+			disable: function() {
+				let maxWidth = 800;
+				return window.innerWidth < maxWidth;
+			}
 		});
 	}
 
