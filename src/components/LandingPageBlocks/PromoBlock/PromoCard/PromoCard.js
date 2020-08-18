@@ -7,10 +7,6 @@ const PromoCard = props => {
 	const cardBodyAosName = props.cardBodyAnimation.name ? props.cardBodyAnimation.name : null;
 	const cardBodyDuration = props.cardBodyAnimation.duration ? props.cardBodyAnimation.duration : null;
 
-	const cardLogoDelay = props.cardLogoAnimation.delay ? props.cardLogoAnimation.delay : null;
-	const cardLogoAosName = props.cardLogoAnimation.name ? props.cardLogoAnimation.name : null;
-	const cardLogoDuration = props.cardLogoAnimation.duration ? props.cardLogoAnimation.duration : null;
-
 	const cardTitleDelay = props.cardTitleAnimation.delay ? props.cardTitleAnimation.delay : null;
 	const cardTitleAosName = props.cardTitleAnimation.name ? props.cardTitleAnimation.name : null;
 	const cardTitleDuration = props.cardTitleAnimation.duration ? props.cardTitleAnimation.duration : null;
@@ -74,13 +70,7 @@ const PromoCard = props => {
 			className="promo-card-body"
 		>
 			<div className="promo-card-img-box">
-				<div 
-					data-aos={cardLogoAosName}
-					data-aos-duration={cardLogoDuration}
-					data-aos-delay={cardLogoDelay}
-					data-aos-anchor=".promo-card-body"
-					className="pc-img"
-				>
+				<div className="pc-img">
 					<img src={props.imgPath} alt=""/>
 				</div>
 			</div>

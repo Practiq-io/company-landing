@@ -2,9 +2,9 @@ let codeSnippetCounter = 0;
 let codeFlag = 0;
 let titleFlag = 0;
 let commentFlag = 0;
-let codeSpeed = 7;
+let codeSpeed = 9;
 let titleSpeed = 35;
-let commentSpeed = 1;
+let commentSpeed = 4;
 const codeSnippets = [
 	{
 		title: "React SPA",
@@ -81,7 +81,7 @@ const writeCode = (txt) => {
 		codeFlag++;
 		setTimeout(() => writeCode(txt), codeSpeed);
 	} else if (codeFlag === txt.length) {
-		setTimeout(() => removeCode(txt), 1500);
+		setTimeout(() => removeCode(txt), 2000);
 	}
 };
 
@@ -93,7 +93,7 @@ const removeCode = (txt) => {
 			"code_block-animation-txt"
 		).innerHTML = txt = txt.slice(0, codeFlag - 1);
 		codeFlag--;
-		setTimeout(() => removeCode(txt), 1);
+		setTimeout(() => removeCode(txt), 5);
 	} else {
 		setTimeout(() => removeComment(codeSnippets[codeSnippetCounter].comment), 1);
 	}
