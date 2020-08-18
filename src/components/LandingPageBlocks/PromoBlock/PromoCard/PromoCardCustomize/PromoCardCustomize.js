@@ -8,10 +8,6 @@ const PromoCardCustomize = (props) => {
 	const aosName = props.cardBodyAnimation.name ? props.cardBodyAnimation.name : null;
 	const duration = props.cardBodyAnimation.duration ? props.cardBodyAnimation.duration : null;
 
-	const cardLogoDelay = props.cardLogoAnimation.delay ? props.cardLogoAnimation.delay : null;
-	const cardLogoAosName = props.cardLogoAnimation.name ? props.cardLogoAnimation.name : null;
-	const cardLogoDuration = props.cardLogoAnimation.duration ? props.cardLogoAnimation.duration : null;
-
 	const cardTitleDelay = props.cardTitleAnimation.delay ? props.cardTitleAnimation.delay : null;
 	const cardTitleAosName = props.cardTitleAnimation.name ? props.cardTitleAnimation.name : null;
 	const cardTitleDuration = props.cardTitleAnimation.duration ? props.cardTitleAnimation.duration : null;
@@ -74,13 +70,7 @@ const PromoCardCustomize = (props) => {
 			className="promo-card-Customize-body"
 		>
 			<div className="promo-card-Customize-img-box">
-				<div 
-					data-aos={cardLogoAosName}
-					data-aos-duration={cardLogoDuration}
-					data-aos-delay={cardLogoDelay}
-					data-aos-anchor-placement="bottom-bottom"	
-					className="pc-Customize-img"
-				>
+				<div className="pc-Customize-img">
 					<img src={addCard} alt="" />
 				</div>
 			</div>

@@ -57,27 +57,20 @@ const PromoBlock = (props) => {
 					<div data-aos-anchor-placement="bottom-bottom" className="card_block">
 						<div className="flex-container">
 							<PromoCard
-								cardLogoAnimation={animationSettings("zoom-in", "2000", "1000", null, "#PB_customTrigger")}
 								cardTitleAnimation={animationSettings(
-									"fade-right",
+									"fade-left",
 									"750",
-									"800",
-									null,
-									"#PB_customTrigger"
+									"800"
 								)}
 								cardTextAnimation={animationSettings(
-									"fade-right",
+									"zoom-in",
 									"950",
-									"800",
-									null,
-									"#PB_customTrigger"
+									"800"
 								)}
 								cardBodyAnimation={animationSettings(
 									"fade-up-left",
 									"450",
-									"600",
-									null,
-									"#PB_customTrigger"
+									"600"
 								)}
 								title={"Documentation"}
 								subTitle={"Swagger, Javadoc, etc."}
@@ -87,27 +80,20 @@ const PromoBlock = (props) => {
 								imgPath={documentation}
 							/>
 							<PromoCard
-								cardLogoAnimation={animationSettings("zoom-in", "2000", "1000", null, "#PB_customTrigger")}
 								cardTitleAnimation={animationSettings(
-									"fade-right",
+									"fade-left",
 									"1050",
-									"800",
-									null,
-									"#PB_customTrigger"
+									"800"
 								)}
 								cardTextAnimation={animationSettings(
-									"fade-right",
+									"zoom-in",
 									"1250",
-									"800",
-									null,
-									"#PB_customTrigger"
+									"800"
 								)}
 								cardBodyAnimation={animationSettings(
 									"fade-up-left",
 									"750",
-									"600",
-									null,
-									"#PB_customTrigger"
+									"600"
 								)}
 								title={"Docker files"}
 								subTitle={""}
@@ -119,15 +105,13 @@ const PromoBlock = (props) => {
 						</div>
 						<div className="flex-container">
 							<PromoCard
-								id="PB_customTrigger"
-								cardLogoAnimation={animationSettings("zoom-in", "1950", "1000")}
 								cardTitleAnimation={animationSettings(
-									"fade-right",
+									"fade-left",
 									"1350",
 									"800"
 								)}
 								cardTextAnimation={animationSettings(
-									"fade-right",
+									"zoom-in",
 									"1850",
 									"800"
 								)}
@@ -142,14 +126,13 @@ const PromoBlock = (props) => {
 								imgPath={endTesting}
 							/>
 							<PromoCardCustomize
-								cardLogoAnimation={animationSettings("zoom-in", "2250", "1000")}
 								cardTitleAnimation={animationSettings(
-									"fade-right",
+									"fade-left",
 									"1650",
 									"800"
 								)}
 								cardTextAnimation={animationSettings(
-									"fade-right",
+									"zoom-in",
 									"1950",
 									"800"
 								)}
