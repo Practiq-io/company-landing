@@ -58,17 +58,17 @@
 			display: -webkit-flex;
 			display: -moz-box;
 			display: flex;
-			-webkit-box-pack: space-evenly;
-			-webkit-justify-content: space-evenly;
-			-moz-box-pack: space-evenly;
-			justify-content: space-evenly;
+			-webkit-box-pack: end;
+			-webkit-justify-content: flex-end;
+			-moz-box-pack: end;
+			justify-content: flex-end;
 			width: 100%;
 
 			@media screen and (max-width: 1150px) {
 				-webkit-box-pack: justify;
 				-webkit-justify-content: space-between;
 				-moz-box-pack: justify;
-				justify-content: space-between;
+				justify-content: center;
 			}
 
 			@media screen and (max-width: 1000px) {
@@ -98,20 +98,33 @@
 				-moz-box-direction: normal;
 				flex-direction: column;
 				background: #2473ea;
-				
+
 				border-radius: 12px;
 				max-width: 300px;
 				height: 403px;
 
 				.who-block-text {
-					padding: 16px 20px ;
+					padding: 16px 20px;
 					color: white;
-					font-family: 'Circle-Regular';
+					font-family: "Circle-Regular";
 					font-size: 1rem;
 					line-height: 20px;
-					background: -webkit-gradient(linear, left top, right top, from(#2473EA),to(#6fa1ec));
-					background: -webkit-linear-gradient(left, #2473EA,#6fa1ec);
-					background: linear-gradient(to right, #2473EA,#6fa1ec);
+					background: -webkit-gradient(
+						linear,
+						left top,
+						right top,
+						from(#2473ea),
+						to(#6fa1ec)
+					);
+					background: -webkit-linear-gradient(left, #2473ea, #6fa1ec);
+					background: -webkit-gradient(
+						linear,
+						left top,
+						right top,
+						from(#2473ea),
+						to(#6fa1ec)
+					);
+					background: linear-gradient(to right, #2473ea, #6fa1ec);
 					border-bottom-left-radius: 12px;
 					border-bottom-right-radius: 12px;
 
@@ -186,7 +199,6 @@
 						width: 20px;
 						height: 20px;
 					}
-					
 				}
 
 				&.liza {
@@ -194,21 +206,17 @@
 
 					@media screen and (max-width: 1220px) {
 						height: -webkit-calc(424px - 50px) !important;
-
 						height: calc(424px - 50px) !important;
 					}
 
 					@media screen and (max-width: 1150px) {
 						height: -webkit-calc(403px - 40px) !important;
-
 						height: calc(403px - 40px) !important;
 					}
 
 					@media screen and (max-width: 1150px) {
 						height: 425px !important;
 					}
-
-				
 
 					.person-image {
 						background-image: url("../../../image/Liza.png");
@@ -242,11 +250,8 @@
 					}
 
 					display: -webkit-box !important;
-
 					display: -webkit-flex !important;
-
 					display: -moz-box !important;
-
 					display: flex !important;
 					max-width: 380px;
 
@@ -277,9 +282,8 @@
 						}
 
 						p:nth-child(2) {
-							// font-size: 0.875rem;
 							font-size: 1rem;
-							font-family: 'Circle-Regular';
+							font-family: "Circle-Regular";
 							line-height: 20px;
 							color: #696974;
 						}
@@ -312,5 +316,40 @@
 				}
 			}
 		}
+	}
+}
+.WB-content {
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: -moz-box;
+	display: flex;
+	-webkit-box-pack: center;
+	-webkit-justify-content: center;
+	-moz-box-pack: center;
+	justify-content: center;
+	-webkit-box-align: start;
+	-webkit-align-items: flex-start;
+	-moz-box-align: start;
+	align-items: flex-start;
+}
+.WB-title-text {
+	text-align: center;
+}
+.wb-middle-card {
+	margin: 0 40px;
+}
+
+@media screen and (max-width: 1000px) {
+	.WB-title-box {
+		width: 100%;
+		display: -webkit-box;
+		display: -webkit-flex;
+		display: -moz-box;
+		display: flex;
+		margin-right: 0;
+		-webkit-box-pack: center;
+		-webkit-justify-content: center;
+		-moz-box-pack: center;
+		justify-content: center;
 	}
 }

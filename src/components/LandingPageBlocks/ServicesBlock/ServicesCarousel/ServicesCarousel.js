@@ -2,9 +2,7 @@ import React, { Component } from "react";
 import "../../../../../node_modules/slick-carousel/slick/slick-theme.css";
 import "../../../../../node_modules/slick-carousel/slick/slick.css";
 import activeLeftArrow from './CarouselCustomArrows/ActiveLeft.svg';
-import inactiveLeftArrow from './CarouselCustomArrows/InactiveLeft.svg';
 import activeRightArrow from './CarouselCustomArrows/ActiveRight.svg';
-import inactiveRightArrow from './CarouselCustomArrows/InactiveRight.svg';
 import "./ServicesCarouselFix.css";
 import Slider from "react-slick";
 
@@ -33,7 +31,8 @@ class ServicesCarousel extends Component {
 		infinite: false,
 		focusOnSelect: false,
 		variableWidth: true,
-		afterChange: (current) => this.setState({ activeSlide: current }),
+		arrows: false,
+		beforeChange: (current, next) => this.setState({ activeSlide: next })
 	};
 	render() {
 		return (
@@ -43,31 +42,29 @@ class ServicesCarousel extends Component {
 				</Slider>
 				<div 
 					style={{
-						pointerEvents: this.state.activeSlide === 0 ? "none" : "auto"
+						pointerEvents: this.state.activeSlide === 0 ? "none" : "auto",
+						transition: "0.5s",
+						opacity: this.state.activeSlide === 0 ? "0.2" : "1"
 					}}
 					className="leftArrow" 
 					onClick={this.previous
 				}>
 					<img 
-						src={
-							this.state.activeSlide === 0 ? 
-							inactiveLeftArrow : activeLeftArrow
-							} 
+						src={activeLeftArrow} 
 						alt=""
 					/>
 				</div>
 				<div
 					style={{
-						pointerEvents: this.state.activeSlide === 2 ? "none" : "auto"
+						pointerEvents: this.state.activeSlide === 2 ? "none" : "auto",
+						transition: "0.5s",
+						opacity: this.state.activeSlide === 2 ? "0.2" : "1"
 					}} 
 					className="rightArrow" 
 					onClick={this.next}
 				>
 					<img 
-						src={
-							this.state.activeSlide === 2 ? 
-							inactiveRightArrow : activeRightArrow
-						} 
+						src={activeRightArrow} 
 						alt=""
 					/>
 				</div>

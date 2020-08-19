@@ -29,7 +29,7 @@ class HeroBlock extends Component {
 							data-aos-duration="700"
 						>
 							<h1>
-								Let our pre-vetted developers build a {" "}
+								Let our pre-vetted developers build a {" "}<br className="title-animation-linebreak-fix"></br>
 								<span className="lineBreakFix">{"< "}<span id="code_block-animation-title"></span>{" />"}</span><br className="title-animation-linebreak"></br> for you
 							</h1>
 						</div>
