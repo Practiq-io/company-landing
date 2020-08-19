@@ -77,11 +77,6 @@
   max-width: 8px;
   max-height: 8px;
 }
-.card-set_timeline .timeline_card:hover .timeline_card--select-circle {
-  -webkit-transition: 0.1s;
-  transition: 0.1s;
-  border: solid 1px #a1a1a1 !important;
-}
 .card-set_timeline .timeline_position-wrapper {
   position: relative;
   display: -webkit-box;
