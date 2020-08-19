@@ -18,27 +18,10 @@ nav {
 			padding-top: 16px;
 			width: 100%;
 
-			.logo-mobile-nav {
-				width: 116px;
-				height: 32px;
-
-				@media screen and (max-width: 1000px) {
-					display: block;
-				}
-				@media screen and (min-width: 1000px) {
-					display: none;
-				}
-			}
+			
 			.logo-desktop-nav {
 				width: 116px;
 				height: 32px;
-
-				@media screen and (max-width: 1000px) {
-					display: none;
-				}
-				@media screen and (min-width: 1000px) {
-					display: block;
-				}
 			}
 
 			.navigation {
@@ -76,10 +59,23 @@ nav {
 		}
 	}
 }
-
 .mobile-navigation_display {
 	display: none;
-	@media screen and (max-width: 1000px) {
+}
+.logo-mobile-nav {
+	width: 116px;
+	height: 32px;
+	display: none;
+}
+@media screen and (max-width: 1000px) {
+	.logo-mobile-nav {
 		display: block;
+	}
+	.logo-desktop-nav {
+		display: none;
+	}
+	.mobile-navigation_display {
+		display: block;
+		
 	}
 }

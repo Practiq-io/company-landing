@@ -23,7 +23,7 @@ const PromoCard = props => {
 				data-aos={cardTitleAosName}
 				data-aos-duration={cardTitleDuration}
 				data-aos-delay={cardTitleDelay}
-				data-aos-anchor-placement="bottom-bottom"
+				data-aos-anchor-placement="center-center"
 				className="pc-title"
 			>
 				<p>{props.title}</p>
@@ -38,7 +38,7 @@ const PromoCard = props => {
 				data-aos={cardTitleAosName}
 				data-aos-duration={cardTitleDuration}
 				data-aos-delay={cardTitleDelay} 
-				data-aos-anchor-placement="bottom-bottom"
+				data-aos-anchor-placement="center-center"
 				className="pc-subtitle"
 			>
 				<p>{props.subTitle}</p>
@@ -53,7 +53,7 @@ const PromoCard = props => {
 				data-aos={cardTextAosName}
 				data-aos-duration={cardTextDuration}
 				data-aos-delay={cardTextDelay} 
-				data-aos-anchor-placement="bottom-bottom"
+				data-aos-anchor-placement="center-center"
 				className="pc-text-body"
 			>
 				<p>{props.textBody}</p>

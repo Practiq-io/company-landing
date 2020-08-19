@@ -18,33 +18,9 @@ nav .wrapper .nav_wrapper {
   padding-top: 16px;
   width: 100%;
 }
-nav .wrapper .nav_wrapper .logo-mobile-nav {
-  width: 116px;
-  height: 32px;
-}
-@media screen and (max-width: 1000px) {
-  nav .wrapper .nav_wrapper .logo-mobile-nav {
-    display: block;
-  }
-}
-@media screen and (min-width: 1000px) {
-  nav .wrapper .nav_wrapper .logo-mobile-nav {
-    display: none;
-  }
-}
 nav .wrapper .nav_wrapper .logo-desktop-nav {
   width: 116px;
   height: 32px;
-}
-@media screen and (max-width: 1000px) {
-  nav .wrapper .nav_wrapper .logo-desktop-nav {
-    display: none;
-  }
-}
-@media screen and (min-width: 1000px) {
-  nav .wrapper .nav_wrapper .logo-desktop-nav {
-    display: block;
-  }
 }
 nav .wrapper .nav_wrapper .navigation {
   display: -webkit-box;
@@ -78,7 +54,18 @@ nav .wrapper .nav_wrapper .navigation .nav_desctop a:last-of-type {
 .mobile-navigation_display {
   display: none;
 }
+.logo-mobile-nav {
+  width: 116px;
+  height: 32px;
+  display: none;
+}
 @media screen and (max-width: 1000px) {
+  .logo-mobile-nav {
+    display: block;
+  }
+  .logo-desktop-nav {
+    display: none;
+  }
   .mobile-navigation_display {
     display: block;
   }

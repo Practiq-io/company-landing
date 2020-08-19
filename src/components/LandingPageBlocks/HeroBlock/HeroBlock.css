@@ -288,18 +288,23 @@ section .grid_wrapper .working_image img {
 		max-width: 49%;
 	}
 }
+.mobile_image {
+	display: none;
+}
 @media screen and (max-width: 1100px) {
-	section .grid_wrapper .section_title h1 {
-		font-size: 2.7rem;
-		line-height: 50px;
-		padding: 0 15px;
-	}
+	
 	section .grid_wrapper .section_text p {
 		font-size: 0.8rem;
 	}
 }
 @media screen and (max-width: 1000px) {
+	section .grid_wrapper .section_title h1 {
+		font-size: 2.7rem;
+		line-height: 50px;
+		padding: 0 15px;
+	}
 	section > img.mobile_image {
+		display: block;
 		position: absolute;
 		top: 0;
 		right: 0;
@@ -472,6 +477,19 @@ section .grid_wrapper .working_image img {
 	}
 	section .grid_wrapper .section_text .arrow img.mobile.ArrowRight:hover {
 		background-color: purple;
+	}
+}
+.title-animation-linebreak-fix {
+	display: none;
+}
+@media screen and (max-width: 1152px) {
+	.title-animation-linebreak-fix {
+		display: block;
+	}
+}
+@media screen and (max-width: 1000px) {
+	.title-animation-linebreak-fix {
+		display: none;
 	}
 }
 @media screen and (max-width: 500px) {

@@ -6,18 +6,23 @@ import LizaMobile from "../../../image/Liza-mobile.png";
 import RomaMobile from "../../../image/Roma-mobile.png";
 import linkidMobile from "../../../image/linkid-blue.svg";
 
-const WhoBlock = (props) => {
+const WhoBlock = () => {
 	return (
 		<section className="WB-Section">
 			<div className="wrapper">
 				<content className="WB-content">
-					<h2
-						data-aos-anchor-placement="bottom-bottom"
-						data-aos="fade-right"
-						data-aos-duration="800"
-					>
-						Who build this
-					</h2>
+					
+					<div className="WB-title-box">
+						<h2	
+							className="WB-title-text"
+							data-aos-anchor-placement="bottom-bottom"
+							data-aos="fade-right"
+							data-aos-duration="800"
+						>
+							Who build this
+						</h2>
+					</div>
+					
 
 					<div className="person-card">
 
@@ -69,7 +74,7 @@ const WhoBlock = (props) => {
 							data-aos-delay="950"
 							data-aos-duration="1000"
 
-							className="person liza"
+							className="person liza wb-middle-card"
 						>
 							<div className="person-image">
 								<p
@@ -151,7 +156,7 @@ const WhoBlock = (props) => {
 
 
 						<div className="person-mobile-block">
-							<div className="person-card-mobile ika">
+							<div className="person-card-mobile ika ">
 								<div 
 									data-aos-anchor-placement="top"
 									data-aos="zoom-in"
