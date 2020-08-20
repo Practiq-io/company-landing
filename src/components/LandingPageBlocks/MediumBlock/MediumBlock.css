@@ -362,11 +362,11 @@
 }
 .medium_card_frame_mobile a {
   text-decoration: none;
-  text-decoration-color: inherit;
+  color: inherit;
 }
 .medium_card_frame_mobile a:visited {
   text-decoration: none;
-  text-decoration-color: inherit;
+  color: inherit;
 }
 .medium-card_mobile {
   display: flex;
