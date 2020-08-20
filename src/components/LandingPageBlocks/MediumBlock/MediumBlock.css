@@ -360,6 +360,14 @@
   width: 100%;
   display: none;
 }
+.medium_card_frame_mobile a {
+  text-decoration: none;
+  color: inherit;
+}
+.medium_card_frame_mobile a:visited {
+  text-decoration: none;
+  color: inherit;
+}
 .medium-card_mobile {
   display: flex;
   flex-direction: column;
