@@ -708,17 +708,7 @@
   margin-top: -10px;
 }
 .HIWB-Section .wrapper {
-  width: 1100px;
-}
-@media screen and (max-width: 1000px) {
-  .HIWB-Section .wrapper {
-    width: 500px;
-  }
-}
-@media screen and (max-width: 600px) {
-  .HIWB-Section .wrapper {
-    width: 100%;
-  }
+  max-width: 1100px;
 }
 @media screen and (max-width: 1000px) {
   .HIWB-blocks.block01 {

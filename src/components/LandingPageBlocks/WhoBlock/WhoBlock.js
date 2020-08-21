@@ -8,7 +8,7 @@ import linkidMobile from "../../../image/linkid-blue.svg";
 
 const WhoBlock = () => {
 	return (
-		<section className="WB-Section">
+		<section className="WB-Section" id="who-block_anchor">
 			<div className="wrapper">
 				<content className="WB-content">
 					
