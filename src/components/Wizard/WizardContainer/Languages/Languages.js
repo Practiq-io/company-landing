@@ -3,7 +3,6 @@ import "./Languages.css";
 import selectedTagClose from "./Languages_img/tagClose.svg";
 import Autosuggest from "react-autosuggest";
 import "./Autocomplete/Autocomplete.css";
-import { CSSTransition, TransitionGroup } from "react-transition-group";
 
 const popularTags = [
 	"C++",
@@ -172,12 +171,6 @@ export default class Languages extends Component {
 			let newSelectedTag = [name, "junior"];
 			let selectedTags = [...this.state.selectedTags];
 			selectedTags.push(newSelectedTag);
-			// this.setState((prevState) => ({
-			// 	popularTags: prevState.popularTags
-			// }));
-			// this.setState((prevState) => ({
-			// 	selectedTags: prevState.selectedTags,
-			// }));
 			this.setState({popularTags, selectedTags})
 		} else {
 			this.setState({ inputError: "* exceeded limit" });
@@ -397,15 +390,11 @@ export default class Languages extends Component {
 							</p>
 						</div>
 
-						<TransitionGroup className="languages-selected-tags_output">
+						<div className="languages-selected-tags_output">
 							{this.state.selectedTags
 								? this.state.selectedTags.map((name) => {
 										return (
-											<CSSTransition
-												key={name[0]}
-												timeout={100}
-												classNames="tags-fade"
-											>
+										
 												<div className="selected_tag" key={name[0]}>
 													<p>{name[0]}</p>
 													<img
@@ -415,24 +404,20 @@ export default class Languages extends Component {
 														alt=""
 													/>
 												</div>
-											</CSSTransition>
+											
 										);
 								  })
 								: null}
-						</TransitionGroup>
+						</div>
 
 						<p className="modal-content_subtitle">
 							Or select from the following:
 						</p>
-						<TransitionGroup className="languages-popular-tags_output">
+						<div className="languages-popular-tags_output">
 							{this.state.popularTags
 								? this.state.popularTags.map((name) => {
 										return (
-											<CSSTransition
-												key={name}
-												timeout={100}
-												classNames="tags-fade"
-											>
+											
 												<div
 													onClick={() => this.addPopularTag(name)}
 													className="popular_tag"
@@ -440,11 +425,11 @@ export default class Languages extends Component {
 												>
 													<p>{name}</p>
 												</div>
-											</CSSTransition>
+											
 										);
 								  })
 								: null}
-						</TransitionGroup>
+						</div>
 					</div>
 				</div>
 
