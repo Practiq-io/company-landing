@@ -119,14 +119,13 @@ const allTags = [
 	},
 ];
 
-
 export default class Languages extends Component {
 	state = {
 		value: "",
 		suggestions: [],
 		selectedTags: [],
 		customDeliverables: "",
-		system: []
+		system: [],
 	};
 	onChange = (event, { newValue, method }) => {
 		this.setState({
@@ -139,26 +138,20 @@ export default class Languages extends Component {
 	}
 	getSuggestions(value) {
 		const escapedValue = this.escapeRegexCharacters(value.trim());
-	
+
 		if (escapedValue === "") {
 			return [];
 		}
-	
+
 		const regex = new RegExp("^" + escapedValue, "i");
-	
+
 		return allTags.filter((language) => regex.test(language.name));
 	}
 	getSuggestionValue(suggestion) {
 		return suggestion.name;
 	}
 	renderSuggestion(suggestion) {
-		return (
-			<div
-				className="custom-styles_span"
-			>
-				{suggestion.name}
-			</div>
-		);
+		return <div className="custom-styles_span">{suggestion.name}</div>;
 	}
 	onSuggestionsFetchRequested = ({ value }) => {
 		this.setState({
@@ -170,6 +163,7 @@ export default class Languages extends Component {
 			suggestions: [],
 		});
 	};
+
 	addPopularTag = (name) => {
 		if (this.state.selectedTags.length < 10) {
 			let popularTags = [...this.state.popularTags];
@@ -178,7 +172,13 @@ export default class Languages extends Component {
 			let newSelectedTag = [name, "junior"];
 			let selectedTags = [...this.state.selectedTags];
 			selectedTags.push(newSelectedTag);
-			this.setState({ popularTags, selectedTags });
+			// this.setState((prevState) => ({
+			// 	popularTags: prevState.popularTags
+			// }));
+			// this.setState((prevState) => ({
+			// 	selectedTags: prevState.selectedTags,
+			// }));
+			this.setState({popularTags, selectedTags})
 		} else {
 			this.setState({ inputError: "* exceeded limit" });
 		}
@@ -342,16 +342,19 @@ export default class Languages extends Component {
 			this.props.nextStep();
 		}
 	};
-	onSuggestionSelected = (event, { suggestion, suggestionValue, suggestionIndex, sectionIndex, method }) =>{
-		this.addInputTagAutosuggest(suggestionValue)
-    };	
+	onSuggestionSelected = (
+		event,
+		{ suggestion, suggestionValue, suggestionIndex, sectionIndex, method }
+	) => {
+		this.addInputTagAutosuggest(suggestionValue);
+	};
 
 	render() {
 		const { value, suggestions, inputError, screenWidth } = this.state;
 		const inputProps = {
 			placeholder: screenWidth > 370 ? "e.g., Java, React, Drupal, etc." : "",
 			value,
-			onChange: this.onChange
+			onChange: this.onChange,
 		};
 
 		const { prevStep } = this.props;
