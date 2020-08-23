@@ -172,11 +172,11 @@ export default class Languages extends Component {
 	};
 	addPopularTag = (name) => {
 		if (this.state.selectedTags.length < 10) {
-			let newSelectedTag = [name, "junior"];
 			let popularTags = [...this.state.popularTags];
-			let selectedTags = [...this.state.selectedTags];
 			let index = popularTags.indexOf(name);
 			popularTags.splice(index, 1);
+			let newSelectedTag = [name, "junior"];
+			let selectedTags = [...this.state.selectedTags];
 			selectedTags.push(newSelectedTag);
 			this.setState({ popularTags, selectedTags });
 		} else {
