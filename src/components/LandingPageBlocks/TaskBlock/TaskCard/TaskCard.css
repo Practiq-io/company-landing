@@ -52,7 +52,7 @@
 		margin: 0 15px 30px 15px;
 	}
 }
-@media screen and (max-width: 500px) {
+@media screen and (max-width: 717px) {
 	.TC-Cardbox {
 		background: rgb(255, 255, 255);
 		width: 100%;
