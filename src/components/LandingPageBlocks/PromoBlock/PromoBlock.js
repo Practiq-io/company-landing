@@ -3,7 +3,7 @@ import "./PromoBlock.css";
 import PromoCard from "./PromoCard/PromoCard";
 import PromoCardCustomize from "./PromoCard/PromoCardCustomize/PromoCardCustomize";
 import documentation from "../../../image/documentation.svg";
-import docerFiles from "../../../image/docker.svg";
+import docerFiles from "../../../image/docerFiles.png";
 import endTesting from "../../../image/unitTest.svg";
 
 const PromoBlock = (props) => {
