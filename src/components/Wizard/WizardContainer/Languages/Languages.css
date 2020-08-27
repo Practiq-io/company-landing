@@ -57,6 +57,7 @@
   flex-wrap: wrap;
   -webkit-transition: 0.3s;
   transition: 0.3s;
+  position: relative;
 }
 .languages-popular-tags_output .popular_tag {
   border: 1px solid #e9e9ed;

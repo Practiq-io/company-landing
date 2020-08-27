@@ -48,17 +48,23 @@ export default class App extends Component {
 					className="loader-position"
 				>
 					<div 
-						style={{
-							display: this.state.bodyIsVisible ? "none" : "block"
-						}} 
-						className="loader"
+						className="loader-frame"
 					>
+						<div 
+							style={{
+								display: this.state.bodyIsVisible ? "none" : "block"
+							}} 
+							className="loader"
+						>
+						</div>
 					</div>
+					
 				</div>
 				
 				<div
-					style={{
+					style={{ 
 						opacity: this.state.bodyIsVisible ? "1" : "0",
+						position: this.state.bodyIsVisible ? "static" : "fixed"
 					}}
 					className="App"
 				>

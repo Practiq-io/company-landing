@@ -34,6 +34,14 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  z-index: 500;
+}
+.loader-frame {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .loader,
 .loader:after {
@@ -42,7 +50,7 @@
   height: 7em;
 }
 .loader {
-  position: relative;
+  position: absolute;
   top: 40vh;
   margin: 60px auto;
   font-size: 10px;

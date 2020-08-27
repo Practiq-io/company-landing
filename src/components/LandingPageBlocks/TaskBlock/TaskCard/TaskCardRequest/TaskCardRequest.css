@@ -81,7 +81,7 @@
 		margin: 0 15px 30px 15px;
 	}
 }
-@media screen and (max-width: 500px) {
+@media screen and (max-width: 717px) {
 	.TCR-avatar-img {
 		margin-right: 30px;
 		-webkit-align-self: flex-start;
