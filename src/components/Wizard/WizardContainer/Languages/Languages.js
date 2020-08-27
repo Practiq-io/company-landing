@@ -3,28 +3,9 @@ import "./Languages.css";
 import selectedTagClose from "./Languages_img/tagClose.svg";
 import Autosuggest from "react-autosuggest";
 import "./Autocomplete/Autocomplete.css";
+import axios from '../../../../axios-endpoint.js';
+import Loader from '../../wizardUI/wizardLoader';
 
-const popularTags = [
-	"C++",
-	"C#",
-	"Java",
-	"React",
-	"Joomla",
-	"Wordpress",
-	"Javascript",
-	"Laravel",
-	"Node JS",
-	"Ruby",
-	"Swift",
-	"CSS",
-	"HTML",
-	"Drupal",
-	"Kotlin",
-	".NET",
-	"IOS",
-	"Android",
-	"AWS",
-];
 const allTags = [
 	{
 		name: "Java",
@@ -125,7 +106,35 @@ export default class Languages extends Component {
 		selectedTags: [],
 		customDeliverables: "",
 		system: [],
+		popLoader: false,
+		popularTags: []
 	};
+	componentDidMount() {
+		if (this.props.containerState) {
+			this.setState(this.props.containerState);
+		} else {
+			this.setState({popLoader: true, popularTags: []})
+			axios
+				.get("/capabilities/skills/popular")
+				.then((result) => {
+					let popTagsArray = result.data.skills
+					let popularTags = [];
+					let popularTagsReference = []
+					popTagsArray.forEach(tag => {
+						let tagName = tag.name;
+						popularTags.push(tagName)
+						popularTagsReference.push(tagName)
+						this.setState({popularTags, popularTagsReference})
+					})
+					this.setState({popLoader: false})
+				})
+				.catch((err) => {
+					console.log(err);
+					this.setState({popLoader: false, popTagsError: err.toString()})
+				});
+		}
+		this.setState({ screenWidth: window.innerWidth });
+	}
 	onChange = (event, { newValue, method }) => {
 		this.setState({
 			value: newValue,
@@ -171,13 +180,13 @@ export default class Languages extends Component {
 			let newSelectedTag = [name, "junior"];
 			let selectedTags = [...this.state.selectedTags];
 			selectedTags.push(newSelectedTag);
-			this.setState({popularTags, selectedTags})
+			this.setState({ popularTags, selectedTags });
 		} else {
 			this.setState({ inputError: "* exceeded limit" });
 		}
 	};
 	removeSelectedTag = (name) => {
-		if (popularTags.includes(name)) {
+		if (this.state.popularTagsReference.includes(name)) {
 			let selectedTags = [...this.state.selectedTags];
 			let popularTags = [...this.state.popularTags];
 			let inputError = { ...this.state.inputError };
@@ -305,14 +314,7 @@ export default class Languages extends Component {
 			}
 		}
 	};
-	componentDidMount() {
-		if (this.props.containerState) {
-			this.setState(this.props.containerState);
-		} else {
-			this.setState({ popularTags });
-		}
-		this.setState({ screenWidth: window.innerWidth });
-	}
+	
 	validation = () => {
 		if (this.state.selectedTags.length === 0) {
 			this.setState({ inputError: "* choose a language" });
@@ -327,8 +329,8 @@ export default class Languages extends Component {
 				taxonomy: {
 					selectedTags: this.state.selectedTags,
 					popularTags: this.state.popularTags,
-					customDeliverables: this.state.customDeliverables,
 					system: this.state.system,
+					popularTagsReference: this.state.popularTagsReference
 				},
 			};
 			this.props.setWizardProperties(taxonomy);
@@ -394,17 +396,15 @@ export default class Languages extends Component {
 							{this.state.selectedTags
 								? this.state.selectedTags.map((name) => {
 										return (
-										
-												<div className="selected_tag" key={name[0]}>
-													<p>{name[0]}</p>
-													<img
-														onClick={() => this.removeSelectedTag(name[0])}
-														className="selected-tag_close-button"
-														src={selectedTagClose}
-														alt=""
-													/>
-												</div>
-											
+											<div className="selected_tag" key={name[0]}>
+												<p>{name[0]}</p>
+												<img
+													onClick={() => this.removeSelectedTag(name[0])}
+													className="selected-tag_close-button"
+													src={selectedTagClose}
+													alt=""
+												/>
+											</div>
 										);
 								  })
 								: null}
@@ -414,18 +414,18 @@ export default class Languages extends Component {
 							Or select from the following:
 						</p>
 						<div className="languages-popular-tags_output">
+							{this.state.popTagsError ? <p>{this.state.popTagsError}</p> : null}
+							{this.state.popLoader ? <Loader/> : null}
 							{this.state.popularTags
 								? this.state.popularTags.map((name) => {
 										return (
-											
-												<div
-													onClick={() => this.addPopularTag(name)}
-													className="popular_tag"
-													key={name}
-												>
-													<p>{name}</p>
-												</div>
-											
+											<div
+												onClick={() => this.addPopularTag(name)}
+												className="popular_tag"
+												key={name}
+											>
+												<p>{name}</p>
+											</div>
 										);
 								  })
 								: null}

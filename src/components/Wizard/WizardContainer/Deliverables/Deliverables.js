@@ -80,6 +80,7 @@ export default class Deliverables extends Component {
 					popularTags: this.state.popularTags,
 					system: this.state.system,
 					customDeliverables: this.state.customDeliverables,
+					popularTagsReference: this.state.popularTagsReference
 				},
 			};
 			this.props.setWizardProperties(taxonomy);
