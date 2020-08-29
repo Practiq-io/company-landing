@@ -3,101 +3,101 @@ import "./Languages.css";
 import selectedTagClose from "./Languages_img/tagClose.svg";
 import Autosuggest from "react-autosuggest";
 import "./Autocomplete/Autocomplete.css";
-import axios from '../../../../axios-endpoint.js';
-import Loader from '../../wizardUI/wizardLoader';
+import axios from "../../../../axios-endpoint.js";
+import Loader from "../../wizardUI/wizardLoader";
 
-const allTags = [
-	{
-		name: "Java",
-	},
-	{
-		name: "Java SE",
-	},
-	{
-		name: "Java Docs",
-	},
-	{
-		name: "Javascript",
-	},
-	{
-		name: "React",
-	},
-	{
-		name: "Laravel",
-	},
-	{
-		name: "Node JS",
-	},
-	{
-		name: "Ruby",
-	},
-	{
-		name: "C++",
-	},
-	{
-		name: "C#",
-	},
-	{
-		name: "Swift",
-	},
-	{
-		name: "CSS",
-	},
-	{
-		name: "HTML",
-	},
-	{
-		name: "Drupal",
-	},
-	{
-		name: "Wordpress",
-	},
-	{
-		name: "React Native",
-	},
-	{
-		name: "PHP",
-	},
-	{
-		name: "Perl",
-	},
-	{
-		name: "Scala",
-	},
-	{
-		name: "Haskell",
-	},
-	{
-		name: "Java1",
-	},
-	{
-		name: "Java2",
-	},
-	{
-		name: "Java3",
-	},
-	{
-		name: "Java4",
-	},
-	{
-		name: "Java5",
-	},
-	{
-		name: "Java6",
-	},
-	{
-		name: "Java7",
-	},
-	{
-		name: "Java8",
-	},
-	{
-		name: "Java9",
-	},
-	{
-		name: "Java10",
-	},
-];
+// const allTags = [
+// 	{
+// 		name: "Java",
+// 	},
+// 	{
+// 		name: "Java SE",
+// 	},
+// 	{
+// 		name: "Java Docs",
+// 	},
+// 	{
+// 		name: "Javascript",
+// 	},
+// 	{
+// 		name: "React",
+// 	},
+// 	{
+// 		name: "Laravel",
+// 	},
+// 	{
+// 		name: "Node JS",
+// 	},
+// 	{
+// 		name: "Ruby",
+// 	},
+// 	{
+// 		name: "C++",
+// 	},
+// 	{
+// 		name: "C#",
+// 	},
+// 	{
+// 		name: "Swift",
+// 	},
+// 	{
+// 		name: "CSS",
+// 	},
+// 	{
+// 		name: "HTML",
+// 	},
+// 	{
+// 		name: "Drupal",
+// 	},
+// 	{
+// 		name: "Wordpress",
+// 	},
+// 	{
+// 		name: "React Native",
+// 	},
+// 	{
+// 		name: "PHP",
+// 	},
+// 	{
+// 		name: "Perl",
+// 	},
+// 	{
+// 		name: "Scala",
+// 	},
+// 	{
+// 		name: "Haskell",
+// 	},
+// 	{
+// 		name: "Java1",
+// 	},
+// 	{
+// 		name: "Java2",
+// 	},
+// 	{
+// 		name: "Java3",
+// 	},
+// 	{
+// 		name: "Java4",
+// 	},
+// 	{
+// 		name: "Java5",
+// 	},
+// 	{
+// 		name: "Java6",
+// 	},
+// 	{
+// 		name: "Java7",
+// 	},
+// 	{
+// 		name: "Java8",
+// 	},
+// 	{
+// 		name: "Java9",
+// 	},
+// 	{
+// 		name: "Java10",
+// 	},
+// ];
 
 export default class Languages extends Component {
 	state = {
@@ -107,34 +107,36 @@ export default class Languages extends Component {
 		customDeliverables: "",
 		system: [],
 		popLoader: false,
-		popularTags: []
+		popularTags: [],
 	};
+
 	componentDidMount() {
 		if (this.props.containerState) {
 			this.setState(this.props.containerState);
 		} else {
-			this.setState({popLoader: true, popularTags: []})
+			this.setState({ popLoader: true, popularTags: [] });
 			axios
 				.get("/capabilities/skills/popular")
 				.then((result) => {
-					let popTagsArray = result.data.skills
+					let popTagsArray = result.data.skills;
 					let popularTags = [];
-					let popularTagsReference = []
-					popTagsArray.forEach(tag => {
+					let popularTagsReference = [];
+					popTagsArray.forEach((tag) => {
 						let tagName = tag.name;
-						popularTags.push(tagName)
-						popularTagsReference.push(tagName)
-						this.setState({popularTags, popularTagsReference})
-					})
-					this.setState({popLoader: false})
+						popularTags.push(tagName);
+						popularTagsReference.push(tagName);
+						this.setState({ popularTags, popularTagsReference });
+					});
+					this.setState({ popLoader: false });
 				})
 				.catch((err) => {
 					console.log(err);
-					this.setState({popLoader: false, popTagsError: err.toString()})
+					this.setState({ popLoader: false, popTagsError: err.toString() });
 				});
 		}
 		this.setState({ screenWidth: window.innerWidth });
 	}
+
 	onChange = (event, { newValue, method }) => {
 		this.setState({
 			value: newValue,
@@ -144,17 +146,6 @@ export default class Languages extends Component {
 	escapeRegexCharacters(str) {
 		return str.replace(/[.*+?^${}()|[\\]/g, "\\$&");
 	}
-	getSuggestions(value) {
-		const escapedValue = this.escapeRegexCharacters(value.trim());
-
-		if (escapedValue === "") {
-			return [];
-		}
-
-		const regex = new RegExp("^" + escapedValue, "i");
-
-		return allTags.filter((language) => regex.test(language.name));
-	}
 	getSuggestionValue(suggestion) {
 		return suggestion.name;
 	}
@@ -162,14 +153,29 @@ export default class Languages extends Component {
 		return <div className="custom-styles_span">{suggestion.name}</div>;
 	}
 	onSuggestionsFetchRequested = ({ value }) => {
-		this.setState({
-			suggestions: this.getSuggestions(value),
-		});
+		axios
+			.get('/capabilities/skills', { params: { q: value } })
+			.then((result) => {
+				let newSuggestions = result.data.skills;
+				this.setState({
+					suggestions: newSuggestions
+				});
+			})
+			.catch((err) => {
+				console.log(err);
+			});
 	};
 	onSuggestionsClearRequested = () => {
+		
 		this.setState({
 			suggestions: [],
 		});
+	};
+	onSuggestionSelected = (
+		event,
+		{ suggestion, suggestionValue, suggestionIndex, sectionIndex, method }
+	) => {
+		this.addInputTagAutosuggest(suggestionValue);
 	};
 
 	addPopularTag = (name) => {
@@ -314,7 +320,6 @@ export default class Languages extends Component {
 			}
 		}
 	};
-	
 	validation = () => {
 		if (this.state.selectedTags.length === 0) {
 			this.setState({ inputError: "* choose a language" });
@@ -330,18 +335,12 @@ export default class Languages extends Component {
 					selectedTags: this.state.selectedTags,
 					popularTags: this.state.popularTags,
 					system: this.state.system,
-					popularTagsReference: this.state.popularTagsReference
+					popularTagsReference: this.state.popularTagsReference,
 				},
 			};
 			this.props.setWizardProperties(taxonomy);
 			this.props.nextStep();
 		}
-	};
-	onSuggestionSelected = (
-		event,
-		{ suggestion, suggestionValue, suggestionIndex, sectionIndex, method }
-	) => {
-		this.addInputTagAutosuggest(suggestionValue);
 	};
 
 	render() {
@@ -414,8 +413,10 @@ export default class Languages extends Component {
 							Or select from the following:
 						</p>
 						<div className="languages-popular-tags_output">
-							{this.state.popTagsError ? <p>{this.state.popTagsError}</p> : null}
-							{this.state.popLoader ? <Loader/> : null}
+							{this.state.popTagsError ? (
+								<p>{this.state.popTagsError}</p>
+							) : null}
+							{this.state.popLoader ? <Loader /> : null}
 							{this.state.popularTags
 								? this.state.popularTags.map((name) => {
 										return (
