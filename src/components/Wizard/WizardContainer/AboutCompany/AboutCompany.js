@@ -12,6 +12,7 @@ export default class AboutCompany extends Component {
 				companyName: containerState.companyName,
 				email: containerState.email,
 				website: containerState.website,
+				userName: containerState.userName,
 			});
 		}
 	}
@@ -20,16 +21,28 @@ export default class AboutCompany extends Component {
 		let companyNameError = "";
 		let emailError = "";
 		let websiteError = "";
+		let userNameError = "";
+
 		const blockedRegex = /[\]!$%^&*()":{}|<>]/;
 
 		if (this.state.companyName) {
 			if (this.state.companyName.length > 500) {
 				companyNameError = "* too long string";
-			} else if (this.state.companyName.match(blockedRegex)){
+			} else if (this.state.companyName.match(blockedRegex)) {
 				companyNameError = "* only string values";
 			}
 		} else {
 			companyNameError = "* is required";
+		}
+
+		if (this.state.userName) {
+			if (this.state.userName.length > 500) {
+				userNameError = "* too long string";
+			} else if (this.state.userName.match(blockedRegex)) {
+				userNameError = "* only string values";
+			}
+		} else {
+			userNameError = "* is required";
 		}
 
 		if (this.state.email) {
@@ -37,7 +50,7 @@ export default class AboutCompany extends Component {
 				emailError = "* too long string";
 			} else if (!this.state.email.includes("@")) {
 				emailError = "* invalid email format";
-			} else if (this.state.email.match(blockedRegex)){
+			} else if (this.state.email.match(blockedRegex)) {
 				emailError = "* only string values";
 			}
 		} else {
@@ -47,16 +60,21 @@ export default class AboutCompany extends Component {
 		if (this.state.website) {
 			if (this.state.website.length > 500) {
 				websiteError = "* too long string";
-			} else if (this.state.website.match(blockedRegex)){
+			} else if (this.state.website.match(blockedRegex)) {
 				websiteError = "* only string values";
 			}
 		}
 
-		if (companyNameError || emailError || websiteError) {
-			this.setState({ companyNameError, emailError, websiteError });
+		if (companyNameError || emailError || websiteError || userNameError) {
+			this.setState({
+				companyNameError,
+				emailError,
+				websiteError,
+				userNameError,
+			});
 			return false;
 		}
-		
+
 		return true;
 	};
 
@@ -68,6 +86,7 @@ export default class AboutCompany extends Component {
 					companyName: this.state.companyName,
 					email: this.state.email,
 					website: this.state.website,
+					userName: this.state.userName,
 				},
 			};
 			this.props.setWizardProperties(aboutCompany);
@@ -80,9 +99,14 @@ export default class AboutCompany extends Component {
 	};
 
 	render() {
-		const { companyNameError, emailError, websiteError } = this.state;
+		const {
+			companyNameError,
+			emailError,
+			websiteError,
+			userNameError,
+		} = this.state;
 		const { toggleWizard } = this.props;
-	
+
 		return (
 			<div className="wizard-modal_content-box">
 				<div className="modal-position_wrapper">
@@ -90,6 +114,20 @@ export default class AboutCompany extends Component {
 						<p>Tell us about your company</p>
 					</div>
 					<div className="modal-content_box">
+						<p className="modal-content_subtitle">
+							User name
+							<span className="validation_error-message">
+								{userNameError}
+							</span>
+						</p>
+						<input
+							className="about-company_input"
+							onChange={this.onChangeHandler}
+							type="text"
+							name="userName"
+							autoComplete="off"
+							defaultValue={this.state.userName}
+						/>
 						<p className="modal-content_subtitle">
 							Company name
 							<span className="validation_error-message">

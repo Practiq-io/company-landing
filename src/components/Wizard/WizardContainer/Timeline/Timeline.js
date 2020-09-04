@@ -2,9 +2,9 @@ import React, { Component } from "react";
 import "./Timeline.css";
 import selectedDot from "./TimelineImg/timeline-selected-dot.svg";
 
-const firstTimeline = "3 days";
-const secondTimeline = "7 days";
-const thirdTimeline = "14 days";
+const firstTimeline = 3;
+const secondTimeline = 7;
+const thirdTimeline = 14;
 
 export default class Timeline extends Component {
 	state = {
@@ -196,7 +196,7 @@ export default class Timeline extends Component {
 								id="timeline_input"
 								onChange={this.onChangeHandler}
 								className="custom-timeline_input"
-								type="text"
+								type="number"
 								autoComplete="off"
 								placeholder="Other"
 								value={customTimeline}

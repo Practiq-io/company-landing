@@ -7,6 +7,7 @@ import Deliverables from "./Deliverables/Deliverables";
 import General from "./General/General";
 import Timeline from "./Timeline/Timeline";
 import Success from "./Success/Success";
+import axios from '../../../axios-endpoint.js';
 
 export class WizardContainer extends Component {
 	state = {
@@ -97,7 +98,7 @@ export class WizardContainer extends Component {
 				response: taskData.apiResponse,
 			};
 			apis.push(requestResponse);
-			specification.apis = apis;
+			// specification.apis = apis;
 		}
 
 		if (data.specification.taskType === "API Connector/Adapter") {
@@ -109,7 +110,7 @@ export class WizardContainer extends Component {
 				action: taskData.documentation,
 			};
 			apis.push(requestResponse);
-			specification.apis = apis;
+			// specification.apis = apis;
 		}
 
 		if (data.specification.taskType === "Long running process") {
@@ -122,16 +123,17 @@ export class WizardContainer extends Component {
 			specification.customBackendTask = taskData.taskDescription;
 		}
 
-		let projectTimelines = [];
+		let duration = [];
 
 		if (data.projectTimelines.customTimeline) {
-			projectTimelines = data.projectTimelines.customTimeline;
+			duration = data.projectTimelines.customTimeline;
 		} else {
-			projectTimelines = data.projectTimelines.timeline;
+			duration = data.projectTimelines.timeline;
 		}
 
 		let backendData = {
 			user: {
+				fullName: data.aboutCompany.userName,
 				email: data.aboutCompany.email,
 				companyName: data.aboutCompany.companyName,
 				website: data.aboutCompany.website,
@@ -141,14 +143,24 @@ export class WizardContainer extends Component {
 			requirements: {
 				taxonomy: taxonomy,
 				specification: specification,
-			},
-			deliverables: {
-				system: data.taxonomy.system,
-				custom: data.taxonomy.customDeliverables,
-				projectTimelines: projectTimelines,
-			},
+				duration: duration
+			}
 		};
+		if(data.taxonomy.system.length > 0){
+			backendData.requirements.deliverables = {
+				system : data.taxonomy.system,
+				custom : data.taxonomy.customDeliverables
+			}
+		}
 		console.log("Wizard data for backend :", backendData);
+		console.log("Wizard data for backend :", JSON.stringify(backendData));
+		axios.post("/tasks/create", JSON.stringify(backendData))
+			.then((response) => {
+			  console.log("Data sent to backend", response);
+			})
+			.catch((err) => {
+			  console.error(err);
+			})
 	};
 
 	componentWillUnmount() {
