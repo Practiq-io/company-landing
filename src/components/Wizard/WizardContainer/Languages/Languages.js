@@ -6,99 +6,6 @@ import "./Autocomplete/Autocomplete.css";
 import axios from "../../../../axios-endpoint.js";
 import Loader from "../../wizardUI/wizardLoader";
 
-// const allTags = [
-// 	{
-// 		name: "Java",
-// 	},
-// 	{
-// 		name: "Java SE",
-// 	},
-// 	{
-// 		name: "Java Docs",
-// 	},
-// 	{
-// 		name: "Javascript",
-// 	},
-// 	{
-// 		name: "React",
-// 	},
-// 	{
-// 		name: "Laravel",
-// 	},
-// 	{
-// 		name: "Node JS",
-// 	},
-// 	{
-// 		name: "Ruby",
-// 	},
-// 	{
-// 		name: "C++",
-// 	},
-// 	{
-// 		name: "C#",
-// 	},
-// 	{
-// 		name: "Swift",
-// 	},
-// 	{
-// 		name: "CSS",
-// 	},
-// 	{
-// 		name: "HTML",
-// 	},
-// 	{
-// 		name: "Drupal",
-// 	},
-// 	{
-// 		name: "Wordpress",
-// 	},
-// 	{
-// 		name: "React Native",
-// 	},
-// 	{
-// 		name: "PHP",
-// 	},
-// 	{
-// 		name: "Perl",
-// 	},
-// 	{
-// 		name: "Scala",
-// 	},
-// 	{
-// 		name: "Haskell",
-// 	},
-// 	{
-// 		name: "Java1",
-// 	},
-// 	{
-// 		name: "Java2",
-// 	},
-// 	{
-// 		name: "Java3",
-// 	},
-// 	{
-// 		name: "Java4",
-// 	},
-// 	{
-// 		name: "Java5",
-// 	},
-// 	{
-// 		name: "Java6",
-// 	},
-// 	{
-// 		name: "Java7",
-// 	},
-// 	{
-// 		name: "Java8",
-// 	},
-// 	{
-// 		name: "Java9",
-// 	},
-// 	{
-// 		name: "Java10",
-// 	},
-// ];
-
 export default class Languages extends Component {
 	state = {
 		value: "",
@@ -166,7 +73,6 @@ export default class Languages extends Component {
 			});
 	};
 	onSuggestionsClearRequested = () => {
-		
 		this.setState({
 			suggestions: [],
 		});

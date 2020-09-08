@@ -29,7 +29,7 @@ export default class ControlsBackend extends Component {
 				<div className="card-set">
 					<div
 						onClick={() => selectTask("General purpose API")}
-						className="task-type_card"
+						className="task-type_card left-task-type_card"
 					>
 						<div className="task-type_card--info-box">
 						<Animated
@@ -66,7 +66,7 @@ export default class ControlsBackend extends Component {
 
 					<div
 						onClick={() => selectTask("API Connector/Adapter")}
-						className="task-type_card"
+						className="task-type_card right-task-type_card"
 					>
 						<div className="task-type_card--info-box">
 						<Animated
@@ -105,7 +105,7 @@ export default class ControlsBackend extends Component {
 				<div className="card-set card-set_margin-between">
 					<div
 						onClick={() => selectTask("Long running process")}
-						className="task-type_card"
+						className="task-type_card left-task-type_card"
 					>
 						<div className="task-type_card--info-box">
 						<Animated
@@ -142,7 +142,7 @@ export default class ControlsBackend extends Component {
 
 					<div
 						onClick={() => selectTask("Custom backend task")}
-						className="task-type_card task-type_card-mobile-margin-bottom"
+						className="task-type_card task-type_card-mobile-margin-bottom right-task-type_card"
 					>
 						<div className="task-type_card--info-box">
 						<Animated

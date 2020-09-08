@@ -227,7 +227,7 @@ export default class Deliverables extends Component {
 							<div className="card-set">
 								<div
 									onClick={() => this.toggleDeliverables("DOCUMENTATION")}
-									className="task-type_card"
+									className="task-type_card left-task-type_card"
 									style={{
 										background: system.includes("DOCUMENTATION")
 											? "#1371FD"
@@ -276,7 +276,7 @@ export default class Deliverables extends Component {
 
 								<div
 									onClick={() => this.toggleDeliverables("DOCKER_FILES")}
-									className="task-type_card"
+									className="task-type_card right-task-type_card"
 									style={{
 										background: system.includes("DOCKER_FILES")
 											? "#1371FD"
@@ -327,7 +327,7 @@ export default class Deliverables extends Component {
 							<div className="card-set card-set_margin-between">
 								<div
 									onClick={() => this.toggleDeliverables("END_TO_END_TESTS")}
-									className="task-type_card"
+									className="task-type_card left-task-type_card"
 									style={{
 										background: system.includes("END_TO_END_TESTS")
 											? "#1371FD"
@@ -376,7 +376,7 @@ export default class Deliverables extends Component {
 
 								<div
 									onClick={() => this.toggleDeliverables("CUSTOM_DELIVERABLES")}
-									className="task-type_card"
+									className="task-type_card right-task-type_card"
 									style={{
 										background: system.includes("CUSTOM_DELIVERABLES")
 											? "#1371FD"

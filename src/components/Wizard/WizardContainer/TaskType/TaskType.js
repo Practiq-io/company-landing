@@ -119,58 +119,15 @@ export default class TaskType extends Component {
 		}
 	};
 
-	generalPurposeApiValidation = () => {
-		let apiRequestError = "";
-		let apiResponseError = "";
-		const blockedRegex = /[\]!$%^&*()":{}|<>]/;
-		const data = this.state.taskData.generalApi;
-
-		if (data.apiRequest) {
-			if (data.apiRequest.length > 500) {
-				apiRequestError = "* too long string";
-			} else if (data.apiRequest.match(blockedRegex)) {
-				apiRequestError = "* only string values";
-			}
-		}
-
-		if (data.apiResponse) {
-			if (data.apiResponse.length > 500) {
-				apiResponseError = "* too long string";
-			} else if (data.apiResponse.match(blockedRegex)) {
-				apiResponseError = "* only string values";
-			}
-		}
-
-		if (apiRequestError || apiResponseError) {
-			this.setState({ apiRequestError, apiResponseError });
-			return false;
-		}
-
-		return true;
-	};
-
-	apiConnectorAdapterValidation = () => {
-		let apiRequestError = "";
-		let apiResponseError = "";
+	apiConnectorAdapterValidation = (category) => {
+		let fieldError = "";
+		let field2Error = "";
+		let field3Error = "";
+		let field4Error = "";
+		let field5Error = "";
 		let documentationError = "";
 		const blockedRegex = /[\]!$%^&*()":{}|<>]/;
-		const data = this.state.taskData.connectorAdapter;
-
-		if (data.apiRequest) {
-			if (data.apiRequest.length > 500) {
-				apiRequestError = "* too long string";
-			} else if (data.apiRequest.match(blockedRegex)) {
-				apiRequestError = "* only string values";
-			}
-		}
-
-		if (data.apiResponse) {
-			if (data.apiResponse.length > 500) {
-				apiResponseError = "* too long string";
-			} else if (data.apiResponse.match(blockedRegex)) {
-				apiResponseError = "* only string values";
-			}
-		}
+		const data = this.state.taskData[category];
 
 		if (data.documentation) {
 			if (data.documentation.length > 500) {
@@ -181,9 +138,68 @@ export default class TaskType extends Component {
 		} else {
 			documentationError = "* is required";
 		}
+		if (data.field) {
+			if (data.field.length > 500) {
+				fieldError = " too long string";
+			} else if (data.field.match(blockedRegex)) {
+				fieldError = " only string values";
+			}
+		} else if (data.field === "") {
+			fieldError = " is required";
+		}
+		if (data.field2) {
+			if (data.field2.length > 500) {
+				field2Error = " too long string";
+			} else if (data.field2.match(blockedRegex)) {
+				field2Error = " only string values";
+			}
+		} else if (data.field2 === "") {
+			field2Error = " is required";
+		}
+		if (data.field3) {
+			if (data.field3.length > 500) {
+				field3Error = " too long string";
+			} else if (data.field3.match(blockedRegex)) {
+				field3Error = " only string values";
+			}
+		} else if (data.field3 === "") {
+			field3Error = " is required";
+		}
+		if (data.field4) {
+			if (data.field4.length > 500) {
+				field4Error = " too long string";
+			} else if (data.field4.match(blockedRegex)) {
+				field4Error = " only string values";
+			}
+		} else if (data.field4 === "") {
+			field4Error = " is required";
+		}
+		if (data.field5) {
+			if (data.field5.length > 500) {
+				field5Error = " too long string";
+			} else if (data.field5.match(blockedRegex)) {
+				field5Error = " only string values";
+			}
+		} else if (data.field5 === "") {
+			field5Error = " is required";
+		}
 
-		if (apiRequestError || apiResponseError || documentationError) {
-			this.setState({ apiRequestError, apiResponseError, documentationError });
+		if (
+			fieldError ||
+			field2Error ||
+			field3Error ||
+			field4Error ||
+			field5Error ||
+			documentationError
+			) {
+			this.setState({ 
+				documentationError,
+				fieldError,
+				field2Error,
+				field3Error,
+				field4Error,
+				field5Error
+			});
 			return false;
 		}
 
@@ -204,9 +220,11 @@ export default class TaskType extends Component {
 		} else {
 			datasourceError = "* is required";
 		}
-
+		
 		if (datasourceError) {
-			this.setState({ datasourceError });
+			this.setState({ 
+				datasourceError
+			 });
 			return false;
 		}
 
@@ -230,6 +248,80 @@ export default class TaskType extends Component {
 
 		if (taskDescriptionError) {
 			this.setState({ taskDescriptionError });
+			return false;
+		}
+		return true;
+	};
+
+	apiFieldsValidation = (category) => {
+		let fieldError = "";
+		let field2Error = "";
+		let field3Error = "";
+		let field4Error = "";
+		let field5Error = "";
+		const blockedRegex = /[\]!$%^&*()"{}|<>]/;
+		const data = this.state.taskData[category];
+
+		if (data.field) {
+			if (data.field.length > 500) {
+				fieldError = " too long string";
+			} else if (data.field.match(blockedRegex)) {
+				fieldError = " only string values";
+			}
+		} else if (data.field === "") {
+			fieldError = " is required";
+		}
+		if (data.field2) {
+			if (data.field2.length > 500) {
+				field2Error = " too long string";
+			} else if (data.field2.match(blockedRegex)) {
+				field2Error = " only string values";
+			}
+		} else if (data.field2 === "") {
+			field2Error = " is required";
+		}
+		if (data.field3) {
+			if (data.field3.length > 500) {
+				field3Error = " too long string";
+			} else if (data.field3.match(blockedRegex)) {
+				field3Error = " only string values";
+			}
+		} else if (data.field3 === "") {
+			field3Error = " is required";
+		}
+		if (data.field4) {
+			if (data.field4.length > 500) {
+				field4Error = " too long string";
+			} else if (data.field4.match(blockedRegex)) {
+				field4Error = " only string values";
+			}
+		} else if (data.field4 === "") {
+			field4Error = " is required";
+		}
+		if (data.field5) {
+			if (data.field5.length > 500) {
+				field5Error = " too long string";
+			} else if (data.field5.match(blockedRegex)) {
+				field5Error = " only string values";
+			}
+		} else if (data.field5 === "") {
+			field5Error = " is required";
+		}
+
+		if (
+			fieldError ||
+			field2Error ||
+			field3Error ||
+			field4Error ||
+			field5Error
+		) {
+			this.setState({
+				fieldError,
+				field2Error,
+				field3Error,
+				field4Error,
+				field5Error,
+			});
 			return false;
 		}
 		return true;
@@ -323,9 +415,9 @@ export default class TaskType extends Component {
 
 	validation = () => {
 		if (this.state.taskData.generalApi) {
-			return this.generalPurposeApiValidation();
+			return this.apiFieldsValidation("generalApi");
 		} else if (this.state.taskData.connectorAdapter) {
-			return this.apiConnectorAdapterValidation();
+			return this.apiConnectorAdapterValidation("connectorAdapter");
 		} else if (this.state.taskData.longRunningProcess) {
 			return this.longRunningProcessValidation();
 		} else if (this.state.taskData.customBackendTask) {

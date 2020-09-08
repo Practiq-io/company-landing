@@ -29,6 +29,12 @@
 .card-set_margin-between {
 	margin-top: 16px;
 }
+.right-task-type_card {
+	margin-left: 8px;
+}
+.left-task-type_card {
+	margin-right: 8px;
+}
 .task-type_card {
 	cursor: pointer;
 	display: -webkit-box;
@@ -46,7 +52,7 @@
 	padding: 20px 16px;
 	border: 0.5px solid #e9e9ed;
 	background: rgb(253, 253, 253);
-	max-width: 280px;
+	width: 280px;
 	-webkit-box-flex: 1;
 	-webkit-flex-grow: 1;
 	-moz-box-flex: 1;
@@ -58,6 +64,7 @@
 	-moz-user-select: none;
 	-ms-user-select: none;
 	user-select: none;
+	flex-wrap: wrap;
 	img {
 		width: auto;
 	}
@@ -125,10 +132,16 @@
 		margin-top: 0;
 	}
 	.card-set .task-type_card {
-		max-width: 100%;
+		width: 100%;
 		margin-bottom: 16px;
 	}
 	.task-type_card-mobile-margin-bottom {
 		margin-bottom: 0 !important;
+	}
+	.right-task-type_card {
+		margin-left: 0;
+	}
+	.left-task-type_card {
+		margin-right: 0;
 	}
 }
