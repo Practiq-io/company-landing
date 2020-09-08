@@ -13,3 +13,15 @@
 .modal-content_box .about-company_input {
   margin-bottom: 27px;
 }
+.test {
+  border: none;
+}
+.test:focus {
+  border: none;
+}
+.poop {
+  height: 50px;
+  width: 50px;
+  background: red;
+  margin: 6px 0;
+}

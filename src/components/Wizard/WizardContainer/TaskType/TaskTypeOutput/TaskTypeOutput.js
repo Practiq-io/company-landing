@@ -31,6 +31,8 @@ export default class TaskTypeOutput extends Component {
 						outputOnChange={outputOnChange}
 						containerState={containerState}
 						taskTypeState={taskTypeState}
+						addApiInput={addApiInput}
+						removeApiInput={removeApiInput}
 					/>
 				);
 			case "API Connector/Adapter":
@@ -40,6 +42,8 @@ export default class TaskTypeOutput extends Component {
 						outputOnChange={outputOnChange}
 						containerState={containerState}
 						taskTypeState={taskTypeState}
+						addApiInput={addApiInput}
+						removeApiInput={removeApiInput}
 					/>
 				);
 			case "Long running process":

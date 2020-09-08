@@ -192,7 +192,7 @@ export default class SinglePageApplication extends Component {
 							</div>
 						);
 					  })
-					: null}
+				: null}
 
 				<p
 					onClick={() => addApiInput("singlePageApplication")}

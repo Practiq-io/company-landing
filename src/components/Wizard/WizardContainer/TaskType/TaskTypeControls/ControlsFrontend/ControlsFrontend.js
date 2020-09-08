@@ -29,7 +29,7 @@ export default class ControlsFrontend extends Component {
 				<div className="card-set">
 					<div
 						onClick={() => selectTask("Landing page")}
-						className="task-type_card"
+						className="task-type_card left-task-type_card"
 					>
 						<div className="task-type_card--info-box">
 							<Animated
@@ -64,7 +64,7 @@ export default class ControlsFrontend extends Component {
 
 					<div
 						onClick={() => selectTask("Single page application")}
-						className="task-type_card"
+						className="task-type_card right-task-type_card"
 					>
 						<div className="task-type_card--info-box">
 							<Animated
@@ -103,7 +103,7 @@ export default class ControlsFrontend extends Component {
 				<div className="card-set card-set_margin-between">
 					<div
 						onClick={() => selectTask("Frontend component")}
-						className="task-type_card"
+						className="task-type_card left-task-type_card"
 					>
 						<div className="task-type_card--info-box">
 							<Animated
@@ -139,7 +139,7 @@ export default class ControlsFrontend extends Component {
 
 					<div
 						onClick={() => selectTask("Custom frontend task")}
-						className="task-type_card task-type_card-mobile-margin-bottom"
+						className="task-type_card task-type_card-mobile-margin-bottom right-task-type_card"
 					>
 						<div className="task-type_card--info-box">
 							<Animated

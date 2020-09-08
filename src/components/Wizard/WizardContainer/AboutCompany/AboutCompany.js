@@ -2,7 +2,9 @@ import React, { Component } from "react";
 import "./AboutCompany.css";
 
 export default class AboutCompany extends Component {
-	state = {};
+	state = {
+		// files: []
+	};
 
 	componentWillMount() {
 		const containerState = this.props.containerState;
@@ -98,6 +100,12 @@ export default class AboutCompany extends Component {
 		this.setState({ [e.target.name]: e.target.value });
 	};
 
+	// fileOnChange = (e) => {
+	// 	let files = [...this.state.files];
+	// 	files.push(e.target.files[0])
+	// 	this.setState({ files })
+	// };
+
 	render() {
 		const {
 			companyNameError,
@@ -106,19 +114,32 @@ export default class AboutCompany extends Component {
 			userNameError,
 		} = this.state;
 		const { toggleWizard } = this.props;
-
+		
 		return (
 			<div className="wizard-modal_content-box">
+				{/* {
+					this.state.files.map(kek => {
+						return <div key={kek} className="poop"></div>
+					})
+				} */}
 				<div className="modal-position_wrapper">
+					{/* <form>
+						<input
+							onChange={(e) => this.fileOnChange(e)}
+							className="test"
+							type="file"
+							name="file"
+							multiple
+						/>
+					</form> */}
+
 					<div className="modal-title">
 						<p>Tell us about your company</p>
 					</div>
 					<div className="modal-content_box">
 						<p className="modal-content_subtitle">
 							User name
-							<span className="validation_error-message">
-								{userNameError}
-							</span>
+							<span className="validation_error-message">{userNameError}</span>
 						</p>
 						<input
 							className="about-company_input"
