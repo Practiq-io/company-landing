@@ -3,6 +3,7 @@ import "./App.css";
 import MainContainer from "../PractiqProject/MainContainer";
 import Footer from "../../components/Footer/Footer";
 import NavigationBar from "../../components/NavigationBar/NavigationBar";
+import FileUpload from "../../components/FileUpload";
 
 export default class App extends Component {
 	state = {
@@ -37,6 +38,7 @@ export default class App extends Component {
 	componentWillUnmount() {
 		window.removeEventListener("load", this.handleLoad);
 	}
+	
 
 	render() {
 		return (
@@ -69,7 +71,7 @@ export default class App extends Component {
 					className="App"
 				>
 					<NavigationBar toggle={this.state.toggle} />
-
+					<FileUpload/>
 					<MainContainer wizard={this.state} />
 
 					<Footer />
