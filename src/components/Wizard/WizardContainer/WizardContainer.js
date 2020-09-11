@@ -25,7 +25,9 @@ export class WizardContainer extends Component {
 		if (data.specification.taskType === "Single page application") {
 			let taskData = data.specification.taskData.singlePageApplication;
 			let links = [taskData.designLink];
-			let attachments = taskData.attachedFiles;
+			let attachments = taskData.attachedFiles.map(fileLink => {
+				return fileLink[0];
+			});
 			let apis = [];
 			Object.keys(taskData).forEach((key) => {
 				if (
@@ -46,7 +48,9 @@ export class WizardContainer extends Component {
 		if (data.specification.taskType === "Landing page") {
 			let taskData = data.specification.taskData.landingPage;
 			let links = [taskData.designLink];
-			let attachments = taskData.attachedFiles;
+			let attachments = taskData.attachedFiles.map(fileLink => {
+				return fileLink[0];
+			});
 			let apis = [];
 			Object.keys(taskData).forEach((key) => {
 				if (
@@ -67,7 +71,9 @@ export class WizardContainer extends Component {
 		if (data.specification.taskType === "Frontend component") {
 			let taskData = data.specification.taskData.frontendComponent;
 			let links = [taskData.designLink];
-			let attachments = taskData.attachedFiles;
+			let attachments = taskData.attachedFiles.map(fileLink => {
+				return fileLink[0];
+			});
 			let apis = [];
 			Object.keys(taskData).forEach((key) => {
 				if (

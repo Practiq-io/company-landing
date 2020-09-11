@@ -6,12 +6,6 @@
 }
 
 
-.fileUploader {
-	border: solid red 1px;
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-}
 .choseFile {
     margin-bottom: 20px;
 }
@@ -31,4 +25,12 @@
 	height: 50px;
 	border: solid 5px red;
 	margin: 10px;
+	position: relative;
+}
+
+.outputTest {
+	min-width: 70px;
+	position: relative;
+	background: rgba(27, 37, 31, 0.911);
+	padding: 2em;
 }

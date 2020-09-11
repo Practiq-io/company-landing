@@ -3,7 +3,6 @@ import selectedFileIcon from "../OutputComponentsImg/selected-file-icon.svg";
 import fileIcon from "../OutputComponentsImg/file-icon.svg";
 import deleteFileIcon from "../OutputComponentsImg/delete-file-icon.svg";
 import minusIcon from "../OutputComponentsImg/minus-icon.svg";
-import uuid from "uuid";
 
 export default class SinglePageApplication extends Component {
 	componentDidMount() {
@@ -17,35 +16,25 @@ export default class SinglePageApplication extends Component {
 				const singlePageApplication = {
 					singlePageApplication: {
 						designLink: "",
-						attachedFiles: [
-							"homepage.sketch",
-							"profile.sketch",
-							"timko.sketch",
-							"nurko.sketch",
-						],
+						attachedFiles: [],
 						apisFields: [],
-						apisFieldKeys: ["field2","field3","field4","field5"],
-						field: ""
+						apisFieldKeys: ["field2", "field3", "field4", "field5"],
+						field: "",
 					},
 				};
 				this.props.setTaskTypeState(singlePageApplication);
 			}
 		} else {
 			const singlePageApplication = {
-                singlePageApplication: {
-                    designLink: "",
-                    attachedFiles: [
-                        "homepage.sketch",
-                        "profile.sketch",
-                        "timko.sketch",
-                        "nurko.sketch",
-                    ],
-                    apisFields: [],
-                    apisFieldKeys: ["field2","field3","field4","field5"],
-                    field: ""
-                },
-            };
-            this.props.setTaskTypeState(singlePageApplication);
+				singlePageApplication: {
+					designLink: "",
+					attachedFiles: [],
+					apisFields: [],
+					apisFieldKeys: ["field2", "field3", "field4", "field5"],
+					field: "",
+				},
+			};
+			this.props.setTaskTypeState(singlePageApplication);
 		}
 	}
 
@@ -56,13 +45,16 @@ export default class SinglePageApplication extends Component {
 			removeAttachedFile,
 			attachFile,
 			addApiInput,
-			removeApiInput
+			removeApiInput,
+			loadingBar,
+			uploadPercentage,
 		} = this.props;
 
 		const makeApiButtonDisabled = taskTypeState.taskData.singlePageApplication
 			? taskTypeState.taskData.singlePageApplication.apisFieldKeys.length === 0
 			: null;
-		const makeAttachFileButtonDisabled = taskTypeState.taskData.singlePageApplication
+		const makeAttachFileButtonDisabled = taskTypeState.taskData
+			.singlePageApplication
 			? taskTypeState.taskData.singlePageApplication.attachedFiles.length === 5
 			: null;
 
@@ -70,7 +62,9 @@ export default class SinglePageApplication extends Component {
 			<>
 				<p className="modal-content_subtitle">
 					Design
-					<span className="validation_error-message">{taskTypeState.designLinkError}</span>
+					<span className="validation_error-message">
+						{taskTypeState.designLinkError}
+					</span>
 				</p>
 
 				<input
@@ -84,46 +78,80 @@ export default class SinglePageApplication extends Component {
 					placeholder="Paste link"
 					defaultValue={
 						taskTypeState.taskData.singlePageApplication
-						? taskTypeState.taskData.singlePageApplication.designLink
-						: ""
+							? taskTypeState.taskData.singlePageApplication.designLink
+							: ""
 					}
 				/>
 
 				{taskTypeState.taskData.singlePageApplication
-					? taskTypeState.taskData.singlePageApplication.attachedFiles.map((file) => {
-						return (
-							<div key={uuid()} className="attached-file_box">
-								<div className="attached-file_wrapper">
-									<img className="attached-file-icon" src={fileIcon} alt="" />
-									<img
-										className="attached-file-selected-icon"
-										src={selectedFileIcon}
-										alt=""
-									/>
-									<p className="attached-file-name">{file}</p>
-									<img
-										onClick={() => removeAttachedFile(file, "singlePageApplication")}
-										className="delete-attached-file-icon"
-										src={deleteFileIcon}
-										alt=""
-									/>
-								</div>
-							</div>
-						);
-					  })
-					: null}
-
-				<p
-					onClick={() => attachFile("__test.sketch", "singlePageApplication")}
+					? taskTypeState.taskData.singlePageApplication.attachedFiles.map(
+							(file) => {
+								return (
+									<div key={file[0]} className="attached-file_box">
+										<div className="attached-file_wrapper">
+											<img
+												className="attached-file-icon"
+												src={fileIcon}
+												alt=""
+											/>
+											<img
+												className="attached-file-selected-icon"
+												src={selectedFileIcon}
+												alt=""
+											/>
+											<p className="attached-file-name">{file[1]}</p>
+											<img
+												onClick={() =>
+													removeAttachedFile(file[0], "singlePageApplication")
+												}
+												className="delete-attached-file-icon"
+												src={deleteFileIcon}
+												alt=""
+											/>
+										</div>
+									</div>
+								);
+							}
+					  )
+					: null
+				}
+				<div
+					className="loadingBar-container"
 					style={{
-						color: makeAttachFileButtonDisabled ? "#B1B1B8" : "#1371FD",
-						cursor: makeAttachFileButtonDisabled ? "context-menu" : "pointer",
-						marginBottom: "32px",
+						display: loadingBar ? "block" : "none",
 					}}
-					className="attach-file-button"
 				>
-					+ Attach files
-				</p>
+					<div
+						className="loading-bar"
+						style={{
+							width: uploadPercentage,
+						}}
+					></div>
+				</div>
+				<label 
+					htmlFor="file-upload" 
+					className="custom-file-upload"
+					style={{
+						cursor: makeAttachFileButtonDisabled ? "context-menu" : "pointer"
+					}}
+				>
+					<p 
+						className="attach-file-button"
+						style={{
+							color: makeAttachFileButtonDisabled ? "#B1B1B8" : "#1371FD",
+							cursor: makeAttachFileButtonDisabled ? "context-menu" : "pointer"
+						}}
+					>
+						+ Attach files
+					</p> 
+				</label>
+				<input
+					disabled={makeAttachFileButtonDisabled}
+					id="file-upload"
+					type="file"
+					className="fileUploader"
+					onChange={(e) => attachFile(e, "singlePageApplication")}
+				/>
 
 				<p className="modal-content_subtitle">
 					APIs
@@ -131,10 +159,10 @@ export default class SinglePageApplication extends Component {
 				</p>
 
 				<div className="front-end_input-wrapper">
-					<label 
+					<label
 						className="error-message_label"
 						style={{
-							color: taskTypeState.fieldError ? "#eb5757" : "transparent"
+							color: taskTypeState.fieldError ? "#eb5757" : "transparent",
 						}}
 					>
 						*{taskTypeState.fieldError}
@@ -149,50 +177,58 @@ export default class SinglePageApplication extends Component {
 							autoComplete="off"
 							defaultValue={
 								taskTypeState.taskData.singlePageApplication
-								? taskTypeState.taskData.singlePageApplication.field
-								: ""
+									? taskTypeState.taskData.singlePageApplication.field
+									: ""
 							}
 						/>
 					</label>
 				</div>
 				{taskTypeState.taskData.singlePageApplication
-					? taskTypeState.taskData.singlePageApplication.apisFields.map((input) => {
-						const errorKey = input + "Error"
-						return (
-							<div key={input} className="front-end_input-wrapper">
-								<label 
-									className="error-message_label"
-									style={{
-										color: taskTypeState[errorKey] ? "#eb5757" : "transparent"
-									}}
-								>
-									*{taskTypeState[errorKey]}
-									<input
-										className="front-end_input"
-										onChange={outputOnChange("singlePageApplication")}
-										style={{
-											marginBottom: "16px",
-										}}
-										type="text"
-										name={input}
-										autoComplete="off"
-										defaultValue={
-											taskTypeState.taskData.singlePageApplication
-												? taskTypeState.taskData.singlePageApplication[input]
-												: ""
-										}
-									/>
-								</label> 
-								<div
-									onClick={() => removeApiInput("singlePageApplication", input)}
-									className="front-end_input_remove-button"
-								>
-									<img src={minusIcon} alt="" />
-								</div>
-							</div>
-						);
-					  })
-				: null}
+					? taskTypeState.taskData.singlePageApplication.apisFields.map(
+							(input) => {
+								const errorKey = input + "Error";
+								return (
+									<div key={input} className="front-end_input-wrapper">
+										<label
+											className="error-message_label"
+											style={{
+												color: taskTypeState[errorKey]
+													? "#eb5757"
+													: "transparent",
+											}}
+										>
+											*{taskTypeState[errorKey]}
+											<input
+												className="front-end_input"
+												onChange={outputOnChange("singlePageApplication")}
+												style={{
+													marginBottom: "16px",
+												}}
+												type="text"
+												name={input}
+												autoComplete="off"
+												defaultValue={
+													taskTypeState.taskData.singlePageApplication
+														? taskTypeState.taskData.singlePageApplication[
+																input
+														  ]
+														: ""
+												}
+											/>
+										</label>
+										<div
+											onClick={() =>
+												removeApiInput("singlePageApplication", input)
+											}
+											className="front-end_input_remove-button"
+										>
+											<img src={minusIcon} alt="" />
+										</div>
+									</div>
+								);
+							}
+					  )
+					: null}
 
 				<p
 					onClick={() => addApiInput("singlePageApplication")}

@@ -4,88 +4,105 @@ import axios from "axios";
 
 class FileUpload extends Component {
 	state = {
-        fileUploadError: "",
-		preparedFiles: []
-    };
-    
-    removePlug = name => {
-        let preparedFiles = [...this.state.preparedFiles];
-        let index = 0;
-        preparedFiles.forEach(file => {
-            
-            if(name === file.fileName){
-                preparedFiles.splice(index, 1);
-                this.setState({preparedFiles});
-            }
-            index++;
-        })
-        
-    }
+		fileUploadError: "",
+		preparedFiles: [],
+		loadingBar: false,
+		uploadPercentage: 0,
+	};
 
-	onChange = e => {
+	removePlug = (name) => {
+		let preparedFiles = [...this.state.preparedFiles];
+		let index = 0;
+
+		preparedFiles.map((file) => {
+			if (name === file[0]) {
+				preparedFiles.splice(index, 1);
+				this.setState({ preparedFiles });
+			}
+			index++;
+		});
+	};
+	onChange = async (e) => {
 		e.preventDefault();
-        let preparedFiles = [...this.state.preparedFiles];
-        let newFile = { file: e.target.files[0], fileName: e.target.files[0].name};
-        preparedFiles.push(newFile);
-        this.setState({preparedFiles});
-    };
-    
-    submit = async e => {
-        e.preventDefault();
-        const formData = new FormData();
-        let files = [...this.state.preparedFiles];
-		for (var x = 0; x < files.length; x++) {
-			formData.append(
-				`file${x}`,
-                files[x].file
-			);
-        }
-        for (var p of formData) {
-            console.log(p, "AAAAAAAAAAAAAAAAAA"); 
-        }
-		
-		try {
-			const res = await axios.post("http://localhost:5000/upload", formData, {
-				headers: {
-					"Content-Type": "multipart/form-data",
-				},
-			});
-			console.log(res, "RESPONSE");
-		} catch (err) {
-            if(err.status === 400){
-                this.setState({fileUploadError:"No files were chosen"})
-            } else {
+        
+        if(e.target.files[0]){
+            this.setState({loadingBar: true});
+            let preparedFiles = [...this.state.preparedFiles];
+            let fileName = e.target.files[0].name;
+            const formData = new FormData();
+            formData.append(
+                "attachment",
+                e.target.files[0],
+                "Production.postman_environment.json"
+            );
+            var requestOptions = {
+                method: "POST",
+                body: formData,
+                redirect: "follow",
+                onUploadProgress: (progressEvent) => {
+                    var percentCompleted = Math.round(
+                        (progressEvent.loaded * 100) / progressEvent.total
+                    );
+                    this.setState({ uploadPercentage: percentCompleted });
+                },
+            };
+            e.target.value = null;
+            try {
+                const res = await axios
+                    .post(
+                        "https://ec2-54-170-173-178.eu-west-1.compute.amazonaws.com/tasks/attachment",
+                        formData,
+                        requestOptions
+                    )
+                    .then(result => {
+                        let attachment = [];
+                        attachment.push(result.data);
+                        attachment.push(fileName);
+                        preparedFiles.push(attachment);
+                        this.setState({ preparedFiles, loadingBar: false , uploadPercentage: 0});
+                    });
+            } catch (err) {
                 console.log(err);
+                this.setState({ loadingBar: false, uploadPercentage: 0});
             }
-			
-		}
-    }
+        } 
+	};
 
 	render() {
-        console.log(this.state);
+		console.log(this.state);
 		return (
 			<>
 				<div className="fileUploadWrapper">
-                    <p>{this.state.fileUploadError}</p> 
-					<form onSubmit={this.submit} className="fileUploader">
+					<p>{this.state.fileUploadError}</p>
+					<form className="fileUploader">
 						<input
 							className="choseFile"
 							type="file"
 							id="customFile"
 							onChange={this.onChange}
 						/>
-						<label className="fileName" htmlFor="customFile">
-							{this.state.filename}
-						</label>
-						<button onClick={this.submit}>submit</button>
 					</form>
-					{
-                            this.state.preparedFiles.map(item => {
-                                return <div onClick={() => this.removePlug(item.fileName)} className="plug" key={item.fileName}>
-                                    <p>{item.fileName}</p>
-                                </div>
-                            })
-                        }
+					<div className="outputTest">
+						<div
+							style={{
+                                width: this.state.uploadPercentage,
+                                display: this.state.loadingBar ? "block" : "none"
+							}}
+							className="loadingBar"
+						></div>
+						{this.state.preparedFiles.map(item => {
+							return (
+								<div
+									onClick={() => this.removePlug(item[0])}
+									className="plug"
+									key={item[0]}
+								>
+									<p>{item[1]}</p>
+								</div>
+							);
+						})}
+					</div>
+					
 				</div>
 			</>
 		);

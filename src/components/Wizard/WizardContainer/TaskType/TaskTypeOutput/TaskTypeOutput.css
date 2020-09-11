@@ -102,3 +102,26 @@
 .front-end_input-wrapper .front-end_input_remove-button img {
   width: auto;
 }
+.loadingBar-container {
+  height: 4px;
+  width: 120px;
+  border-radius: 4px;
+  background: #e9e9ed;
+  position: relative;
+  margin-bottom: 16px;
+}
+.loading-bar {
+  position: absolute;
+  background: #139ffd;
+  height: 100%;
+  border-radius: 4px;
+  width: 100%;
+}
+input[type="file"] {
+  display: none;
+}
+.custom-file-upload {
+  width: fit-content;
+  cursor: pointer;
+  margin-bottom: 32px;
+}
