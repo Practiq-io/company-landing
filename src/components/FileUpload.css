@@ -1,0 +1,36 @@
+.fileUploadWrapper {
+	padding: 2em;
+	border: solid 1px black;
+	display: flex;
+	justify-content: center;
+}
+
+
+.choseFile {
+    margin-bottom: 20px;
+}
+.fileName {
+    margin-bottom: 20px;
+	display: flex;
+	justify-content: center;
+}
+
+.submitButton {
+	color: white;
+	background: rgb(70, 168, 233);
+    
+}
+
+.plug {
+	height: 50px;
+	border: solid 5px red;
+	margin: 10px;
+	position: relative;
+}
+
+.outputTest {
+	min-width: 70px;
+	position: relative;
+	background: rgba(27, 37, 31, 0.911);
+	padding: 2em;
+}

@@ -3,41 +3,82 @@ import "./TaskType.css";
 import TaskTypeSwitch from "./TaskTypeSwitch/TaskTypeSwitch";
 import TaskTypeControls from "./TaskTypeControls/TaskTypeControls";
 import TaskTypeOutput from "./TaskTypeOutput/TaskTypeOutput";
+import axios from 'axios';
 
 export default class TaskType extends Component {
 	state = {
 		programming: "backend",
 		taskType: "",
 		taskData: {},
+		loadingBar: false,
+		uploadPercentage: 0
 	};
 
 	setTaskType = (taskType) => {
 		this.setState({ taskType: taskType });
 	};
 
-	attachFile = (name, taskKey) => {
-		let key = taskKey;
-		let taskData = { ...this.state.taskData };
-		key = { ...this.state.taskData[key] };
-		let attachedFiles = [...key.attachedFiles];
-		if (attachedFiles.length < 5) {
-			attachedFiles.push(name);
-			key.attachedFiles = attachedFiles;
-			taskData[taskKey] = key;
-			this.setState({ taskData });
-		}
+	attachFile = async (e, category) => {
+		e.preventDefault();
+      
+        if(e.target.files[0]){
+			this.setState({loadingBar: true});
+			let taskData = {...this.state.taskData};
+            let attachedFiles = [...taskData[category].attachedFiles];
+            let fileName = e.target.files[0].name;
+            const formData = new FormData();
+            formData.append(
+                "attachment",
+                e.target.files[0],
+                "Production.postman_environment.json"
+            );
+            var requestOptions = {
+                method: "POST",
+                body: formData,
+                redirect: "follow",
+                onUploadProgress: (progressEvent) => {
+                    var percentCompleted = Math.round(
+                        (progressEvent.loaded * 100) / progressEvent.total
+					);
+                    this.setState({ uploadPercentage: percentCompleted });
+                },
+            };
+            e.target.value = null;
+            try {
+                await axios
+                    .post(
+                        "https://ec2-54-170-173-178.eu-west-1.compute.amazonaws.com/tasks/attachment",
+                        formData,
+                        requestOptions
+                    )
+                    .then(result => {
+                        let attachment = [];
+                        attachment.push(result.data);
+                        attachment.push(fileName);
+						attachedFiles.push(attachment);
+						taskData[category].attachedFiles = attachedFiles;
+                        this.setState({ taskData, loadingBar: false , uploadPercentage: 0});
+                    });
+            } catch (err) {
+                console.log(err);
+                this.setState({ loadingBar: false, uploadPercentage: 0});
+            }
+        } 
 	};
 
-	removeAttachedFile = (name, taskKey) => {
-		let key = taskKey;
-		let taskData = { ...this.state.taskData };
-		key = { ...this.state.taskData[key] };
-		let attachedFiles = [...key.attachedFiles];
-		let index = attachedFiles.indexOf(name);
-		attachedFiles.splice(index, 1);
-		key.attachedFiles = attachedFiles;
-		taskData[taskKey] = key;
-		this.setState({ taskData });
+	removeAttachedFile = (name, category) => {
+		let taskData = {...this.state.taskData};
+		let attachedFiles = [...taskData[category].attachedFiles];
+		let index = 0;
+
+		attachedFiles.forEach(file => {
+			if (name === file[0]) {
+				attachedFiles.splice(index, 1);
+				taskData[category].attachedFiles = attachedFiles;
+				this.setState({ taskData });
+			}
+			index++;
+		});
 	};
 
 	addApiInput = (category) => {
@@ -202,7 +243,6 @@ export default class TaskType extends Component {
 			});
 			return false;
 		}
-
 		return true;
 	};
 
@@ -487,6 +527,8 @@ export default class TaskType extends Component {
 							containerState={containerState}
 							addApiInput={this.addApiInput}
 							removeApiInput={this.removeApiInput}
+							loadingBar={this.state.loadingBar}
+							uploadPercentage={this.state.uploadPercentage}
 						/>
 					</div>
 				</div>

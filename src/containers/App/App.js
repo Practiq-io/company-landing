@@ -37,6 +37,7 @@ export default class App extends Component {
 	componentWillUnmount() {
 		window.removeEventListener("load", this.handleLoad);
 	}
+	
 
 	render() {
 		return (
@@ -69,9 +70,7 @@ export default class App extends Component {
 					className="App"
 				>
 					<NavigationBar toggle={this.state.toggle} />
-
 					<MainContainer wizard={this.state} />
-
 					<Footer />
 				</div>
 			</>

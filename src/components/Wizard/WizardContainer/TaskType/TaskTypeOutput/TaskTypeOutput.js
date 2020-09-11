@@ -19,7 +19,9 @@ export default class TaskTypeOutput extends Component {
 			attachFile,
 			containerState,
 			addApiInput,
-			removeApiInput
+			removeApiInput,
+			uploadPercentage,
+			loadingBar
 		} = this.props;
 		const taskType = taskTypeState.taskType;
 
@@ -75,6 +77,8 @@ export default class TaskTypeOutput extends Component {
 						containerState={containerState}
 						addApiInput={addApiInput}
 						removeApiInput={removeApiInput}
+						uploadPercentage={uploadPercentage}
+						loadingBar={loadingBar}
 					/>
 				);
 			case "Single page application":
@@ -88,6 +92,8 @@ export default class TaskTypeOutput extends Component {
 						containerState={containerState}
 						addApiInput={addApiInput}
 						removeApiInput={removeApiInput}
+						uploadPercentage={uploadPercentage}
+						loadingBar={loadingBar}
 					/>
 				);
 			case "Frontend component":
@@ -101,6 +107,8 @@ export default class TaskTypeOutput extends Component {
 						containerState={containerState}
 						addApiInput={addApiInput}
 						removeApiInput={removeApiInput}
+						uploadPercentage={uploadPercentage}
+						loadingBar={loadingBar}
 					/>
 				);
 			case "Custom frontend task":
