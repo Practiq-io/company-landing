@@ -1,23 +1,23 @@
-import React, { Component } from "react";
-import "./ServicesBlock.css";
-import FrontEnd from "./FrontEnd/FrontEnd";
-import BackEnd from "./BackEnd/BackEnd";
+import React, { Component } from 'react';
+import './ServicesBlock.css';
+import FrontEnd from './FrontEnd/FrontEnd';
+import BackEnd from './BackEnd/BackEnd';
 
 class ServicesBlock extends Component {
 	state = {
-		displayed: "backend",
+		displayed: 'backend',
 		switched: false,
 	};
 
 	switchToBackEnd = () => {
-		if (this.state.displayed !== "backend") {
-			this.setState({ displayed: "backend", switched: false });
+		if (this.state.displayed !== 'backend') {
+			this.setState({ displayed: 'backend', switched: false });
 		}
 	};
 
 	switchToFrontEnd = () => {
-		if (this.state.displayed !== "frontend") {
-			this.setState({ displayed: "frontend", switched: true });
+		if (this.state.displayed !== 'frontend') {
+			this.setState({ displayed: 'frontend', switched: true });
 		}
 	};
 
@@ -31,7 +31,7 @@ class ServicesBlock extends Component {
 		return (
 			<section className="SB-Section" id="services-block_anchor">
 				<div className="wrapper">
-					<content className="upperServicesBox">
+					<div className="upperServicesBox">
 						<h2
 							data-aos-anchor-placement="center-center"
 							data-aos="fade-down"
@@ -52,7 +52,7 @@ class ServicesBlock extends Component {
 								onClick={this.switchToFrontEnd}
 								className="frontendButton"
 								style={{
-									color: this.state.switched ? "white" : "#171725",
+									color: this.state.switched ? 'white' : '#171725',
 								}}
 							>
 								Frontend
@@ -61,7 +61,7 @@ class ServicesBlock extends Component {
 								onClick={this.switchToBackEnd}
 								className="backendButton"
 								style={{
-									color: this.state.switched ? "#171725" : "white",
+									color: this.state.switched ? '#171725' : 'white',
 								}}
 							>
 								Backend
@@ -70,20 +70,20 @@ class ServicesBlock extends Component {
 							<div
 								className="buttonSwitch"
 								style={{
-									right: this.state.switched ? "143px" : "0",
+									right: this.state.switched ? '143px' : '0',
 								}}
 							></div>
 						</div>
-					</content>
-					<content className="lowerServicesBox">
-						{this.state.displayed === "backend" ? (
+					</div>
+					<div className="lowerServicesBox">
+						{this.state.displayed === 'backend' ? (
 							<BackEnd toggleSpecificTask={toggleSpecificTask} />
 						) : null}
 
-						{this.state.displayed === "frontend" ? (
+						{this.state.displayed === 'frontend' ? (
 							<FrontEnd toggleSpecificTask={toggleSpecificTask} />
 						) : null}
-					</content>
+					</div>
 				</div>
 			</section>
 		);

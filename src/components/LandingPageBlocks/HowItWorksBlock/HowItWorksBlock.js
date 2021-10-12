@@ -1,27 +1,27 @@
-import React from "react";
-import "./HowItWorksBlock.css";
-import faceLogo from "../../../image/face.svg";
-import dotsDesc from "../../../image/dots-desctop.png";
-import dotsDesctopBlock2 from "../../../image/dotsDesctopBlock2.png";
-import dotsDesctopBlock3 from "../../../image/dotsDesctopBlock3.png";
-import dotsDesctopBlock4 from "../../../image/dotsDesctopBlock4.png";
-import Lisa from "../../../image/Lisa.svg";
-import Mark from "../../../image/Mark.svg";
-import Michael from "../../../image/Michael.svg";
-import Lana from "../../../image/Lana.svg";
-import codeWindow from "../../../image/codeWindow.svg";
-import GitHub from "../../../image/GitHub.svg";
-import dotsMobileBlock1 from "../../../image/dotsMobileBlock1.png";
-import dotsMobileBlock2 from "../../../image/dotsMobileBlock2.png";
-import dotsMobileBlock3 from "../../../image/dotsMobileBlock3.png";
-import dotsMobileBlock4 from "../../../image/dotsMobileBlock4.png";
-import dotsMobileBlock5 from "../../../image/dotsMobileBlock5.png";
+import React from 'react';
+import './HowItWorksBlock.css';
+import faceLogo from '../../../image/face.svg';
+import dotsDesc from '../../../image/dots-desctop.png';
+import dotsDesctopBlock2 from '../../../image/dotsDesctopBlock2.png';
+import dotsDesctopBlock3 from '../../../image/dotsDesctopBlock3.png';
+import dotsDesctopBlock4 from '../../../image/dotsDesctopBlock4.png';
+import Lisa from '../../../image/Lisa.svg';
+import Mark from '../../../image/Mark.svg';
+import Michael from '../../../image/Michael.svg';
+import Lana from '../../../image/Lana.svg';
+import codeWindow from '../../../image/codeWindow.svg';
+import GitHub from '../../../image/GitHub.svg';
+import dotsMobileBlock1 from '../../../image/dotsMobileBlock1.png';
+import dotsMobileBlock2 from '../../../image/dotsMobileBlock2.png';
+import dotsMobileBlock3 from '../../../image/dotsMobileBlock3.png';
+import dotsMobileBlock4 from '../../../image/dotsMobileBlock4.png';
+import dotsMobileBlock5 from '../../../image/dotsMobileBlock5.png';
 
 const HowItWorksBlock = () => {
 	return (
 		<section className="HIWB-Section" id="how-it-works_anchor">
 			<div className="wrapper">
-				<content className="HIWB-content">
+				<div className="HIWB-content">
 					<h2
 						data-aos-anchor-placement="bottom-bottom"
 						data-aos="fade-down"
@@ -113,7 +113,7 @@ const HowItWorksBlock = () => {
 									data-aos-duration="800"
 								>
 									Our platform classifies the skill set and level of knowledge
-									required for the task execution.{" "}
+									required for the task execution.{' '}
 								</p>
 
 								<div
@@ -364,7 +364,7 @@ const HowItWorksBlock = () => {
 								>
 									We make code reviews to ensure level of quality and provide
 									developers with resources needed to comply to industry
-									standards{" "}
+									standards{' '}
 								</p>
 
 								<div
@@ -532,7 +532,7 @@ const HowItWorksBlock = () => {
 							</div>
 						</div>
 					</div>
-				</content>
+				</div>
 			</div>
 		</section>
 	);

@@ -1,45 +1,82 @@
-import React, { Component } from "react";
-import "./Languages.css";
-import selectedTagClose from "./Languages_img/tagClose.svg";
-import Autosuggest from "react-autosuggest";
-import "./Autocomplete/Autocomplete.css";
-import axios from "../../../../axios-endpoint.js";
-import Loader from "../../wizardUI/wizardLoader";
+import React, { Component } from 'react';
+import './Languages.css';
+import selectedTagClose from './Languages_img/tagClose.svg';
+import Autosuggest from 'react-autosuggest';
+import './Autocomplete/Autocomplete.css';
+import axios from '../../../../axios-endpoint.js';
+import Loader from '../../wizardUI/wizardLoader';
 
 export default class Languages extends Component {
 	state = {
-		value: "",
-		suggestions: [],
+		value: '',
+		suggestions: [
+			'React',
+			'C++',
+			'C#',
+			'C',
+			'JavaScript',
+			'Angular',
+			'Jquery',
+			'Python',
+			'Docker',
+			'Wordpress',
+			'Joomla',
+		],
 		selectedTags: [],
-		customDeliverables: "",
+		customDeliverables: '',
 		system: [],
 		popLoader: false,
-		popularTags: [],
+		popularTags: [
+			'React',
+			'C++',
+			'C#',
+			'C',
+			'JavaScript',
+			'Angular',
+			'Jquery',
+			'Python',
+			'Docker',
+			'Wordpress',
+			'Joomla',
+		],
+		popularTagsReference: [
+			'React',
+			'C++',
+			'C#',
+			'C',
+			'JavaScript',
+			'Angular',
+			'Jquery',
+			'Python',
+			'Docker',
+			'Wordpress',
+			'Joomla',
+		],
 	};
 
 	componentDidMount() {
 		if (this.props.containerState) {
 			this.setState(this.props.containerState);
-		} else {
-			this.setState({ popLoader: true, popularTags: [] });
-			axios
-				.get("/capabilities/skills/popular")
-				.then((result) => {
-					let popTagsArray = result.data.skills;
-					let popularTags = [];
-					let popularTagsReference = [];
-					popTagsArray.forEach((tag) => {
-						let tagName = tag.name;
-						popularTags.push(tagName);
-						popularTagsReference.push(tagName);
-						this.setState({ popularTags, popularTagsReference });
-					});
-					this.setState({ popLoader: false });
-				})
-				.catch((err) => {
-					console.log(err);
-					this.setState({ popLoader: false, popTagsError: err.toString() });
-				});
+			// } else {
+			// 	this.setState({ popLoader: true, popularTags: [] });
+			// 	axios
+			// 		.get("/capabilities/skills/popular")
+			// 		.then((result) => {
+			// 			let popTagsArray = result.data.skills;
+			// 			let popularTags = [];
+			// 			let popularTagsReference = [];
+			// 			popTagsArray.forEach((tag) => {
+			// 				let tagName = tag.name;
+			// 				popularTags.push(tagName);
+			// 				popularTagsReference.push(tagName);
+			// 				this.setState({ popularTags, popularTagsReference });
+			// 			});
+			// 			this.setState({ popLoader: false });
+			// 		})
+			// 		.catch((err) => {
+			// 			console.log(err);
+			// 			this.setState({ popLoader: false, popTagsError: err.toString() });
+			// 		});
 		}
 		this.setState({ screenWidth: window.innerWidth });
 	}
@@ -47,17 +84,17 @@ export default class Languages extends Component {
 	onChange = (event, { newValue, method }) => {
 		this.setState({
 			value: newValue,
-			inputError: "",
+			inputError: '',
 		});
 	};
 	escapeRegexCharacters(str) {
-		return str.replace(/[.*+?^${}()|[\\]/g, "\\$&");
+		return str.replace(/[.*+?^${}()|[\\]/g, '\\$&');
 	}
 	getSuggestionValue(suggestion) {
 		return suggestion.name;
 	}
 	renderSuggestion(suggestion) {
-		return <div className="custom-styles_span">{suggestion.name}</div>;
+		// return <div className="custom-styles_span">{suggestion.name}</div>;
 	}
 	onSuggestionsFetchRequested = ({ value }) => {
 		axios
@@ -65,7 +102,7 @@ export default class Languages extends Component {
 			.then((result) => {
 				let newSuggestions = result.data.skills;
 				this.setState({
-					suggestions: newSuggestions
+					suggestions: newSuggestions,
 				});
 			})
 			.catch((err) => {
@@ -89,12 +126,12 @@ export default class Languages extends Component {
 			let popularTags = [...this.state.popularTags];
 			let index = popularTags.indexOf(name);
 			popularTags.splice(index, 1);
-			let newSelectedTag = [name, "junior"];
+			let newSelectedTag = [name, 'junior'];
 			let selectedTags = [...this.state.selectedTags];
 			selectedTags.push(newSelectedTag);
 			this.setState({ popularTags, selectedTags });
 		} else {
-			this.setState({ inputError: "* exceeded limit" });
+			this.setState({ inputError: '* exceeded limit' });
 		}
 	};
 	removeSelectedTag = (name) => {
@@ -108,7 +145,7 @@ export default class Languages extends Component {
 				}
 			});
 			popularTags.push(name);
-			inputError = "";
+			inputError = '';
 			this.setState({ popularTags, selectedTags, inputError });
 		} else {
 			let selectedTags = [...this.state.selectedTags];
@@ -123,7 +160,7 @@ export default class Languages extends Component {
 	addInputTagFunction = () => {
 		const blockedRegex = /[\]!$%^&*()":{}|<>]/;
 		if (this.state.value.match(blockedRegex)) {
-			this.setState({ inputError: "* only string values" });
+			this.setState({ inputError: '* only string values' });
 		} else {
 			if (this.state.value.length < 30) {
 				if (this.state.selectedTags.length < 10) {
@@ -142,26 +179,26 @@ export default class Languages extends Component {
 
 					if (popularTagsLowerCase.includes(valueLowerCase)) {
 						let index = popularTagsLowerCase.indexOf(valueLowerCase);
-						let newSelectedTag = [popularTags[index], "junior"];
+						let newSelectedTag = [popularTags[index], 'junior'];
 						selectedTags.push(newSelectedTag);
 						popularTags.splice(index, 1);
-						value = "";
+						value = '';
 						this.setState({ selectedTags, popularTags, value });
 					} else {
 						if (!selectedTagsLowerCase.includes(valueLowerCase)) {
-							let newSelectedTag = [value, "junior"];
+							let newSelectedTag = [value, 'junior'];
 							selectedTags.push(newSelectedTag);
-							value = "";
+							value = '';
 							this.setState({ selectedTags, value });
 						} else {
-							this.setState({ inputError: "* this tag is already selected" });
+							this.setState({ inputError: '* this tag is already selected' });
 						}
 					}
 				} else {
-					this.setState({ inputError: "* exceeded limit" });
+					this.setState({ inputError: '* exceeded limit' });
 				}
 			} else {
-				this.setState({ inputError: "* too long string" });
+				this.setState({ inputError: '* too long string' });
 			}
 		}
 	};
@@ -169,7 +206,7 @@ export default class Languages extends Component {
 		let languageName = name;
 		const blockedRegex = /[\]!$%^&*()":{}|<>]/;
 		if (languageName.match(blockedRegex)) {
-			this.setState({ inputError: "* only string values" });
+			this.setState({ inputError: '* only string values' });
 		} else {
 			if (languageName.length < 30) {
 				if (this.state.selectedTags.length < 10) {
@@ -188,47 +225,47 @@ export default class Languages extends Component {
 
 					if (popularTagsLowerCase.includes(valueLowerCase)) {
 						let index = popularTagsLowerCase.indexOf(valueLowerCase);
-						let newSelectedTag = [popularTags[index], "junior"];
+						let newSelectedTag = [popularTags[index], 'junior'];
 						selectedTags.push(newSelectedTag);
 						popularTags.splice(index, 1);
-						value = "";
+						value = '';
 						this.setState({ selectedTags, popularTags, value });
 					} else {
 						if (!selectedTagsLowerCase.includes(valueLowerCase)) {
-							let newSelectedTag = [value, "junior"];
+							let newSelectedTag = [value, 'junior'];
 							selectedTags.push(newSelectedTag);
-							value = "";
+							value = '';
 							this.setState({ selectedTags, value });
 						} else {
-							this.setState({ inputError: "* this tag is already selected" });
+							this.setState({ inputError: '* this tag is already selected' });
 						}
 					}
 				} else {
-					this.setState({ inputError: "* exceeded limit" });
+					this.setState({ inputError: '* exceeded limit' });
 				}
 			} else {
-				this.setState({ inputError: "* too long string" });
+				this.setState({ inputError: '* too long string' });
 			}
 		}
 	};
 	addInputTag = (event) => {
-		if (event.key === "Enter") {
+		if (event.key === 'Enter') {
 			if (this.state.value) {
 				this.addInputTagFunction();
 			} else {
-				this.setState({ inputError: "* language input is empty" });
+				this.setState({ inputError: '* language input is empty' });
 			}
-		} else if (event.type === "click") {
+		} else if (event.type === 'click') {
 			if (this.state.value) {
 				this.addInputTagFunction();
 			} else {
-				this.setState({ inputError: "* language input is empty" });
+				this.setState({ inputError: '* language input is empty' });
 			}
 		}
 	};
 	validation = () => {
 		if (this.state.selectedTags.length === 0) {
-			this.setState({ inputError: "* choose a language" });
+			this.setState({ inputError: '* choose a language' });
 			return false;
 		}
 		return true;
@@ -252,7 +289,7 @@ export default class Languages extends Component {
 	render() {
 		const { value, suggestions, inputError, screenWidth } = this.state;
 		const inputProps = {
-			placeholder: screenWidth > 370 ? "e.g., Java, React, Drupal, etc." : "",
+			placeholder: screenWidth > 370 ? 'e.g., Java, React, Drupal, etc.' : '',
 			value,
 			onChange: this.onChange,
 		};
@@ -286,10 +323,10 @@ export default class Languages extends Component {
 							<p
 								onClick={this.addInputTag}
 								style={{
-									color: this.state.value ? "#1371FD" : "#B1B1B8",
-									cursor: this.state.value ? "pointer" : "context-menu",
-									pointerEvents: this.state.value ? "auto" : "none",
-									marginBottom: "32px",
+									color: this.state.value ? '#1371FD' : '#B1B1B8',
+									cursor: this.state.value ? 'pointer' : 'context-menu',
+									pointerEvents: this.state.value ? 'auto' : 'none',
+									marginBottom: '32px',
 								}}
 								className="mobile-add-button"
 							>

@@ -1,19 +1,18 @@
-import React from "react";
-import "./WhoBlock.css";
-import linkid from "../../../image/linkid.svg";
-import IkaMobile from "../../../image/Ika-mobile.png";
-import LizaMobile from "../../../image/Liza-mobile.png";
-import RomaMobile from "../../../image/Roma-mobile.png";
-import linkidMobile from "../../../image/linkid-blue.svg";
+import React from 'react';
+import './WhoBlock.css';
+import linkid from '../../../image/linkid.svg';
+import IkaMobile from '../../../image/Ika-mobile.png';
+import LizaMobile from '../../../image/Liza-mobile.png';
+import RomaMobile from '../../../image/Roma-mobile.png';
+import linkidMobile from '../../../image/linkid-blue.svg';
 
 const WhoBlock = () => {
 	return (
 		<section className="WB-Section" id="who-block_anchor">
 			<div className="wrapper">
-				<content className="WB-content">
-					
+				<div className="WB-content">
 					<div className="WB-title-box">
-						<h2	
+						<h2
 							className="WB-title-text"
 							data-aos-anchor-placement="bottom-bottom"
 							data-aos="fade-right"
@@ -22,16 +21,13 @@ const WhoBlock = () => {
 							Who build this
 						</h2>
 					</div>
-					
 
 					<div className="person-card">
-
-						<div 
+						<div
 							data-aos-anchor-placement="bottom-bottom"
 							data-aos="fade-left"
 							data-aos-delay="650"
 							data-aos-duration="1000"
-
 							className="person"
 						>
 							<div className="person-image">
@@ -44,12 +40,11 @@ const WhoBlock = () => {
 									Ilya Sidorovich
 								</p>
 
-								<div 
+								<div
 									data-aos-anchor-placement="bottom-bottom"
 									data-aos="fade-in"
 									data-aos-delay="1550"
 									data-aos-duration="1000"
-
 									className="linkid-logo"
 								>
 									<img src={linkid} alt="" />
@@ -68,12 +63,11 @@ const WhoBlock = () => {
 							</div>
 						</div>
 
-						<div 
+						<div
 							data-aos-anchor-placement="bottom-bottom"
 							data-aos="fade-left"
 							data-aos-delay="950"
 							data-aos-duration="1000"
-
 							className="person liza wb-middle-card"
 						>
 							<div className="person-image">
@@ -86,12 +80,11 @@ const WhoBlock = () => {
 									Elizaveta Kolesnichenko
 								</p>
 
-								<div 
+								<div
 									data-aos-anchor-placement="bottom-bottom"
 									data-aos="fade-in"
 									data-aos-delay="1750"
 									data-aos-duration="1000"
-
 									className="linkid-logo"
 								>
 									<img src={linkid} alt="" />
@@ -104,18 +97,17 @@ const WhoBlock = () => {
 									data-aos-delay="2050"
 									data-aos-duration="1000"
 								>
-									Co-founder, Product / Strategy Head of Startup Incubation @ ACE
-									Incubator MSc Cognitive Neurobiology, UvA
+									Co-founder, Product / Strategy Head of Startup Incubation @
+									ACE Incubator MSc Cognitive Neurobiology, UvA
 								</p>
 							</div>
 						</div>
 
-						<div 
+						<div
 							data-aos-anchor-placement="bottom-bottom"
 							data-aos="fade-left"
 							data-aos-delay="1250"
 							data-aos-duration="1000"
-
 							className="person roma"
 						>
 							<div className="person-image">
@@ -128,12 +120,11 @@ const WhoBlock = () => {
 									Roman Cherepivskiy
 								</p>
 
-								<div 
+								<div
 									data-aos-anchor-placement="bottom-bottom"
 									data-aos="fade-in"
 									data-aos-delay="1950"
 									data-aos-duration="1000"
-
 									className="linkid-logo"
 								>
 									<img src={linkid} alt="" />
@@ -152,17 +143,13 @@ const WhoBlock = () => {
 							</div>
 						</div>
 
-
-
-
 						<div className="person-mobile-block">
 							<div className="person-card-mobile ika ">
-								<div 
+								<div
 									data-aos-anchor-placement="top"
 									data-aos="zoom-in"
 									data-aos-delay="1200"
 									data-aos-duration="1000"
-									
 									className="person-card-image"
 								>
 									<img src={IkaMobile} alt="" />
@@ -193,12 +180,11 @@ const WhoBlock = () => {
 							</div>
 
 							<div className="person-card-mobile liza">
-								<div 
+								<div
 									data-aos-anchor-placement="top"
 									data-aos="zoom-in"
 									data-aos-delay="1200"
 									data-aos-duration="1000"
-
 									className="person-card-image"
 								>
 									<img src={LizaMobile} alt="" />
@@ -229,12 +215,11 @@ const WhoBlock = () => {
 							</div>
 
 							<div className="person-card-mobile roma">
-								<div 
+								<div
 									data-aos-anchor-placement="top"
 									data-aos="zoom-in"
 									data-aos-delay="800"
 									data-aos-duration="1000"
-
 									className="person-card-image"
 								>
 									<img src={RomaMobile} alt="" />
@@ -265,7 +250,7 @@ const WhoBlock = () => {
 							</div>
 						</div>
 					</div>
-				</content>
+				</div>
 			</div>
 		</section>
 	);
