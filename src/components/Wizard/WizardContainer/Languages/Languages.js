@@ -9,19 +9,7 @@ import Loader from '../../wizardUI/wizardLoader';
 export default class Languages extends Component {
 	state = {
 		value: '',
-		suggestions: [
-			'React',
-			'C++',
-			'C#',
-			'C',
-			'JavaScript',
-			'Angular',
-			'Jquery',
-			'Python',
-			'Docker',
-			'Wordpress',
-			'Joomla',
-		],
+		suggestions: [],
 		selectedTags: [],
 		customDeliverables: '',
 		system: [],
