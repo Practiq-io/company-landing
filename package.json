@@ -8,7 +8,7 @@
     "@testing-library/user-event": "^7.2.1",
     "animate.css": "^4.1.0",
     "aos": "^2.3.4",
-    "axios": "^0.20.0",
+    "axios": "^0.21.2",
     "react": "^16.13.1",
     "react-animated-css": "^1.2.1",
     "react-autosuggest": "^10.0.2",
