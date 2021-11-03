@@ -1,11 +1,18 @@
 import React from "react";
 import "./Footer.css";
-import footerLogo from "../../image/logo.png";
+import footerLogo from "../../image/logo.svg";
 
 const Footer = () => {
 	return (
 		<footer className="footer-main">
-			<div className="footer-wrapper wrapper">
+			<div 
+				data-aos-anchor="#medium-animation-trigger"
+				data-aos="fade-ib"
+				data-aos-delay="1550"
+				data-aos-duration="1000"
+
+				className="footer-wrapper wrapper"
+			>
 				<div className="footer-logoch">
 					<div className="content">
 						<img src={footerLogo} alt="" />
@@ -23,7 +30,7 @@ const Footer = () => {
 
 					<div className="contacts">
 						<p>Contacts</p>
-						<a href="#">hello@practiq.com</a>
+						<a href="plugged">hello@practiq.com</a>
 					</div>
 				</div>
 			</div>

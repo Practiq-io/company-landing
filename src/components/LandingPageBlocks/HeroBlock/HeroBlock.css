@@ -26,13 +26,14 @@
 	-webkit-tap-highlight-color: transparent;
 }
 #code_block-animation-title {
-	white-space: pre;
 	line-height: 71px;
+	display:inline-block;
 }
 .mobileCodeBlockPlaceholder {
 	display: none;
 }
 .mobile-hero-button {
+	cursor: pointer;
 	display: none;
 }
 section .grid_wrapper .code_window .code_block {
@@ -147,9 +148,15 @@ section .grid_wrapper {
 	grid-template-rows: repeat(3, minmax(min-content, max-content));
 	grid-template-areas: "section_title  code" "section_text  image " "button        image";
 }
+.lineBreakFix {
+	line-height: 74px;
+	display: inline-block;
+	border-bottom: none!important;
+}
 section .grid_wrapper .section_title {
 	grid-area: section_title;
 	align-self: center;
+	display: inline-block;
 }
 section .grid_wrapper .section_title h1 {
 	font-family: "DINE-1451";
@@ -222,8 +229,9 @@ section .grid_wrapper .button button {
 	-webkit-align-items: center;
 	-moz-box-align: center;
 	align-items: center;
-	font-family: "RobotoMono-Regular";
-	font-size: 1rem;
+	font-family: 'Roboto Mono', monospace;
+	font-size: 16px;
+	font-weight: 300;
 	color: white;
 	padding: 13px 32px;
 	border: none;
@@ -253,6 +261,9 @@ section .grid_wrapper .working_image img {
 	z-index: 2;
 }
 @media screen and (max-width: 1200px) {
+	#code_block-animation-title {
+		display:inline;
+	}
 	section .grid_wrapper .code_window .code_block {
 		width: 368px;
 		height: 180px;
@@ -277,17 +288,23 @@ section .grid_wrapper .working_image img {
 		max-width: 49%;
 	}
 }
+.mobile_image {
+	display: none;
+}
 @media screen and (max-width: 1100px) {
-	section .grid_wrapper .section_title h1 {
-		font-size: 2.7rem;
-		line-height: 50px;
-	}
+	
 	section .grid_wrapper .section_text p {
 		font-size: 0.8rem;
 	}
 }
 @media screen and (max-width: 1000px) {
+	section .grid_wrapper .section_title h1 {
+		font-size: 2.7rem;
+		line-height: 50px;
+		padding: 0 15px;
+	}
 	section > img.mobile_image {
+		display: block;
 		position: absolute;
 		top: 0;
 		right: 0;
@@ -297,8 +314,6 @@ section .grid_wrapper .working_image img {
 	}
 	.mobile-hero-button {
 		display: block;
-	}
-	.mobile-hero-button {
 		font-size: 16px;
 		font-family: 'RobotoMono-Bold';
 		font-weight: 600;
@@ -311,7 +326,7 @@ section .grid_wrapper .working_image img {
 		align-self: start;
 		border-style: none;
 		padding: 10px 20px;
-		background-color: white;
+		background: white;
 		color: #1371fd;
 		margin-bottom: 25px;
 	}
@@ -362,7 +377,8 @@ section .grid_wrapper .working_image img {
 	section .grid_wrapper .section_title h1 {
 		color: white;
 		font-size: 1.75rem;
-		width: 280px;
+		width: 330px;
+		
 		line-height: 7px;
 		text-align: center;
 	}
@@ -461,6 +477,19 @@ section .grid_wrapper .working_image img {
 	}
 	section .grid_wrapper .section_text .arrow img.mobile.ArrowRight:hover {
 		background-color: purple;
+	}
+}
+.title-animation-linebreak-fix {
+	display: none;
+}
+@media screen and (max-width: 1152px) {
+	.title-animation-linebreak-fix {
+		display: block;
+	}
+}
+@media screen and (max-width: 1000px) {
+	.title-animation-linebreak-fix {
+		display: none;
 	}
 }
 @media screen and (max-width: 500px) {

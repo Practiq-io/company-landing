@@ -22,8 +22,16 @@ class ServicesCard extends Component {
 	};
 
 	render() {
+		const { toggleSpecificTask } = this.props;
+
 		return (
-			<div className="servicesCardBody">
+			<div 
+				data-aos={this.props.animationName}
+				data-aos-delay={this.props.animationDelay}
+				
+
+				className="servicesCardBody"
+			>
 				<div className="mobileWrap">
 					<div className="servicesCardImgbox">
 						<img
@@ -31,11 +39,10 @@ class ServicesCard extends Component {
 							src={this.props.imgPath}
 							alt="service icon"
 						/>
-						
 					</div>
 					<p className="servicesCardTitleMobile">{this.props.title}</p>
 				</div>
-				
+
 				<div className="cardStructure">
 					<div className="cardInfoBox">
 						<div className="servicesCardUpperBox">
@@ -45,40 +52,46 @@ class ServicesCard extends Component {
 
 						<div className="servicesCardLowerBox">
 							<p className="servicesCardExample">Example:</p>
-							<p className="servicesCardTextBody">
-								{this.state.displayedString}
-								<span
-									className="servicesCardMainSpan"
-									style={{
-										display: this.state.hiddenString ? "inline" : "none",
-									}}
-								>
+
+							<div className="services-animation-wrapper">
+								<p className="servicesCardTextBody">
+									{this.state.displayedString}
 									<span
-										id="servicesCardDots"
+										className="servicesCardMainSpan"
 										style={{
-											display: this.state.show ? "none" : "inline",
+											display: this.state.hiddenString ? "inline" : "none",
 										}}
 									>
-										...
+										<span
+											id="servicesCardDots"
+											style={{
+												display: this.state.show ? "none" : "inline",
+											}}
+										>
+											...
+										</span>
+										<span
+											style={{
+												display: this.state.show ? "inline" : "none",
+											}}
+											id="moreText"
+										>
+											{<br></br>}
+											{this.state.hiddenString}
+										</span>
+										<span onClick={() => this.toggleText()} id="toggleTextSpan">
+											{this.state.show ? " Less" : " More"}
+										</span>
 									</span>
-									<span
-										style={{
-											display: this.state.show ? "inline" : "none",
-										}}
-										id="moreText"
-									>
-										{<br></br>}
-										{this.state.hiddenString}
-									</span>
-									<span onClick={() => this.toggleText()} id="toggleTextSpan">
-										{this.state.show ? " Less" : " More"}
-									</span>
-								</span>
-							</p>
+								</p>
+							</div>
 						</div>
 					</div>
 
-					<div className="servicesCardButton">
+					<div
+						onClick={() => toggleSpecificTask()}
+						className="servicesCardButton"
+					>
 						<p>Get started</p>
 						<img
 							className="servicesCardButtonImg"

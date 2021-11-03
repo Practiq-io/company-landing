@@ -3,8 +3,18 @@ import "./TaskCardRequest.css";
 import Avatar from "../../../../../image/face.svg";
 
 const TaskCardRequest = (props) => {
+	const cardBodyDelay = props.cardBodyAnimation.delay ? props.cardBodyAnimation.delay : null;
+	const cardBodyAosName = props.cardBodyAnimation.name ? props.cardBodyAnimation.name : null;
+	const cardBodyDuration = props.cardBodyAnimation.duration ? props.cardBodyAnimation.duration : null;
+
 	return (
-		<div className="TCR-Cardbox">
+		<div 
+			className="TCR-Cardbox"
+			data-aos-anchor-placement="bottom-bottom"
+			data-aos={cardBodyAosName}
+			data-aos-duration={cardBodyDuration}
+			data-aos-delay={cardBodyDelay}
+		>
 			<img className="TCR-avatar-img" src={Avatar} alt="" />
 
 			<div className="TCR-body-frame">
@@ -16,7 +26,7 @@ const TaskCardRequest = (props) => {
 					</p>
 				</div>
 
-				<div className="TCR-Card-button">
+				<div onClick={() => props.toggle()} className="TCR-Card-button">
 					<p>Send request</p>
 				</div>
 				

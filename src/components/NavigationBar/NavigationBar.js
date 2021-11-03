@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import "./NavigationBar.css";
-import logo from "../../image/logo.png";
-import mobileLogo from "../../image/mobileLogo.png";
+import logo from "../../image/logo.svg";
+import mobileLogo from "../../image/mobileLogo.svg";
 import MobileNavigation from "./mobileNavigation/mobileNavigation";
 
 class NavigationBar extends Component {
@@ -14,13 +14,17 @@ class NavigationBar extends Component {
 	}
   
 	render() {
+		const {toggle} = this.props;
 		return (
 			<>
-				<nav className="Navigation-Panel">
+				<nav
+					
+				className="Navigation-Panel">
 					<div className="mobile-navigation_display">
 						<MobileNavigation
 							display={this.state.mobileNavigation}
 							toggle={this.toggleMobileMenu}
+							toggleWizard={toggle}
 						/>
 					</div>
 
@@ -28,6 +32,7 @@ class NavigationBar extends Component {
 						<div className="nav_wrapper">
 							<div className="logo">
 								<img
+									
 									src={logo}
 									alt="practiq logo"
 									className="logo-desktop-nav"
@@ -44,7 +49,12 @@ class NavigationBar extends Component {
 									<a href="#services-block_anchor">What we do</a>
 									<a href="#how-it-works_anchor">How it works</a>
 									<a href="#who-block_anchor">About us</a>
-									<a href="#start">Get started</a>
+									<a 
+										onClick={toggle}
+										href="#start"
+									>
+										Get started
+									</a>
 								</div>
 							</div>
 						</div>

@@ -2,9 +2,9 @@
   padding: 120px 0;
   background: #fafafc;
   width: 100%;
+  position: relative;
 }
 .SB-section-wrapper {
-  background: red;
   width: 100%;
 }
 .upperServicesBox {
@@ -81,7 +81,7 @@
   -webkit-transition: 0.2s;
   transition: 0.2s;
 }
-@media screen and (max-width: 696px) {
+@media screen and (max-width: 717px) {
   .SB-Section {
     padding: 40px 0 120px 0;
     background: #fafafc;

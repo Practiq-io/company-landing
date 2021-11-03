@@ -2,25 +2,20 @@
 .slick-slider .slick-list {
 	overflow: visible !important;
 }
-
 .slick-slider .slick-track,
 .slick-slider .slick-list div {
 	outline: none;
 }
-
 .slick-dots li.slick-active button:before {
 	color: #1371fd !important;
 }
-
 .slick-dots li button:before {
 	color: rgb(122, 122, 122);
 }
-
 .slick-dots {
 	bottom: -70px;
 	font-size: 8px;
 }
-
 .slick-track {
 	display: -webkit-box !important;
 	display: -webkit-flex !important;
@@ -29,15 +24,54 @@
 	-webkit-align-self: stretch !important;
 	align-self: stretch !important;
 }
-
 .slick-slide {
 	height: inherit !important;
-
 	display: -webkit-box !important;
-
 	display: -webkit-flex !important;
-
 	display: -moz-box !important;
-
 	display: flex !important;
+}
+.customLeftArrow {
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: -moz-box;
+	display: flex;
+	position: absolute !important;
+	background: url("./CarouselCustomArrows/ActiveLeft.svg");
+	background-repeat: no-repeat;
+	background-size: cover;
+	bottom: -21%;
+	left: 33%;
+	height: 40px;
+	width: 40px;
+	z-index: 70;
+	cursor: pointer;
+}
+.leftArrow {
+	height: 40px;
+	width: 40px;
+	position: absolute;
+	left: 37%;
+	bottom: 4%;
+	cursor: pointer;
+	-webkit-tap-highlight-color: transparent;
+}
+.rightArrow {
+	position: absolute;
+	height: 40px;
+	width: 40px;
+	right: 37%;
+	bottom: 4%;
+	cursor: pointer;
+	-webkit-tap-highlight-color: transparent;
+}
+@media screen and (max-width: 700px) {
+	.leftArrow {
+		left: 17%;
+		bottom: 4%;
+	}
+	.rightArrow {
+		right: 17%;
+		bottom: 4%;
+	}
 }

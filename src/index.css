@@ -77,7 +77,7 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   line-height: 1;
-  
+  -webkit-font-smoothing: antialiased;
 }
 ol, ul {
 	list-style: none;
@@ -104,13 +104,11 @@ a {
 	-moz-box-sizing: border-box;
 	     box-sizing: border-box;
 }
-
 .overflow_wrapper {
 	overflow-x: hidden;
 }
-
 :active, :focus {
 	outline: 0;
 	border: none;
 	-moz-outline-style: none;
-  }
+}

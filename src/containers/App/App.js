@@ -10,17 +10,70 @@ export default class App extends Component {
 		toggle: () => {
 			this.setState({ showWizard: !this.state.showWizard });
 		},
+		toggleSpecificTask: (taskName, programmingType) => {
+			this.setState({
+				showWizard: true,
+				specificTask: taskName,
+				programmingType: programmingType,
+			});
+		},
+		resetWizardTask: () => {
+			this.setState({
+				specificTask: "",
+				programmingType: "",
+			})
+		},
+		bodyIsVisible: false,
 	};
+
+	handleLoad = () => {
+		this.setState({ bodyIsVisible: true });
+	};
+
+	componentDidMount() {
+		window.addEventListener("load", this.handleLoad);
+	}
+
+	componentWillUnmount() {
+		window.removeEventListener("load", this.handleLoad);
+	}
+	
 
 	render() {
 		return (
-			<div className="App">
-				<NavigationBar />
-
-				<MainContainer wizard={this.state} />
-
-				<Footer />
-			</div>
+			<>
+				<div
+					style={{
+						display: this.state.bodyIsVisible ? "none" : "block"
+					}} 
+					className="loader-position"
+				>
+					<div 
+						className="loader-frame"
+					>
+						<div 
+							style={{
+								display: this.state.bodyIsVisible ? "none" : "block"
+							}} 
+							className="loader"
+						>
+						</div>
+					</div>
+					
+				</div>
+				
+				<div
+					style={{ 
+						opacity: this.state.bodyIsVisible ? "1" : "0",
+						position: this.state.bodyIsVisible ? "static" : "fixed"
+					}}
+					className="App"
+				>
+					<NavigationBar toggle={this.state.toggle} />
+					<MainContainer wizard={this.state} />
+					<Footer />
+				</div>
+			</>
 		);
 	}
 }

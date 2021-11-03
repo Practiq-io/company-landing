@@ -38,7 +38,9 @@
 
 .react-autosuggest__input--open {
 }
+
 .custom-styles_span {
+	overflow: auto;
 	width: 100%;
 	min-height: 46px;
 	border-bottom: 1px solid #e9e9ed;
@@ -59,8 +61,6 @@
 
 .react-autosuggest__suggestions-container--open {
 	display: block;
-	max-height: 217px;
-	overflow: hidden;
 	position: absolute;
 	top: 70px;
 	width: 100%;
@@ -77,6 +77,12 @@
 	margin: 0;
 	padding: 0;
 	list-style-type: none;
+	max-height: 217px;
+	overflow: auto;
+	&::-webkit-scrollbar {
+		width: 0px;
+		background: transparent;
+	}
 }
 
 .react-autosuggest__suggestion {

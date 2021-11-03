@@ -10,12 +10,18 @@
   -moz-box-direction: normal;
   flex-direction: column;
 }
-.modal-content_box .modal-content_subtitle {
-  color: #696974;
-  margin-bottom: 17px;
-  -webkit-transition: 0.2s;
-  transition: 0.2s;
-}
 .modal-content_box .about-company_input {
   margin-bottom: 27px;
+}
+.test {
+  border: none;
+}
+.test:focus {
+  border: none;
+}
+.poop {
+  height: 50px;
+  width: 50px;
+  background: red;
+  margin: 6px 0;
 }

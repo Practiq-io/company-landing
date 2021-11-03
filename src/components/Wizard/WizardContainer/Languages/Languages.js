@@ -1,203 +1,157 @@
-import React, { Component } from "react";
-import "./Languages.css";
-import selectedTagClose from "./Languages_img/tagClose.svg";
-import Autosuggest from "react-autosuggest";
-import "./Autocomplete/Autocomplete.css";
-import uuid from "uuid";
-
-const popularTags = [
-	"C++",
-	"C#",
-	"Java",
-	"React",
-	"Joomla",
-	"Wordpress",
-	"Javascript",
-	"Laravel",
-	"Node JS",
-	"Ruby",
-	"Swift",
-	"CSS",
-	"HTML",
-	"Drupal",
-	"Kotlin",
-	".NET",
-	"IOS",
-	"Android",
-	"AWS",
-];
-const allTags = [
-	{
-		name: "Java",
-	},
-	{
-		name: "Java SE",
-	},
-	{
-		name: "Java Docs",
-	},
-	{
-		name: "Javascript",
-	},
-	{
-		name: "React",
-	},
-	{
-		name: "Laravel",
-	},
-	{
-		name: "Node JS",
-	},
-	{
-		name: "Ruby",
-	},
-	{
-		name: "C++",
-	},
-	{
-		name: "C#",
-	},
-	{
-		name: "Swift",
-	},
-	{
-		name: "CSS",
-	},
-	{
-		name: "HTML",
-	},
-	{
-		name: "Drupal",
-	},
-	{
-		name: "Wordpress",
-	},
-	{
-		name: "React Native",
-	},
-	{
-		name: "PHP",
-	},
-	{
-		name: "Perl",
-	},
-	{
-		name: "Scala",
-	},
-	{
-		name: "Haskell",
-	},
-	{
-		name: "Java1",
-	},
-	{
-		name: "Java2",
-	},
-	{
-		name: "Java3",
-	},
-	{
-		name: "Java4",
-	},
-	{
-		name: "Java5",
-	},
-	{
-		name: "Java6",
-	},
-	{
-		name: "Java7",
-	},
-	{
-		name: "Java8",
-	},
-	{
-		name: "Java9",
-	},
-	{
-		name: "Java10",
-	},
-];
-function escapeRegexCharacters(str) {
-	return str.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
-}
-function getSuggestions(value) {
-	const escapedValue = escapeRegexCharacters(value.trim());
-
-	if (escapedValue === "") {
-		return [];
-	}
-
-	const regex = new RegExp("^" + escapedValue, "i");
-
-	return allTags.filter((language) => regex.test(language.name));
-}
-function getSuggestionValue(suggestion) {
-	return suggestion.name;
-}
-function renderSuggestion(suggestion) {
-	return <div className="custom-styles_span">{suggestion.name}</div>;
-}
+import React, { Component } from 'react';
+import './Languages.css';
+import selectedTagClose from './Languages_img/tagClose.svg';
+import Autosuggest from 'react-autosuggest';
+import './Autocomplete/Autocomplete.css';
+import axios from '../../../../axios-endpoint.js';
+import Loader from '../../wizardUI/wizardLoader';
 
 export default class Languages extends Component {
 	state = {
-		value: "",
+		value: '',
 		suggestions: [],
 		selectedTags: [],
+		customDeliverables: '',
+		system: [],
+		popLoader: false,
+		popularTags: [
+			'React',
+			'C++',
+			'C#',
+			'C',
+			'JavaScript',
+			'Angular',
+			'Jquery',
+			'Python',
+			'Docker',
+			'Wordpress',
+			'Joomla',
+		],
+		popularTagsReference: [
+			'React',
+			'C++',
+			'C#',
+			'C',
+			'JavaScript',
+			'Angular',
+			'Jquery',
+			'Python',
+			'Docker',
+			'Wordpress',
+			'Joomla',
+		],
 	};
+
+	componentDidMount() {
+		if (this.props.containerState) {
+			this.setState(this.props.containerState);
+			// } else {
+			// 	this.setState({ popLoader: true, popularTags: [] });
+			// 	axios
+			// 		.get("/capabilities/skills/popular")
+			// 		.then((result) => {
+			// 			let popTagsArray = result.data.skills;
+			// 			let popularTags = [];
+			// 			let popularTagsReference = [];
+			// 			popTagsArray.forEach((tag) => {
+			// 				let tagName = tag.name;
+			// 				popularTags.push(tagName);
+			// 				popularTagsReference.push(tagName);
+			// 				this.setState({ popularTags, popularTagsReference });
+			// 			});
+			// 			this.setState({ popLoader: false });
+			// 		})
+			// 		.catch((err) => {
+			// 			console.log(err);
+			// 			this.setState({ popLoader: false, popTagsError: err.toString() });
+			// 		});
+		}
+		this.setState({ screenWidth: window.innerWidth });
+	}
 
 	onChange = (event, { newValue, method }) => {
 		this.setState({
 			value: newValue,
-			inputError: "",
+			inputError: '',
 		});
 	};
+	escapeRegexCharacters(str) {
+		return str.replace(/[.*+?^${}()|[\\]/g, '\\$&');
+	}
+	getSuggestionValue(suggestion) {
+		return suggestion.name;
+	}
+	renderSuggestion(suggestion) {
+		// return <div className="custom-styles_span">{suggestion.name}</div>;
+	}
 	onSuggestionsFetchRequested = ({ value }) => {
-		this.setState({
-			suggestions: getSuggestions(value),
-		});
+		axios
+			.get('/capabilities/skills', { params: { q: value } })
+			.then((result) => {
+				let newSuggestions = result.data.skills;
+				this.setState({
+					suggestions: newSuggestions,
+				});
+			})
+			.catch((err) => {
+				console.log(err);
+			});
 	};
 	onSuggestionsClearRequested = () => {
 		this.setState({
 			suggestions: [],
 		});
 	};
-	addSelectedTag = (name) => {
+	onSuggestionSelected = (
+		event,
+		{ suggestion, suggestionValue, suggestionIndex, sectionIndex, method }
+	) => {
+		this.addInputTagAutosuggest(suggestionValue);
+	};
+
+	addPopularTag = (name) => {
 		if (this.state.selectedTags.length < 10) {
 			let popularTags = [...this.state.popularTags];
-			let selectedTags = [...this.state.selectedTags];
 			let index = popularTags.indexOf(name);
 			popularTags.splice(index, 1);
-			selectedTags.push(name);
+			let newSelectedTag = [name, 'junior'];
+			let selectedTags = [...this.state.selectedTags];
+			selectedTags.push(newSelectedTag);
 			this.setState({ popularTags, selectedTags });
 		} else {
-			this.setState({ inputError: "* exceeded limit" });
+			this.setState({ inputError: '* exceeded limit' });
 		}
 	};
 	removeSelectedTag = (name) => {
-		if (popularTags.includes(name)) {
+		if (this.state.popularTagsReference.includes(name)) {
 			let selectedTags = [...this.state.selectedTags];
 			let popularTags = [...this.state.popularTags];
-			let index = selectedTags.indexOf(name);
-			selectedTags.splice(index, 1);
+			let inputError = { ...this.state.inputError };
+			selectedTags.forEach((tag, i) => {
+				if (tag[0].includes(name)) {
+					selectedTags.splice(i, 1);
+				}
+			});
 			popularTags.push(name);
-			this.state.inputError = "";
-			this.setState({ popularTags, selectedTags });
+			inputError = '';
+			this.setState({ popularTags, selectedTags, inputError });
 		} else {
 			let selectedTags = [...this.state.selectedTags];
-			let index = selectedTags.indexOf(name);
-			selectedTags.splice(index, 1);
+			selectedTags.forEach((tag, i) => {
+				if (tag[0].includes(name)) {
+					selectedTags.splice(i, 1);
+				}
+			});
 			this.setState({ selectedTags });
 		}
 	};
-	addInputTag = (event) => {
-		if (event.key === "Enter" && this.state.value) {
-			const blockedRegex = /[\[\]!@$%^&*(),?":{}|<>]/;
-
-			if (this.state.value.match(blockedRegex)) {
-				this.setState({ inputError: "* only string values" });
-			} else {
-				if (this.state.value.length < 30) {
+	addInputTagFunction = () => {
+		const blockedRegex = /[\]!$%^&*()":{}|<>]/;
+		if (this.state.value.match(blockedRegex)) {
+			this.setState({ inputError: '* only string values' });
+		} else {
+			if (this.state.value.length < 30) {
+				if (this.state.selectedTags.length < 10) {
 					let value = this.state.value;
 					let valueLowerCase = this.state.value.toLowerCase();
 					let selectedTags = [...this.state.selectedTags];
@@ -208,45 +162,100 @@ export default class Languages extends Component {
 					});
 
 					let selectedTagsLowerCase = selectedTags.map((lowerCase) => {
-						return lowerCase.toLowerCase();
+						return lowerCase[0].toLowerCase();
 					});
 
 					if (popularTagsLowerCase.includes(valueLowerCase)) {
 						let index = popularTagsLowerCase.indexOf(valueLowerCase);
-						selectedTags.push(popularTags[index]);
+						let newSelectedTag = [popularTags[index], 'junior'];
+						selectedTags.push(newSelectedTag);
 						popularTags.splice(index, 1);
-						value = "";
+						value = '';
 						this.setState({ selectedTags, popularTags, value });
 					} else {
 						if (!selectedTagsLowerCase.includes(valueLowerCase)) {
-							selectedTags.push(value);
-							value = "";
+							let newSelectedTag = [value, 'junior'];
+							selectedTags.push(newSelectedTag);
+							value = '';
 							this.setState({ selectedTags, value });
 						} else {
-							return;
+							this.setState({ inputError: '* this tag is already selected' });
 						}
 					}
 				} else {
-					this.setState({ inputError: "* too long string" });
+					this.setState({ inputError: '* exceeded limit' });
 				}
+			} else {
+				this.setState({ inputError: '* too long string' });
 			}
 		}
 	};
-	componentDidMount() {
-		if (this.props.containerState) {
-			this.setState({
-				popularTags: this.props.containerState.popularTags,
-				selectedTags: this.props.containerState.selectedTags,
-			});
+	addInputTagAutosuggest = (name) => {
+		let languageName = name;
+		const blockedRegex = /[\]!$%^&*()":{}|<>]/;
+		if (languageName.match(blockedRegex)) {
+			this.setState({ inputError: '* only string values' });
+		} else {
+			if (languageName.length < 30) {
+				if (this.state.selectedTags.length < 10) {
+					let value = languageName;
+					let valueLowerCase = languageName.toLowerCase();
+					let selectedTags = [...this.state.selectedTags];
+					let popularTags = [...this.state.popularTags];
+
+					let popularTagsLowerCase = popularTags.map((lowerCase) => {
+						return lowerCase.toLowerCase();
+					});
+
+					let selectedTagsLowerCase = selectedTags.map((lowerCase) => {
+						return lowerCase[0].toLowerCase();
+					});
+
+					if (popularTagsLowerCase.includes(valueLowerCase)) {
+						let index = popularTagsLowerCase.indexOf(valueLowerCase);
+						let newSelectedTag = [popularTags[index], 'junior'];
+						selectedTags.push(newSelectedTag);
+						popularTags.splice(index, 1);
+						value = '';
+						this.setState({ selectedTags, popularTags, value });
+					} else {
+						if (!selectedTagsLowerCase.includes(valueLowerCase)) {
+							let newSelectedTag = [value, 'junior'];
+							selectedTags.push(newSelectedTag);
+							value = '';
+							this.setState({ selectedTags, value });
+						} else {
+							this.setState({ inputError: '* this tag is already selected' });
+						}
+					}
+				} else {
+					this.setState({ inputError: '* exceeded limit' });
+				}
+			} else {
+				this.setState({ inputError: '* too long string' });
+			}
 		}
-		this.setState({ popularTags });
-	}
+	};
+	addInputTag = (event) => {
+		if (event.key === 'Enter') {
+			if (this.state.value) {
+				this.addInputTagFunction();
+			} else {
+				this.setState({ inputError: '* language input is empty' });
+			}
+		} else if (event.type === 'click') {
+			if (this.state.value) {
+				this.addInputTagFunction();
+			} else {
+				this.setState({ inputError: '* language input is empty' });
+			}
+		}
+	};
 	validation = () => {
 		if (this.state.selectedTags.length === 0) {
-			this.setState({ inputError: "* choose a language" });
+			this.setState({ inputError: '* choose a language' });
 			return false;
 		}
-
 		return true;
 	};
 	continue = () => {
@@ -256,6 +265,8 @@ export default class Languages extends Component {
 				taxonomy: {
 					selectedTags: this.state.selectedTags,
 					popularTags: this.state.popularTags,
+					system: this.state.system,
+					popularTagsReference: this.state.popularTagsReference,
 				},
 			};
 			this.props.setWizardProperties(taxonomy);
@@ -264,9 +275,9 @@ export default class Languages extends Component {
 	};
 
 	render() {
-		const { value, suggestions, inputError } = this.state;
+		const { value, suggestions, inputError, screenWidth } = this.state;
 		const inputProps = {
-			placeholder: "e.g., Java, React, Drupal, etc.",
+			placeholder: screenWidth > 370 ? 'e.g., Java, React, Drupal, etc.' : '',
 			value,
 			onChange: this.onChange,
 		};
@@ -274,7 +285,7 @@ export default class Languages extends Component {
 		const { prevStep } = this.props;
 
 		return (
-			<div className="languages_frame" onKeyPress={this.addInputTag}>
+			<div className="wizard-modal_content-box" onKeyPress={this.addInputTag}>
 				<div className="modal-position_wrapper">
 					<div className="modal-title">
 						<p>What languages and frameworks are you looking for?</p>
@@ -286,23 +297,39 @@ export default class Languages extends Component {
 							<span className="validation_error-message">{inputError}</span>
 						</p>
 
-						<Autosuggest
-							suggestions={suggestions}
-							onSuggestionsFetchRequested={this.onSuggestionsFetchRequested}
-							onSuggestionsClearRequested={this.onSuggestionsClearRequested}
-							getSuggestionValue={getSuggestionValue}
-							renderSuggestion={renderSuggestion}
-							inputProps={inputProps}
-						/>
+						<div className="mobile-add-button_wrapper">
+							<Autosuggest
+								className="autosuggest-input"
+								suggestions={suggestions}
+								onSuggestionsFetchRequested={this.onSuggestionsFetchRequested}
+								onSuggestionsClearRequested={this.onSuggestionsClearRequested}
+								getSuggestionValue={this.getSuggestionValue}
+								renderSuggestion={this.renderSuggestion}
+								inputProps={inputProps}
+								onSuggestionSelected={this.onSuggestionSelected}
+							/>
+							<p
+								onClick={this.addInputTag}
+								style={{
+									color: this.state.value ? '#1371FD' : '#B1B1B8',
+									cursor: this.state.value ? 'pointer' : 'context-menu',
+									pointerEvents: this.state.value ? 'auto' : 'none',
+									marginBottom: '32px',
+								}}
+								className="mobile-add-button"
+							>
+								+ Add tag
+							</p>
+						</div>
 
 						<div className="languages-selected-tags_output">
 							{this.state.selectedTags
 								? this.state.selectedTags.map((name) => {
 										return (
-											<div className="selected_tag" key={uuid()}>
-												<p>{name}</p>
+											<div className="selected_tag" key={name[0]}>
+												<p>{name[0]}</p>
 												<img
-													onClick={() => this.removeSelectedTag(name)}
+													onClick={() => this.removeSelectedTag(name[0])}
 													className="selected-tag_close-button"
 													src={selectedTagClose}
 													alt=""
@@ -316,15 +343,18 @@ export default class Languages extends Component {
 						<p className="modal-content_subtitle">
 							Or select from the following:
 						</p>
-
 						<div className="languages-popular-tags_output">
+							{this.state.popTagsError ? (
+								<p>{this.state.popTagsError}</p>
+							) : null}
+							{this.state.popLoader ? <Loader /> : null}
 							{this.state.popularTags
 								? this.state.popularTags.map((name) => {
 										return (
 											<div
-												onClick={() => this.addSelectedTag(name)}
+												onClick={() => this.addPopularTag(name)}
 												className="popular_tag"
-												key={uuid()}
+												key={name}
 											>
 												<p>{name}</p>
 											</div>

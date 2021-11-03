@@ -192,6 +192,7 @@
 .HIWB-Section {
   padding-top: 120px;
   padding-bottom: 120px;
+  position: relative;
 }
 @media screen and (max-width: 1000px) {
   .HIWB-Section {
@@ -205,16 +206,16 @@
   padding: 15px 35px;
   border-radius: 30px;
 }
-.HIWB-Section .HIWB-content h2 {
+.HIWB-Section .HIWB-content .HIW-title {
   text-align: center;
   padding-bottom: 80px;
 }
 @media screen and (max-width: 1000px) {
-  .HIWB-Section .HIWB-content h2 {
+  .HIWB-Section .HIWB-content .HIW-title {
     padding-bottom: 40px;
     position: relative;
   }
-  .HIWB-Section .HIWB-content h2::after {
+  .HIWB-Section .HIWB-content .HIW-title::after {
     content: "";
     position: absolute;
     display: block;
@@ -325,6 +326,11 @@
   height: 83px;
   margin-right: 40px;
 }
+@media screen and (max-width: 800px) {
+  .HIWB-Section .HIWB-content .HIWB-blocks .HIWB-info .discription-content {
+    margin-right: 20px;
+  }
+}
 .HIWB-Section .HIWB-content .HIWB-blocks .HIWB-info .discription-text {
   width: 300px;
   height: 100px;
@@ -340,7 +346,7 @@
   -webkit-justify-content: center;
   -moz-box-pack: center;
   justify-content: center;
-  background-image: url("../../../image/cloudSpeach.png");
+  background-image: url("../../../image/cloudSpeach.svg");
   background-repeat: no-repeat;
   background-size: contain;
   background-position: center center;
@@ -431,7 +437,7 @@
   display: flex;
   -webkit-justify-content: space-around;
   justify-content: space-around;
-  padding-top: 40px;
+  padding-top: 10px;
 }
 @media screen and (max-width: 520px) {
   .HIWB-Section .HIWB-content .blockPosition .HIWB-info .discription {
@@ -643,10 +649,11 @@
   }
 }
 .HIWB-Section .HIWB-content .block06 .discription .chat .you-content .message {
-  background-image: url("../../../image/cloudSpeach2.png");
+  background-image: url("../../../image/cloudSpeach2.svg");
   background-repeat: no-repeat;
   background-size: contain;
-  padding: 30px 30px;
+  width: 270px;
+  height: 65px;
 }
 @media screen and (max-width: 1000px) {
   .HIWB-Section .HIWB-content .block06 .discription .chat .you-content .message {
@@ -691,30 +698,44 @@
   -webkit-order: 1;
   -moz-box-ordinal-group: 2;
   order: 1;
-  background-image: url("../../../image/cloudSpeach3.png");
+  background-image: url("../../../image/cloudSpeach3.svg");
   background-repeat: no-repeat;
   background-size: contain;
-  background-position-x: 10px;
-  padding: 15px;
+  width: 155px;
+  height: 73px;
 }
 .HIWB-Section .HIWB-content .block06 .discription .chat .someone .message p:nth-child(2) {
   margin-top: -10px;
 }
 .HIWB-Section .wrapper {
-  width: 1100px;
-}
-@media screen and (max-width: 1000px) {
-  .HIWB-Section .wrapper {
-    width: 500px;
-  }
-}
-@media screen and (max-width: 600px) {
-  .HIWB-Section .wrapper {
-    width: 100%;
-  }
+  max-width: 1100px;
 }
 @media screen and (max-width: 1000px) {
   .HIWB-blocks.block01 {
     padding-top: 10px !important;
   }
+}
+.HIW-block_trigger-box {
+  height: 50px;
+  width: 50px;
+  background: transparent;
+  position: absolute;
+  top: 700px;
+}
+.HIW-set-five-block_trigger-box {
+  height: 50px;
+  width: 50px;
+  background: transparent;
+  position: absolute;
+  bottom: -100px;
+}
+.HIW-set-six-block_trigger-box {
+  height: 50px;
+  width: 50px;
+  z-index: 900;
+  position: absolute;
+  bottom: -300px;
+}
+.HIWB-title p:nth-of-type(2) {
+  line-height: 25px;
 }

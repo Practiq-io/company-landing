@@ -1,5 +1,6 @@
 .WB-Section {
   background-color: #f9f9fb;
+  position: relative;
 }
 .WB-Section .WB-content {
   display: -webkit-box;
@@ -49,6 +50,7 @@
     display: block;
     width: 40px;
     height: 2px;
+    left: -webkit-calc(30%);
     left: calc(50% - 20px);
     bottom: 30px;
     background-color: #1371fd;
@@ -59,10 +61,10 @@
   display: -webkit-flex;
   display: -moz-box;
   display: flex;
-  -webkit-box-pack: space-evenly;
-  -webkit-justify-content: space-evenly;
-  -moz-box-pack: space-evenly;
-  justify-content: space-evenly;
+  -webkit-box-pack: end;
+  -webkit-justify-content: flex-end;
+  -moz-box-pack: end;
+  justify-content: flex-end;
   width: 100%;
 }
 @media screen and (max-width: 1150px) {
@@ -70,7 +72,7 @@
     -webkit-box-pack: justify;
     -webkit-justify-content: space-between;
     -moz-box-pack: justify;
-    justify-content: space-between;
+    justify-content: center;
   }
 }
 @media screen and (max-width: 1000px) {
@@ -88,6 +90,8 @@
   }
 }
 .WB-Section .WB-content .person-card .person {
+  position: relative;
+  z-index: 2;
   display: -webkit-box;
   display: -webkit-flex;
   display: -moz-box;
@@ -98,8 +102,26 @@
   -moz-box-orient: vertical;
   -moz-box-direction: normal;
   flex-direction: column;
+  background: #2473ea;
+  border-radius: 12px;
   max-width: 300px;
   height: 403px;
+}
+.WB-Section .WB-content .person-card .person .who-block-text {
+  padding: 16px 20px;
+  color: white;
+  font-family: "Circle-Regular";
+  font-size: 1rem;
+  line-height: 20px;
+  background: -webkit-linear-gradient(left, #2473ea, #6fa1ec);
+  background: -webkit-gradient(linear, left top, right top, from(#2473ea), to(#6fa1ec));
+  background: linear-gradient(to right, #2473ea, #6fa1ec);
+  border-bottom-left-radius: 12px;
+  border-bottom-right-radius: 12px;
+}
+.WB-Section .WB-content .person-card .person .who-block-text p {
+  letter-spacing: 0.7px;
+  line-height: 22px;
 }
 @media screen and (max-width: 1220px) {
   .WB-Section .WB-content .person-card .person {
@@ -166,17 +188,6 @@
   padding: 24px 0 40px 0;
   width: 20px;
   height: 20px;
-}
-.WB-Section .WB-content .person-card .person .person-image + p {
-  margin-top: auto;
-  padding: 16px 20px;
-  background-color: #2473ea;
-  color: white;
-  font-family: 'Circle-Regular';
-  font-size: 1rem;
-  line-height: 20px;
-  border-bottom-right-radius: 12px;
-  border-bottom-left-radius: 12px;
 }
 .WB-Section .WB-content .person-card .person.liza {
   height: 424px !important;
@@ -254,7 +265,7 @@
 }
 .WB-Section .WB-content .person-card .person-mobile-block .person-card-mobile .person-card-text p:nth-child(2) {
   font-size: 1rem;
-  font-family: 'Circle-Regular';
+  font-family: "Circle-Regular";
   line-height: 20px;
   color: #696974;
 }
@@ -276,4 +287,38 @@
 }
 .WB-Section .WB-content .person-card .person-mobile-block .person-card-mobile.roma {
   padding-top: 20px;
+}
+.WB-content {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -moz-box-pack: center;
+  justify-content: center;
+  -webkit-box-align: start;
+  -webkit-align-items: flex-start;
+  -moz-box-align: start;
+  align-items: flex-start;
+}
+.WB-title-text {
+  text-align: center;
+}
+.wb-middle-card {
+  margin: 0 40px;
+}
+@media screen and (max-width: 1000px) {
+  .WB-title-box {
+    width: 100%;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -moz-box;
+    display: flex;
+    margin-right: 0;
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+    -moz-box-pack: center;
+    justify-content: center;
+  }
 }

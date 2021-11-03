@@ -6,13 +6,16 @@
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.5.0",
     "@testing-library/user-event": "^7.2.1",
+    "animate.css": "^4.1.0",
+    "aos": "^2.3.4",
+    "axios": "^0.20.0",
     "react": "^16.13.1",
+    "react-animated-css": "^1.2.1",
     "react-autosuggest": "^10.0.2",
     "react-dom": "^16.13.1",
-    "react-redux": "^7.2.0",
-    "react-scripts": "3.4.1",
+    "react-scripts": "^3.4.3",
     "react-slick": "^0.26.1",
-    "redux": "^4.0.5",
+    "react-transition-group": "^4.4.1",
     "slick-carousel": "^1.8.1"
   },
   "scripts": {
@@ -34,6 +37,7 @@
       "last 1 chrome version",
       "last 1 firefox version",
       "last 1 safari version"
-    ]
+    ],
+    "proxy": "http://localhost:5000"
   }
 }

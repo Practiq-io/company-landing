@@ -17,6 +17,8 @@ export default class WizardProgressBar extends Component {
             progressWidth = "83.3%"
         } else if (step === 6){
             progressWidth = "99.96%"
+        } else if (step === 7){
+            progressWidth = "99.96%"
         }
         return (
             <div className="wizard-step-progress-box">
